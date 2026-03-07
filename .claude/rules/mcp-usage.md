@@ -30,13 +30,16 @@ AIOS uses Docker MCP Toolkit as the primary MCP infrastructure:
 | **playwright** | Browser automation, screenshots, web testing |
 | **desktop-commander** | Docker container operations via docker-gateway |
 
-### Inside Docker Desktop (via docker-gateway)
+### Direct in Claude Code (project .claude/settings.json)
+| MCP | Purpose |
+|-----|---------|
+| **Apify** | Web scraping, Actors, social media data extraction |
 
+### Inside Docker Desktop (via docker-gateway) — NOT CONFIGURED
 | MCP | Purpose |
 |-----|---------|
 | **EXA** | Web search, research, company/competitor analysis |
 | **Context7** | Library documentation lookup |
-| **Apify** | Web scraping, Actors, social media data extraction |
 
 ## CRITICAL: Tool Selection Priority
 
@@ -108,7 +111,7 @@ mcp__docker-gateway__resolve-library-id
 mcp__docker-gateway__get-library-docs
 ```
 
-## Apify MCP Usage (via Docker)
+## Apify MCP Usage (Direct via npx)
 
 ### Use Apify for:
 1. Searching Actors in Apify Store (web scrapers, automation tools)
@@ -120,14 +123,19 @@ mcp__docker-gateway__get-library-docs
 ### Access pattern (7 tools available):
 
 ```text
-mcp__docker-gateway__apify-slash-rag-web-browser  # RAG-enabled web browsing
-mcp__docker-gateway__search-actors                 # Search for Actors
-mcp__docker-gateway__call-actor                    # Run an Actor
-mcp__docker-gateway__fetch-actor-details           # Get Actor info/schema
-mcp__docker-gateway__get-actor-output              # Get results from Actor run
-mcp__docker-gateway__search-apify-docs             # Search Apify documentation
-mcp__docker-gateway__fetch-apify-docs              # Fetch documentation page
+mcp__apify__apify-slash-rag-web-browser  # RAG-enabled web browsing
+mcp__apify__search-actors                # Search for Actors
+mcp__apify__call-actor                   # Run an Actor
+mcp__apify__fetch-actor-details          # Get Actor info/schema
+mcp__apify__get-actor-output             # Get results from Actor run
+mcp__apify__search-apify-docs            # Search Apify documentation
+mcp__apify__fetch-apify-docs             # Fetch documentation page
 ```
+
+### Configuration:
+- Configured in `.claude/settings.json` (gitignored - contains API key)
+- Runs via `npx @apify/actors-mcp-server`
+- No Docker required
 
 ### When to use Apify vs other tools:
 | Task | Tool |
