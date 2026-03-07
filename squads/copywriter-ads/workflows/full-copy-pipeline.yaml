@@ -1,0 +1,74 @@
+name: full-copy-pipeline
+version: 1.0.0
+description: Pipeline completo de criacao de copy. Zara pesquisa e entrega briefing, Zoe escreve as copies.
+
+trigger:
+  command: "*copy-pipeline"
+  agent: zara
+
+elicitation:
+  enabled: true
+  questions:
+    - id: product
+      prompt: "Para qual produto?"
+      type: choice
+      options:
+        - GCN (Guia de Condutas Nutricionais)
+        - Webnutri
+        - ANC (Aceleracao Nutri de Consultorio)
+      required: true
+
+    - id: quantity
+      prompt: "Quantas copies voce precisa?"
+      type: text
+      required: true
+      default: "3"
+
+    - id: format
+      prompt: "Qual formato dos anuncios?"
+      type: choice
+      options:
+        - Video frontal no consultorio
+        - UGC mostrando produto
+        - Narrado com cenas
+        - Carrossel
+        - Headline POV + cenas
+        - Misto (varios formatos)
+      required: true
+
+    - id: angle
+      prompt: "Tem algum angulo especifico que quer explorar? (opcional)"
+      type: text
+      required: false
+
+steps:
+  - id: zara-research
+    agent: zara
+    action: briefing
+    description: Zara analisa winning ads, avatar e briefing do produto para gerar briefing de pesquisa
+    inputs:
+      product: "{{elicitation.product}}"
+      angle: "{{elicitation.angle}}"
+    on_success: zoe-write
+
+  - id: zoe-write
+    agent: zoe
+    action: write-copy
+    description: Zoe escreve as copies baseada no briefing da Zara
+    inputs:
+      product: "{{elicitation.product}}"
+      quantity: "{{elicitation.quantity}}"
+      format: "{{elicitation.format}}"
+      research_brief: "{{steps.zara-research.output}}"
+    on_success: review
+
+  - id: review
+    agent: zoe
+    action: review
+    description: Zoe revisa as copies contra o tone of voice e winning ads
+    inputs:
+      copies: "{{steps.zoe-write.output}}"
+
+completion:
+  message: "Pipeline completo! Copies geradas e revisadas."
+  output_location: docs/outputs/

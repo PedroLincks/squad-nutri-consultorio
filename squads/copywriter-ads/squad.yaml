@@ -1,0 +1,51 @@
+name: "copywriter-ads"
+version: 0.1.0
+description: "Squad de copywriting para anuncios. Dupla Zara (spy/pesquisa) + Zoe (copywriter) trabalhando juntas para criar copies de alta conversao para os produtos Nutri de Consultorio."
+author: "Pedro Lincks"
+license: MIT
+
+aios:
+  minVersion: "2.1.0"
+  type: squad
+
+products:
+  - id: gcn
+    name: "Guia de Condutas Nutricionais"
+    briefing: docs/prd/guia-condutas-nutricionais/briefing.md
+    avatar: docs/prd/guia-condutas-nutricionais/avatar.md
+    winning_ads: docs/references/winning-ads/winning-ads-gcn.md
+  - id: webnutri
+    name: "Webnutri"
+    briefing: docs/prd/webnutri/briefing.md
+    avatar: docs/prd/webnutri/avatar.md
+    winning_ads: docs/references/winning-ads/winning-ads-webnutri.md
+  - id: anc
+    name: "Aceleracao Nutri de Consultorio"
+    briefing: docs/prd/aceleracao-nutri-consultorio/briefing.md
+    avatar: docs/prd/aceleracao-nutri-consultorio/avatar.md
+    winning_ads: docs/references/winning-ads/winning-ads-anc.md
+
+shared_resources:
+  tone_of_voice: docs/prd/tone-of-voice.md
+  library: docs/library/
+  references: docs/references/
+  templates: docs/templates/
+
+components:
+  agents:
+    - agents/*.yaml
+  tasks:
+    - tasks/*.yaml
+  workflows:
+    - workflows/*.yaml
+  templates:
+    - templates/*.md
+
+dependencies: []
+
+keywords:
+  - aios
+  - squad
+  - copywriting
+  - ads
+  - nutricao

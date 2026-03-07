@@ -47,6 +47,8 @@ Use `@agent-name` ou `/AIOS:agents:agent-name`:
 | `@data-engineer` | Dara | Database design |
 | `@ux-design-expert` | Uma | UX/UI design |
 | `@devops` | Gage | CI/CD, git push (EXCLUSIVO) |
+| `@zara` | Zara | Spy & Pesquisa de copy para anuncios |
+| `@zoe` | Zoe | Copywriter de anuncios |
 
 ### Comandos de Agentes
 Use prefixo `*` para comandos:

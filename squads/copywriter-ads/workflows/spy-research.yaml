@@ -1,0 +1,50 @@
+name: spy-research
+version: 1.0.0
+description: Workflow de pesquisa da Zara. Analisa mercado, concorrentes e winning ads para gerar insights.
+
+trigger:
+  command: "*spy"
+  agent: zara
+
+elicitation:
+  enabled: true
+  questions:
+    - id: product
+      prompt: "Para qual produto?"
+      type: choice
+      options:
+        - GCN (Guia de Condutas Nutricionais)
+        - Webnutri
+        - ANC (Aceleracao Nutri de Consultorio)
+      required: true
+
+    - id: focus
+      prompt: "Qual o foco da pesquisa?"
+      type: choice
+      options:
+        - Analise de winning ads (padroes e insights)
+        - Novos angulos de copy
+        - Analise de hooks por tipo
+        - Gaps e oportunidades
+        - Pesquisa completa (tudo)
+      required: true
+
+steps:
+  - id: load-context
+    action: read-files
+    description: Carregar briefing, avatar, winning ads e pesquisas do produto
+
+  - id: analyze
+    action: analyze-patterns
+    description: Analisar padroes conforme o foco escolhido
+
+  - id: cross-reference
+    action: cross-library
+    description: Cruzar com principios dos livros de copy
+
+  - id: deliver
+    action: generate-insights
+    description: Entregar insights acionaveis organizados
+
+completion:
+  message: "Pesquisa completa! Insights prontos para a Zoe."

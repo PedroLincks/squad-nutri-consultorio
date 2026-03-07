@@ -1,0 +1,66 @@
+name: write-copy
+version: 1.0.0
+description: Workflow de escrita de copy da Zoe. Cria copies completas para anuncios.
+
+trigger:
+  command: "*write-copy"
+  agent: zoe
+
+elicitation:
+  enabled: true
+  questions:
+    - id: product
+      prompt: "Para qual produto?"
+      type: choice
+      options:
+        - GCN (Guia de Condutas Nutricionais)
+        - Webnutri
+        - ANC (Aceleracao Nutri de Consultorio)
+      required: true
+
+    - id: format
+      prompt: "Qual formato do anuncio?"
+      type: choice
+      options:
+        - Video frontal no consultorio
+        - UGC mostrando produto
+        - Narrado com cenas do produto
+        - Carrossel Instagram
+        - Headline POV + cenas
+        - Reels com roteiro
+      required: true
+
+    - id: angle
+      prompt: "Qual angulo ou tema? (ex: cenario clinico, cobrar mais caro, review de ferramentas)"
+      type: text
+      required: true
+
+    - id: variations
+      prompt: "Quantas variacoes?"
+      type: choice
+      options:
+        - "1 (copy unica)"
+        - "2 (teste A/B)"
+        - "3 (teste A/B/C)"
+      required: true
+
+steps:
+  - id: load-context
+    action: read-files
+    description: Carregar briefing, avatar, tone of voice, winning ads
+
+  - id: write
+    action: write-copies
+    description: Escrever copies no formato solicitado
+
+  - id: tone-check
+    action: validate-tone
+    description: Validar contra tone of voice (palavras proibidas, estilo)
+
+  - id: deliver
+    action: format-output
+    description: Entregar copies formatadas e prontas
+
+completion:
+  message: "Copies prontas!"
+  output_location: docs/outputs/
