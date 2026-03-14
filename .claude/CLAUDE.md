@@ -47,6 +47,7 @@ Use `@agent-name` ou `/AIOS:agents:agent-name`:
 | `@data-engineer` | Dara | Database design |
 | `@ux-design-expert` | Uma | UX/UI design |
 | `@devops` | Gage | CI/CD, git push (EXCLUSIVO) |
+| `@jack` | Jack | Estrategista de vendas, escala e head de marketing |
 | `@zara` | Zara | Spy & Pesquisa de copy para anuncios |
 | `@zoe` | Zoe | Copywriter de anuncios |
 

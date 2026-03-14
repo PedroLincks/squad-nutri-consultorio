@@ -27,6 +27,7 @@ Thumbs.db
 .aios-core/local/
 .claude/settings.local.json
 .claude/settings.json
+.mcp.json
 .aios/install-log.txt
 
 # Large files (books PDFs - keep local only)

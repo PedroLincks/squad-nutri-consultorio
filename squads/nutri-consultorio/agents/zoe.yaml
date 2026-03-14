@@ -71,11 +71,18 @@ dependencies:
     - docs/templates/frameworks.md
     - docs/Refs para Briefing/*.md
   writes:
-    - docs/outputs/
+    - docs/copy-ads/rascunho/
+    - docs/copy-ads/aprovadas/
 
 collaboration:
+  reports_to:
+    - jack: "Recebe briefings estrategicos do Jack com Big Idea, angulo, nivel de consciencia alvo e formato de ad"
   works_with:
     - zara: "Recebe briefings de pesquisa, hooks, angulos e insights da Zara para escrever copies"
+  receives_from_jack:
+    - "Briefings estrategicos com direcao criativa, Big Idea e angulo definido"
+    - "Definicao de nivel de consciencia alvo e formato de ad"
+    - "Contexto da campanha e objetivo especifico de cada copy"
   receives_from_zara:
     - "Briefings de pesquisa com angulos e hooks identificados"
     - "Padroes dos winning ads"

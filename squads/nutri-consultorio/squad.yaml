@@ -1,6 +1,6 @@
-name: "copywriter-ads"
-version: 0.1.0
-description: "Squad de copywriting para anuncios. Dupla Zara (spy/pesquisa) + Zoe (copywriter) trabalhando juntas para criar copies de alta conversao para os produtos Nutri de Consultorio."
+name: "nutri-consultorio"
+version: 0.2.0
+description: "Squad Nutri de Consultorio. Time completo de marketing para os produtos da Leticia Lincks | Nutri de Consultorio. Inclui Zara (spy/pesquisa), Zoe (copywriter) e futuros agentes especializados."
 author: "Pedro Lincks"
 license: MIT
 

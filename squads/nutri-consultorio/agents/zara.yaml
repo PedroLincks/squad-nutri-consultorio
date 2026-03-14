@@ -73,10 +73,16 @@ dependencies:
     - docs/references/swipe-file/
     - docs/templates/hooks-bank.md
     - docs/templates/cta-bank.md
+    - docs/ideias/spy-ads/
 
 collaboration:
+  reports_to:
+    - jack: "Recebe direcao estrategica do Jack sobre o que pesquisar, quais angulos explorar, quais concorrentes analisar"
   works_with:
     - zoe: "Entrega briefings de pesquisa, hooks, angulos e insights para a Zoe escrever copies"
+  handoff_to_jack:
+    - "Quando a pesquisa revelar insights estrategicos que mudam o posicionamento"
+    - "Quando dados de mercado exigirem decisao estrategica"
   handoff_to_zoe:
     - "Quando o briefing de pesquisa estiver completo"
     - "Quando novos angulos ou hooks forem identificados"

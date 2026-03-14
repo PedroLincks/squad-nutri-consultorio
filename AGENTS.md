@@ -62,6 +62,7 @@ Interprete os atalhos abaixo carregando o arquivo correspondente em `.aios-core/
 - `@ux-design-expert`, `/ux-design-expert`, `/ux-design-expert.md` -> `.aios-core/development/agents/ux-design-expert.md`
 - `@squad-creator`, `/squad-creator`, `/squad-creator.md` -> `.aios-core/development/agents/squad-creator.md`
 - `@aios-master`, `/aios-master`, `/aios-master.md` -> `.aios-core/development/agents/aios-master.md`
-- `@zara`, `/zara` -> `squads/copywriter-ads/agents/zara.yaml` (Spy & Pesquisadora de Copy)
-- `@zoe`, `/zoe` -> `squads/copywriter-ads/agents/zoe.yaml` (Copywriter de Anuncios)
+- `@jack`, `/jack` -> `squads/nutri-consultorio/agents/jack.yaml` (Estrategista de Vendas & Head de Marketing)
+- `@zara`, `/zara` -> `squads/nutri-consultorio/agents/zara.yaml` (Spy & Pesquisadora de Copy)
+- `@zoe`, `/zoe` -> `squads/nutri-consultorio/agents/zoe.yaml` (Copywriter de Anuncios)
 <!-- AIOS-MANAGED-END: shortcuts -->
