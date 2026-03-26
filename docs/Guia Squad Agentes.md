@@ -256,6 +256,19 @@ Todo plano/estrategia segue esta estrutura:
 
 ---
 
+## Squads de Elite
+
+Alem dos agentes internos (Jack, Zara, Zoe), voce tem dois squads especializados:
+
+| Squad | Agentes | Ativacao | Foco |
+|-------|---------|----------|------|
+| **Copy Squad** | 23 (22 lendas + Cyrus orquestrador) | `@copy-chief` ou `@copy-squad:{nome}` | Copy de nivel mundial |
+| **Hormozi Squad** | 16 (15 especialistas + orquestrador) | `@hormozi-chief` ou `@hormozi-{area}` | Estrategia, ofertas, escala |
+
+**Guia completo:** `docs/Guia Squads - Copy Squad e Hormozi Squad.md`
+
+---
+
 ## Produtos do Ecossistema
 
 | Produto | Preco | Tipo | O que vende |

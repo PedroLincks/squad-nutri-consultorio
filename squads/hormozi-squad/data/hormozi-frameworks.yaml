@@ -1,0 +1,257 @@
+# Hormozi Business Frameworks Reference
+# Referenced by specialist agents for structured methodology application
+
+frameworks:
+  value_equation:
+    source: "Alex Hormozi — $100M Offers"
+    description: "The core equation for creating irresistible offers by maximizing value perception"
+    components:
+      - name: "Dream Outcome"
+        description: "The ideal end result the customer wants — make it vivid, specific, and emotionally compelling. The bigger the outcome, the higher the value."
+      - name: "Perceived Likelihood of Achievement"
+        description: "How confident the buyer is that they will actually get the result. Increased by proof, guarantees, track record, and specificity."
+      - name: "Time Delay"
+        description: "How long until the buyer gets their first meaningful result. The shorter the delay, the higher the value. Compress time to result aggressively."
+      - name: "Effort and Sacrifice"
+        description: "How much work, discomfort, or sacrifice the buyer must endure. The less effort required, the higher the value. Do it for them where possible."
+    when_to_use: "Every offer creation, pricing decision, or offer audit. This is the foundational framework."
+
+  closer_framework:
+    source: "Alex Hormozi — $100M Offers, refined in Gym Launch"
+    description: "Six-step sales closing framework for high-ticket conversations"
+    components:
+      - name: "C — Clarify"
+        description: "Ask questions to understand their current situation, goals, and what they have tried before. Never pitch before you understand."
+      - name: "L — Label"
+        description: "Restate their problem back to them in their own words. When they say 'exactly,' you have earned the right to present."
+      - name: "O — Overview"
+        description: "Present the 3-step path from where they are to where they want to be. Keep it simple and logical."
+      - name: "S — Sell the Vacation"
+        description: "Sell the outcome, not the process. Paint the picture of their life after the transformation."
+      - name: "E — Explain Away Concerns"
+        description: "Handle objections by isolating them and reframing. If we solved X, would you be ready?"
+      - name: "R — Reinforce and Close"
+        description: "Ask for the decision. Use an assumptive close. Reinforce the value and the urgency."
+    when_to_use: "Phone sales, Zoom calls, in-person consultations, DM selling — any conversation-based sales"
+
+  lead_magnets_taxonomy:
+    source: "Alex Hormozi — $100M Leads"
+    description: "Classification of lead magnets by type, effort, and effectiveness"
+    components:
+      - name: "Free Trial / Sample"
+        description: "Give them a taste of the paid product. Highest conversion to paid but highest cost to deliver."
+      - name: "Free Tool / Calculator"
+        description: "Software or spreadsheet that solves a specific problem. High perceived value, builds habit."
+      - name: "Free Training / Workshop"
+        description: "Educational content that demonstrates expertise. Builds authority and trust."
+      - name: "Checklist / Cheat Sheet"
+        description: "Condensed actionable resource. Low cost to create, high perceived value if specific."
+      - name: "Assessment / Quiz"
+        description: "Personalized diagnosis that generates curiosity about the result. High engagement."
+      - name: "Template / Swipe File"
+        description: "Ready-to-use resource they can implement immediately. Saves them effort."
+      - name: "Community Access"
+        description: "Free membership to a group. Builds belonging and opens relationship loop."
+    when_to_use: "Lead generation design, opt-in page creation, content strategy planning"
+
+  hundred_million_offers:
+    source: "Alex Hormozi — $100M Offers"
+    description: "The complete offer creation methodology for building Grand Slam Offers"
+    components:
+      - name: "Dream Outcome Identification"
+        description: "Define what the customer truly wants in their own words, not what you think they want."
+      - name: "Problem-Solution Mapping"
+        description: "List every problem between the customer and their dream outcome. For each problem, list sub-problems."
+      - name: "Solution Vehicle Creation"
+        description: "Transform each problem into a deliverable — course, tool, template, service, community."
+      - name: "Proprietary Naming"
+        description: "Name each solution vehicle with a unique, branded name that implies the transformation."
+      - name: "Value Stack Assembly"
+        description: "Stack core offer + speed bonuses + effort bonuses + proof bonuses into an irresistible package."
+      - name: "Guarantee Design"
+        description: "Create a guarantee so strong it becomes a selling point: unconditional, conditional, performance, or anti-guarantee."
+      - name: "Scarcity and Urgency"
+        description: "Add real constraints — quantity limits, time windows, bonus expiration — to drive immediate action."
+    when_to_use: "Creating a new offer, redesigning an underperforming offer, launching a new product"
+
+  hundred_million_leads:
+    source: "Alex Hormozi — $100M Leads"
+    description: "The four core methods of getting leads, organized by cost and speed"
+    components:
+      - name: "Warm Outreach"
+        description: "Reaching out to people who already know you — past clients, contacts, friends. Free, fast, but limited scale."
+      - name: "Cold Outreach"
+        description: "Reaching out to strangers — email, DM, phone. Free to low cost, scalable, but requires volume and skill."
+      - name: "Content (Free)"
+        description: "Creating content that attracts leads organically — social media, blog, YouTube, podcast. Free, slow to start, compounds over time."
+      - name: "Paid Ads"
+        description: "Buying attention through advertising — Facebook, Google, YouTube, TikTok. Fast, scalable, requires budget and skill."
+    when_to_use: "Lead generation strategy, channel selection, marketing budget allocation"
+
+  laire:
+    source: "Alex Hormozi — $100M Leads"
+    description: "The customer acquisition and retention lifecycle"
+    components:
+      - name: "L — Lead"
+        description: "Attract attention and generate leads through the 4 core methods."
+      - name: "A — Audience"
+        description: "Build an engaged audience that trusts you before you sell. Give value first."
+      - name: "I — Invite"
+        description: "Invite the audience to take the next step — webinar, call, purchase. Make the offer."
+      - name: "R — Retain"
+        description: "Keep customers engaged, getting results, and staying longer. Retention is cheaper than acquisition."
+      - name: "E — Earn"
+        description: "Earn referrals and repeat purchases from satisfied customers. The cheapest lead source."
+    when_to_use: "Business model design, customer lifecycle mapping, retention strategy"
+
+  # ═══════════════════════════════════════════════════════════════
+  # NEW FRAMEWORKS FROM $100M PLAYBOOKS (added 2026-03-20)
+  # ═══════════════════════════════════════════════════════════════
+
+  goated_ads_assembly:
+    source: "Alex Hormozi — $100M Goated Ads Playbook"
+    description: "Mass ad production system: 50 hooks x 3-5 meats x 1-3 CTAs = 150-750 ads/week"
+    components:
+      - name: "Hook (50 variations)"
+        description: "First 1-3 seconds. Research-driven, mapped to 5 awareness levels. 80% of prep time goes here."
+      - name: "Meat (5 formats)"
+        description: "Demonstration, Testimonial, Education, Story, Faceless — each with subtypes."
+      - name: "CTA (1-3 variations)"
+        description: "5-element formula: what/how/when/what-they-get/what-happens-next. Show-and-tell principle."
+    when_to_use: "Ad creation, creative scaling, fighting ad fatigue, weekly Ad Day production"
+
+  hook_anatomy:
+    source: "Alex Hormozi — $100M Hooks Playbook"
+    description: "Two-part hook structure with 9 verbal types and the 70/20/10 testing rule"
+    components:
+      - name: "Call Out"
+        description: "Select the audience — who is this for? (Cocktail Party Effect)"
+      - name: "Condition for Value"
+        description: "Why should they keep consuming? Promise of reward."
+      - name: "9 Verbal Types"
+        description: "Labels, Yes Questions, Open Questions, Conditionals, Commands, Statements, Lists/Steps, Narratives, Exclamations"
+      - name: "70/20/10 Rule"
+        description: "70% proven winners, 20% winner-adjacent permutations, 10% experimental"
+    when_to_use: "Hook writing for any medium — ads, content, emails, YouTube, social"
+
+  four_pillars_lead_nurture:
+    source: "Alex Hormozi — $100M Lead Nurture Playbook"
+    description: "Four pillars to maximize show rates: Availability, Speed, Personalization, Volume"
+    components:
+      - name: "Availability"
+        description: "7-day scheduling, extended hours, 15-min slots, 3 scheduling methods"
+      - name: "Speed"
+        description: "First contact in 60s = +391% conversion. 78% buy from first responder."
+      - name: "Personalization"
+        description: "Best-to-best routing, segment messaging, personalized proof"
+      - name: "Volume"
+        description: "8-step scheduling cadence, BAMFAM methodology, ACA outreach framework"
+    when_to_use: "Lead follow-up optimization, show rate improvement, sales team management"
+
+  five_horsemen_retention:
+    source: "Alex Hormozi — $100M Retention Playbook"
+    description: "Five core retention tactics that dramatically reduce churn"
+    components:
+      - name: "Track Attendance"
+        description: "What gets measured gets managed. Track engagement before they churn."
+      - name: "Reach Out 2x/Week"
+        description: "Proactive outreach to at-risk members before they cancel."
+      - name: "Handwritten Cards"
+        description: "Personal touch that creates emotional bond and increases switching cost."
+      - name: "Member Events"
+        description: "Community events that deepen relationships and create belonging."
+      - name: "Exit Interviews"
+        description: "Learn why they leave. Fix the system, not the symptom."
+    when_to_use: "Churn reduction, retention strategy, membership businesses"
+
+  crazy_eight_ltv:
+    source: "Alex Hormozi — $100M Lifetime Value Playbook"
+    description: "Eight levers to increase customer lifetime value"
+    components:
+      - name: "Increase Prices"
+        description: "Charge more for existing services — highest leverage play."
+      - name: "Decrease Costs"
+        description: "Reduce COGS without reducing perceived value."
+      - name: "Increase Purchases"
+        description: "Get customers to buy more frequently."
+      - name: "Cross-sell"
+        description: "Sell complementary products/services."
+      - name: "Upsell Quantity"
+        description: "Sell more of what they already buy."
+      - name: "Upsell Quality"
+        description: "Sell premium versions."
+      - name: "Downsell Quantity"
+        description: "Offer smaller packages to retain price-sensitive customers."
+      - name: "Downsell Quality"
+        description: "Offer lower-tier versions rather than losing the customer."
+    when_to_use: "LTV optimization, revenue growth without new customers, margin improvement"
+
+  genie_framework_pricing:
+    source: "Alex Hormozi — $100M Pricing Playbook"
+    description: "Doubling price = 6x profit (vs 3.5x for doubling customers or purchases)"
+    components:
+      - name: "10 Instant Profit Plays"
+        description: "28-day billing, processing fees, sales tax, CPI increases, annual billing, round up, renewal fee, automatic continuity, ultra high ticket anchor, guarantee upsells"
+      - name: "Combined Impact"
+        description: "+26.8% to +63.8% revenue increase from plays alone"
+    when_to_use: "Pricing optimization, instant profit generation, margin engineering"
+
+  raise_letter_framework:
+    source: "Alex Hormozi — $100M Price Raise Playbook"
+    description: "Five-step framework for communicating price increases to existing customers"
+    components:
+      - name: "R — Remind"
+        description: "Remind them of the value they have received and results achieved."
+      - name: "A — Address"
+        description: "Address that a change is happening — be direct, not apologetic."
+      - name: "I — Invest"
+        description: "Frame the increase as an investment in better service/results."
+      - name: "S — Soften"
+        description: "Offer a loyalty benefit — legacy pricing window, bonus, or lock-in."
+      - name: "E — Explain"
+        description: "Explain what they get with the new pricing — new features, better delivery."
+    when_to_use: "Price raises on existing customers, membership price increases, subscription repricing"
+
+  fast_cash_play:
+    source: "Alex Hormozi — $100M Fast Cash Playbook"
+    description: "10% of customers will pay 10x. Run every 90 days for instant profit."
+    components:
+      - name: "The 10x/10% Rule"
+        description: "Identify top 10% of customers, offer ultra-premium at 10x price."
+      - name: "Push-to-Consult Sequence"
+        description: "7-day email/text sequence to book high-ticket consultations."
+      - name: "Push-to-Checkout Sequence"
+        description: "Automated cart-open sequence for lower-friction offers."
+      - name: "The 4Rs Post-Campaign"
+        description: "Reviews, Results, Referrals, Resells — extract maximum value after the play."
+    when_to_use: "Quarterly profit injection, cash flow management, premium offer testing"
+
+  money_models_fifteen:
+    source: "Alex Hormozi — $100M Money Models"
+    description: "15 offer types across 4 categories for complete revenue architecture"
+    components:
+      - name: "Attraction Offers (5)"
+        description: "Win Your Money Back, Giveaways, Decoy Offers, Buy X Get Y Free, Pay Less Now/Pay More Later"
+      - name: "Upsell Offers (4)"
+        description: "Classic Upsell, Menu Upsell, Anchor Upsell, Rollover Upsell"
+      - name: "Downsell Offers (3)"
+        description: "Payment Plan Downsells, Trial With Penalty, Feature Downsells"
+      - name: "Continuity Offers (3)"
+        description: "Continuity Bonus, Continuity Discount, Waived Fee Offer"
+      - name: "Growth Formula"
+        description: "2x customers x 2x price x 2x purchases = 8x growth"
+    when_to_use: "Revenue architecture design, offer portfolio building, business model optimization"
+
+  brand_building_four_steps:
+    source: "Alex Hormozi — $100M Branding Playbook"
+    description: "Four-step brand building process with measurement framework"
+    components:
+      - name: "Step 1: Ideal Customer"
+        description: "Define who you want to attract — this determines all brand decisions."
+      - name: "Step 2: What They Like"
+        description: "Research what your ideal customer already associates with quality/trust."
+      - name: "Step 3: Associate"
+        description: "Pair your brand with those positive associations consistently."
+      - name: "Step 4: Optimize"
+        description: "Measure reach, influence, and direction. Branded vs unbranded = 45:1 vs 4:1 ROAS."
+    when_to_use: "Brand strategy, content-brand alignment, premium positioning, long-term brand building"
