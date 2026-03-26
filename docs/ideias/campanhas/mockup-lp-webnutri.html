@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOCKUP — LP Webnutri com Elementos de Cashback</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
+
+  /* ============================================ */
+  /* BANNER DE CONTEXTO (nao faz parte da LP)     */
+  /* ============================================ */
+  .mockup-banner {
+    background: #9B59B6;
+    color: #fff;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 10001;
+  }
+  .mockup-banner span { opacity: 0.8; }
+
+  /* ============================================ */
+  /* STICKY BAR                                   */
+  /* ============================================ */
+  .cashback-sticky-bar {
+    background: linear-gradient(135deg, #F5A623 0%, #E8961A 100%);
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: slideDown 0.5s ease-out;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .cashback-sticky-bar p { font-size: 14px; font-weight: 700; margin: 0; }
+  .cashback-sticky-bar a {
+    background: #1a1a1a; color: #fff; padding: 8px 20px; border-radius: 25px;
+    text-decoration: none; font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; transition: background 0.2s; white-space: nowrap;
+  }
+  .cashback-sticky-bar a:hover { background: #333; }
+
+  @keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+  }
+
+  /* ============================================ */
+  /* HERO                                         */
+  /* ============================================ */
+  .hero-section {
+    background: linear-gradient(180deg, #0d0d1a 0%, #1a0d2e 60%, #0d0d1a 100%);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .hero-section img { max-width: 220px; margin-bottom: 24px; }
+  .hero-section h1 {
+    font-size: 30px; font-weight: 700; line-height: 1.4;
+    max-width: 650px; margin: 0 auto 16px;
+  }
+  .hero-section h1 .degrade {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+  .hero-section p {
+    font-size: 16px; opacity: 0.7; max-width: 550px; margin: 0 auto 30px; line-height: 1.6;
+  }
+  .hero-section p .degrade {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+  .hero-section .btn-hero {
+    display: inline-block; background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: #fff; padding: 16px 40px; border-radius: 8px; text-decoration: none;
+    font-size: 16px; font-weight: 700; text-transform: uppercase; transition: all 0.2s;
+  }
+  .hero-section .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168,85,247,0.3); }
+
+  /* ============================================ */
+  /* BLOCO OFERTA CASHBACK                        */
+  /* ============================================ */
+  .cashback-offer-block {
+    background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
+    padding: 70px 20px;
+    text-align: center;
+    color: #1a1a1a;
+    border-top: 4px solid #F5A623;
+  }
+  .cashback-offer-block .badge-85 {
+    display: inline-block;
+    background: linear-gradient(135deg, #F5A623 0%, #E8961A 100%);
+    color: #fff; padding: 10px 28px; border-radius: 25px;
+    font-size: 13px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(245,166,35,0.3);
+  }
+  .cashback-offer-block h2 {
+    font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #1a1a1a;
+  }
+  .cashback-offer-block .subtitle {
+    font-size: 18px; font-weight: 600; color: #444; margin-bottom: 40px;
+  }
+  .steps-container {
+    display: flex; justify-content: center; gap: 30px;
+    max-width: 900px; margin: 0 auto 40px; flex-wrap: wrap;
+  }
+  .step-card {
+    flex: 1; min-width: 220px; max-width: 280px;
+    background: #fff; border-radius: 16px; padding: 30px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #f0f0f0;
+  }
+  .step-card .step-number {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #F5A623 0%, #E8961A 100%);
+    color: #fff; border-radius: 50%;
+    font-size: 20px; font-weight: 800; margin-bottom: 16px;
+  }
+  .step-card .step-icon { font-size: 28px; margin-bottom: 8px; }
+  .step-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #1a1a1a; }
+  .step-card p { font-size: 14px; color: #666; line-height: 1.5; }
+
+  /* Preco ancora */
+  .price-anchor-block {
+    margin: 30px auto;
+    max-width: 400px;
+  }
+  .price-anchor-block .price-old {
+    text-decoration: line-through; color: #999; font-size: 24px;
+  }
+  .price-anchor-block .price-real {
+    color: #2ECC71; font-size: 48px; font-weight: 800;
+    display: block; margin: 8px 0;
+  }
+  .price-anchor-block .price-note {
+    color: #666; font-size: 14px;
+  }
+
+  .cashback-offer-block .reinforcement {
+    font-size: 18px; color: #444; margin-bottom: 8px; font-weight: 500;
+  }
+  .cashback-offer-block .reinforcement strong { color: #1a1a1a; }
+  .cashback-offer-block .deadline {
+    font-size: 15px; color: #E74C3C; font-weight: 700; margin-bottom: 30px;
+  }
+  .cashback-offer-block .btn-cashback {
+    display: inline-block; background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: #fff; padding: 18px 48px; border-radius: 8px; text-decoration: none;
+    font-size: 18px; font-weight: 700; text-transform: uppercase;
+    transition: all 0.2s; box-shadow: 0 4px 16px rgba(168,85,247,0.3);
+  }
+  .cashback-offer-block .btn-cashback:hover {
+    transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168,85,247,0.4);
+  }
+
+  /* ============================================ */
+  /* LOGOS PARCEIROS                               */
+  /* ============================================ */
+  .partner-logos {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+  }
+  .partner-logos .partner-title {
+    font-size: 13px; font-weight: 600; color: #999;
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;
+  }
+  .partner-logos-grid {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    align-items: center; gap: 20px 28px;
+    max-width: 800px; margin: 0 auto 16px;
+  }
+  .partner-logos-grid .logo-item {
+    display: flex; align-items: center; justify-content: center;
+    height: 36px; opacity: 0.7; transition: opacity 0.2s; filter: grayscale(30%);
+  }
+  .partner-logos-grid .logo-item:hover { opacity: 1; filter: grayscale(0%); }
+  .partner-logos-grid .logo-item img {
+    max-height: 32px; max-width: 90px; object-fit: contain;
+  }
+  .partner-logos .partner-footer {
+    font-size: 12px; color: #aaa; margin-top: 8px; font-style: italic;
+  }
+
+  /* ============================================ */
+  /* PLACEHOLDERS                                 */
+  /* ============================================ */
+  .placeholder-section {
+    padding: 60px 20px; text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .placeholder-section.dark { background: #111; }
+  .placeholder-section.darker { background: #0a0a0a; }
+  .placeholder-section h3 {
+    font-size: 14px; text-transform: uppercase;
+    letter-spacing: 2px; opacity: 0.3; margin-bottom: 8px;
+  }
+  .placeholder-section p { opacity: 0.15; font-size: 13px; }
+
+  /* ============================================ */
+  /* PRICING COMPARATIVO                          */
+  /* ============================================ */
+  .pricing-comparativo {
+    background: #0d0d1a; padding: 70px 20px; text-align: center;
+  }
+  .pricing-comparativo h2 {
+    font-size: 24px; font-weight: 700; margin-bottom: 20px; opacity: 0.8;
+  }
+  .pricing-comparativo .total-original {
+    font-size: 20px; text-decoration: line-through; color: #666; margin-bottom: 8px;
+  }
+  .pricing-comparativo .total-offer {
+    font-size: 24px; font-weight: 700; margin-bottom: 24px;
+  }
+  .pricing-comparativo .cashback-line-triple {
+    font-size: 22px; font-weight: 800; color: #2ECC71;
+    padding: 16px 30px; border-radius: 12px; display: inline-block;
+    background: rgba(46,204,113,0.1); border: 1px solid rgba(46,204,113,0.3);
+  }
+
+  /* ============================================ */
+  /* OFERTA ESPECIAL COM BADGE                    */
+  /* ============================================ */
+  .pricing-section {
+    background: linear-gradient(180deg, #1a0d2e 0%, #0d0d1a 100%);
+    padding: 70px 20px; text-align: center;
+  }
+  .pricing-section .cashback-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #F5A623 0%, #E8961A 100%);
+    color: #fff; padding: 10px 24px; border-radius: 25px;
+    font-size: 13px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(245,166,35,0.3);
+  }
+  .pricing-section .price-old-line {
+    font-size: 16px; color: #888; margin-bottom: 8px;
+  }
+  .pricing-section .price-old-line span {
+    text-decoration: line-through;
+  }
+  .pricing-section .price-main { margin-bottom: 8px; }
+  .pricing-section .price-main .parcela-label { font-size: 20px; opacity: 0.7; }
+  .pricing-section .price-main .parcela-valor { font-size: 56px; font-weight: 800; }
+  .pricing-section .price-avista { font-size: 16px; opacity: 0.6; margin-bottom: 16px; }
+  .pricing-section .investment-real {
+    font-size: 32px; font-weight: 800; color: #2ECC71;
+    margin-bottom: 8px;
+  }
+  .pricing-section .cashback-deadline {
+    font-size: 13px; color: #E74C3C; font-weight: 600; margin-bottom: 24px;
+  }
+  .pricing-section .btn-pricing {
+    display: inline-block; background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: #fff; padding: 16px 40px; border-radius: 8px;
+    text-decoration: none; font-size: 16px; font-weight: 700; text-transform: uppercase;
+  }
+  .pricing-section .garantia {
+    margin-top: 16px; font-size: 13px; opacity: 0.5;
+  }
+
+  /* ============================================ */
+  /* FAQ                                          */
+  /* ============================================ */
+  .faq-section {
+    background: #111; padding: 70px 20px; color: #fff;
+  }
+  .faq-section h2 { text-align: center; font-size: 28px; font-weight: 700; margin-bottom: 40px; }
+  .faq-container { max-width: 700px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 20px 0; }
+  .faq-item.cashback-campaign {
+    border-left: 3px solid #F5A623; padding-left: 16px; margin-left: -16px;
+  }
+  .faq-item summary {
+    font-size: 16px; font-weight: 600; cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item summary::after { content: '+'; font-size: 20px; font-weight: 300; opacity: 0.5; }
+  .faq-item[open] summary::after { content: '-'; }
+  .faq-item .faq-answer { margin-top: 12px; font-size: 14px; line-height: 1.7; color: #aaa; }
+  .faq-item.cashback-campaign .faq-new-tag {
+    display: inline-block; background: #F5A623; color: #fff;
+    font-size: 10px; font-weight: 700; padding: 2px 8px;
+    border-radius: 10px; margin-left: 8px; vertical-align: middle;
+  }
+  .faq-existing summary { opacity: 0.4; }
+  .faq-existing .faq-answer { opacity: 0.3; }
+
+  /* ============================================ */
+  /* CTA FINAL                                    */
+  /* ============================================ */
+  .cta-final-section {
+    background: linear-gradient(180deg, #1a0d2e 0%, #0d0d1a 100%);
+    padding: 70px 20px; text-align: center;
+  }
+  .cta-final-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 24px; }
+
+  /* Labels */
+  .section-label {
+    display: inline-block; padding: 4px 12px; border-radius: 4px;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 16px;
+  }
+  .section-label.new { background: #F5A623; color: #fff; }
+  .section-label.modified { background: #3498db; color: #fff; }
+  .section-label.existing { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .cashback-sticky-bar { flex-direction: column; gap: 8px; padding: 10px 16px; }
+    .cashback-sticky-bar p { font-size: 12px; }
+    .cashback-offer-block h2 { font-size: 24px; }
+    .steps-container { flex-direction: column; align-items: center; }
+    .step-card { max-width: 100%; }
+    .pricing-section .price-main .parcela-valor { font-size: 40px; }
+    .pricing-section .investment-real { font-size: 24px; }
+    .price-anchor-block .price-real { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Banner informativo -->
+<div class="mockup-banner">
+  MOCKUP DE VISUALIZACAO — LP WEBNUTRI (webnutri.com.br) — Elementos temporarios de cashback
+  <br><span>Os elementos marcados com "NOVO" ou "MODIFICADO" sao as alteracoes da campanha de marco.</span>
+</div>
+
+<!-- ==================== -->
+<!-- ALTERACAO 1: STICKY BAR -->
+<!-- ==================== -->
+<div class="cashback-sticky-bar cashback-campaign">
+  <p>DE 15 A 31/03 — Webnutri por R$47 (cashback de R$250).</p>
+</div>
+
+<!-- ==================== -->
+<!-- HERO (simulacao) -->
+<!-- ==================== -->
+<section class="hero-section">
+  <span class="section-label existing">SECAO EXISTENTE</span>
+  <br><br>
+  <img src="https://webnutri.com.br/wp-content/uploads/2025/12/Mask-group.png" alt="Webnutri Logo">
+  <h1><span class="degrade">Dificuldade em fidelizar seus pacientes</span> e aumentar o preco da sua consulta?</h1>
+  <p>Implemente o <span class="degrade"><b>P</b></span>rotocolo de <span class="degrade"><b>A</b></span>tendimento <span class="degrade"><b>V</b></span>isual, usado pelas nutricionistas premium para transformar consultas basicas em experiencias de alto padrao</p>
+  <a href="#" class="btn-hero">QUERO IMPLEMENTAR AGORA</a>
+</section>
+
+<!-- ==================== -->
+<!-- ALTERACAO 2: BLOCO OFERTA CASHBACK -->
+<!-- ==================== -->
+<section class="cashback-offer-block cashback-campaign" id="oferta-cashback">
+  <span class="section-label new">NOVO — BLOCO DE OFERTA CASHBACK</span>
+  <br><br>
+  <span class="badge-85">85% CASHBACK</span>
+  <h2>De 15 a 31/03, Webnutri por R$47</h2>
+  <p class="subtitle">Como funciona:</p>
+
+  <div class="steps-container">
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <div class="step-icon">&#x1f6d2;</div>
+      <h4>Assine normal</h4>
+      <p>Assine a Webnutri normalmente pelo site (R$297/ano)</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <div class="step-icon">&#x1f4f1;</div>
+      <h4>Baixe o app de cashback</h4>
+      <p>Cadastre seu CPF</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <div class="step-icon">&#x1f4b0;</div>
+      <h4>Receba de volta</h4>
+      <p>Receba R$250 de volta na hora para gastar em mais de 2.000 lojas no Brasil</p>
+    </div>
+  </div>
+
+  <a href="#" class="btn-cashback">QUERO MINHA WEBNUTRI POR R$47</a>
+
+  <!-- Logos parceiros -->
+  <div class="partner-logos">
+    <p class="partner-title">Use seu cashback em lojas como:</p>
+    <div class="partner-logos-grid">
+      <div class="logo-item"><img src="https://logo.clearbit.com/natura.com.br" alt="Natura"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/nike.com" alt="Nike"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/adidas.com" alt="Adidas"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/samsung.com" alt="Samsung"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/shopee.com.br" alt="Shopee"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/boticario.com.br" alt="O Boticario"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/havaianas.com.br" alt="Havaianas"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/riachuelo.com.br" alt="Riachuelo"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/loccitane.com" alt="L'Occitane"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/hering.com.br" alt="Hering"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/hope.com.br" alt="Hope"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/levis.com" alt="Levi's"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/shoulder.com.br" alt="Shoulder"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/duxnutrition.com.br" alt="Dux Nutrition"></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/adcos.com.br" alt="Adcos"></div>
+    </div>
+    <p class="partner-footer">E mais de 2.000 lojas no Brasil</p>
+  </div>
+</section>
+
+<!-- Secoes existentes -->
+<section class="placeholder-section dark">
+  <span class="section-label existing">SECAO EXISTENTE</span>
+  <h3>Secao 02 — Como funciona o P.A.V</h3>
+  <p>3 pilares do Protocolo de Atendimento Visual</p>
+</section>
+<section class="placeholder-section darker">
+  <span class="section-label existing">SECAO EXISTENTE</span>
+  <h3>Secao 03 — Comparativo</h3>
+  <p>Nutri comum vs Nutri com P.A.V</p>
+</section>
+<section class="placeholder-section dark">
+  <span class="section-label existing">SECAO EXISTENTE</span>
+  <h3>Secoes 04-10</h3>
+  <p>Prova social, Acesso imediato, Pack Didatica, Kit Adesao, Layouts, Formatos, Atualizacoes</p>
+</section>
+<section class="placeholder-section darker">
+  <span class="section-label existing">SECAO EXISTENTE</span>
+  <h3>Secoes 11-12</h3>
+  <p>Presentes inclusos, Elogio de pacientes</p>
+</section>
+
+<!-- ==================== -->
+<!-- ALTERACAO 3: PRICING COMPARATIVO COM REFORCO -->
+<!-- ==================== -->
+<section class="pricing-comparativo">
+  <span class="section-label modified">MODIFICADO — REFORCO DE CASHBACK NO COMPARATIVO</span>
+  <br><br>
+  <h2>Se voce fosse comprar cada parte separadamente...</h2>
+  <p class="total-original">Total de R$1.532,00</p>
+  <p class="total-offer">Mas somente hoje e agora por apenas <strong>R$297,00</strong></p>
+
+  <!-- NOVO: Tripla ancora -->
+  <div class="cashback-line-triple">
+    De 15 a 31/03, voce ainda recebe R$250 de cashback.<br>
+    <span style="font-size: 28px;">Investimento real: R$47.</span>
+  </div>
+</section>
+
+<!-- ==================== -->
+<!-- ALTERACAO 4: OFERTA ESPECIAL COM BADGE -->
+<!-- ==================== -->
+<section class="pricing-section">
+  <span class="section-label modified">MODIFICADO — BADGE + INVESTIMENTO REAL</span>
+  <br><br>
+  <div class="cashback-badge">85% CASHBACK — Receba R$250 de volta</div>
+
+
+  <div class="price-main">
+    <span class="parcela-label">12x de</span><br>
+    <span class="parcela-valor">R$ 29,90</span>
+  </div>
+  <p class="price-avista">ou R$297,00 a vista</p>
+
+  <p class="investment-real">Investimento real: R$47/ano</p>
+
+
+  <a href="#" class="btn-pricing">QUERO ACESSO A WEBNUTRI</a>
+  <p class="garantia">&#x1f512; Garantia de 7 dias</p>
+</section>
+
+<!-- Placeholder -->
+<section class="placeholder-section dark">
+  <span class="section-label existing">SECAO EXISTENTE</span>
+  <h3>Secao 15-16</h3>
+  <p>Garantia 7 dias, Sobre nos</p>
+</section>
+
+<!-- ==================== -->
+<!-- ALTERACAO 5: FAQ COM CASHBACK -->
+<!-- ==================== -->
+<section class="faq-section">
+  <span class="section-label modified">MODIFICADO — NOVAS PERGUNTAS NO FAQ</span>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq-container">
+
+    <details class="faq-item cashback-campaign" open>
+      <summary>O que e o cashback? <span class="faq-new-tag">NOVO</span></summary>
+      <div class="faq-answer">
+        Voce assina a Webnutri pelo preco normal (R$297/ano) e recebe R$250 de volta pelo app Vale Bonus para gastar em mais de 2.000 lojas parceiras no Brasil. Seu investimento real fica R$47 pelo ano inteiro.
+      </div>
+    </details>
+
+    <details class="faq-item cashback-campaign">
+      <summary>Como recebo o cashback? <span class="faq-new-tag">NOVO</span></summary>
+      <div class="faq-answer">
+        Apos a compra, baixe o app Vale Bonus (disponivel na App Store e Google Play), faca seu cadastro gratuito e o valor de R$250 cai na hora.
+      </div>
+    </details>
+
+    <details class="faq-item cashback-campaign">
+      <summary>Onde posso usar o cashback? <span class="faq-new-tag">NOVO</span></summary>
+      <div class="faq-answer">
+        Em mais de 2.000 lojas parceiras no Brasil pelo app Vale Bonus. Voce pode usar em compras do dia a dia.
+      </div>
+    </details>
+
+    <details class="faq-item cashback-campaign">
+      <summary>Ate quando vale o cashback? <span class="faq-new-tag">NOVO</span></summary>
+      <div class="faq-answer">
+        De 15 a 31 de marco de 2026. Apos essa data, a Webnutri volta ao valor normal sem cashback.
+      </div>
+    </details>
+
+    <details class="faq-item cashback-campaign">
+      <summary>Preciso fazer alguma coisa alem de assinar? <span class="faq-new-tag">NOVO</span></summary>
+      <div class="faq-answer">
+        So baixar o app Vale Bonus e se cadastrar. O cashback cai automaticamente.
+      </div>
+    </details>
+
+    <!-- Perguntas existentes -->
+    <details class="faq-item faq-existing">
+      <summary>Como funciona a Webnutri?</summary>
+      <div class="faq-answer">Pergunta existente...</div>
+    </details>
+    <details class="faq-item faq-existing">
+      <summary>Os materiais sao editaveis?</summary>
+      <div class="faq-answer">Pergunta existente...</div>
+    </details>
+    <details class="faq-item faq-existing">
+      <summary>Posso usar no Canva?</summary>
+      <div class="faq-answer">Pergunta existente...</div>
+    </details>
+  </div>
+</section>
+
+<!-- ==================== -->
+<!-- ALTERACAO 6: CTA FINAL COM BADGE -->
+<!-- ==================== -->
+<section class="cta-final-section">
+  <span class="section-label modified">MODIFICADO — BADGE NO CTA FINAL</span>
+  <br><br>
+  <div style="display:inline-block; background:linear-gradient(135deg,#F5A623,#E8961A); color:#fff; padding:10px 24px; border-radius:25px; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:1px; margin-bottom:20px;">85% CASHBACK — Receba R$250 de volta</div>
+  <h2>Garanta seu acesso agora</h2>
+  <div style="margin-bottom: 8px;">
+    <span style="font-size: 20px; opacity: 0.7;">12x de</span><br>
+    <span style="font-size: 48px; font-weight: 800;">R$ 29,90</span>
+  </div>
+  <p style="opacity: 0.6; margin-bottom: 12px;">ou R$297,00 a vista</p>
+  <p style="font-size: 28px; font-weight: 800; color: #2ECC71; margin-bottom: 8px;">Investimento real: R$47/ano</p>
+  <a href="#" style="display:inline-block; background:linear-gradient(135deg,#a855f7,#7c3aed); color:#fff; padding:16px 40px; border-radius:8px; text-decoration:none; font-size:16px; font-weight:700; text-transform:uppercase;">QUERO ACESSO A WEBNUTRI</a>
+</section>
+
+<!-- Footer -->
+<section class="placeholder-section dark" style="padding: 30px;">
+  <p style="opacity: 0.3; font-size: 12px;">Footer da pagina</p>
+</section>
+
+</body>
+</html>

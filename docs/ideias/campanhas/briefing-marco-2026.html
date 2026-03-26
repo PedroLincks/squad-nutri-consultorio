@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Briefing de Campanha — Marco Nutri de Consultorio 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1a1a2e;
+    background: #ffffff;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .page { padding: 40px 50px; }
+  .page-break { page-break-before: always; padding-top: 40px; }
+
+  /* COVER */
+  .cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);
+    color: white;
+    text-align: center;
+    padding: 60px;
+    page-break-after: always;
+  }
+  .cover-badge {
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  .cover h1 {
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #fff, #e0e0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cover h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #a5a5d0;
+    margin-bottom: 40px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .cover-meta-item {
+    text-align: center;
+  }
+  .cover-meta-item .label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8888bb;
+    margin-bottom: 4px;
+  }
+  .cover-meta-item .value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f59e0b;
+  }
+  .cover-products {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .cover-product {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 20px 30px;
+    text-align: center;
+  }
+  .cover-product .name { font-size: 14px; font-weight: 700; color: #fff; }
+  .cover-product .price { font-size: 11px; color: #8888bb; margin: 4px 0; }
+  .cover-product .cashback {
+    font-size: 18px;
+    font-weight: 900;
+    color: #34d399;
+  }
+  .cover-product .perceived {
+    font-size: 10px;
+    color: #a5a5d0;
+    margin-top: 2px;
+  }
+
+  /* SECTION HEADERS */
+  .section-num {
+    display: inline-block;
+    background: linear-gradient(135deg, #2d1b69, #4c1d95);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 800;
+    font-size: 13px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin: 30px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #4c1d95;
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d1b69;
+    margin: 20px 0 8px 0;
+  }
+  h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4c1d95;
+    margin: 15px 0 6px 0;
+  }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 15px 0;
+    font-size: 10.5px;
+  }
+  th {
+    background: #2d1b69;
+    color: white;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  tr:nth-child(even) td { background: #f8f7ff; }
+  tr:hover td { background: #eee8ff; }
+
+  /* ALERT BOXES */
+  .alert {
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 10.5px;
+  }
+  .alert-warn {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    color: #92400e;
+  }
+  .alert-danger {
+    background: #fee2e2;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+  }
+  .alert-success {
+    background: #d1fae5;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+  }
+  .alert-info {
+    background: #ede9fe;
+    border-left: 4px solid #7c3aed;
+    color: #4c1d95;
+  }
+  .alert strong { font-weight: 700; }
+
+  /* CARDS */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 10px 0;
+  }
+  .card {
+    background: #f8f7ff;
+    border: 1px solid #e5e0ff;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 12px;
+    color: #2d1b69;
+    margin-bottom: 6px;
+  }
+
+  /* PHASE BARS */
+  .phase {
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    border-left: 5px solid;
+  }
+  .phase-launch { background: #fef3c7; border-color: #f59e0b; }
+  .phase-sustain { background: #dbeafe; border-color: #3b82f6; }
+  .phase-urgency { background: #fee2e2; border-color: #ef4444; }
+  .phase-title {
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  /* HOOKS */
+  .hook-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+  }
+  .hook-list li {
+    background: #f8f7ff;
+    border-left: 3px solid #7c3aed;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 10.5px;
+  }
+  .hook-list li strong {
+    color: #4c1d95;
+    margin-right: 4px;
+  }
+
+  /* PRODUCT TAGS */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tag-gcn { background: #dbeafe; color: #1e40af; }
+  .tag-web { background: #d1fae5; color: #065f46; }
+
+  /* TIMELINE */
+  .timeline-item {
+    display: flex;
+    gap: 12px;
+    margin: 6px 0;
+    font-size: 10.5px;
+  }
+  .timeline-date {
+    min-width: 70px;
+    font-weight: 700;
+    color: #4c1d95;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .checklist li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 10.5px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    color: #7c3aed;
+  }
+
+  /* STRIKETHROUGH */
+  .strike { text-decoration: line-through; color: #9ca3af; }
+
+  /* LP SECTION MAP */
+  .lp-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 6px 0;
+    font-size: 10px;
+  }
+  .lp-num {
+    min-width: 22px;
+    height: 22px;
+    background: #e5e0ff;
+    color: #4c1d95;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 22px;
+    font-weight: 700;
+    font-size: 9px;
+  }
+  .lp-num.active {
+    background: #4c1d95;
+    color: white;
+  }
+  .lp-label { color: #6b7280; }
+  .lp-label.active { color: #1a1a2e; font-weight: 700; }
+
+  /* QUOTE BLOCKS */
+  .copy-block {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    font-size: 10.5px;
+    font-style: italic;
+    color: #374151;
+  }
+
+  /* METRICS HIGHLIGHT */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+  }
+  .metric-card {
+    background: linear-gradient(135deg, #f8f7ff, #ede9fe);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+  .metric-value {
+    font-size: 22px;
+    font-weight: 900;
+    color: #4c1d95;
+  }
+  .metric-label {
+    font-size: 9px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* DO / DON'T */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 10px 0;
+  }
+  .do-box {
+    background: #d1fae5;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .dont-box {
+    background: #fee2e2;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .do-box h4 { color: #065f46; margin: 0 0 6px 0; }
+  .dont-box h4 { color: #991b1b; margin: 0 0 6px 0; }
+  .do-box li, .dont-box li { font-size: 10px; margin: 3px 0; }
+
+  /* BUDGET BAR */
+  .budget-bar {
+    display: flex;
+    height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  .budget-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: white;
+  }
+  .budget-seg.launch { background: #f59e0b; width: 45%; }
+  .budget-seg.sustain { background: #3b82f6; width: 35%; }
+  .budget-seg.urgency { background: #ef4444; width: 20%; }
+
+  p { margin: 4px 0; font-size: 10.5px; }
+  ul, ol { margin: 4px 0 8px 18px; font-size: 10.5px; }
+  li { margin: 2px 0; }
+
+  .footer-note {
+    margin-top: 30px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 9px;
+    color: #9ca3af;
+    text-align: center;
+  }
+
+  @media print {
+    .page-break { page-break-before: always; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-badge">Briefing de Campanha</div>
+  <h1>MARCO<br>NUTRI DE CONSULTORIO</h1>
+  <h2>Campanha de Cashback — 17 a 31 de Marco 2026</h2>
+
+  <div class="cover-products">
+    <div class="cover-product">
+      <div class="name">GCN</div>
+      <div class="price">Guia de Condutas Nutricionais</div>
+      <div class="cashback">100% CASHBACK</div>
+      <div class="perceived">Cliente percebe: R$0 (gratis)</div>
+    </div>
+    <div class="cover-product">
+      <div class="name">WEBNUTRI</div>
+      <div class="price">Plataforma de Materiais Visuais</div>
+      <div class="cashback">85% CASHBACK</div>
+      <div class="perceived">Cliente percebe: R$47/ano</div>
+    </div>
+  </div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="label">Budget</div>
+      <div class="value">R$10.000</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Periodo</div>
+      <div class="value">15 dias</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Objetivo</div>
+      <div class="value">Volume + Base</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Canal Principal</div>
+      <div class="value">Meta Ads</div>
+    </div>
+  </div>
+
+  <div style="margin-top:50px; font-size: 10px; color: #6b6b9e;">
+    Criado por Jack (Estrategista) | 14/03/2026 | Responsavel: Pedro Lincks
+  </div>
+</div>
+
+<!-- PAGE 2: VISAO GERAL + OFERTA -->
+<div class="page">
+  <h2><span class="section-num">1</span> VISAO GERAL</h2>
+
+  <table>
+    <tr><th style="width:200px">Item</th><th>Detalhe</th></tr>
+    <tr><td><strong>Nome da campanha</strong></td><td>Marco Nutri de Consultorio</td></tr>
+    <tr><td><strong>Periodo</strong></td><td>17 a 31 de marco de 2026 (15 dias)</td></tr>
+    <tr><td><strong>Produtos</strong></td><td>GCN (Guia de Condutas Nutricionais) + Webnutri</td></tr>
+    <tr><td><strong>Objetivo</strong></td><td>Volume de vendas + captacao de leads na base para upsell em abril</td></tr>
+    <tr><td><strong>Budget total de ads</strong></td><td>R$10.000 (extensivel se ROAS > 3x)</td></tr>
+    <tr><td><strong>Canais</strong></td><td>Meta Ads (principal), Email, WhatsApp, Organico (stories/feed)</td></tr>
+    <tr><td><strong>Publico</strong></td><td>Nutricionistas — clientes novos (cold) + base existente (warm)</td></tr>
+  </table>
+
+  <h2><span class="section-num">2</span> A OFERTA</h2>
+
+  <h3>Mecanica do Cashback</h3>
+  <p>Parceria com <strong>Vale Bonus</strong> — app de cashback com mais de 2.000 lojas parceiras no Brasil. A cliente compra o produto pelo preco normal, baixa o app Vale Bonus, e recebe o cashback imediatamente para gastar onde quiser.</p>
+  <p><strong>Custo para o negocio:</strong> R$3,00 por transacao.</p>
+
+  <div class="alert alert-warn">
+    <strong>REGRA:</strong> O nome "Vale Bonus" NAO deve aparecer nos ads. Usar apenas "cashback" ou "recebe de volta". O nome do app aparece SOMENTE na secao de explicacao da oferta na pagina de vendas e no FAQ.
+  </div>
+
+  <h3>Oferta por produto</h3>
+  <table>
+    <tr><th></th><th><span class="tag tag-gcn">GCN</span></th><th><span class="tag tag-web">WEBNUTRI</span></th></tr>
+    <tr><td><strong>Preco normal</strong></td><td>R$147</td><td>R$297/ano</td></tr>
+    <tr><td><strong>Cashback</strong></td><td style="color:#059669;font-weight:700">100% (R$147)</td><td style="color:#059669;font-weight:700">85% (R$250)</td></tr>
+    <tr><td><strong>Preco percebido</strong></td><td style="color:#059669;font-weight:700">R$0 (gratis)</td><td style="color:#059669;font-weight:700">R$47</td></tr>
+    <tr><td><strong>Receita real</strong></td><td>R$147</td><td>R$297</td></tr>
+    <tr><td><strong>Custo (taxa)</strong></td><td>R$3</td><td>R$3</td></tr>
+    <tr><td><strong>Lucro por venda</strong></td><td style="font-weight:700">R$144</td><td style="font-weight:700">R$294</td></tr>
+    <tr><td><strong>Margem</strong></td><td style="color:#059669;font-weight:700">97.9%</td><td style="color:#059669;font-weight:700">98.9%</td></tr>
+  </table>
+
+  <h3>Como comunicar (3 passos)</h3>
+  <div class="alert alert-success">
+    <strong>1.</strong> "Compre normal pelo site" &rarr; <strong>2.</strong> "Baixe o app de cashback e faca seu cadastro" &rarr; <strong>3.</strong> "Receba o valor de volta na hora para gastar em mais de 2.000 lojas"
+  </div>
+
+  <div class="do-dont">
+    <div class="do-box">
+      <h4>USAR</h4>
+      <ul>
+        <li>"100% de cashback"</li>
+        <li>"Recebe de volta"</li>
+        <li>"Oferta de marco"</li>
+        <li>"Investimento real: R$47"</li>
+      </ul>
+    </div>
+    <div class="dont-box">
+      <h4>NAO USAR</h4>
+      <ul>
+        <li><span class="strike">"Semana do Consumidor"</span></li>
+        <li><span class="strike">"Desconto" / "Promocao"</span></li>
+        <li><span class="strike">"Gratis" sem contexto</span></li>
+        <li><span class="strike">Nome do app nos ads</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: UNIT ECONOMICS + FASES -->
+<div class="page page-break">
+  <h2><span class="section-num">3</span> UNIT ECONOMICS & METAS</h2>
+
+  <h3>Cenarios de resultado</h3>
+  <table>
+    <tr><th>Cenario</th><th>Vendas GCN</th><th>Vendas Web</th><th>Faturamento</th><th>Custo total</th><th>Lucro</th></tr>
+    <tr><td>Conservador</td><td>100</td><td>50</td><td>R$29.550</td><td>R$10.450</td><td style="color:#059669;font-weight:700">R$19.100</td></tr>
+    <tr><td>Moderado</td><td>200</td><td>80</td><td>R$53.160</td><td>R$10.840</td><td style="color:#059669;font-weight:700">R$42.320</td></tr>
+    <tr><td>Agressivo</td><td>350</td><td>120</td><td>R$87.090</td><td>R$11.410</td><td style="color:#059669;font-weight:700">R$75.680</td></tr>
+  </table>
+
+  <h3>KPIs alvo</h3>
+  <div class="metric-grid">
+    <div class="metric-card">
+      <div class="metric-label">CPA GCN</div>
+      <div class="metric-value">&lt; R$80</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">CPA Webnutri</div>
+      <div class="metric-value">&lt; R$100</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">ROAS GCN</div>
+      <div class="metric-value">&gt; 1.8x</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">ROAS Webnutri</div>
+      <div class="metric-value">&gt; 2.9x</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">CTR GCN</div>
+      <div class="metric-value">&gt; 1.5%</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">CTR Webnutri</div>
+      <div class="metric-value">&gt; 1.2%</div>
+    </div>
+  </div>
+
+  <h3>Regras de escala</h3>
+  <div class="alert alert-info">
+    <strong>ESCALAR:</strong> CPA abaixo da meta por 3 dias &rarr; +20% budget no adset<br>
+    <strong>ESCALAR+:</strong> ROAS > 3x por 3 dias &rarr; liberar budget extra alem dos R$10k<br>
+    <strong>PAUSAR:</strong> CPA > 2x a meta por 2 dias &rarr; pausa adset, roda novo criativo<br>
+    <strong>REGRA:</strong> Nunca aumentar budget mais que 20% de uma vez
+  </div>
+
+  <h2><span class="section-num">4</span> FASES DA CAMPANHA</h2>
+
+  <h3>Distribuicao de budget</h3>
+  <div class="budget-bar">
+    <div class="budget-seg launch">LANCAMENTO 45% (R$4.500)</div>
+    <div class="budget-seg sustain">SUSTENTACAO 35% (R$3.500)</div>
+    <div class="budget-seg urgency">URGENCIA 20% (R$2.000)</div>
+  </div>
+
+  <div class="phase phase-launch">
+    <div class="phase-title">FASE 1 — LANCAMENTO (17 a 21/mar | 5 dias | R$900/dia)</div>
+    <p><strong>Objetivo:</strong> Impacto maximo. Maior volume de vendas nos primeiros dias.</p>
+    <table>
+      <tr><th>Campanha</th><th>Produto</th><th>Publico</th><th>Budget/dia</th></tr>
+      <tr><td>GCN-COLD</td><td><span class="tag tag-gcn">GCN</span></td><td>Lookalike + Interesses</td><td style="font-weight:700">R$400</td></tr>
+      <tr><td>GCN-WARM</td><td><span class="tag tag-gcn">GCN</span></td><td>Remarketing + Base</td><td style="font-weight:700">R$150</td></tr>
+      <tr><td>WEB-COLD</td><td><span class="tag tag-web">WEB</span></td><td>Lookalike + Interesses</td><td style="font-weight:700">R$250</td></tr>
+      <tr><td>WEB-WARM</td><td><span class="tag tag-web">WEB</span></td><td>Remarketing + Base</td><td style="font-weight:700">R$100</td></tr>
+    </table>
+    <p><strong>Acoes:</strong> Ads ON + Email blast dia 17 + WhatsApp dia 17 + Stories com oferta</p>
+  </div>
+
+  <div class="phase phase-sustain">
+    <div class="phase-title">FASE 2 — SUSTENTACAO (22 a 28/mar | 7 dias | R$500/dia)</div>
+    <p><strong>Objetivo:</strong> Otimizar. Matar ads ruins, escalar os bons.</p>
+    <p><strong>Acoes:</strong> Rotacao de criativos | Email dia 20 (prova social) | Email dia 25 (FAQ cashback) | WhatsApp dia 25</p>
+  </div>
+
+  <div class="phase phase-urgency">
+    <div class="phase-title">FASE 3 — URGENCIA FINAL (29 a 31/mar | 3 dias | R$667/dia)</div>
+    <p><strong>Objetivo:</strong> Converter indecisos. Escassez real.</p>
+    <p><strong>Acoes:</strong> Remarketing agressivo | Email dia 29 + 31 | WhatsApp dia 31 | Stories countdown</p>
+  </div>
+</div>
+
+<!-- PAGE 4: DIRECAO CRIATIVA -->
+<div class="page page-break">
+  <h2><span class="section-num">5</span> DIRECAO CRIATIVA</h2>
+
+  <h3><span class="tag tag-gcn">GCN</span> Angulo principal: "100% DE CASHBACK"</h3>
+  <p><strong>Mensagem central:</strong> "Voce compra o GCN, recebe 100% do valor de volta. E como levar de graca."</p>
+  <p><strong>Nivel de consciencia:</strong> Problem Aware &rarr; Solution Aware</p>
+
+  <h4>Hooks para testar (minimo 5 variacoes)</h4>
+  <ol class="hook-list">
+    <li><strong>#1</strong> "O GCN ta com 100% de cashback em marco. Voce compra e recebe seu dinheiro de volta."</li>
+    <li><strong>#2</strong> "Voce paga R$147 e recebe R$147 de volta. Faz a conta."</li>
+    <li><strong>#3</strong> "Chegou no consultorio uma paciente com Hashimoto. Voce sabe exatamente o que fazer? Se nao, essa oferta e pra voce."</li>
+    <li><strong>#4</strong> "Toda nutri deveria ter um Norte Clinico. Em marco, custa zero."</li>
+    <li><strong>#5</strong> "Voce compra o GCN, recebe 100% de cashback e ainda fica com o guia. So em marco."</li>
+    <li><strong>#6</strong> "Voce atende um paciente com SII e a primeira coisa que faz e abrir o Google? Tem um jeito melhor. E em marco ta com 100% de cashback."</li>
+  </ol>
+
+  <h4>Formatos de corpo do ad (meats)</h4>
+  <table>
+    <tr><th>Formato</th><th>Descricao</th><th>Ref.</th></tr>
+    <tr><td><strong>Cenario clinico</strong></td><td>"Chegou paciente com X, como ficaria sua conduta?" + GCN resolvendo</td><td>Ads #1, #3, #5</td></tr>
+    <tr><td><strong>Demonstracao</strong></td><td>Abrir Notion, mostrar protocolo de uma patologia</td><td>Ad #4</td></tr>
+    <tr><td><strong>Depoimento</strong></td><td>UGC de nutricionista usando o GCN no consultorio</td><td>Ad #2</td></tr>
+    <tr><td><strong>Antes/depois</strong></td><td>Sem GCN (insegura, Google) vs Com GCN (segura, rapida)</td><td>Briefing</td></tr>
+  </table>
+
+  <p><strong>CTA padrao:</strong> "Clica em Saiba Mais e garante seu GCN com 100% de cashback. So em marco."</p>
+
+  <hr style="margin: 20px 0; border: none; border-top: 2px dashed #e5e0ff;">
+
+  <h3><span class="tag tag-web">WEBNUTRI</span> Angulo principal: "POR R$47"</h3>
+  <p><strong>Mensagem central:</strong> "Webnutri por R$47 em marco. Voce paga R$297, recebe R$250 de volta."</p>
+  <p><strong>Nivel de consciencia:</strong> Solution Aware &rarr; Product Aware</p>
+
+  <h4>Hooks para testar (minimo 5 variacoes)</h4>
+  <ol class="hook-list">
+    <li><strong>#1</strong> "Webnutri por R$47 em marco. Nao e erro de digitacao."</li>
+    <li><strong>#2</strong> "POV: voce e nutricionista e entrega plano alimentar preto e branco em PDF do Word. Em marco voce resolve isso por R$47."</li>
+    <li><strong>#3</strong> "R$47 pra sair de uma consulta comum e entregar uma experiencia premium. So em marco."</li>
+    <li><strong>#4</strong> "Voce cobra R$300 na consulta e entrega material amador? Por R$47 voce resolve isso o ano inteiro."</li>
+    <li><strong>#5</strong> "Webnutri com 85% de cashback. Voce paga R$297, recebe R$250 de volta e fica com acesso o ano todo."</li>
+    <li><strong>#6</strong> "A diferenca entre uma consulta de R$100 e uma de R$400 nao e o conhecimento. E a experiencia visual. Em marco, custa R$47."</li>
+  </ol>
+
+  <h4>Formatos de corpo do ad (meats)</h4>
+  <table>
+    <tr><th>Formato</th><th>Descricao</th><th>Ref.</th></tr>
+    <tr><td><strong>Contraste visual</strong></td><td>Plano alimentar Word (amador) vs Webnutri (premium)</td><td>Ad #4</td></tr>
+    <tr><td><strong>Pergunta-resposta</strong></td><td>"Como cobrar mais caro?" &rarr; mostra material</td><td>Ad #2</td></tr>
+    <tr><td><strong>POV nicho</strong></td><td>"POV: voce e nutricionista e e assim que..." + cenas</td><td>Ad #1</td></tr>
+    <tr><td><strong>Consulta comum</strong></td><td>"A consulta comum e uma armadilha" + P.A.V.</td><td>Ad #3</td></tr>
+  </table>
+
+  <p><strong>CTA padrao:</strong> "Clica em Saiba Mais. Paga R$297, recebe R$250 de cashback na hora. Acesso por 1 ano inteiro."</p>
+
+  <hr style="margin: 20px 0; border: none; border-top: 2px dashed #e5e0ff;">
+
+  <h3>Regras criativas gerais</h3>
+  <div class="do-dont">
+    <div class="do-box">
+      <h4>TOM DE VOZ — USAR</h4>
+      <ul>
+        <li>"Na pratica"</li>
+        <li>"Vou te explicar"</li>
+        <li>"Deixa eu te mostrar"</li>
+        <li>"Faz sentido?"</li>
+        <li>"A maioria das nutricionistas faz isso"</li>
+        <li>"O problema e que"</li>
+      </ul>
+      <p style="margin-top:6px"><strong>Emojis:</strong> ✅✨👀😮‍💨🙂‍↕️</p>
+    </div>
+    <div class="dont-box">
+      <h4>PALAVRAS PROIBIDAS</h4>
+      <ul>
+        <li><span class="strike">Transformar</span></li>
+        <li><span class="strike">Descubra o segredo</span></li>
+        <li><span class="strike">Fala galera</span></li>
+        <li><span class="strike">Conteudo de valor</span></li>
+        <li><span class="strike">Jornada</span></li>
+        <li><span class="strike">Impactar</span></li>
+        <li><span class="strike">Nao e sobre X, e sobre Y</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="alert alert-info">
+    <strong>Regra 70-20-10:</strong> 70% hooks provados (dos winning ads) | 20% variacoes | 10% novos<br>
+    <strong>Volume minimo:</strong> 5 variacoes de hook por produto, em pelo menos 2 formatos (video + imagem/carrossel)
+  </div>
+</div>
+
+<!-- PAGE 5: ALTERACOES NAS LPs -->
+<div class="page page-break">
+  <h2><span class="section-num">6</span> ALTERACOES NAS PAGINAS DE VENDAS</h2>
+
+  <div class="alert alert-warn">
+    <strong>IMPORTANTE:</strong> Todos os elementos sao temporarios. Implementar ate 16/03 e remover em 01/04. Recomendacao: usar classes CSS proprias (ex: <code>.cashback-campaign</code>) para facilitar a remocao.
+  </div>
+
+  <h3><span class="tag tag-gcn">GCN</span> guiadecondutasnutricionais.com.br</h3>
+
+  <p><strong>Estrutura atual (14 secoes):</strong></p>
+  <div style="display:flex; flex-wrap:wrap; gap:4px; margin:6px 0 12px 0;">
+    <span class="lp-num active">01</span><span class="lp-num active">02</span><span class="lp-num">03</span><span class="lp-num">04</span><span class="lp-num">05</span><span class="lp-num">06</span><span class="lp-num">07</span><span class="lp-num active">08</span><span class="lp-num">09</span><span class="lp-num">10</span><span class="lp-num active">11</span><span class="lp-num active">12</span><span class="lp-num">13</span><span class="lp-num">14</span>
+  </div>
+  <p style="font-size:9px;color:#6b7280;">Roxo = secoes que recebem alteracoes</p>
+
+  <div class="card" style="margin: 10px 0; border-color: #f59e0b;">
+    <div class="card-title" style="color:#92400e;">ACIMA DA SECAO 01 (Hero) — Barra sticky de oferta</div>
+    <div class="copy-block">
+      <strong>MARCO NUTRI DE CONSULTORIO</strong> — GCN com 100% de Cashback. Voce compra e recebe R$147 de volta. Valido ate 31/03.<br>[QUERO SABER MAIS &darr;]
+    </div>
+    <p>Cor de destaque (amarelo/dourado ou verde). Link ancora para a secao de explicacao. Primeira coisa que o lead ve.</p>
+  </div>
+
+  <div class="card" style="margin: 10px 0; border-color: #7c3aed; border-width: 2px;">
+    <div class="card-title" style="color:#4c1d95;">ENTRE SECAO 01 E 02 — Bloco de oferta (SECAO PRINCIPAL)</div>
+    <div class="copy-block">
+      <strong style="font-size:13px;">Em marco, o GCN ta com 100% de cashback</strong><br><br>
+      <strong>Como funciona:</strong><br>
+      <strong>Passo 1:</strong> Compre o GCN normalmente pelo site (R$147)<br>
+      <strong>Passo 2:</strong> Baixe o app Vale Bonus e faca seu cadastro gratuito<br>
+      <strong>Passo 3:</strong> Receba R$147 de volta na hora para gastar em mais de 2.000 lojas no Brasil<br><br>
+      Simples assim. Voce fica com o GCN e recebe seu dinheiro de volta.<br>
+      <strong>Oferta valida de 17 a 31 de marco.</strong><br>
+      [QUERO MEU GCN COM CASHBACK]
+    </div>
+    <p>Icones visuais para cada passo (1, 2, 3). Badge "100% CASHBACK". CTA &rarr; #checkout.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">SECAO 08 (Preco) — Badge de cashback</div>
+      <p>Badge: <strong>"100% CASHBACK — Receba R$147 de volta"</strong></p>
+      <p>Linha: "Voce paga R$147 e recebe R$147 de volta pelo app de cashback"</p>
+      <p>Data: "Cashback valido de 17 a 31 de marco"</p>
+    </div>
+    <div class="card">
+      <div class="card-title">SECAO 12 (CTA final) — Replica</div>
+      <p>Mesma logica da Secao 08. Badge + linha de cashback junto a repeticao do preco.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin: 10px 0;">
+    <div class="card-title">SECAO 11 (FAQ) — 5 perguntas de cashback no INICIO</div>
+    <p><strong>1. O que e o cashback?</strong> — Voce compra o GCN (R$147) e recebe o valor integral de volta pelo app Vale Bonus.</p>
+    <p><strong>2. Como recebo?</strong> — Baixe o app Vale Bonus, cadastre-se, o valor cai na hora.</p>
+    <p><strong>3. Onde posso usar?</strong> — Em mais de 2.000 lojas parceiras no Brasil.</p>
+    <p><strong>4. Ate quando vale?</strong> — 17 a 31 de marco de 2026.</p>
+    <p><strong>5. Preciso fazer algo alem de comprar?</strong> — So baixar o app e se cadastrar.</p>
+  </div>
+
+  <hr style="margin: 20px 0; border: none; border-top: 2px dashed #e5e0ff;">
+
+  <h3><span class="tag tag-web">WEBNUTRI</span> webnutri.com.br</h3>
+
+  <p><strong>Estrutura atual (20 secoes):</strong></p>
+  <div style="display:flex; flex-wrap:wrap; gap:4px; margin:6px 0 12px 0;">
+    <span class="lp-num active">01</span><span class="lp-num active">02</span><span class="lp-num">03</span><span class="lp-num">04</span><span class="lp-num">05</span><span class="lp-num">06</span><span class="lp-num">07</span><span class="lp-num">08</span><span class="lp-num">09</span><span class="lp-num">10</span><span class="lp-num">11</span><span class="lp-num">12</span><span class="lp-num active">13</span><span class="lp-num active">14</span><span class="lp-num">15</span><span class="lp-num">16</span><span class="lp-num active">17</span><span class="lp-num active">18</span><span class="lp-num">19</span><span class="lp-num">20</span>
+  </div>
+  <p style="font-size:9px;color:#6b7280;">Roxo = secoes que recebem alteracoes</p>
+
+  <div class="card" style="margin: 10px 0; border-color: #f59e0b;">
+    <div class="card-title" style="color:#92400e;">ACIMA DA SECAO 01 (Hero) — Barra sticky</div>
+    <div class="copy-block">
+      <strong>MARCO NUTRI DE CONSULTORIO</strong> — Webnutri por R$47 (cashback de R$250). Valido ate 31/03.<br>[QUERO SABER MAIS &darr;]
+    </div>
+  </div>
+
+  <div class="card" style="margin: 10px 0; border-color: #7c3aed; border-width: 2px;">
+    <div class="card-title" style="color:#4c1d95;">ENTRE SECAO 01 E 02 — Bloco de oferta (SECAO PRINCIPAL)</div>
+    <div class="copy-block">
+      <strong style="font-size:13px;">Em marco, Webnutri por R$47</strong><br><br>
+      <strong>Como funciona:</strong><br>
+      <strong>Passo 1:</strong> Assine a Webnutri normalmente pelo site (R$297/ano)<br>
+      <strong>Passo 2:</strong> Baixe o app Vale Bonus e faca seu cadastro gratuito<br>
+      <strong>Passo 3:</strong> Receba R$250 de volta na hora para gastar em mais de 2.000 lojas no Brasil<br><br>
+      Voce paga R$297 e recebe R$250 de volta.<br>
+      <strong>Investimento real: R$47 por 1 ano inteiro de acesso.</strong><br>
+      <strong>Oferta valida de 17 a 31 de marco.</strong><br>
+      [QUERO MINHA WEBNUTRI POR R$47]
+    </div>
+    <p>Badge: "85% CASHBACK" ou "INVESTIMENTO REAL: R$47/ANO". Ancora: <span class="strike">R$297</span> &rarr; R$47. CTA &rarr; #checkout.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">SECAO 13 (Pricing comparativo) — Tripla ancora</div>
+      <p>Adicionar ao final: "E em marco, voce ainda recebe R$250 de cashback."</p>
+      <p><strong>Tripla ancora:</strong> <span class="strike">R$1.532</span> &rarr; <span class="strike">R$297</span> &rarr; <strong style="color:#059669;font-size:14px;">R$47</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">SECAO 14 (Oferta) — Badge + ancora</div>
+      <p>Badge: <strong>"85% CASHBACK — Receba R$250 de volta"</strong></p>
+      <p><span class="strike">R$297</span> &rarr; "Investimento real: <strong>R$47/ano</strong>"</p>
+      <p>"Cashback valido de 17 a 31 de marco"</p>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">SECAO 17 (FAQ) — 5 perguntas cashback</div>
+      <p>Mesmo formato do GCN, ajustando: R$297 pago, R$250 de volta, investimento real R$47.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">SECAO 18 (CTA final) — Replica</div>
+      <p>Badge + ancora + "Investimento real: R$47/ano"</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 6: EMAILS + WHATSAPP -->
+<div class="page page-break">
+  <h2><span class="section-num">7</span> SEQUENCIA DE EMAILS</h2>
+
+  <div class="phase phase-launch">
+    <div class="phase-title">Email 1 — ABERTURA (17/mar)</div>
+    <p><strong>Assunto:</strong> "GCN com 100% de cashback (so em marco)"</p>
+    <p><strong>Angulo:</strong> Oferta direta. Sem enrolacao.</p>
+    <ul>
+      <li>Abrir com a oferta na cara: "Esse mes o GCN ta com 100% de cashback"</li>
+      <li>Explicar em 3 passos como funciona</li>
+      <li>Repetir pra Webnutri: "E a Webnutri ta por R$47 (85% de cashback)"</li>
+      <li>CTA: links para as duas paginas</li>
+      <li>Prazo: "De 17 a 31 de marco"</li>
+    </ul>
+  </div>
+
+  <div class="phase phase-sustain">
+    <div class="phase-title">Email 2 — PROVA SOCIAL (20/mar)</div>
+    <p><strong>Assunto:</strong> "[numero] nutris ja garantiram o GCN com cashback"</p>
+    <p>Mostrar volume de vendas ou depoimentos + reforcar oferta + CTA</p>
+  </div>
+
+  <div class="phase phase-sustain">
+    <div class="phase-title">Email 3 — QUEBRA DE OBJECAO (25/mar)</div>
+    <p><strong>Assunto:</strong> "Como funciona o cashback? Te explico em 30 segundos"</p>
+    <p>FAQ curto sobre o cashback + "voce recebe na hora, sem burocracia" + CTA</p>
+  </div>
+
+  <div class="phase phase-urgency">
+    <div class="phase-title">Email 4 — URGENCIA (29/mar)</div>
+    <p><strong>Assunto:</strong> "Faltam 3 dias (depois volta ao preco normal)"</p>
+    <p>"Dia 31 encerra" + recap rapido da oferta + CTA</p>
+  </div>
+
+  <div class="phase phase-urgency">
+    <div class="phase-title">Email 5 — ULTIMO DIA (31/mar)</div>
+    <p><strong>Assunto:</strong> "HOJE encerra o cashback do GCN e Webnutri"</p>
+    <p>"Essa e a ultima vez" + oferta resumida + "Depois de hoje, volta ao preco normal. Sem excecao." + CTA</p>
+  </div>
+
+  <h2><span class="section-num">8</span> SEQUENCIA DE WHATSAPP</h2>
+
+  <div class="card" style="margin:8px 0; border-color: #22c55e;">
+    <div class="card-title" style="color:#15803d;">Mensagem 1 (17/mar) — Abertura</div>
+    <div class="copy-block">
+      Oi [nome]! Esse mes a gente ta com uma oferta especial:<br><br>
+      GCN com 100% de cashback — voce compra e recebe R$147 de volta<br>
+      Webnutri por R$47 — voce paga R$297 e recebe R$250 de volta<br><br>
+      O cashback cai na hora no app pra voce gastar em mais de 2.000 lojas.<br><br>
+      Valido ate 31/03. Link: [link]
+    </div>
+  </div>
+
+  <div class="card" style="margin:8px 0; border-color: #22c55e;">
+    <div class="card-title" style="color:#15803d;">Mensagem 2 (25/mar) — Lembrete</div>
+    <div class="copy-block">
+      Oi [nome]! So lembrando que o cashback do GCN (100%) e da Webnutri (85%) ta valendo ate dia 31.<br><br>
+      Duvida de como funciona? Voce compra normal, baixa o app, e o valor cai na hora. Simples.<br><br>
+      [link]
+    </div>
+  </div>
+
+  <div class="card" style="margin:8px 0; border-color: #22c55e;">
+    <div class="card-title" style="color:#15803d;">Mensagem 3 (31/mar) — Ultimo dia</div>
+    <div class="copy-block">
+      [nome], hoje e o ultimo dia do cashback do GCN e da Webnutri. Amanha volta ao preco normal.<br><br>
+      Se tava pensando, e agora ou so na proxima (e nao tem previsao de proxima).<br><br>
+      [link]
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7: CRONOGRAMA + CHECKLIST -->
+<div class="page page-break">
+  <h2><span class="section-num">9</span> CRONOGRAMA DE EXECUCAO</h2>
+
+  <table>
+    <tr><th style="width:90px">Data</th><th>Acao</th><th style="width:130px">Responsavel</th></tr>
+    <tr><td><strong>14/mar</strong></td><td>Aprovar briefing</td><td>Pedro</td></tr>
+    <tr><td><strong>14-15/mar</strong></td><td>Produzir copies dos ads (hooks + body + CTA)</td><td>Copywriter (Zoe)</td></tr>
+    <tr><td><strong>14-15/mar</strong></td><td>Produzir textos de LP (banner, secao cashback, FAQ)</td><td>Copywriter (Zoe)</td></tr>
+    <tr><td><strong>14-15/mar</strong></td><td>Produzir sequencia de emails (5 emails)</td><td>Copywriter (Zoe)</td></tr>
+    <tr><td><strong>14-15/mar</strong></td><td>Produzir mensagens de WhatsApp (3 mensagens)</td><td>Copywriter (Zoe)</td></tr>
+    <tr><td><strong>15-16/mar</strong></td><td>Criar criativos visuais (video + imagem por produto)</td><td>Designer / Pedro</td></tr>
+    <tr><td><strong>16/mar</strong></td><td>Implementar elementos temporarios nas LPs</td><td>Dev / Pedro</td></tr>
+    <tr><td><strong>16/mar</strong></td><td>Subir campanhas no Meta Ads (4 campanhas)</td><td>Pedro</td></tr>
+    <tr><td><strong>16/mar</strong></td><td>Configurar sequencia de emails na ferramenta</td><td>Pedro</td></tr>
+    <tr style="background:#fef3c7"><td><strong>17/mar</strong></td><td><strong>GO LIVE — Ads + Email 1 + WhatsApp 1</strong></td><td><strong>Pedro</strong></td></tr>
+    <tr><td>20/mar</td><td>Email 2 (prova social)</td><td>Automatico</td></tr>
+    <tr><td>22/mar</td><td>Review de performance — otimizar ads</td><td>Pedro + Jack</td></tr>
+    <tr><td>25/mar</td><td>Email 3 (FAQ) + WhatsApp 2</td><td>Automatico</td></tr>
+    <tr><td>29/mar</td><td>Email 4 (urgencia)</td><td>Automatico</td></tr>
+    <tr><td>31/mar</td><td>Email 5 (ultimo dia) + WhatsApp 3</td><td>Automatico</td></tr>
+    <tr style="background:#dbeafe"><td><strong>01/abr</strong></td><td>Remover elementos temporarios das LPs</td><td>Dev / Pedro</td></tr>
+    <tr style="background:#dbeafe"><td><strong>01/abr</strong></td><td>Review final de resultados</td><td>Pedro + Jack</td></tr>
+  </table>
+
+  <h2><span class="section-num">10</span> POS-CAMPANHA (ABRIL)</h2>
+
+  <div class="alert alert-info">
+    <strong>Objetivo estrategico:</strong> Upsell da base captada para ANC (R$2k-4k).<br>
+    Todos os compradores de GCN e Webnutri em marco entram na base para sequencia de nurture em abril.<br>
+    <strong>Benchmark:</strong> 5% de conversao da base = receita adicional significativa.<br>
+    Planejamento detalhado sera criado na primeira semana de abril com base nos resultados de marco.
+  </div>
+
+  <h2 style="margin-top:30px;">CHECKLIST PRE-LANCAMENTO (16/mar)</h2>
+
+  <ul class="checklist">
+    <li>Copies dos ads aprovados (GCN + Webnutri)</li>
+    <li>Criativos visuais prontos (minimo 5 variacoes por produto)</li>
+    <li>Elementos temporarios implementados na LP do GCN</li>
+    <li>Elementos temporarios implementados na LP da Webnutri</li>
+    <li>4 campanhas criadas no Meta Ads (GCN-COLD, GCN-WARM, WEB-COLD, WEB-WARM)</li>
+    <li>Publicos configurados (lookalike, interesses, remarketing, base email)</li>
+    <li>Pixel/CAPI funcionando nas duas LPs</li>
+    <li>Sequencia de 5 emails configurada na ferramenta</li>
+    <li>3 mensagens de WhatsApp prontas</li>
+    <li>Teste de compra nas duas LPs (fluxo completo)</li>
+    <li>Cashback Vale Bonus ativo e testado</li>
+  </ul>
+
+  <div class="footer-note">
+    Briefing criado por Jack (Estrategista) | Squad Nutri de Consultorio | 14/03/2026<br>
+    Responsavel: Pedro Lincks
+  </div>
+</div>
+
+</body>
+</html>
