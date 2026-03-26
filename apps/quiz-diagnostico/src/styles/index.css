@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #070e24 0%, #0a1233 50%, #101c3f 100%);
+  min-height: 100vh;
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .quiz-option-label {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer
+           border border-white/10 bg-white/5
+           transition-all duration-200 ease-in-out
+           hover:bg-[rgba(201,169,110,0.06)] hover:border-[rgba(201,169,110,0.3)];
+  }
+
+  .quiz-option-label.selected {
+    background: rgba(200, 135, 74, 0.08);
+    border-color: #c8874a;
+    box-shadow: 0 0 10px rgba(200, 135, 74, 0.3);
+  }
+
+  .radio-circle {
+    @apply w-5 h-5 rounded-full border-2 border-white/30 flex-shrink-0
+           flex items-center justify-center transition-all duration-200;
+  }
+
+  .radio-circle.selected {
+    border-color: #c8874a;
+    background: transparent;
+  }
+
+  .radio-circle.selected::after {
+    content: '';
+    @apply w-3 h-3 rounded-full block;
+    background: #c8874a;
+  }
+}
