@@ -57,9 +57,6 @@ export default function App() {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-[#c9a96e] font-montserrat tracking-tight">
             Diagnóstico do Consultório
           </h1>
-          <p className="text-gray-400 text-sm font-inter mt-1">
-            {config.brandOwner} | {config.brandName}
-          </p>
         </div>
 
         {/* Glass card */}
