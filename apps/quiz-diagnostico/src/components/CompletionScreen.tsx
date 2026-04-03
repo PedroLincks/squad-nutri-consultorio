@@ -16,7 +16,7 @@ export function CompletionScreen({ brandName }: CompletionScreenProps) {
 
       <div className="space-y-3">
         <h2 className="text-2xl sm:text-3xl font-bold text-white font-montserrat">
-          Diagnóstico concluído!
+          Anamnese concluída!
         </h2>
         <p className="text-gray-300 font-inter text-sm sm:text-base">
           Estamos preparando sua análise personalizada...

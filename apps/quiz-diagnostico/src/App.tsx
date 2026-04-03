@@ -5,7 +5,6 @@ import { submitToWebhook } from './lib/webhook'
 import { ProgressBar } from './components/ProgressBar'
 import { QuizStep } from './components/QuizStep'
 import { CompletionScreen } from './components/CompletionScreen'
-import { WhatsAppButton } from './components/WhatsAppButton'
 
 type Answers = Record<number, string>
 
@@ -55,7 +54,7 @@ export default function App() {
         {/* Header */}
         <div className="text-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-[#c9a96e] font-montserrat tracking-tight">
-            Diagnóstico do Consultório
+            Anamnese do Consultório
           </h1>
         </div>
 
@@ -92,8 +91,6 @@ export default function App() {
         </p>
       </div>
 
-      {/* WhatsApp floating button */}
-      <WhatsAppButton />
     </div>
   )
 }
