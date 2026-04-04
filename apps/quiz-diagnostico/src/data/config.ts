@@ -3,10 +3,10 @@
  */
 export const config = {
   /** URL to redirect after quiz completion (página de agendamento) */
-  redirectUrl: 'https://PLACEHOLDER-AGENDAMENTO.com',
+  redirectUrl: 'https://nutrideconsultorio.com/diagnostico-02',
 
   /** Make webhook URL — quiz sends all data here on completion */
-  webhookUrl: 'https://hook.us1.make.com/PLACEHOLDER',
+  webhookUrl: 'https://hook.us1.make.com/rhrpo9fa204sgxarna77uzefe093vov4',
 
   /** WhatsApp number (international format, digits only) */
   whatsappNumber: '5511999999999',
@@ -26,5 +26,5 @@ export const config = {
    * Guru passes these in the thank-you page URL.
    * Map: paramName → friendly label for the webhook payload.
    */
-  guruParams: ['email', 'name', 'phone', 'product', 'transaction_id'] as const,
+  guruParams: ['c_email', 'c_name', 'c_phone', 'c_product', 'c_tid'] as const,
 } as const

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { questions } from './data/questions'
 import { config } from './data/config'
 import { submitToWebhook } from './lib/webhook'
@@ -12,6 +12,7 @@ export default function App() {
   const [currentStep, setCurrentStep] = useState(1)
   const [answers, setAnswers] = useState<Answers>({})
   const [isCompleted, setIsCompleted] = useState(false)
+  const hasSubmitted = useRef(false)
 
   const totalSteps = questions.length
   const currentQuestion = questions[currentStep - 1]
@@ -28,7 +29,10 @@ export default function App() {
         setCurrentStep((prev) => prev + 1)
       } else {
         setIsCompleted(true)
-        submitToWebhook(updatedAnswers)
+        if (!hasSubmitted.current) {
+          hasSubmitted.current = true
+          submitToWebhook(updatedAnswers)
+        }
       }
     }, delay)
   }, [currentStep, totalSteps, currentQuestion.type, answers])
@@ -42,14 +46,15 @@ export default function App() {
   useEffect(() => {
     if (isCompleted) {
       const timer = setTimeout(() => {
-        window.location.href = config.redirectUrl
+        const target = window.top ?? window
+        target.location.href = config.redirectUrl
       }, config.redirectDelayMs)
       return () => clearTimeout(timer)
     }
   }, [isCompleted])
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 sm:p-6">
+    <div className="flex justify-center p-4 pt-2 sm:p-6 sm:pt-3">
       <div className="w-full max-w-lg">
         {/* Header */}
         <div className="text-center mb-6">

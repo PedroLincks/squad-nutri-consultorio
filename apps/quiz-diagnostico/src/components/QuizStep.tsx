@@ -62,24 +62,16 @@ export function QuizStep({ question, selectedAnswer, onSelect, onBack, isFirstSt
             const isSelected = selectedAnswer === option.id
 
             return (
-              <label
+              <div
                 key={option.id}
                 className={`quiz-option-label ${isSelected ? 'selected' : ''}`}
                 onClick={() => onSelect(option.id)}
               >
-                <input
-                  type="radio"
-                  name={`question-${question.id}`}
-                  value={option.id}
-                  checked={isSelected}
-                  onChange={() => onSelect(option.id)}
-                  className="hidden"
-                />
                 <span className={`radio-circle ${isSelected ? 'selected' : ''}`} />
                 <span className="text-sm sm:text-base text-gray-200 font-inter">
                   {option.label}
                 </span>
-              </label>
+              </div>
             )
           })}
         </div>

@@ -25,40 +25,32 @@ export const questions: QuizQuestion[] = [
   },
   {
     id: 2,
-    question: 'Qual a sua modalidade de atendimento?',
-    type: 'radio',
-    options: [
-      { id: 'a', label: 'Presencial' },
-      { id: 'b', label: 'Online' },
-      { id: 'c', label: 'Ambas' },
-    ],
-  },
-  {
-    id: 3,
     question: 'Quantos pacientes você atende por mês?',
     type: 'radio',
     options: [
       { id: 'a', label: 'Menos de 10 pacientes' },
-      { id: 'b', label: 'Entre 10 e 30 pacientes' },
-      { id: 'c', label: 'Entre 30 e 60 pacientes' },
-      { id: 'd', label: 'Entre 60 e 100 pacientes' },
-      { id: 'e', label: 'Mais de 100 pacientes' },
+      { id: 'b', label: 'Entre 10 e 20 pacientes' },
+      { id: 'c', label: 'Entre 30 e 40 pacientes' },
+      { id: 'd', label: 'Entre 40 e 50 pacientes' },
+      { id: 'e', label: 'Entre 50 e 60 pacientes' },
+      { id: 'f', label: 'Mais de 60 pacientes' },
+    ],
+  },
+  {
+    id: 3,
+    question: 'Qual o faturamento médio mensal do seu consultório?',
+    type: 'radio',
+    options: [
+      { id: 'a', label: 'Menos de R$ 2.000' },
+      { id: 'b', label: 'Entre R$ 2.000 e R$ 4.000' },
+      { id: 'c', label: 'Entre R$ 4.000 e R$ 6.000' },
+      { id: 'd', label: 'Entre R$ 6.000 e R$ 8.000' },
+      { id: 'e', label: 'Entre R$ 8.000 e R$ 10.000' },
+      { id: 'f', label: 'Acima de R$ 10.000' },
     ],
   },
   {
     id: 4,
-    question: 'Qual o faturamento médio mensal do seu consultório?',
-    type: 'radio',
-    options: [
-      { id: 'a', label: 'Menos de R$ 3.000' },
-      { id: 'b', label: 'Entre R$ 3.000 e R$ 8.000' },
-      { id: 'c', label: 'Entre R$ 8.000 e R$ 15.000' },
-      { id: 'd', label: 'Entre R$ 15.000 e R$ 30.000' },
-      { id: 'e', label: 'Acima de R$ 30.000' },
-    ],
-  },
-  {
-    id: 5,
     question: 'Qual o ticket médio que você cobra por atendimento?',
     type: 'radio',
     options: [
@@ -70,15 +62,9 @@ export const questions: QuizQuestion[] = [
     ],
   },
   {
-    id: 6,
-    question: 'Qual sua maior dificuldade hoje para melhorar o resultado do seu consultório?',
-    type: 'radio',
-    options: [
-      { id: 'a', label: 'Atrair novos pacientes de forma consistente' },
-      { id: 'b', label: 'Fazer os pacientes voltarem e continuarem o acompanhamento' },
-      { id: 'c', label: 'Cobrar o que eu realmente mereço (aumentar meu ticket)' },
-      { id: 'd', label: 'Organizar a rotina e os processos do consultório' },
-      { id: 'e', label: 'Todas as anteriores' },
-    ],
+    id: 5,
+    question: 'Qual a sua maior dificuldade hoje? O que você precisa de ajuda?',
+    type: 'text',
+    placeholder: 'Digite sua maior dificuldade...',
   },
 ]

@@ -5,7 +5,7 @@ type Answers = Record<number, string>
 
 /**
  * Reads URL search params passed by Digital Manager Guru on redirect.
- * Example URL: https://quiz.vercel.app/?email=fulana@email.com&name=Maria&phone=11999...&product=webnutri
+ * Example URL: https://quiz.vercel.app/?c_email=fulana@email.com&c_name=Maria&c_phone=11999...&c_product=webnutri
  */
 export function getGuruParams(): Record<string, string> {
   const params = new URLSearchParams(window.location.search)
@@ -59,16 +59,19 @@ export async function submitToWebhook(answers: Answers): Promise<boolean> {
   const quizAnswers = resolveAnswers(answers)
 
   const payload = {
-    // Purchase data from Guru
-    ...guruData,
+    // Purchase data from Guru (renamed from c_ prefixed params)
+    name: guruData.c_name ?? '',
+    email: guruData.c_email ?? '',
+    phone: guruData.c_phone ?? '',
+    product: guruData.c_product ?? '',
+    transaction_id: guruData.c_tid ?? '',
 
     // Quiz answers (human-readable)
     instagram: quizAnswers.qual_o_seu_do_instagram ?? '',
-    modalidade_atendimento: quizAnswers.qual_a_sua_modalidade_de_atendimento ?? '',
     pacientes_mes: quizAnswers.quantos_pacientes_voce_atende_por_mes ?? '',
     faturamento_mensal: quizAnswers.qual_o_faturamento_medio_mensal_do_seu_consultorio ?? '',
     ticket_medio: quizAnswers.qual_o_ticket_medio_que_voce_cobra_por_atendimento ?? '',
-    maior_dificuldade: quizAnswers.qual_sua_maior_dificuldade_hoje_para_melhorar_o_resultado_do_seu_consultorio ?? '',
+    maior_dificuldade: quizAnswers.qual_a_sua_maior_dificuldade_hoje_o_que_voce_precisa_de_ajuda ?? '',
 
     // Metadata
     source: 'quiz-diagnostico-consultorio',
