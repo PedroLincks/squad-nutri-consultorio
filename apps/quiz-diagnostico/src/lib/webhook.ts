@@ -68,10 +68,10 @@ export async function submitToWebhook(answers: Answers): Promise<boolean> {
 
     // Quiz answers (human-readable)
     instagram: quizAnswers.qual_o_seu_do_instagram ?? '',
-    pacientes_mes: quizAnswers.quantos_pacientes_voce_atende_por_mes ?? '',
-    faturamento_mensal: quizAnswers.qual_o_faturamento_medio_mensal_do_seu_consultorio ?? '',
-    ticket_medio: quizAnswers.qual_o_ticket_medio_que_voce_cobra_por_atendimento ?? '',
-    maior_dificuldade: quizAnswers.qual_a_sua_maior_dificuldade_hoje_o_que_voce_precisa_de_ajuda ?? '',
+    momento_atual: quizAnswers.qual_e_o_seu_momento_atual ?? '',
+    faturamento_medio: quizAnswers.qual_a_sua_media_de_faturamento_atual ?? '',
+    ticket_medio: quizAnswers.qual_ticket_medio_voce_cobra_por_atendimento ?? '',
+    maior_dificuldade: quizAnswers.qual_e_a_sua_maior_dificuldade_hoje_se_voce_pudesse_nos_pedir_ajuda_em_algo_o_que_pediria ?? '',
 
     // Metadata
     source: 'quiz-diagnostico-consultorio',
