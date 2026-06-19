@@ -5,11 +5,10 @@
 ```
 Pedro (dono do negocio)
   └── Jack (Estrategista & Head de Marketing)
-        ├── Zara (Spy & Pesquisadora)
         └── Zoe (Copywriter)
 ```
 
-**Fluxo natural:** Jack define estrategia → Zara pesquisa → Zoe escreve
+**Fluxo natural:** Jack define estrategia e briefing → Zoe escreve
 
 ---
 
@@ -18,7 +17,6 @@ Pedro (dono do negocio)
 | Agente | Ativacao | Skill |
 |--------|----------|-------|
 | Jack | `@jack` | `/AIOS:agents:jack` |
-| Zara | `@zara` | `/AIOS:agents:zara` |
 | Zoe | `@zoe` | `/AIOS:agents:zoe` |
 
 Para sair de qualquer agente: `*exit`
@@ -41,7 +39,7 @@ Para ver comandos disponíveis: `*help`
 | `*offer` | Cria oferta irresistivel (Value Equation + MAGIC naming + bonuses + garantia) | Quando precisar criar ou reformular uma oferta de produto |
 | `*funnel` | Arquitetar ou revisar funil e jornada do cliente entre GCN/Webnutri/ANC | Quando quiser repensar a jornada do cliente entre produtos |
 | `*go-to-market` | Estrategia completa de lancamento de produto | Antes de lancar algo novo no mercado |
-| `*brief` | Gera briefing estrategico com direcao criativa para Zara pesquisar e Zoe escrever | Quando quiser direcionar o trabalho de Zara e Zoe para uma campanha especifica |
+| `*brief` | Gera briefing estrategico com direcao criativa para Zoe escrever | Quando quiser direcionar o trabalho da Zoe para uma campanha especifica |
 | `*big-idea` | Desenvolve Big Idea para campanha (tema central, angulo, mecanismo unico) | Quando precisar de um conceito central forte para campanha |
 | `*money-model` | Desenha Money Model completo (atracao + upsell + downsell + continuidade) | Para estruturar modelo de monetizacao do ecossistema |
 | `*fast-cash` | Cria Fast Cash Play trimestral (oferta ultra-premium para base quente) | A cada trimestre para gerar caixa rapido com base existente |
@@ -71,51 +69,9 @@ Para ver comandos disponíveis: `*help`
 Todo plano/estrategia segue esta estrutura:
 1. **CONTEXTO** — Situacao atual e por que isso importa
 2. **ESTRATEGIA** — O que fazer e por que (com framework de referencia)
-3. **EXECUCAO** — Passo a passo com responsaveis (Jack/Zara/Zoe)
+3. **EXECUCAO** — Passo a passo com responsaveis (Jack/Zoe)
 4. **METRICAS** — Como medir sucesso (KPIs especificos)
 5. **PROXIMOS PASSOS** — Acoes imediatas ordenadas por prioridade
-
----
-
-## Zara — Spy & Pesquisadora de Copy
-
-**Persona:** Analitica, curiosa, organizada. Devora livros de copy e esta sempre de olho no mercado.
-
-**Quando usar:** Quando precisar de DADOS e INSIGHTS antes de escrever. Zara nao escreve copy — ela entrega a municao para Zoe.
-
-### Comandos
-
-| Comando | O que faz | Quando usar |
-|---------|-----------|-------------|
-| `*spy` | Pesquisa e analisa copies de um nicho ou concorrente especifico | Quando quiser espionar o que concorrentes estao fazendo |
-| `*analyze-hooks` | Analisa e categoriza hooks dos winning ads por produto | Para entender quais tipos de hooks estao funcionando |
-| `*patterns` | Identifica padroes nas copies vencedoras de um produto | Para descobrir estruturas e angulos que convertem |
-| `*benchmark` | Compara copies atuais com melhores praticas do mercado | Para avaliar se as copies estao no nivel do mercado |
-| `*swipe` | Adiciona nova referencia ao swipe file com analise | Quando encontrar uma copy boa e quiser salvar com analise |
-| `*briefing` | Gera briefing de pesquisa completo para Zoe criar copies | Quando a pesquisa estiver pronta e for hora de passar para Zoe |
-| `*angles` | Lista angulos de copy disponiveis para um produto | Quando precisar de ideias de angulos para uma campanha |
-| `*gaps` | Identifica gaps e oportunidades nas copies atuais | Para encontrar o que esta faltando nas campanhas |
-
-### O que Zara consulta
-
-| Documento | Caminho |
-|-----------|---------|
-| Briefing do produto | `docs/prd/{produto}/briefing.md` |
-| Avatar do produto | `docs/prd/{produto}/avatar.md` |
-| Tone of voice | `docs/prd/tone-of-voice.md` |
-| Winning ads | `docs/references/winning-ads/winning-ads-{produto}.md` |
-| Principios de copy | `docs/library/principles.md` |
-| Formulas classicas | `docs/library/formulas.md` |
-| Lendas do copy | `docs/library/legends.md` |
-
-### O que Zara entrega
-
-- Hooks categorizados por tipo e eficacia
-- Angulos de copy com justificativa
-- Padroes identificados nos winning ads
-- Briefings completos para Zoe
-- Oportunidades e gaps no mercado
-- Swipe files anotados
 
 ---
 
@@ -181,22 +137,18 @@ Todo plano/estrategia segue esta estrutura:
 
 ```
 1. @jack *campaign        → Define estrategia, calendario, budget
-2. @jack *brief           → Cria briefing para Zara e Zoe
-3. @zara *spy             → Pesquisa concorrentes e mercado
-4. @zara *patterns        → Identifica o que funciona
-5. @zara *briefing        → Entrega insights para Zoe
-6. @zoe *batch            → Cria lote de copies
-7. @zoe *variations       → Gera variacoes A/B
+2. @jack *brief           → Cria briefing com direcao criativa e angulos para Zoe
+3. @zoe *batch            → Cria lote de copies
+4. @zoe *variations       → Gera variacoes A/B
 ```
 
 ### Fluxo 2: Melhorar Campanha Existente
 
 ```
 1. @jack *diagnose        → Identifica o que nao esta funcionando
-2. @zara *gaps            → Encontra oportunidades perdidas
-3. @zara *analyze-hooks   → Analisa quais hooks performam
-4. @zoe *rewrite          → Reescreve ads com novos angulos
-5. @zoe *variations       → Cria testes A/B
+2. @jack *brief           → Define novos angulos e direcao criativa
+3. @zoe *rewrite          → Reescreve ads com novos angulos
+4. @zoe *variations       → Cria testes A/B
 ```
 
 ### Fluxo 3: Criar Oferta Irresistivel
@@ -204,9 +156,8 @@ Todo plano/estrategia segue esta estrutura:
 ```
 1. @jack *offer           → Cria oferta com Value Equation
 2. @jack *pricing         → Otimiza preco
-3. @jack *brief           → Briefing com direcao criativa
-4. @zara *angles          → Lista angulos possiveis
-5. @zoe *write-copy       → Escreve copy da oferta
+3. @jack *brief           → Briefing com direcao criativa e angulos
+4. @zoe *write-copy       → Escreve copy da oferta
 ```
 
 ### Fluxo 4: Planejamento Trimestral
@@ -218,12 +169,11 @@ Todo plano/estrategia segue esta estrutura:
 4. @jack *campaign        → Planeja proxima campanha
 ```
 
-### Fluxo 5: Pesquisa Rapida + Copy
+### Fluxo 5: Copy Rapida
 
 ```
-1. @zara *spy             → Pesquisa rapida do mercado
-2. @zara *briefing        → Briefing para Zoe
-3. @zoe *write-copy       → Escreve copy
+1. @jack *brief           → Briefing rapido com angulo e produto
+2. @zoe *write-copy       → Escreve copy
 ```
 
 ### Fluxo 6: Escala
@@ -238,27 +188,23 @@ Todo plano/estrategia segue esta estrutura:
 
 ## Dicas de Uso
 
-1. **Sempre comece pelo Jack** quando for algo estrategico. Ele define o "que" e "por que" antes de Zara e Zoe executarem.
+1. **Sempre comece pelo Jack** quando for algo estrategico. Ele define o "que" e "por que" antes da Zoe executar.
 
-2. **Use Zara antes de Zoe** para garantir que as copies tenham fundamento em dados reais, nao achismo.
+2. **Zoe pode trabalhar direto** se voce ja tiver clareza do angulo, produto e formato. Nao precisa sempre passar pelo Jack.
 
-3. **Zoe pode trabalhar direto** se voce ja tiver clareza do angulo, produto e formato. Nao precisa sempre passar por Jack e Zara.
+3. **Jack nao escreve copy.** Se pedir copy para ele, ele vai criar um briefing estrategico e direcionar para Zoe.
 
-4. **Jack nao escreve copy.** Se pedir copy para ele, ele vai criar um briefing estrategico e direcionar para Zoe.
+4. **Especifique o produto** (GCN, Webnutri ou ANC) ao usar qualquer agente — cada produto tem avatar, tom e estrategia diferentes.
 
-5. **Zara nao escreve copy.** Ela entrega pesquisa e insights. A execucao e da Zoe.
+5. **Use `*help`** dentro de qualquer agente para ver os comandos disponiveis.
 
-6. **Especifique o produto** (GCN, Webnutri ou ANC) ao usar qualquer agente — cada produto tem avatar, tom e estrategia diferentes.
-
-7. **Use `*help`** dentro de qualquer agente para ver os comandos disponiveis.
-
-8. **Use `*exit`** para sair do agente e voltar ao modo normal.
+6. **Use `*exit`** para sair do agente e voltar ao modo normal.
 
 ---
 
 ## Squads de Elite
 
-Alem dos agentes internos (Jack, Zara, Zoe), voce tem dois squads especializados:
+Alem dos agentes internos (Jack, Zoe), voce tem dois squads especializados:
 
 | Squad | Agentes | Ativacao | Foco |
 |-------|---------|----------|------|

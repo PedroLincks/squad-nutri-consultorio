@@ -1,6 +1,6 @@
 # Principios-Chave de Copywriting
 
-> Compilado dos grandes autores. Zara e Zoe consultam este arquivo como base.
+> Compilado dos grandes autores. Jack e Zoe consultam este arquivo como base.
 
 ## Niveis de Consciencia (Eugene Schwartz)
 

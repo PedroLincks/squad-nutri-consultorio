@@ -1,10 +1,10 @@
 name: full-copy-pipeline
 version: 1.0.0
-description: Pipeline completo de criacao de copy. Zara pesquisa e entrega briefing, Zoe escreve as copies.
+description: Pipeline de criacao de copy. Zoe escreve as copies a partir do briefing do produto.
 
 trigger:
   command: "*copy-pipeline"
-  agent: zara
+  agent: zoe
 
 elicitation:
   enabled: true
@@ -42,24 +42,15 @@ elicitation:
       required: false
 
 steps:
-  - id: zara-research
-    agent: zara
-    action: briefing
-    description: Zara analisa winning ads, avatar e briefing do produto para gerar briefing de pesquisa
-    inputs:
-      product: "{{elicitation.product}}"
-      angle: "{{elicitation.angle}}"
-    on_success: zoe-write
-
   - id: zoe-write
     agent: zoe
     action: write-copy
-    description: Zoe escreve as copies baseada no briefing da Zara
+    description: Zoe escreve as copies a partir do briefing, do avatar e dos winning ads do produto
     inputs:
       product: "{{elicitation.product}}"
       quantity: "{{elicitation.quantity}}"
       format: "{{elicitation.format}}"
-      research_brief: "{{steps.zara-research.output}}"
+      angle: "{{elicitation.angle}}"
     on_success: review
 
   - id: review

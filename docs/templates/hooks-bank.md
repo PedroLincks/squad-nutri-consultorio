@@ -1,6 +1,6 @@
 # Banco de Hooks
 
-> Ganchos de abertura que funcionam no seu nicho. Zara alimenta, Zoe usa.
+> Ganchos de abertura que funcionam no seu nicho. Zoe consulta e alimenta conforme escreve.
 
 ## Hooks de Curiosidade
 
@@ -40,4 +40,4 @@
 
 ---
 
-> A Zara vai adicionar hooks automaticamente conforme pesquisar concorrentes.
+> Adicione novos hooks conforme encontrar nos winning ads e nas analises de concorrentes.

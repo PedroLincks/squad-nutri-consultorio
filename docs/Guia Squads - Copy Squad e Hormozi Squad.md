@@ -6,7 +6,7 @@
 
 ## Visao Geral
 
-Voce tem **dois squads especializados** alem dos agentes internos (Jack, Zara, Zoe):
+Voce tem **dois squads especializados** alem dos agentes internos (Jack, Zoe):
 
 | Squad | Agentes | Foco |
 |-------|---------|------|
@@ -21,7 +21,6 @@ Voce tem **dois squads especializados** alem dos agentes internos (Jack, Zara, Z
 Pedro (dono do negocio)
   │
   ├── Jack (Estrategista & Head de Marketing)
-  │     ├── Zara (Spy & Pesquisadora)
   │     └── Zoe (Copywriter)
   │
   ├── Copy Squad (22 lendas do copywriting)
@@ -245,11 +244,10 @@ Pesquisa → Value Equation → Grand Slam Offer → Naming → Garantia → Bon
 1. @jack *campaign               → Define estrategia e calendario
 2. @hormozi-offers *create-offer → Cria Grand Slam Offer com Value Equation
 3. @jack *brief                  → Briefing criativo baseado na oferta
-4. @zara *spy                    → Pesquisa concorrentes
-5. @copy-chief *brief            → Cyrus atribui ao copywriter certo
-6. (especialista escreve)        → Sales letter, emails, VSL...
-7. @zoe *batch                   → Adapta para Meta Ads
-8. @zoe *variations              → Variacoes A/B
+4. @copy-chief *brief            → Cyrus atribui ao copywriter certo
+5. (especialista escreve)        → Sales letter, emails, VSL...
+6. @zoe *batch                   → Adapta para Meta Ads
+7. @zoe *variations              → Variacoes A/B
 ```
 
 ### Fluxo 2: Criar Oferta Irresistivel + Copy de Vendas
@@ -270,9 +268,8 @@ Pesquisa → Value Equation → Grand Slam Offer → Naming → Garantia → Bon
 ```
 1. @jack *diagnose                → O que nao esta funcionando?
 2. @hormozi-chief *diagnose      → Analise Hormozi (oferta? leads? vendas?)
-3. @zara *gaps                   → Oportunidades perdidas
-4. (corrigir com o agente certo) → Depende do diagnostico
-5. @zoe *rewrite                 → Novas copies
+3. (corrigir com o agente certo) → Depende do diagnostico
+4. @zoe *rewrite                 → Novas copies
 ```
 
 ### Fluxo 4: Email Sequence de Nivel Mundial
@@ -310,7 +307,6 @@ Pesquisa → Value Equation → Grand Slam Offer → Naming → Garantia → Bon
 
 ```
 ESTRATEGIA DO NEGOCIO?     → Jack (rapido) ou Hormozi Squad (profundo)
-PESQUISA DE MERCADO?        → Zara
 COPY RAPIDA PRA META ADS?  → Zoe
 COPY DE ALTO NIVEL?         → Copy Squad (via Copy Chief ou direto)
 OFERTA / PRICING / ESCALA?  → Hormozi Squad
@@ -323,7 +319,7 @@ OFERTA / PRICING / ESCALA?  → Hormozi Squad
 | Campanha completa | Jack + Hormozi Offers + Copy Squad + Zoe |
 | Email sequence | Jack (brief) + Andre Chaperon (escrita) |
 | VSL de produto | Hormozi Offers (oferta) + Stefan Georgi (roteiro) |
-| Escalar ads | Jack (estrategia) + Zara (pesquisa) + Zoe (copies) |
+| Escalar ads | Jack (estrategia) + Zoe (copies) |
 | Reformular oferta | Hormozi Offers + Hormozi Pricing + Dan Kennedy (landing) |
 | Funil do zero | Hormozi Chief (diagnostico) + Russell Brunson (funil) + Chaperon (emails) |
 
@@ -339,7 +335,7 @@ OFERTA / PRICING / ESCALA?  → Hormozi Squad
 
 4. **Jack conhece seus produtos. Os squads nao.** Sempre passe contexto sobre GCN, Webnutri ou ANC quando usar os squads. Jack ja sabe tudo isso.
 
-5. **Use squads para trabalho profundo e de referencia.** Para o dia a dia das campanhas, Jack + Zara + Zoe sao mais rapidos porque ja conhecem o contexto.
+5. **Use squads para trabalho profundo e de referencia.** Para o dia a dia das campanhas, Jack + Zoe sao mais rapidos porque ja conhecem o contexto.
 
 6. **Combine squads.** O melhor resultado vem de usar Hormozi Squad para a oferta/estrategia e Copy Squad para a execucao da copy.
 
@@ -352,7 +348,6 @@ OFERTA / PRICING / ESCALA?  → Hormozi Squad
 ```
 # Agentes internos
 @jack                          → Estrategista
-@zara                          → Spy / Pesquisadora
 @zoe                           → Copywriter rapida
 
 # Copy Squad
