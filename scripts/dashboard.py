@@ -173,6 +173,9 @@ def main():
                           "account": ACCOUNT_ID, "ranges": ranges}, ensure_ascii=False)
 
     html = HTML_TEMPLATE.replace("/*__DATA__*/", payload)
+    out_dir = os.path.dirname(out)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Painel gerado: {out}")
