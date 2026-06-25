@@ -1,0 +1,289 @@
+#!/usr/bin/env python3
+"""Gera o painel HTML de performance de criativos (Max).
+
+Lê, por período, os dados do Meta (spend/ctr por ad) e da Guru (receita por
+utm_content) de um diretório de dados, cruza por ad id (dígitos após o '|' no
+utm_content) e emite um HTML auto-contido com abas de período, cards de resumo,
+tabela ordenável com ROAS colorido, split por produto e avisos de UTM.
+
+Uso:
+  python3 scripts/dashboard.py <data_dir> <saida.html>
+
+Espera no data_dir, por período P (hoje|ontem|7d|14d|mes):
+  meta_<P>.json  -> lista de {id, name, amount_spent, ctr, impressions}
+  guru_<P>.json  -> lista de {utm_content, vendas, receita}
+"""
+import datetime
+import json
+import os
+import re
+import sys
+
+PERIODS = [
+    ("hoje", "Hoje"),
+    ("ontem", "Ontem"),
+    ("7d", "7 dias"),
+    ("14d", "14 dias"),
+    ("mes", "Este mês"),
+]
+
+# Conta de anuncios (Webnutri) — usada para montar o link do Gerenciador de Anuncios
+ACCOUNT_ID = os.environ.get("META_ACCOUNT_ID", "168028315098298")
+
+AD_ID_RE = re.compile(r"(\d{15,})")
+
+
+def money(s):
+    """'R$1.101,65 BRL' -> 1101.65 ; aceita número."""
+    if isinstance(s, (int, float)):
+        return float(s)
+    if not s:
+        return 0.0
+    s = s.replace(" ", " ").replace("R$", "").replace("BRL", "").strip()
+    s = s.replace(".", "").replace(",", ".")
+    try:
+        return float(s)
+    except ValueError:
+        return 0.0
+
+
+def pct(s):
+    if not s or "available" in str(s).lower():
+        return None
+    s = str(s).replace(" ", " ").replace("%", "").replace("%", "").strip()
+    s = s.replace(".", "").replace(",", ".")
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def product_of(name):
+    m = re.match(r"\s*\[?(WN|MDA|GCN|ANC)\]?", name or "", re.I)
+    return m.group(1).upper() if m else "OUTRO"
+
+
+def ad_id_of(text):
+    ids = AD_ID_RE.findall(text or "")
+    return ids[-1] if ids else None
+
+
+def load(data_dir, period):
+    meta_p = os.path.join(data_dir, f"meta_{period}.json")
+    guru_p = os.path.join(data_dir, f"guru_{period}.json")
+    meta = json.load(open(meta_p)) if os.path.exists(meta_p) else []
+    guru = json.load(open(guru_p)) if os.path.exists(guru_p) else []
+    return meta, guru
+
+
+def build_period(data_dir, period):
+    meta, guru = load(data_dir, period)
+
+    # Receita por ad id (a partir do utm_content da Guru)
+    rev_by_id, vendas_by_id = {}, {}
+    unattributed_rev = unattributed_v = 0.0
+    hygiene = []  # avisos de UTM
+    for row in guru:
+        utm = row.get("utm_content", "")
+        rev = float(row.get("receita", 0) or 0)
+        v = int(row.get("vendas", 0) or 0)
+        aid = ad_id_of(utm)
+        if aid:
+            rev_by_id[aid] = rev_by_id.get(aid, 0) + rev
+            vendas_by_id[aid] = vendas_by_id.get(aid, 0) + v
+            if "{{" in utm or "5B" in utm or "7C" in utm:
+                hygiene.append({"utm": utm, "receita": rev, "tipo": "UTM malformada (encoding/macro)"})
+        else:
+            unattributed_rev += rev
+            unattributed_v += v
+
+    rows, seen = [], set()
+    for ad in meta:
+        aid = str(ad.get("id"))
+        seen.add(aid)
+        spend = money(ad.get("amount_spent"))
+        rev = rev_by_id.get(aid, 0.0)
+        v = vendas_by_id.get(aid, 0)
+        roas = (rev / spend) if spend > 0 else None
+        cac = (spend / v) if v > 0 else None
+        rows.append({
+            "id": aid,
+            "name": ad.get("name", ""),
+            "product": product_of(ad.get("name", "")),
+            "spend": round(spend, 2),
+            "impressions": int(str(ad.get("impressions", "0")).replace(".", "").replace(" ", "") or 0),
+            "ctr": pct(ad.get("ctr")),
+            "vendas": v,
+            "receita": round(rev, 2),
+            "roas": round(roas, 2) if roas is not None else None,
+            "cac": round(cac, 2) if cac is not None else None,
+        })
+
+    # Vendas com ad id que não estão no top de spend do Meta (spend desconhecido)
+    outros_rev = sum(r for i, r in rev_by_id.items() if i not in seen)
+    outros_v = sum(v for i, v in vendas_by_id.items() if i not in seen)
+
+    spend_total = sum(r["spend"] for r in rows)
+    rev_rastreada = sum(r["receita"] for r in rows)
+    rev_total = rev_rastreada + unattributed_rev + outros_rev
+    roas_geral = (rev_rastreada / spend_total) if spend_total > 0 else None
+
+    rows.sort(key=lambda r: -r["receita"])
+    return {
+        "rows": rows,
+        "hygiene": hygiene,
+        "summary": {
+            "spend_total": round(spend_total, 2),
+            "rev_rastreada": round(rev_rastreada, 2),
+            "rev_sem_atrib": round(unattributed_rev, 2),
+            "rev_outros": round(outros_rev, 2),
+            "vendas_sem_atrib": int(unattributed_v),
+            "vendas_outros": int(outros_v),
+            "rev_total": round(rev_total, 2),
+            "roas_geral": round(roas_geral, 2) if roas_geral is not None else None,
+            "cobertura": round(100 * rev_rastreada / rev_total, 1) if rev_total > 0 else 0,
+        },
+    }
+
+
+def date_ranges(today):
+    """Intervalo de datas (label) de cada periodo, relativo a `today` (date)."""
+    f = lambda d: d.strftime("%d/%m")
+    td = datetime.timedelta
+    return {
+        "hoje": f(today),
+        "ontem": f(today - td(days=1)),
+        "7d": f(today - td(days=6)) + "–" + f(today),
+        "14d": f(today - td(days=13)) + "–" + f(today),
+        "mes": f(today.replace(day=1)) + "–" + f(today),
+    }
+
+
+def main():
+    data_dir = sys.argv[1] if len(sys.argv) > 1 else "."
+    out = sys.argv[2] if len(sys.argv) > 2 else "dashboard.html"
+    generated = sys.argv[3] if len(sys.argv) > 3 else ""
+    today = sys.argv[4] if len(sys.argv) > 4 else ""
+
+    today_d = datetime.date(*map(int, today.split("-"))) if today else datetime.date.today()
+    ranges = date_ranges(today_d)
+
+    data = {p: build_period(data_dir, p) for p, _ in PERIODS}
+    payload = json.dumps({"periods": PERIODS, "data": data, "generated": generated,
+                          "account": ACCOUNT_ID, "ranges": ranges}, ensure_ascii=False)
+
+    html = HTML_TEMPLATE.replace("/*__DATA__*/", payload)
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"Painel gerado: {out}")
+
+
+HTML_TEMPLATE = r"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel de Performance — Nutri de Consultório</title>
+<style>
+  :root{--bg:#0f1115;--card:#1a1d24;--line:#2a2e38;--txt:#e6e8ec;--mut:#8b909c;
+        --green:#1f9d55;--greenbg:#11341f;--yellow:#b8860b;--yellowbg:#33290a;--red:#c0392b;--redbg:#3a1714;--accent:#4f8cff;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  header{padding:20px 28px 8px}
+  h1{margin:0;font-size:20px}
+  .sub{color:var(--mut);font-size:12px;margin-top:4px}
+  .tabs{display:flex;gap:6px;padding:14px 28px 0;flex-wrap:wrap}
+  .tab{padding:8px 16px;border:1px solid var(--line);border-radius:8px 8px 0 0;background:var(--card);
+       color:var(--mut);cursor:pointer;font-weight:600}
+  .tab.active{color:var(--txt);border-bottom-color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+  .wrap{padding:0 28px 40px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+  .c{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .c .k{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+  .c .v{font-size:22px;font-weight:700;margin-top:4px}
+  .c small{color:var(--mut);font-weight:400;font-size:12px}
+  .filters{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap;align-items:center}
+  .chip{padding:5px 12px;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--mut);cursor:pointer;font-size:12px}
+  .chip.on{color:#fff;border-color:var(--accent);background:#1b2740}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{color:var(--mut);font-size:11px;text-transform:uppercase;cursor:pointer;user-select:none;position:sticky;top:0;background:var(--card)}
+  th:first-child,td:first-child{text-align:left;white-space:normal;max-width:380px}
+  tr:hover td{background:#21252e}
+  .pill{display:inline-block;padding:1px 7px;border-radius:6px;font-size:10px;font-weight:700;margin-right:6px}
+  .WN{background:#13314a;color:#7fb6ff}.MDA{background:#3a2a13;color:#f0b95f}.GCN{background:#2a1340;color:#c08bff}.OUTRO{background:#23262e;color:#9aa}
+  .roas{font-weight:700;padding:2px 8px;border-radius:6px}
+  .good{background:var(--greenbg);color:#56d98a}.mid{background:var(--yellowbg);color:#e7c463}.bad{background:var(--redbg);color:#ff8a7a}.na{color:var(--mut)}
+  .warn{background:#241a12;border:1px solid #4a3318;border-radius:10px;padding:12px 16px;margin:14px 0;color:#f0c98a}
+  .warn b{color:#ffd9a0}
+  .muted{color:var(--mut)}
+  a.adlink{color:var(--txt);text-decoration:none}
+  a.adlink:hover{color:var(--accent);text-decoration:underline}
+  a.adlink .go{color:var(--accent);font-size:11px;margin-left:5px;opacity:.7}
+  .bar{height:6px;background:#23262e;border-radius:4px;overflow:hidden;margin-top:6px}
+  .bar>i{display:block;height:100%;background:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1>📊 Painel de Performance — Criativos</h1>
+  <div class="sub">Meta Ads (spend) × Digital Manager Guru (venda real) cruzados por ad id · Conta 01 - Nutri de Consultório · <b>somente vendas atribuídas ao Meta (utm_source=FB)</b> · <span id="gen"></span></div>
+</header>
+<div class="tabs" id="tabs"></div>
+<div class="wrap" id="wrap"></div>
+<script>
+const DB = /*__DATA__*/;
+let cur = '7d', prod = 'TODOS', sortKey='receita', sortDir=-1;
+const fmt = n => n==null ? '—' : 'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const num = n => n==null ? '—' : n.toLocaleString('pt-BR');
+const roasClass = r => r==null?'na':(r>=2?'good':(r>=1?'mid':'bad'));
+const adLink = id => `https://adsmanager.facebook.com/adsmanager/manage/ads?act=${DB.account}&selected_ad_ids=${id}`;
+
+function tabs(){
+  document.getElementById('tabs').innerHTML = DB.periods.map(([k,l])=>
+    `<div class="tab ${k===cur?'active':''}" onclick="setP('${k}')">${l}</div>`).join('');
+  document.getElementById('gen').textContent = DB.generated ? ('última atualização: '+DB.generated) : '';
+}
+function setP(k){cur=k;render()}
+function setProd(p){prod=p;render()}
+function setSort(k){ if(sortKey===k) sortDir*=-1; else {sortKey=k;sortDir=-1;} render() }
+
+function render(){
+  tabs();
+  const d = DB.data[cur], s = d.summary;
+  let rows = d.rows.filter(r=> prod==='TODOS' || r.product===prod);
+  rows.sort((a,b)=>{const x=a[sortKey],y=b[sortKey];
+    if(x==null)return 1; if(y==null)return -1; return (x>y?1:x<y?-1:0)*sortDir;});
+  const prods = ['TODOS',...Array.from(new Set(d.rows.map(r=>r.product)))];
+  const range = (DB.ranges&&DB.ranges[cur])||'';
+  const periodLine = `<div class="muted" style="margin:14px 0 -2px">📅 Período: <b style="color:var(--txt)">${range}/2026</b> · só vendas atribuídas ao Meta (utm_source=FB)</div>`;
+  const cards = `
+   <div class="cards">
+     <div class="c"><div class="k">Investido (Meta)</div><div class="v">${fmt(s.spend_total)}</div></div>
+     <div class="c"><div class="k">Receita FB (por criativo)</div><div class="v">${fmt(s.rev_rastreada)}</div><small>ROAS geral ${s.roas_geral==null?'—':s.roas_geral+'x'}</small></div>
+     <div class="c"><div class="k">FB sem criativo</div><div class="v">${fmt(s.rev_sem_atrib)}</div><small>${s.vendas_sem_atrib} vendas · UTM/macro quebrada</small></div>
+     <div class="c"><div class="k">Atribuída a criativo</div><div class="v">${s.cobertura}%</div><div class="bar"><i style="width:${s.cobertura}%"></i></div></div>
+   </div>`;
+  const warn = (s.rev_sem_atrib>0 || d.hygiene.length) ? `<div class="warn">
+     ${s.rev_sem_atrib>0?`<b>🔴 ${fmt(s.rev_sem_atrib)} de receita FB sem criativo</b> (${s.vendas_sem_atrib} vendas) — UTM/macro <code>{{ad.id}}</code> não renderizada ou colchetes/pipe quebrando o encoding. Corrigir o parâmetro de URL recupera essa atribuição.`:''}
+   </div>`:'';
+  const filters = `<div class="filters">${prods.map(p=>`<span class="chip ${p===prod?'on':''}" onclick="setProd('${p}')">${p}</span>`).join('')}
+     <span class="muted" style="margin-left:auto">${rows.length} criativos · clique no cabeçalho pra ordenar</span></div>`;
+  const th = (k,l)=>`<th onclick="setSort('${k}')">${l}${sortKey===k?(sortDir<0?' ▼':' ▲'):''}</th>`;
+  const head = `<tr>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('ctr','CTR')}${th('impressions','Impr.')}</tr>`;
+  const body = rows.map(r=>`<tr>
+     <td><span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ abrir</span></a></td>
+     <td>${fmt(r.spend)}</td><td>${fmt(r.receita)}</td><td>${num(r.vendas)}</td>
+     <td><span class="roas ${roasClass(r.roas)}">${r.roas==null?'—':r.roas+'x'}</span></td>
+     <td>${fmt(r.cac)}</td><td>${r.ctr==null?'—':r.ctr.toLocaleString('pt-BR')+'%'}</td><td>${num(r.impressions)}</td>
+   </tr>`).join('');
+  document.getElementById('wrap').innerHTML = periodLine + cards + warn + filters + `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
+render();
+</script>
+</body>
+</html>"""
+
+
+if __name__ == "__main__":
+    main()
