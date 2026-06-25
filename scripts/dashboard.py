@@ -98,6 +98,7 @@ def build_period(data_dir, period):
             unattributed_v += v
 
     rows, seen = [], set()
+    rate = lambda a, b: round(100 * a / b, 1) if b else None
     for ad in meta:
         aid = str(ad.get("id"))
         seen.add(aid)
@@ -106,17 +107,31 @@ def build_period(data_dir, period):
         v = vendas_by_id.get(aid, 0)
         roas = (rev / spend) if spend > 0 else None
         cac = (spend / v) if v > 0 else None
+        impressions = int(ad.get("impressions", 0) or 0)
+        plays = int(ad.get("video_plays", 0) or 0)
+        v3 = int(ad.get("video_3s", 0) or 0)
+        p75 = int(ad.get("video_p75", 0) or 0)
+        link_clicks = int(ad.get("link_clicks", 0) or 0)
         rows.append({
             "id": aid,
             "name": ad.get("name", ""),
             "product": product_of(ad.get("name", "")),
             "spend": round(spend, 2),
-            "impressions": int(str(ad.get("impressions", "0")).replace(".", "").replace(" ", "") or 0),
-            "ctr": pct(ad.get("ctr")),
+            "impressions": impressions,
+            "clicks": int(ad.get("clicks", 0) or 0),
+            "ctr": round(float(ad.get("ctr", 0) or 0), 2),
+            "cpc": round(float(ad.get("cpc", 0) or 0), 2),
+            "cpm": round(float(ad.get("cpm", 0) or 0), 2),
             "vendas": v,
             "receita": round(rev, 2),
             "roas": round(roas, 2) if roas is not None else None,
             "cac": round(cac, 2) if cac is not None else None,
+            "preview": ad.get("preview_link", ""),
+            "play_rate": rate(plays, impressions),
+            "ret_hook": rate(v3, plays),
+            "ret_body": rate(p75, plays),
+            "conv_body": rate(v, p75),
+            "cta": rate(link_clicks, p75),
         })
 
     # Vendas com ad id que não estão no top de spend do Meta (spend desconhecido)
@@ -225,6 +240,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   a.adlink .go{color:var(--accent);font-size:11px;margin-left:5px;opacity:.7}
   .bar{height:6px;background:#23262e;border-radius:4px;overflow:hidden;margin-top:6px}
   .bar>i{display:block;height:100%;background:var(--accent)}
+  .tscroll{overflow-x:auto;border-radius:12px}
+  .tscroll table{min-width:1280px}
 </style>
 </head>
 <body>
@@ -241,6 +258,7 @@ const fmt = n => n==null ? '—' : 'R$ '+n.toLocaleString('pt-BR',{minimumFracti
 const num = n => n==null ? '—' : n.toLocaleString('pt-BR');
 const roasClass = r => r==null?'na':(r>=2?'good':(r>=1?'mid':'bad'));
 const adLink = id => `https://adsmanager.facebook.com/adsmanager/manage/ads?act=${DB.account}&selected_ad_ids=${id}`;
+const rate = n => n==null ? '—' : n.toLocaleString('pt-BR',{maximumFractionDigits:2})+'%';
 
 function tabs(){
   document.getElementById('tabs').innerHTML = DB.periods.map(([k,l])=>
@@ -273,14 +291,15 @@ function render(){
   const filters = `<div class="filters">${prods.map(p=>`<span class="chip ${p===prod?'on':''}" onclick="setProd('${p}')">${p}</span>`).join('')}
      <span class="muted" style="margin-left:auto">${rows.length} criativos · clique no cabeçalho pra ordenar</span></div>`;
   const th = (k,l)=>`<th onclick="setSort('${k}')">${l}${sortKey===k?(sortDir<0?' ▼':' ▲'):''}</th>`;
-  const head = `<tr>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('ctr','CTR')}${th('impressions','Impr.')}</tr>`;
+  const head = `<tr>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('clicks','Cliques')}${th('ctr','CTR')}${th('cpc','CPC')}${th('cpm','CPM')}${th('impressions','Impr.')}${th('play_rate','Play%')}${th('ret_hook','Ret.Hook')}${th('ret_body','Ret.Body')}${th('conv_body','Conv.Body')}${th('cta','CTA')}</tr>`;
   const body = rows.map(r=>`<tr>
-     <td><span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ abrir</span></a></td>
+     <td><span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ver anúncio</span></a></td>
      <td>${fmt(r.spend)}</td><td>${fmt(r.receita)}</td><td>${num(r.vendas)}</td>
      <td><span class="roas ${roasClass(r.roas)}">${r.roas==null?'—':r.roas+'x'}</span></td>
-     <td>${fmt(r.cac)}</td><td>${r.ctr==null?'—':r.ctr.toLocaleString('pt-BR')+'%'}</td><td>${num(r.impressions)}</td>
+     <td>${fmt(r.cac)}</td><td>${num(r.clicks)}</td><td>${rate(r.ctr)}</td><td>${fmt(r.cpc)}</td><td>${fmt(r.cpm)}</td><td>${num(r.impressions)}</td>
+     <td>${rate(r.play_rate)}</td><td>${rate(r.ret_hook)}</td><td>${rate(r.ret_body)}</td><td>${rate(r.conv_body)}</td><td>${rate(r.cta)}</td>
    </tr>`).join('');
-  document.getElementById('wrap').innerHTML = periodLine + cards + warn + filters + `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+  document.getElementById('wrap').innerHTML = periodLine + cards + warn + filters + `<div class="tscroll"><table><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
 }
 render();
 </script>
