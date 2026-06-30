@@ -128,6 +128,7 @@ def build_period(data_dir, period):
             "roas": round(roas, 2) if roas is not None else None,
             "cac": round(cac, 2) if cac is not None else None,
             "preview": ad.get("preview_link", ""),
+            "instagram": ad.get("instagram_link", ""),
             "play_rate": rate(plays, impressions),
             "ret_hook": rate(v3, plays),
             "ret_body": rate(p75, plays),
@@ -319,7 +320,7 @@ function render(){
   const head = `<tr><th class="idx">#</th>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('clicks','Cliques')}${th('ctr','CTR')}${th('cpc','CPC')}${th('cpm','CPM')}${th('impressions','Impr.')}${th('play_rate','Play%')}${th('ret_hook','Ret.Hook')}${th('ret_body','Ret.Body')}${th('conv_body','Conv.Body')}${th('cta','CTA')}</tr>`;
   const body = rows.map((r,i)=>{const t=tier(r);return `<tr class="${t}">
      <td class="idx">${i+1}</td>
-     <td>${badgeOf(t)}<span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ver anúncio</span></a></td>
+     <td>${badgeOf(t)}<span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${r.instagram||r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ${r.instagram?'ver no Instagram':'ver anúncio'}</span></a></td>
      <td>${fmt(r.spend)}</td><td>${fmt(r.receita)}</td><td>${num(r.vendas)}</td>
      <td><span class="roas ${roasClass(r.roas)}">${r.roas==null?'—':r.roas+'x'}</span></td>
      <td>${fmt(r.cac)}</td><td>${num(r.clicks)}</td><td>${rate(r.ctr)}</td><td>${fmt(r.cpc)}</td><td>${fmt(r.cpm)}</td><td>${num(r.impressions)}</td>

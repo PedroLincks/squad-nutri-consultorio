@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
 """Helper da Graph API (Marketing API) do Meta. Chamado por scripts/meta.sh.
 
-Puxa insights no nivel de ANUNCIO (level=ad) por periodo + o link de preview de
-cada anuncio, e normaliza para o formato que o painel (scripts/dashboard.py) consome.
+Puxa insights no nivel de ANUNCIO (level=ad) por periodo + os links de cada
+anuncio (preview do Meta e permalink do post no Instagram), e normaliza para o
+formato que o painel (scripts/dashboard.py) consome.
 
 Shape de cada anuncio:
     {id, name, amount_spent, ctr, impressions, clicks, link_clicks, cpc, cpm,
-     video_plays, video_3s, video_p75, preview_link}
+     video_plays, video_3s, video_p75, preview_link, instagram_link}
 
-  id          = ad_id do Meta (chave de cruzamento com a venda real da Guru:
-                os digitos apos o '|' no utm_content)
-  video_plays = video_play_actions (reproducoes de video)
-  video_3s    = action_type "video_view" (reproducoes de 3s)
-  video_p75   = video_p75_watched_actions (assistiu 75%)
-  preview_link= preview_shareable_link (abre o anuncio renderizado, sem login)
+  id            = ad_id do Meta (chave de cruzamento com a venda real da Guru:
+                  os digitos apos o '|' no utm_content)
+  video_plays   = video_play_actions (reproducoes de video)
+  video_3s      = action_type "video_view" (reproducoes de 3s)
+  video_p75     = video_p75_watched_actions (assistiu 75%)
+  preview_link  = preview_shareable_link (abre o anuncio renderizado, sem login)
+  instagram_link= instagram_permalink_url do creative + "#advertiser" (abre o
+                  post do anuncio no Instagram). Vazio se o anuncio nao tem post
+                  no Instagram (ex: roda so no Facebook).
 
 As metricas derivadas (Play Rate, Retencao do Hook/Body, Conversao do Body,
 Medidor de CTA) sao calculadas no dashboard.py, que tambem tem a venda da Guru.
@@ -84,12 +88,24 @@ def fetch_insights(preset):
     })
 
 
-def fetch_preview_links():
-    """Mapa {ad_id: preview_shareable_link} para todos os anuncios da conta."""
+def fetch_ad_links():
+    """Mapa {ad_id: {"preview": preview_shareable_link, "instagram": permalink}}.
+
+    instagram_permalink_url vem do creative e abre o post do anuncio no Instagram
+    (link tipo https://www.instagram.com/p/XXX/). Nem todo anuncio tem (ex: so no FB).
+    """
     ads = _paginate(f"{ACCOUNT}/ads", {
-        "fields": "id,preview_shareable_link", "limit": 200,
+        "fields": "id,preview_shareable_link,creative{instagram_permalink_url}",
+        "limit": 200,
     })
-    return {str(a["id"]): a.get("preview_shareable_link", "") for a in ads}
+    out = {}
+    for a in ads:
+        cr = a.get("creative") or {}
+        out[str(a["id"])] = {
+            "preview": a.get("preview_shareable_link", "") or "",
+            "instagram": cr.get("instagram_permalink_url", "") or "",
+        }
+    return out
 
 
 def _first(v):
@@ -106,10 +122,20 @@ def _action(actions, action_type):
     return 0.0
 
 
-def normalize(rows, previews):
+def _instagram_link(permalink):
+    """Permalink do Instagram -> link da visao do anunciante (.../p/CODE/#advertiser)."""
+    if not permalink:
+        return ""
+    if "#" in permalink:
+        return permalink
+    return permalink.rstrip("/") + "/#advertiser"
+
+
+def normalize(rows, links):
     out = []
     for r in rows:
         aid = str(r.get("ad_id", ""))
+        lk = links.get(aid, {})
         out.append({
             "id": aid,
             "name": r.get("ad_name", ""),
@@ -123,7 +149,8 @@ def normalize(rows, previews):
             "video_plays": int(_first(r.get("video_play_actions"))),
             "video_3s": int(_action(r.get("actions"), "video_view")),
             "video_p75": int(_first(r.get("video_p75_watched_actions"))),
-            "preview_link": previews.get(aid, ""),
+            "preview_link": lk.get("preview", ""),
+            "instagram_link": _instagram_link(lk.get("instagram", "")),
         })
     return out
 
@@ -146,17 +173,17 @@ def main():
         if preset not in PRESETS:
             print(f"periodo invalido: {preset} (use: {', '.join(PRESETS)})", file=sys.stderr)
             sys.exit(1)
-        previews = fetch_preview_links()
-        print(json.dumps(normalize(fetch_insights(PRESETS[preset]), previews),
+        links = fetch_ad_links()
+        print(json.dumps(normalize(fetch_insights(PRESETS[preset]), links),
                          indent=2, ensure_ascii=False))
         return
 
     if cmd == "build":
         data_dir = sys.argv[2] if len(sys.argv) > 2 else "."
         os.makedirs(data_dir, exist_ok=True)
-        previews = fetch_preview_links()  # 1x para todos os periodos
+        links = fetch_ad_links()  # 1x para todos os periodos
         for period, preset in PRESETS.items():
-            rows = normalize(fetch_insights(preset), previews)
+            rows = normalize(fetch_insights(preset), links)
             path = os.path.join(data_dir, f"meta_{period}.json")
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(rows, f, ensure_ascii=False, indent=2)
