@@ -25,6 +25,7 @@ PERIODS = [
     ("7d", "7 dias"),
     ("14d", "14 dias"),
     ("mes", "Este mês"),
+    ("mespassado", "Mês passado"),
 ]
 
 # Conta de anuncios (Webnutri) — usada para montar o link do Gerenciador de Anuncios
@@ -165,12 +166,15 @@ def date_ranges(today):
     """Intervalo de datas (label) de cada periodo, relativo a `today` (date)."""
     f = lambda d: d.strftime("%d/%m")
     td = datetime.timedelta
+    last_prev = today.replace(day=1) - td(days=1)   # último dia do mês passado
+    first_prev = last_prev.replace(day=1)           # primeiro dia do mês passado
     return {
         "hoje": f(today),
         "ontem": f(today - td(days=1)),
         "7d": f(today - td(days=6)) + "–" + f(today),
         "14d": f(today - td(days=13)) + "–" + f(today),
         "mes": f(today.replace(day=1)) + "–" + f(today),
+        "mespassado": f(first_prev) + "–" + f(last_prev),
     }
 
 
@@ -227,11 +231,20 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
   th{color:var(--mut);font-size:11px;text-transform:uppercase;cursor:pointer;user-select:none;position:sticky;top:0;background:var(--card)}
   th:first-child,td:first-child{text-align:left;white-space:normal;max-width:380px}
-  tr:hover td{background:#21252e}
+  th.idx,td.idx{width:34px;max-width:34px;text-align:right;color:var(--mut);padding-right:6px;cursor:default}
+  td.idx{font-variant-numeric:tabular-nums}
   .pill{display:inline-block;padding:1px 7px;border-radius:6px;font-size:10px;font-weight:700;margin-right:6px}
   .WN{background:#13314a;color:#7fb6ff}.MDA{background:#3a2a13;color:#f0b95f}.GCN{background:#2a1340;color:#c08bff}.OUTRO{background:#23262e;color:#9aa}
   .roas{font-weight:700;padding:2px 8px;border-radius:6px}
   .good{background:var(--greenbg);color:#56d98a}.mid{background:var(--yellowbg);color:#e7c463}.bad{background:var(--redbg);color:#ff8a7a}.na{color:var(--mut)}
+  tr.win td{background:#10271a}
+  tr.win td:first-child{box-shadow:inset 3px 0 0 var(--green)}
+  tr.lose td{background:#2a1411}
+  tr.lose td:first-child{box-shadow:inset 3px 0 0 var(--red)}
+  tr:hover td{background:#21252e}
+  .badge{font-size:13px;margin-right:5px}
+  .legend{color:var(--mut);font-size:11px;margin-left:14px}
+  .legend b{color:var(--txt)}
   .warn{background:#241a12;border:1px solid #4a3318;border-radius:10px;padding:12px 16px;margin:14px 0;color:#f0c98a}
   .warn b{color:#ffd9a0}
   .muted{color:var(--mut)}
@@ -257,6 +270,11 @@ let cur = '7d', prod = 'TODOS', sortKey='receita', sortDir=-1;
 const fmt = n => n==null ? '—' : 'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
 const num = n => n==null ? '—' : n.toLocaleString('pt-BR');
 const roasClass = r => r==null?'na':(r>=2?'good':(r>=1?'mid':'bad'));
+// Gasto mínimo (R$) p/ um criativo ser classificado como winner/loser. Abaixo disso = pouco dado, fica neutro.
+const SPEND_MIN = 50;
+// 🏆 escalar (ROAS>=2) · ⚠️ matar (ROAS<1, gastou e não retornou) · '' = neutro
+const tier = r => (r.spend < SPEND_MIN || r.roas==null) ? '' : (r.roas>=2 ? 'win' : (r.roas<1 ? 'lose' : ''));
+const badgeOf = t => t==='win' ? '<span class="badge">🏆</span>' : (t==='lose' ? '<span class="badge">⚠️</span>' : '');
 const adLink = id => `https://adsmanager.facebook.com/adsmanager/manage/ads?act=${DB.account}&selected_ad_ids=${id}`;
 const rate = n => n==null ? '—' : n.toLocaleString('pt-BR',{maximumFractionDigits:2})+'%';
 
@@ -272,33 +290,41 @@ function setSort(k){ if(sortKey===k) sortDir*=-1; else {sortKey=k;sortDir=-1;} r
 function render(){
   tabs();
   const d = DB.data[cur], s = d.summary;
-  let rows = d.rows.filter(r=> prod==='TODOS' || r.product===prod);
+  const isAll = prod==='TODOS';
+  let rows = d.rows.filter(r=> isAll || r.product===prod);
   rows.sort((a,b)=>{const x=a[sortKey],y=b[sortKey];
     if(x==null)return 1; if(y==null)return -1; return (x>y?1:x<y?-1:0)*sortDir;});
   const prods = ['TODOS',...Array.from(new Set(d.rows.map(r=>r.product)))];
   const range = (DB.ranges&&DB.ranges[cur])||'';
-  const periodLine = `<div class="muted" style="margin:14px 0 -2px">📅 Período: <b style="color:var(--txt)">${range}/2026</b> · só vendas atribuídas ao Meta (utm_source=FB)</div>`;
+  // Agregados recalculados sobre as linhas filtradas (refletem o produto selecionado)
+  const agg = rows.reduce((a,r)=>{a.spend+=r.spend||0;a.rev+=r.receita||0;a.vendas+=r.vendas||0;return a;},{spend:0,rev:0,vendas:0});
+  const aRoas = agg.spend>0 ? agg.rev/agg.spend : null;
+  const aCac = agg.vendas>0 ? agg.spend/agg.vendas : null;
+  const periodLine = `<div class="muted" style="margin:14px 0 -2px">📅 Período: <b style="color:var(--txt)">${range}/2026</b> · só vendas atribuídas ao Meta (utm_source=FB)${isAll?'':` · filtro: <b style="color:var(--txt)">${prod}</b>`}</div>`;
   const cards = `
    <div class="cards">
-     <div class="c"><div class="k">Investido (Meta)</div><div class="v">${fmt(s.spend_total)}</div></div>
-     <div class="c"><div class="k">Receita FB (por criativo)</div><div class="v">${fmt(s.rev_rastreada)}</div><small>ROAS geral ${s.roas_geral==null?'—':s.roas_geral+'x'}</small></div>
-     <div class="c"><div class="k">FB sem criativo</div><div class="v">${fmt(s.rev_sem_atrib)}</div><small>${s.vendas_sem_atrib} vendas · UTM/macro quebrada</small></div>
-     <div class="c"><div class="k">Atribuída a criativo</div><div class="v">${s.cobertura}%</div><div class="bar"><i style="width:${s.cobertura}%"></i></div></div>
+     <div class="c"><div class="k">Investido (Meta)</div><div class="v">${fmt(agg.spend)}</div></div>
+     <div class="c"><div class="k">Receita FB${isAll?' (por criativo)':' · '+prod}</div><div class="v">${fmt(agg.rev)}</div><small>ROAS ${aRoas==null?'—':aRoas.toFixed(2)+'x'}</small></div>
+     <div class="c"><div class="k">Vendas</div><div class="v">${num(agg.vendas)}</div><small>CAC ${fmt(aCac)}</small></div>
+     ${isAll?`<div class="c"><div class="k">FB sem criativo</div><div class="v">${fmt(s.rev_sem_atrib)}</div><small>${s.vendas_sem_atrib} vendas · UTM/macro quebrada</small></div>
+     <div class="c"><div class="k">Atribuída a criativo</div><div class="v">${s.cobertura}%</div><div class="bar"><i style="width:${s.cobertura}%"></i></div></div>`:''}
    </div>`;
-  const warn = (s.rev_sem_atrib>0 || d.hygiene.length) ? `<div class="warn">
+  const warn = (isAll && (s.rev_sem_atrib>0 || d.hygiene.length)) ? `<div class="warn">
      ${s.rev_sem_atrib>0?`<b>🔴 ${fmt(s.rev_sem_atrib)} de receita FB sem criativo</b> (${s.vendas_sem_atrib} vendas) — UTM/macro <code>{{ad.id}}</code> não renderizada ou colchetes/pipe quebrando o encoding. Corrigir o parâmetro de URL recupera essa atribuição.`:''}
    </div>`:'';
   const filters = `<div class="filters">${prods.map(p=>`<span class="chip ${p===prod?'on':''}" onclick="setProd('${p}')">${p}</span>`).join('')}
+     <span class="legend">🏆 <b>ROAS ≥ 2</b> (escalar) · ⚠️ <b>ROAS < 1</b> (matar) · gasto ≥ R$ ${SPEND_MIN}</span>
      <span class="muted" style="margin-left:auto">${rows.length} criativos · clique no cabeçalho pra ordenar</span></div>`;
   const th = (k,l)=>`<th onclick="setSort('${k}')">${l}${sortKey===k?(sortDir<0?' ▼':' ▲'):''}</th>`;
-  const head = `<tr>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('clicks','Cliques')}${th('ctr','CTR')}${th('cpc','CPC')}${th('cpm','CPM')}${th('impressions','Impr.')}${th('play_rate','Play%')}${th('ret_hook','Ret.Hook')}${th('ret_body','Ret.Body')}${th('conv_body','Conv.Body')}${th('cta','CTA')}</tr>`;
-  const body = rows.map(r=>`<tr>
-     <td><span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ver anúncio</span></a></td>
+  const head = `<tr><th class="idx">#</th>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('clicks','Cliques')}${th('ctr','CTR')}${th('cpc','CPC')}${th('cpm','CPM')}${th('impressions','Impr.')}${th('play_rate','Play%')}${th('ret_hook','Ret.Hook')}${th('ret_body','Ret.Body')}${th('conv_body','Conv.Body')}${th('cta','CTA')}</tr>`;
+  const body = rows.map((r,i)=>{const t=tier(r);return `<tr class="${t}">
+     <td class="idx">${i+1}</td>
+     <td>${badgeOf(t)}<span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ver anúncio</span></a></td>
      <td>${fmt(r.spend)}</td><td>${fmt(r.receita)}</td><td>${num(r.vendas)}</td>
      <td><span class="roas ${roasClass(r.roas)}">${r.roas==null?'—':r.roas+'x'}</span></td>
      <td>${fmt(r.cac)}</td><td>${num(r.clicks)}</td><td>${rate(r.ctr)}</td><td>${fmt(r.cpc)}</td><td>${fmt(r.cpm)}</td><td>${num(r.impressions)}</td>
      <td>${rate(r.play_rate)}</td><td>${rate(r.ret_hook)}</td><td>${rate(r.ret_body)}</td><td>${rate(r.conv_body)}</td><td>${rate(r.cta)}</td>
-   </tr>`).join('');
+   </tr>`}).join('');
   document.getElementById('wrap').innerHTML = periodLine + cards + warn + filters + `<div class="tscroll"><table><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
 }
 render();

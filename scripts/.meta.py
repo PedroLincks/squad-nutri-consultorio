@@ -40,6 +40,7 @@ PRESETS = {
     "7d": "last_7d",
     "14d": "last_14d",
     "mes": "this_month",
+    "mespassado": "last_month",
 }
 
 FIELDS = ",".join([

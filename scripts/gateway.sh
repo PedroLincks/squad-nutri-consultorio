@@ -63,13 +63,17 @@ case "$cmd" in
     mkdir -p "$DATA_DIR"
     _mes_ini="$(_dt 1d 'first day of this month' 2>/dev/null || date +%Y-%m-01)"
     _ontem="$(_dt -1d '1 day ago')"
+    # Mês passado: primeiro e último dia (macOS -v encadeado; fallback GNU -d)
+    _mp_ini="$(date -v1d -v-1m +%F 2>/dev/null || date -d 'first day of last month' +%F)"
+    _mp_fim="$(date -v1d -v-1d +%F 2>/dev/null || date -d 'last day of last month' +%F)"
     # periodo:inicio:fim
     for spec in \
       "hoje:${_today}:${_today}" \
       "ontem:${_ontem}:${_ontem}" \
       "7d:$(_dt -6d '6 days ago'):${_today}" \
       "14d:$(_dt -13d '13 days ago'):${_today}" \
-      "mes:${_mes_ini}:${_today}"; do
+      "mes:${_mes_ini}:${_today}" \
+      "mespassado:${_mp_ini}:${_mp_fim}"; do
       p="${spec%%:*}"; rest="${spec#*:}"; ini="${rest%%:*}"; fim="${rest##*:}"
       out="${DATA_DIR}/guru_${p}.json"
       _py revenue-by-utm "$ini" "$fim" > "$out"
