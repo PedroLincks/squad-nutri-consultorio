@@ -64,8 +64,8 @@ case "$cmd" in
     _mes_ini="$(_dt 1d 'first day of this month' 2>/dev/null || date +%Y-%m-01)"
     _ontem="$(_dt -1d '1 day ago')"
     # Mês passado: primeiro e último dia (macOS -v encadeado; fallback GNU -d)
-    _mp_ini="$(date -v1d -v-1m +%F 2>/dev/null || date -d 'first day of last month' +%F)"
-    _mp_fim="$(date -v1d -v-1d +%F 2>/dev/null || date -d 'last day of last month' +%F)"
+    _mp_ini="$(date -v1d -v-1m +%F 2>/dev/null || date -d "$(date +%Y-%m-01) -1 month" +%F)"
+    _mp_fim="$(date -v1d -v-1d +%F 2>/dev/null || date -d "$(date +%Y-%m-01) -1 day" +%F)"
     # periodo:inicio:fim
     for spec in \
       "hoje:${_today}:${_today}" \
