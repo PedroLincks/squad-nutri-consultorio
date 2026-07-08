@@ -54,18 +54,47 @@ FIELDS = ",".join([
 ])
 
 
+# Codigos de erro do Meta que significam "desacelere" (rate limit) — vale a pena
+# tentar de novo com backoff em vez de morrer. 80004 = "too many calls to this
+# ad-account"; 4/17/32/613 = throttling geral por app/usuario.
+_RATE_LIMIT_CODES = {4, 17, 32, 613, 80000, 80003, 80004}
+
+
+def _open(req):
+    """Abre a request com retry exponencial em rate limit do Meta."""
+    delay = 5
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "replace")
+            code = 0
+            try:
+                code = int((json.loads(body).get("error") or {}).get("code", 0))
+            except Exception:
+                pass
+            if (code in _RATE_LIMIT_CODES or e.code == 429) and attempt < 3:
+                print(f"  rate limit do Meta (code {code}); aguardando {delay}s "
+                      f"e tentando de novo...", file=sys.stderr)
+                time.sleep(delay)
+                delay *= 2
+                continue
+            # Anexa o corpo da resposta pra o erro ser diagnosticavel no log do CI.
+            raise urllib.error.HTTPError(e.url, e.code, f"{e.reason} — {body[:300]}",
+                                         e.headers, None)
+
+
 def _get(path, params):
     params = {**params, "access_token": TOKEN}
     url = f"{BASE}/{path}?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.loads(r.read().decode("utf-8"))
+    return _open(req)
 
 
 def _raw(full_url):
     req = urllib.request.Request(full_url, headers={"Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.loads(r.read().decode("utf-8"))
+    return _open(req)
 
 
 def _paginate(path, params):
@@ -88,23 +117,38 @@ def fetch_insights(preset):
     })
 
 
-def fetch_ad_links():
+def fetch_ad_links(ad_ids):
     """Mapa {ad_id: {"preview": preview_shareable_link, "instagram": permalink}}.
+
+    Busca SOMENTE os ad_ids que aparecem nos insights (anuncios com dado no
+    periodo), em lotes via ?ids= — em vez de paginar a conta inteira (600+
+    anuncios). preview_shareable_link e um campo caro no rate limit da conta;
+    paginar tudo estourava o limite 80004 e derrubava o pipeline.
 
     instagram_permalink_url vem do creative e abre o post do anuncio no Instagram
     (link tipo https://www.instagram.com/p/XXX/). Nem todo anuncio tem (ex: so no FB).
+
+    Nao-fatal: os links sao enriquecimento. Se um lote falhar (rate limit apos os
+    retries, etc.), seguimos sem os links daquele lote — o painel atualiza igual.
     """
-    ads = _paginate(f"{ACCOUNT}/ads", {
-        "fields": "id,preview_shareable_link,creative{instagram_permalink_url}",
-        "limit": 200,
-    })
+    ids = [i for i in {str(a) for a in ad_ids} if i]
+    fields = "preview_shareable_link,creative{instagram_permalink_url}"
     out = {}
-    for a in ads:
-        cr = a.get("creative") or {}
-        out[str(a["id"])] = {
-            "preview": a.get("preview_shareable_link", "") or "",
-            "instagram": cr.get("instagram_permalink_url", "") or "",
-        }
+    for i in range(0, len(ids), 50):  # ?ids= aceita ate 50 por chamada
+        batch = ids[i:i + 50]
+        try:
+            data = _get("", {"ids": ",".join(batch), "fields": fields})
+        except Exception as e:
+            print(f"  aviso: links do lote {i // 50 + 1} falharam ({e}); "
+                  f"seguindo sem eles", file=sys.stderr)
+            continue
+        for aid, a in (data.items() if isinstance(data, dict) else []):
+            cr = (a or {}).get("creative") or {}
+            out[str(aid)] = {
+                "preview": (a or {}).get("preview_shareable_link", "") or "",
+                "instagram": cr.get("instagram_permalink_url", "") or "",
+            }
+        time.sleep(0.3)
     return out
 
 
@@ -173,21 +217,28 @@ def main():
         if preset not in PRESETS:
             print(f"periodo invalido: {preset} (use: {', '.join(PRESETS)})", file=sys.stderr)
             sys.exit(1)
-        links = fetch_ad_links()
-        print(json.dumps(normalize(fetch_insights(PRESETS[preset]), links),
+        rows = fetch_insights(PRESETS[preset])
+        links = fetch_ad_links({r.get("ad_id", "") for r in rows})
+        print(json.dumps(normalize(rows, links),
                          indent=2, ensure_ascii=False))
         return
 
     if cmd == "build":
         data_dir = sys.argv[2] if len(sys.argv) > 2 else "."
         os.makedirs(data_dir, exist_ok=True)
-        links = fetch_ad_links()  # 1x para todos os periodos
-        for period, preset in PRESETS.items():
-            rows = normalize(fetch_insights(preset), links)
+        # Puxa os insights de todos os periodos primeiro, junta os ad_ids com dado
+        # e busca os links so desses (em lotes) — 1x para todos os periodos.
+        insights = {period: fetch_insights(preset)
+                    for period, preset in PRESETS.items()}
+        ad_ids = {str(r.get("ad_id", ""))
+                  for rows in insights.values() for r in rows}
+        links = fetch_ad_links(ad_ids)
+        for period, rows in insights.items():
+            norm = normalize(rows, links)
             path = os.path.join(data_dir, f"meta_{period}.json")
             with open(path, "w", encoding="utf-8") as f:
-                json.dump(rows, f, ensure_ascii=False, indent=2)
-            print(f"  {period:5s} -> {path} ({len(rows)} anuncios)")
+                json.dump(norm, f, ensure_ascii=False, indent=2)
+            print(f"  {period:5s} -> {path} ({len(norm)} anuncios)")
         return
 
     print("comando desconhecido:", cmd, file=sys.stderr)
