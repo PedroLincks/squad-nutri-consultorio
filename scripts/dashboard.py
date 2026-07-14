@@ -228,6 +228,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .filters{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap;align-items:center}
   .chip{padding:5px 12px;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--mut);cursor:pointer;font-size:12px}
   .chip.on{color:#fff;border-color:var(--accent);background:#1b2740}
+  .search{position:relative;display:inline-flex;align-items:center}
+  .search input{padding:6px 28px 6px 30px;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--txt);font-size:12px;width:220px;outline:none}
+  .search input:focus{border-color:var(--accent);background:#161a22}
+  .search input::placeholder{color:var(--mut)}
+  .search .ico{position:absolute;left:11px;color:var(--mut);font-size:12px;pointer-events:none}
+  .search .clr{position:absolute;right:9px;color:var(--mut);cursor:pointer;font-size:14px;line-height:1;padding:0 2px}
+  .search .clr:hover{color:var(--txt)}
   table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
   th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
   th{color:var(--mut);font-size:11px;text-transform:uppercase;cursor:pointer;user-select:none;position:sticky;top:0;background:var(--card)}
@@ -267,7 +274,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <div class="wrap" id="wrap"></div>
 <script>
 const DB = /*__DATA__*/;
-let cur = '7d', prod = 'TODOS', sortKey='receita', sortDir=-1;
+let cur = '7d', prod = 'TODOS', sortKey='receita', sortDir=-1, search='', searchCaret=null;
 const fmt = n => n==null ? '—' : 'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
 const num = n => n==null ? '—' : n.toLocaleString('pt-BR');
 const roasClass = r => r==null?'na':(r>=2?'good':(r>=1?'mid':'bad'));
@@ -287,12 +294,16 @@ function tabs(){
 function setP(k){cur=k;render()}
 function setProd(p){prod=p;render()}
 function setSort(k){ if(sortKey===k) sortDir*=-1; else {sortKey=k;sortDir=-1;} render() }
+function setSearch(v,caret){ search=v; searchCaret=(caret==null?v.length:caret); render() }
+function clearSearch(){ search=''; searchCaret=null; render() }
 
 function render(){
   tabs();
   const d = DB.data[cur], s = d.summary;
   const isAll = prod==='TODOS';
-  let rows = d.rows.filter(r=> isAll || r.product===prod);
+  const q = search.trim().toLowerCase();
+  const searching = q.length>0;
+  let rows = d.rows.filter(r=> (isAll || r.product===prod) && (!searching || (r.name||'').toLowerCase().includes(q)));
   rows.sort((a,b)=>{const x=a[sortKey],y=b[sortKey];
     if(x==null)return 1; if(y==null)return -1; return (x>y?1:x<y?-1:0)*sortDir;});
   const prods = ['TODOS',...Array.from(new Set(d.rows.map(r=>r.product)))];
@@ -301,19 +312,20 @@ function render(){
   const agg = rows.reduce((a,r)=>{a.spend+=r.spend||0;a.rev+=r.receita||0;a.vendas+=r.vendas||0;return a;},{spend:0,rev:0,vendas:0});
   const aRoas = agg.spend>0 ? agg.rev/agg.spend : null;
   const aCac = agg.vendas>0 ? agg.spend/agg.vendas : null;
-  const periodLine = `<div class="muted" style="margin:14px 0 -2px">📅 Período: <b style="color:var(--txt)">${range}/2026</b> · só vendas atribuídas ao Meta (utm_source=FB)${isAll?'':` · filtro: <b style="color:var(--txt)">${prod}</b>`}</div>`;
+  const periodLine = `<div class="muted" style="margin:14px 0 -2px">📅 Período: <b style="color:var(--txt)">${range}/2026</b> · só vendas atribuídas ao Meta (utm_source=FB)${isAll?'':` · filtro: <b style="color:var(--txt)">${prod}</b>`}${searching?` · busca: <b style="color:var(--txt)">"${search}"</b>`:''}</div>`;
   const cards = `
    <div class="cards">
      <div class="c"><div class="k">Investido (Meta)</div><div class="v">${fmt(agg.spend)}</div></div>
      <div class="c"><div class="k">Receita FB${isAll?' (por criativo)':' · '+prod}</div><div class="v">${fmt(agg.rev)}</div><small>ROAS ${aRoas==null?'—':aRoas.toFixed(2)+'x'}</small></div>
      <div class="c"><div class="k">Vendas</div><div class="v">${num(agg.vendas)}</div><small>CAC ${fmt(aCac)}</small></div>
-     ${isAll?`<div class="c"><div class="k">FB sem criativo</div><div class="v">${fmt(s.rev_sem_atrib)}</div><small>${s.vendas_sem_atrib} vendas · UTM/macro quebrada</small></div>
+     ${isAll&&!searching?`<div class="c"><div class="k">FB sem criativo</div><div class="v">${fmt(s.rev_sem_atrib)}</div><small>${s.vendas_sem_atrib} vendas · UTM/macro quebrada</small></div>
      <div class="c"><div class="k">Atribuída a criativo</div><div class="v">${s.cobertura}%</div><div class="bar"><i style="width:${s.cobertura}%"></i></div></div>`:''}
    </div>`;
-  const warn = (isAll && (s.rev_sem_atrib>0 || d.hygiene.length)) ? `<div class="warn">
+  const warn = (isAll && !searching && (s.rev_sem_atrib>0 || d.hygiene.length)) ? `<div class="warn">
      ${s.rev_sem_atrib>0?`<b>🔴 ${fmt(s.rev_sem_atrib)} de receita FB sem criativo</b> (${s.vendas_sem_atrib} vendas) — UTM/macro <code>{{ad.id}}</code> não renderizada ou colchetes/pipe quebrando o encoding. Corrigir o parâmetro de URL recupera essa atribuição.`:''}
    </div>`:'';
   const filters = `<div class="filters">${prods.map(p=>`<span class="chip ${p===prod?'on':''}" onclick="setProd('${p}')">${p}</span>`).join('')}
+     <span class="search"><span class="ico">🔍</span><input id="search" type="text" placeholder="filtrar por nome (ex: HK03)" value="${search.replace(/"/g,'&quot;')}" oninput="setSearch(this.value,this.selectionStart)" autocomplete="off">${searching?`<span class="clr" onclick="clearSearch()" title="limpar">×</span>`:''}</span>
      <span class="legend">🏆 <b>ROAS ≥ 2</b> (escalar) · ⚠️ <b>ROAS < 1</b> (matar) · gasto ≥ R$ ${SPEND_MIN}</span>
      <span class="muted" style="margin-left:auto">${rows.length} criativos · clique no cabeçalho pra ordenar</span></div>`;
   const th = (k,l)=>`<th onclick="setSort('${k}')">${l}${sortKey===k?(sortDir<0?' ▼':' ▲'):''}</th>`;
@@ -327,6 +339,7 @@ function render(){
      <td>${rate(r.play_rate)}</td><td>${rate(r.ret_hook)}</td><td>${rate(r.ret_body)}</td><td>${rate(r.conv_body)}</td><td>${rate(r.cta)}</td>
    </tr>`}).join('');
   document.getElementById('wrap').innerHTML = periodLine + cards + warn + filters + `<div class="tscroll"><table><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
+  if(searchCaret!==null){ const el=document.getElementById('search'); if(el){ el.focus(); try{ el.setSelectionRange(searchCaret,searchCaret); }catch(e){} } }
 }
 render();
 </script>
