@@ -119,6 +119,7 @@ def build_period(data_dir, period):
             "product": product_of(ad.get("name", "")),
             "spend": round(spend, 2),
             "impressions": impressions,
+            "frequency": round(float(ad.get("frequency", 0) or 0), 2),
             "clicks": int(ad.get("clicks", 0) or 0),
             "ctr": round(float(ad.get("ctr", 0) or 0), 2),
             "cpc": round(float(ad.get("cpc", 0) or 0), 2),
@@ -262,7 +263,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .bar{height:6px;background:#23262e;border-radius:4px;overflow:hidden;margin-top:6px}
   .bar>i{display:block;height:100%;background:var(--accent)}
   .tscroll{overflow-x:auto;border-radius:12px}
-  .tscroll table{min-width:1280px}
+  .tscroll table{min-width:1360px}
 </style>
 </head>
 <body>
@@ -285,6 +286,9 @@ const tier = r => (r.spend < SPEND_MIN || r.roas==null) ? '' : (r.roas>=2 ? 'win
 const badgeOf = t => t==='win' ? '<span class="badge">🏆</span>' : (t==='lose' ? '<span class="badge">⚠️</span>' : '');
 const adLink = id => `https://adsmanager.facebook.com/adsmanager/manage/ads?act=${DB.account}&selected_ad_ids=${id}`;
 const rate = n => n==null ? '—' : n.toLocaleString('pt-BR',{maximumFractionDigits:2})+'%';
+// Frequencia (impr/alcance): saturacao do publico. <2 saudavel · 2–3 atencao · ≥3 saturado.
+const freq = f => (f==null||f===0) ? '<span class="na">—</span>'
+  : `<span style="color:${f>=3?'#ff8a7a':(f>=2?'#e7c463':'var(--txt)')};font-weight:${f>=2?600:400}">${f.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}x</span>`;
 
 function tabs(){
   document.getElementById('tabs').innerHTML = DB.periods.map(([k,l])=>
@@ -329,13 +333,13 @@ function render(){
      <span class="legend">🏆 <b>ROAS ≥ 2</b> (escalar) · ⚠️ <b>ROAS < 1</b> (matar) · gasto ≥ R$ ${SPEND_MIN}</span>
      <span class="muted" style="margin-left:auto">${rows.length} criativos · clique no cabeçalho pra ordenar</span></div>`;
   const th = (k,l)=>`<th onclick="setSort('${k}')">${l}${sortKey===k?(sortDir<0?' ▼':' ▲'):''}</th>`;
-  const head = `<tr><th class="idx">#</th>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('clicks','Cliques')}${th('ctr','CTR')}${th('cpc','CPC')}${th('cpm','CPM')}${th('impressions','Impr.')}${th('play_rate','Play%')}${th('ret_hook','Ret.Hook')}${th('ret_body','Ret.Body')}${th('conv_body','Conv.Body')}${th('cta','CTA')}</tr>`;
+  const head = `<tr><th class="idx">#</th>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('clicks','Cliques')}${th('ctr','CTR')}${th('cpc','CPC')}${th('cpm','CPM')}${th('impressions','Impr.')}${th('frequency','Freq.')}${th('play_rate','Play%')}${th('ret_hook','Ret.Hook')}${th('ret_body','Ret.Body')}${th('conv_body','Conv.Body')}${th('cta','CTA')}</tr>`;
   const body = rows.map((r,i)=>{const t=tier(r);return `<tr class="${t}">
      <td class="idx">${i+1}</td>
      <td>${badgeOf(t)}<span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${r.instagram||r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ${r.instagram?'ver no Instagram':'ver anúncio'}</span></a></td>
      <td>${fmt(r.spend)}</td><td>${fmt(r.receita)}</td><td>${num(r.vendas)}</td>
      <td><span class="roas ${roasClass(r.roas)}">${r.roas==null?'—':r.roas+'x'}</span></td>
-     <td>${fmt(r.cac)}</td><td>${num(r.clicks)}</td><td>${rate(r.ctr)}</td><td>${fmt(r.cpc)}</td><td>${fmt(r.cpm)}</td><td>${num(r.impressions)}</td>
+     <td>${fmt(r.cac)}</td><td>${num(r.clicks)}</td><td>${rate(r.ctr)}</td><td>${fmt(r.cpc)}</td><td>${fmt(r.cpm)}</td><td>${num(r.impressions)}</td><td>${freq(r.frequency)}</td>
      <td>${rate(r.play_rate)}</td><td>${rate(r.ret_hook)}</td><td>${rate(r.ret_body)}</td><td>${rate(r.conv_body)}</td><td>${rate(r.cta)}</td>
    </tr>`}).join('');
   document.getElementById('wrap').innerHTML = periodLine + cards + warn + filters + `<div class="tscroll"><table><thead>${head}</thead><tbody>${body}</tbody></table></div>`;

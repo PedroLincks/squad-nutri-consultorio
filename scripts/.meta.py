@@ -6,8 +6,12 @@ anuncio (preview do Meta e permalink do post no Instagram), e normaliza para o
 formato que o painel (scripts/dashboard.py) consome.
 
 Shape de cada anuncio:
-    {id, name, amount_spent, ctr, impressions, clicks, link_clicks, cpc, cpm,
-     video_plays, video_3s, video_p75, preview_link, instagram_link}
+    {id, name, amount_spent, ctr, impressions, reach, frequency, clicks,
+     link_clicks, cpc, cpm, video_plays, video_3s, video_p75, preview_link,
+     instagram_link}
+
+  frequency     = impressions / reach no periodo (medidor de saturacao do
+                  criativo/publico; quanto maior, mais o mesmo publico ja viu)
 
   id            = ad_id do Meta (chave de cruzamento com a venda real da Guru:
                   os digitos apos o '|' no utm_content)
@@ -48,8 +52,8 @@ PRESETS = {
 }
 
 FIELDS = ",".join([
-    "ad_id", "ad_name", "spend", "impressions", "clicks", "inline_link_clicks",
-    "ctr", "cpc", "cpm",
+    "ad_id", "ad_name", "spend", "impressions", "reach", "frequency",
+    "clicks", "inline_link_clicks", "ctr", "cpc", "cpm",
     "video_play_actions", "video_p75_watched_actions", "actions",
 ])
 
@@ -186,6 +190,8 @@ def normalize(rows, links):
             "amount_spent": float(r.get("spend", 0) or 0),
             "ctr": float(r.get("ctr", 0) or 0),
             "impressions": int(r.get("impressions", 0) or 0),
+            "reach": int(r.get("reach", 0) or 0),
+            "frequency": float(r.get("frequency", 0) or 0),
             "clicks": int(float(r.get("clicks", 0) or 0)),
             "link_clicks": int(float(r.get("inline_link_clicks", 0) or 0)),
             "cpc": float(r.get("cpc", 0) or 0),
