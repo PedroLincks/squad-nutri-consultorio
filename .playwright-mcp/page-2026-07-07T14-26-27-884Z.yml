@@ -1,0 +1,375 @@
+- generic [ref=e2]:
+  - heading "Nutri, você ainda leva dieta para calcular em casa?" [level=2] [ref=e7]
+  - generic [ref=e10]:
+    - heading "Calcule a dieta 5x mais rápido e entregue o plano alimentar individualizado na hora da consulta" [level=2] [ref=e15]:
+      - generic [ref=e16]: Calcule a dieta 5x mais rápido
+      - text: e entregue o plano alimentar individualizado na hora da consulta
+    - paragraph [ref=e19]: Você vai dominar o protocolo simples e prático para criar e entregar planos alimentares 100% personalizados na consulta e nunca mais gastar seu precioso tempo refazendo cálculos e nem pensando em substituições de alimentos
+    - link "SIM! QUERO ENTREGAR A DIETA NA HORA" [ref=e23] [cursor=pointer]:
+      - /url: "#entregaveis"
+      - generic [ref=e24]:
+        - img [ref=e26]
+        - generic [ref=e29]: SIM! QUERO ENTREGAR A DIETA NA HORA
+  - generic [ref=e34]:
+    - generic [ref=e38]:
+      - heading "Entregar dieta na hora não significa entregar dieta de gaveta!" [level=2] [ref=e41]:
+        - text: Entregar dieta na hora
+        - generic [ref=e42]: não significa entregar dieta de gaveta!
+      - generic [ref=e44]:
+        - paragraph [ref=e45]:
+          - strong [ref=e46]: Esse é, sem dúvida, um dos maiores mitos da nutrição.
+        - paragraph [ref=e47]:
+          - text: Muitas nutricionistas ainda acreditam que, para criar um plano alimentar de qualidade,
+          - strong [ref=e48]: é preciso gastar horas e horas refazendo cálculos, estruturando refeições e analisando cada detalhe manualmente, quando na verdade não!
+    - img [ref=e53]
+  - generic [ref=e60]:
+    - heading "Calcular dietas depois da consulta cria 4 grandes problemas:" [level=2] [ref=e64]:
+      - text: Calcular dietas depois da consulta
+      - generic [ref=e65]: "cria 4 grandes problemas:"
+    - generic [ref=e66]:
+      - generic [ref=e69]:
+        - img [ref=e72]
+        - generic [ref=e77]:
+          - heading "Trabalho sem fim" [level=3] [ref=e78]
+          - paragraph [ref=e79]: A nutri leva planos para casa e sacrifica seu descanso e tempo de qualidade com a família.
+      - generic [ref=e82]:
+        - img [ref=e85]
+        - generic [ref=e90]:
+          - heading "Exaustão mental" [level=3] [ref=e91]
+          - paragraph [ref=e92]: Perde horas refazendo planos para cada paciente, dia após dia. É cansativo
+      - generic [ref=e95]:
+        - img [ref=e98]
+        - generic [ref=e103]:
+          - heading "Limitação no crescimento" [level=3] [ref=e104]
+          - paragraph [ref=e105]: Sabe que poderia atender mais, mas sente que não daria conta da demanda.
+      - generic [ref=e108]:
+        - img [ref=e111]
+        - generic [ref=e116]:
+          - heading "Retrabalho constante" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Toda vez que o paciente pergunta ou pede um ajuste no plano alimentar, a nutri tem que calcular praticamente tudo do zero
+  - generic [ref=e120]:
+    - img [ref=e125]
+    - heading "Veja bem, em uma consulta de 1h30 é totalmente possível entregar o plano alimentar na hora" [level=2] [ref=e133]:
+      - text: Veja bem, em uma consulta de 1h30 é totalmente
+      - generic [ref=e134]: possível entregar o plano alimentar na hora
+    - generic [ref=e142]:
+      - heading "40 minutos" [level=3] [ref=e143]
+      - paragraph [ref=e144]: Montagem do plano
+    - generic [ref=e148]:
+      - heading "5 minutos" [level=3] [ref=e149]
+      - paragraph [ref=e150]: Conexão com o paciente
+    - generic [ref=e154]:
+      - heading "30 minutos" [level=3] [ref=e155]
+      - paragraph [ref=e156]: Anamnese
+    - generic [ref=e160]:
+      - heading "15 minutos" [level=3] [ref=e161]
+      - paragraph [ref=e162]: Avaliação Física e Antropometria
+  - generic [ref=e164]:
+    - generic [ref=e165]:
+      - paragraph [ref=e168]: "Em apenas 40 minutos da consulta, seguindo o protocolo que você está prestes a aprender, o seu paciente sai da consulta com o plano alimentar em mãos, pronto e motivado para começar imediatamente, e você com a melhor parte:"
+      - list [ref=e171]:
+        - listitem [ref=e172]:
+          - img [ref=e174]
+          - generic [ref=e223]: Não perde tempo refazendo cálculos do absoluto zero.
+        - listitem [ref=e224]:
+          - img [ref=e226]
+          - generic [ref=e275]: Não leva trabalho para casa.
+        - listitem [ref=e276]:
+          - img [ref=e278]
+          - generic [ref=e327]: Seu paciente fica plenamente satisfeito com o seu diferencial de entrega
+    - link "SIM! QUERO ENTREGAR A DIETA NA HORA" [ref=e331] [cursor=pointer]:
+      - /url: "#entregaveis"
+      - generic [ref=e332]:
+        - img [ref=e334]
+        - generic [ref=e337]: SIM! QUERO ENTREGAR A DIETA NA HORA
+  - generic [ref=e339]:
+    - heading "Como ter menos retrabalho e mais agilidade?" [level=2] [ref=e342]:
+      - text: Como ter menos retrabalho e
+      - generic [ref=e343]: mais agilidade?
+    - paragraph [ref=e346]:
+      - text: O
+      - strong [ref=e347]: Método Dieta Ágil
+      - text: é um protocolo simples, validado e replicável que te permite estruturar e entregar planos alimentares completos e personalizados na consulta, sem retrabalho, sem estresse e sem comprometer a qualidade do seu atendimento!
+  - generic [ref=e349]:
+    - img [ref=e354]
+    - heading "Veja o que você tem acesso no Método Dieta Ágil" [level=2] [ref=e362]:
+      - text: Veja o que
+      - generic [ref=e363]: você tem acesso
+      - text: no Método Dieta Ágil
+    - generic [ref=e367]:
+      - heading "Metodologia completa em apenas 40 minutos" [level=2] [ref=e370]:
+        - generic [ref=e371]: Metodologia completa
+        - text: em apenas 40 minutos
+      - paragraph [ref=e374]: "Isso mesmo, o seu tempo é precioso e você não vai precisar gastar horas para aprender o DDA. Em apenas 40 minutos de forma prática e objetiva eu vou te ensinar:"
+      - list [ref=e377]:
+        - listitem [ref=e378]:
+          - img [ref=e380]
+          - generic [ref=e429]: Como gerir e conduzir a consulta
+        - listitem [ref=e430]:
+          - img [ref=e432]
+          - generic [ref=e481]: Passo a passo completo em tempo real para calcular a dieta
+        - listitem [ref=e482]:
+          - img [ref=e484]
+          - generic [ref=e533]: Método qualitativo
+        - listitem [ref=e534]:
+          - img [ref=e536]
+          - generic [ref=e585]: Método quantitativo
+    - generic [ref=e589]:
+      - heading "Biblioteca de Refeições" [level=2] [ref=e592]:
+        - generic [ref=e593]: Biblioteca
+        - text: de Refeições
+      - generic [ref=e595]:
+        - text: Uma ferramenta na versão notion e PDF que te entrega uma variedade de ideias de refeições categorizadas por café da manhã, almoço, lanche da tarde e jantar.
+        - text: As refeições estão organizadas de acordo com faixas de calorias e macronutrientes, o que facilita a seleção de opções adequadas para cada paciente Vai montar ou ajustar o plano alimentar?
+        - text: Basta abrir a biblioteca que em minutos você tem todas as refeições prontinhas e calculadas pra você.
+  - generic [ref=e597]:
+    - heading "E tem mais… você vai receber de graça 🎁" [level=2] [ref=e600]:
+      - text: E tem mais…
+      - generic [ref=e601]: você vai receber de graça
+      - text: 🎁
+    - generic [ref=e605]:
+      - heading "Templates de planos alimentares" [level=2] [ref=e608]:
+        - text: Templates de
+        - generic [ref=e609]: planos alimentares
+      - generic [ref=e611]:
+        - text: Você nunca mais vai precisar entregar planos alimentares naqueles layouts de software, confusos e nada atrativos para os pacientes.
+        - text: No Protocolo Dieta Ágil você tem acesso à 10 layouts de planos alimentares para escolher, desde o minimalista ao mais elaborado
+        - text: "Todos os layouts são 100% personalizáveis no canva e acompanham:"
+      - generic "Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys" [ref=e614]:
+        - group [ref=e615]:
+          - generic "Ver mais sobre os planos alimentares" [ref=e616] [cursor=pointer]:
+            - generic [ref=e618]: Ver mais sobre os planos alimentares
+            - img [ref=e621]
+    - generic [ref=e626]:
+      - heading "Box de materiais personalizáveis de atendimento" [level=2] [ref=e629]:
+        - text: Box de
+        - generic [ref=e630]: materiais personalizáveis
+        - text: de atendimento
+      - generic [ref=e632]:
+        - list [ref=e633]:
+          - listitem [ref=e634]: Questionários de pré-consulta, anamnese, retorno e feedback
+          - listitem [ref=e635]: Manual de pré e pós-consulta
+          - listitem [ref=e636]: Receituário para solicitação de exames
+          - listitem [ref=e637]: Receituário para prescrição de suplementos
+          - listitem [ref=e638]: Relatório de avaliação antropométrica
+        - text: Todos incluem descritivos de como utilizar e modelos diferentes para você personalizar como quiser.
+  - generic [ref=e640]:
+    - heading "Mais de 3.000,00 nutris entregam o plano alimentar na consulta depois do Dieta Agil" [level=2] [ref=e643]:
+      - generic [ref=e644]: Mais de 3.000,00 nutris
+      - text: entregam o plano alimentar na consulta depois do Dieta Agil
+    - generic [ref=e647]:
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/group_5.webp
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/group_3.webp
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/group_2-1.webp
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/group_4.webp
+        - img
+  - generic [ref=e649]:
+    - img [ref=e654]
+    - heading "A partir de agora, quem você escolhe ser?" [level=2] [ref=e662]:
+      - text: A partir de agora,
+      - generic [ref=e663]: quem você escolhe ser?
+    - generic [ref=e666]:
+      - heading "Nutricionista que entrega o plano alimentar 5, 7, 10 dias depois da consulta e:" [level=2] [ref=e669]
+      - list [ref=e672]:
+        - listitem [ref=e673]:
+          - img [ref=e675]
+          - generic [ref=e681]: Leva trabalho para casa, a consulta termina, mas ainda tem planos para montar.
+        - listitem [ref=e682]:
+          - img [ref=e684]
+          - generic [ref=e690]: Perde horas refazendo cálculos manualmente, um por um.
+        - listitem [ref=e691]:
+          - img [ref=e693]
+          - generic [ref=e699]: Se sente travada quando o paciente pede substituições e ajustes no plano alimentar.
+        - listitem [ref=e700]:
+          - img [ref=e702]
+          - generic [ref=e708]: Quer atender mais pacientes, mas sabe que não daria conta
+    - generic [ref=e711]:
+      - heading "Nutricionista que aplica o Protocolo Dieta Ágil e :" [level=2] [ref=e714]
+      - list [ref=e717]:
+        - listitem [ref=e718]:
+          - img [ref=e720]
+          - generic [ref=e723]: A sua consulta começa e termina sem pendências.
+        - listitem [ref=e724]:
+          - img [ref=e726]
+          - generic [ref=e729]: Monta o plano alimentar em tempo real com o paciente, sem perda de tempo.
+        - listitem [ref=e730]:
+          - img [ref=e732]
+          - generic [ref=e735]: Seu paciente sai da consulta com um plano estruturado e 100% individualizado.
+        - listitem [ref=e736]:
+          - img [ref=e738]
+          - generic [ref=e741]: Ganha mais tempo livre para estudar, crescer e faturar mais
+  - generic [ref=e747]:
+    - heading "Garanta seu acesso agora e aplique o protocolo amanhã no seu próximo paciente" [level=2] [ref=e752]:
+      - generic [ref=e753]: Garanta seu acesso agora
+      - text: e aplique o protocolo amanhã no seu próximo paciente
+    - generic [ref=e755]: "Relembre o que você vai receber, nutri:"
+    - generic [ref=e756]:
+      - list [ref=e759]:
+        - listitem [ref=e760]:
+          - img [ref=e762]
+          - generic [ref=e764]: Como organizar a sua consulta
+      - generic [ref=e766]: R$ 197
+    - generic [ref=e767]:
+      - list [ref=e770]:
+        - listitem [ref=e771]:
+          - img [ref=e773]
+          - generic [ref=e775]: Biblioteca de Refeições (Notion e Ebook)
+      - generic [ref=e777]: R$ 197
+    - generic [ref=e778]:
+      - list [ref=e781]:
+        - listitem [ref=e782]:
+          - img [ref=e784]
+          - generic [ref=e786]: Templates de planos alimentares
+      - paragraph [ref=e789]: R$ 97
+    - generic [ref=e790]:
+      - list [ref=e793]:
+        - listitem [ref=e794]:
+          - img [ref=e796]
+          - generic [ref=e798]: Box de Materiais Personalizáveis de Atendimento
+      - paragraph [ref=e801]: R$ 97
+    - generic [ref=e803]: No total, seu investimento seria de
+    - heading "R$ 588,00" [level=2] [ref=e806]
+    - paragraph [ref=e809]: "Porém somente hoje e agora nesta página, você terá acesso ao Método Dieta Ágil pelo investimento simbólico de apenas:"
+    - generic [ref=e813]:
+      - heading "12x" [level=3] [ref=e814]
+      - paragraph [ref=e815]:
+        - generic [ref=e816]: R$19,90
+    - paragraph [ref=e819]:
+      - text: ou
+      - generic [ref=e820]: R$ 197,00
+      - text: à vista
+    - link "SIM! EU QUERO ENTREGAR A DIETA NA HORA" [ref=e824] [cursor=pointer]:
+      - /url: https://go.nutrideconsultorio.com/checkout/mda-checkout-r197
+      - generic [ref=e825]:
+        - img [ref=e827]
+        - generic [ref=e830]: SIM! EU QUERO ENTREGAR A DIETA NA HORA
+    - paragraph [ref=e835]: Esse é preço para nunca mais ter que levar dieta para casa!
+  - generic [ref=e837]:
+    - heading "100% de cashback" [level=2] [ref=e840]
+    - paragraph [ref=e843]: Isso mesmo nutri, ao investir R$197,00 no Método Dieta Ágil, você recebe 100% do seu dinheiro em cashback para gastar em mais de 2.000 lojas do Brasil. Uma exclusividade da Nutri de Consultório ©
+    - generic [ref=e846]:
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-1.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-2.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-4.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-5.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-8.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-9.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-10.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-11.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-12.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-13.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-14.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-15.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-16.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-17.svg
+        - img
+      - link:
+        - /url: https://nutrideconsultorio.com/wp-content/uploads/2026/05/Frame-18.png
+        - img
+    - paragraph [ref=e849]: E mais de 2.000 lojas no Brasil
+  - generic [ref=e857]:
+    - heading "Você tem 7 dias para testar o Método Dieta Ágil, aplicar as estratégias e ver a diferença na sua rotina." [level=3] [ref=e858]:
+      - generic [ref=e859]: Você tem 7 dias para testar o Método Dieta Ágil
+      - text: ", aplicar as estratégias e ver a diferença na sua rotina."
+    - paragraph [ref=e860]: Se, por qualquer motivo, você achar que esse método não é para você, ou que ainda não está pronta(o) para essa mudança na sua rotina, basta enviar um e-mail para o nosso time e reembolsaremos 100% do seu dinheiro, sem burocracia e sem perguntas. Ou você vê resultados e ganha mais tempo na sua rotina, ou recebe seu dinheiro de volta, simples assim!
+  - generic [ref=e866]:
+    - heading "Quem vai te ensinar?" [level=3] [ref=e867]
+    - paragraph [ref=e868]:
+      - text: Oi, eu sou a Leticia Cruz, nutricionista há mais de 8 anos e co-fundadora da Nutri de Consultório, uma empresa de educação e soluções para nutricionistas com mais de 22 mil clientes espalhados pelo Brasil e no exterior.
+      - text: A minha missão ao te ensinar o Método Dieta Ágil é tornar a sua rotina de trabalho mais leve, aumentar a sua produtividade e fazer com que você ganhe mais dinheiro com os seus atendimentos, bora?
+  - generic [ref=e870]:
+    - heading "Dúvidas Frequentes" [level=2] [ref=e873]:
+      - generic [ref=e874]: Dúvidas
+      - text: Frequentes
+    - generic "Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys" [ref=e877]:
+      - group [ref=e878]:
+        - generic "Como recebo o acesso?" [ref=e879] [cursor=pointer]:
+          - generic [ref=e881]: Como recebo o acesso?
+      - group [ref=e882]:
+        - generic "Quanto tempo de acesso?" [ref=e883] [cursor=pointer]:
+          - generic [ref=e885]: Quanto tempo de acesso?
+      - group [ref=e886]:
+        - generic "Quais as formas de pagamento?" [ref=e887] [cursor=pointer]:
+          - generic [ref=e889]: Quais as formas de pagamento?
+      - group [ref=e890]:
+        - generic "Tem suporte?" [ref=e891] [cursor=pointer]:
+          - generic [ref=e893]: Tem suporte?
+  - generic [ref=e896]:
+    - generic [ref=e899]:
+      - list [ref=e902]:
+        - listitem [ref=e903]:
+          - img [ref=e905]
+          - generic [ref=e907]: Como organizar a sua consulta
+      - generic [ref=e909]: R$ 197
+    - generic [ref=e910]:
+      - list [ref=e913]:
+        - listitem [ref=e914]:
+          - img [ref=e916]
+          - generic [ref=e918]: Biblioteca de Refeições (Notion e Ebook)
+      - generic [ref=e920]: R$ 197
+    - generic [ref=e921]:
+      - list [ref=e924]:
+        - listitem [ref=e925]:
+          - img [ref=e927]
+          - generic [ref=e929]: Templates de planos alimentares
+      - paragraph [ref=e932]: R$ 97
+    - generic [ref=e933]:
+      - list [ref=e936]:
+        - listitem [ref=e937]:
+          - img [ref=e939]
+          - generic [ref=e941]: Box de Materiais Personalizáveis de Atendimento
+      - paragraph [ref=e944]: R$ 97
+    - generic [ref=e948]:
+      - heading "12x" [level=3] [ref=e949]
+      - paragraph [ref=e950]:
+        - generic [ref=e951]: R$19,90
+    - paragraph [ref=e954]:
+      - text: ou
+      - generic [ref=e955]: R$ 197,00
+      - text: à vista
+    - link "SIM! EU QUERO ENTREGAR A DIETA NA HORA" [ref=e959] [cursor=pointer]:
+      - /url: https://go.nutrideconsultorio.com/checkout/mda-checkout-r197
+      - generic [ref=e960]:
+        - img [ref=e962]
+        - generic [ref=e965]: SIM! EU QUERO ENTREGAR A DIETA NA HORA
+  - list [ref=e974]:
+    - listitem [ref=e975]:
+      - generic [ref=e976]: © Copyright 2025. Todos os direitos reservados a Nutri de Consultório
+    - listitem [ref=e977]:
+      - link "Termos e Condições" [ref=e978] [cursor=pointer]:
+        - /url: https://nutrideconsultorio.com/termos-de-uso-protocolo-dieta-agil/
+        - generic [ref=e979]: Termos e Condições

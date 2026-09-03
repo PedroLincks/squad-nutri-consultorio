@@ -1,0 +1,580 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - heading "Dificuldade em fidelizar seus pacientes e aumentar o preço da sua consulta?" [level=2] [ref=e9]
+      - paragraph [ref=e12]:
+        - text: Implemente o
+        - generic [ref=e13]: P
+        - text: rotocolo de
+        - generic [ref=e14]: A
+        - text: tendimento
+        - generic [ref=e15]: V
+        - text: isual, usado pelas nutricionistas premium para transformar “consultas básicas” em experiências de alto padrão, que fidelizam o paciente e te permitem cobrar 4X mais
+      - link "QUERO IMPLEMENTAR AGORA" [ref=e19] [cursor=pointer]:
+        - /url: "#checkout"
+        - generic [ref=e20]:
+          - img [ref=e22]
+          - generic [ref=e25]: QUERO IMPLEMENTAR AGORA
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - img [ref=e44]
+        - generic [ref=e46]: Materiais Prontos
+      - generic [ref=e47]:
+        - img [ref=e49]
+        - generic [ref=e51]: Entrega Exclusiva
+      - generic [ref=e52]:
+        - img [ref=e54]
+        - generic [ref=e56]: Atendimento Premium
+      - generic [ref=e57]:
+        - img [ref=e59]
+        - generic [ref=e61]: Materiais Prontos
+      - generic [ref=e62]:
+        - img [ref=e64]
+        - generic [ref=e66]: Entrega Exclusiva
+      - generic [ref=e67]:
+        - img [ref=e69]
+        - generic [ref=e71]: Atendimento Premium
+      - generic [ref=e72]:
+        - img [ref=e74]
+        - generic [ref=e76]: Materiais Prontos
+      - generic [ref=e77]:
+        - img [ref=e79]
+        - generic [ref=e81]: Entrega Exclusiva
+      - generic [ref=e82]:
+        - img [ref=e84]
+        - generic [ref=e86]: Atendimento Premium
+      - generic [ref=e87]:
+        - img [ref=e89]
+        - generic [ref=e91]: Materiais Prontos
+      - generic [ref=e92]:
+        - img [ref=e94]
+        - generic [ref=e96]: Entrega Exclusiva
+      - generic [ref=e97]:
+        - img [ref=e99]
+        - generic [ref=e101]: Atendimento Premium
+      - generic [ref=e102]:
+        - img [ref=e104]
+        - generic [ref=e106]: Materiais Prontos
+      - generic [ref=e107]:
+        - img [ref=e109]
+        - generic [ref=e111]: Entrega Exclusiva
+      - generic [ref=e112]:
+        - img [ref=e114]
+        - generic [ref=e116]: Atendimento Premium
+      - generic [ref=e117]:
+        - img [ref=e119]
+        - generic [ref=e121]: Materiais Prontos
+      - generic [ref=e122]:
+        - img [ref=e124]
+        - generic [ref=e126]: Entrega Exclusiva
+      - generic [ref=e127]:
+        - img [ref=e129]
+        - generic [ref=e131]: Atendimento Premium
+      - generic [ref=e132]:
+        - img [ref=e134]
+        - generic [ref=e136]: Materiais Prontos
+      - generic [ref=e137]:
+        - img [ref=e139]
+        - generic [ref=e141]: Entrega Exclusiva
+      - generic [ref=e142]:
+        - img [ref=e144]
+        - generic [ref=e146]: Atendimento Premium
+      - generic [ref=e147]:
+        - img [ref=e149]
+        - generic [ref=e151]: Materiais Prontos
+      - generic [ref=e152]:
+        - img [ref=e154]
+        - generic [ref=e156]: Entrega Exclusiva
+      - generic [ref=e157]:
+        - img [ref=e159]
+        - generic [ref=e161]: Atendimento Premium
+      - generic [ref=e162]:
+        - img [ref=e164]
+        - generic [ref=e166]: Materiais Prontos
+      - generic [ref=e167]:
+        - img [ref=e169]
+        - generic [ref=e171]: Entrega Exclusiva
+      - generic [ref=e172]:
+        - img [ref=e174]
+        - generic [ref=e176]: Atendimento Premium
+      - generic [ref=e177]:
+        - img [ref=e179]
+        - generic [ref=e181]: Materiais Prontos
+      - generic [ref=e182]:
+        - img [ref=e184]
+        - generic [ref=e186]: Entrega Exclusiva
+      - generic [ref=e187]:
+        - img [ref=e189]
+        - generic [ref=e191]: Atendimento Premium
+      - generic [ref=e192]:
+        - img [ref=e194]
+        - generic [ref=e196]: Materiais Prontos
+      - generic [ref=e197]:
+        - img [ref=e199]
+        - generic [ref=e201]: Entrega Exclusiva
+      - generic [ref=e202]:
+        - img [ref=e204]
+        - generic [ref=e206]: Atendimento Premium
+      - generic [ref=e207]:
+        - img [ref=e209]
+        - generic [ref=e211]: Materiais Prontos
+      - generic [ref=e212]:
+        - img [ref=e214]
+        - generic [ref=e216]: Entrega Exclusiva
+      - generic [ref=e217]:
+        - img [ref=e219]
+        - generic [ref=e221]: Atendimento Premium
+    - generic [ref=e223]:
+      - generic [ref=e224]:
+        - heading "Como funciona o P.A.V?" [level=2] [ref=e227]
+        - paragraph [ref=e230]:
+          - text: O Protocolo de Atendimento Visual da Webnutri foi desenvolvido para resolver
+          - strong [ref=e232]: os 3 maiores gargalos
+          - text: "que impedem o seu crescimento hoje: a falta de tempo, a consulta “básica” e a desistência do paciente."
+      - generic [ref=e233]:
+        - generic [ref=e239]:
+          - img [ref=e242]
+          - generic [ref=e246]:
+            - heading "Praticidade" [level=3] [ref=e247]
+            - paragraph [ref=e248]: Sua rotina já é pesada demais para você perder noites no Canva. A Webnutri atua como o seu "Departamento de Criação" terceirizado. São centenas de materiais e ferramentas estratégicas prontas para uso imediato e 100% editáveis
+        - generic [ref=e254]:
+          - img [ref=e257]
+          - generic [ref=e267]:
+            - heading "Imersão Visual" [level=3] [ref=e268]
+            - paragraph [ref=e269]:
+              - text: O fim da "Consulta Rádio" (aquela que você só fala e o paciente esquece). Aqui você traz seu conhecimento técnico para o mundo real.
+              - text: "O que você recebe: Lâminas de Fisiologia, Patologias e Comparativos Alimentares de alto impacto visual, que facilitam a compreensão do paciente."
+        - generic [ref=e275]:
+          - img [ref=e278]
+          - generic [ref=e283]:
+            - heading "Adesão e Retenção" [level=3] [ref=e284]
+            - paragraph [ref=e285]:
+              - text: A dieta falha quando você não facilita a vida do paciente. Este pilar coloca a sua orientação dentro da rotina do paciente (no mercado e na cozinha).
+              - text: "O que você recebe: Guias de Industrializados, Manuais de Suplementação, Lista de substituição personalizada, Listas de Compras e Box de Receitas Práticas e muito mais."
+    - generic [ref=e289]:
+      - generic [ref=e290]:
+        - generic [ref=e291]:
+          - generic [ref=e294]:
+            - img [ref=e297]
+            - heading "Nutricionista comum" [level=3] [ref=e302]
+          - list [ref=e305]:
+            - listitem [ref=e306]:
+              - img [ref=e308]
+              - generic [ref=e312]: Briga por preço e tem medo de perder paciente se cobrar mais caro.
+            - listitem [ref=e313]:
+              - img [ref=e315]
+              - generic [ref=e319]: "Atendimento \"invisível\": fala muito, mas o paciente esquece e não vê valor."
+            - listitem [ref=e320]:
+              - img [ref=e322]
+              - generic [ref=e326]: "Baixa adesão: o paciente desiste na primeira semana."
+            - listitem [ref=e327]:
+              - img [ref=e329]
+              - generic [ref=e333]: Vive sobrecarregada tentando criar materiais sozinha no Canva
+        - generic [ref=e334]:
+          - generic [ref=e337]:
+            - img [ref=e340]
+            - heading "Nutricionista com o P.A.V" [level=3] [ref=e346]
+          - list [ref=e349]:
+            - listitem [ref=e350]:
+              - img [ref=e352]
+              - generic [ref=e357]: Cobra 3x mais com segurança, pois entrega uma experiência superior as concorrentes.
+            - listitem [ref=e358]:
+              - img [ref=e360]
+              - generic [ref=e365]: "Atendimento Premium: usa o visual para encantar, educar e gerar autoridade imediata."
+            - listitem [ref=e366]:
+              - img [ref=e368]
+              - generic [ref=e373]: "Alta fidelização: o paciente segue o plano, tem resultado e renova o acompanhamento."
+            - listitem [ref=e374]:
+              - img [ref=e376]
+              - generic [ref=e381]: Faz parte da elite das nutricionistas, reconhecida e elogiada pelos pacientes.
+      - link "QUERO USAR O P.A.V" [ref=e385] [cursor=pointer]:
+        - /url: "#checkout"
+        - generic [ref=e386]:
+          - img [ref=e388]
+          - generic [ref=e391]: QUERO USAR O P.A.V
+    - generic [ref=e393]:
+      - img [ref=e398]
+      - heading "A Webnutri já impulsionou o atendimento de mais de 10.000 nutricionistas no Brasil e exterior" [level=2] [ref=e405]
+      - generic [ref=e406]:
+        - figure "\"Já faturei mais do que em 1 mês de trabalho árduo no CLT\"" [ref=e409]:
+          - generic [ref=e410]: "\"Já faturei mais do que em 1 mês de trabalho árduo no CLT\""
+        - figure "\"Desde abril tenho fechado o mês vendendo +8k usando a WN\"" [ref=e413]:
+          - generic [ref=e414]: "\"Desde abril tenho fechado o mês vendendo +8k usando a WN\""
+        - figure "\"Reformulei meu atendimento com a WN e vendi meu primeiro pacote\"" [ref=e417]:
+          - generic [ref=e418]: "\"Reformulei meu atendimento com a WN e vendi meu primeiro pacote\""
+    - generic [ref=e420]:
+      - heading "Você recebe acesso imediato" [level=2] [ref=e424]
+      - generic [ref=e426]:
+        - generic [ref=e427]:
+          - heading "Pack Didática Visual" [level=2] [ref=e430]
+          - paragraph [ref=e433]: Para você explicar qualquer assunto para seu paciente com total clareza. São Mais 70 lâminas explicativas para usar durante as consultas e mostrar autoridade e domínio sobre os temas
+          - list [ref=e438]:
+            - listitem [ref=e439]:
+              - generic [ref=e440]: "Patologias Ilustradas: SOP, Diabetes, Disbiose..."
+            - listitem [ref=e441]:
+              - generic [ref=e442]: "Comparativos Visuais: Calorias, Densidade Nutricional..."
+            - listitem [ref=e443]:
+              - generic [ref=e444]: "Anatomia: Para desenhar o problema na mente do paciente…"
+            - listitem [ref=e445]:
+              - generic [ref=e446]: "Ilustrações: Prato saudável, salada de pote, calorias no álcool"
+          - generic "Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys" [ref=e449]:
+            - group [ref=e450]:
+              - generic "Ver lista completa de temas" [ref=e451] [cursor=pointer]:
+                - generic [ref=e453]: Ver lista completa de temas
+              - text:                                                                               
+        - region "Carrossel de imagens" [ref=e457]:
+          - generic [ref=e458]:
+            - group "1 de 7" [ref=e459]:
+              - figure [ref=e460]:
+                - img "_l_mina_suplementos_na_muscula_o_1x" [ref=e461]
+            - group "2 de 7" [ref=e462]:
+              - figure [ref=e463]:
+                - img "1_1x" [ref=e464]
+            - group "3 de 7" [ref=e465]:
+              - figure [ref=e466]:
+                - img "_l_mina_hipertens_o_1__1x" [ref=e467]
+            - group "4 de 7" [ref=e468]:
+              - figure [ref=e469]:
+                - img "_l_mina_atualiza_o_dietas_e_final_de_semana_1x" [ref=e470]
+            - group "5 de 7" [ref=e471]:
+              - figure [ref=e472]:
+                - img "_l_mina_v3_como_montar_lista_de_compras_1_1x" [ref=e473]
+            - group "6 de 7" [ref=e474]:
+              - figure [ref=e475]:
+                - img "_l_mina_prato_saud_vel_1x" [ref=e476]
+            - group "7 de 7" [ref=e477]:
+              - figure [ref=e478]:
+                - img "_l_mina_macronutrientes_e_suas_fontes_1x" [ref=e479]
+          - button [ref=e480] [cursor=pointer]: 
+          - button [ref=e481] [cursor=pointer]: 
+      - generic [ref=e482]:
+        - generic [ref=e483]:
+          - heading "Kit de adesão e suporte inteligente" [level=2] [ref=e486]
+          - paragraph [ref=e489]: Você presente na rotina dos pacientes, do mercado à cozinha. Eles terão acesso aos facilitadores de rotina para seguir o plano alimentar e eliminar as dúvidas que geram desistência
+          - list [ref=e494]:
+            - listitem [ref=e495]:
+              - generic [ref=e496]: "Guia de industrializados: Dezenas de indicações de produtos/marcas para comprar. (pão, iogurtes, requeijão, granolas…)"
+            - listitem [ref=e497]:
+              - generic [ref=e498]: "Guia de medidas: Para fazer as medidas em casa e acompanhar evolução"
+            - listitem [ref=e499]:
+              - generic [ref=e500]: "Manual de Organização e planejamento: Ensinando como ajustar a rotina para seguir a dieta e não desistir"
+            - listitem [ref=e501]:
+              - generic [ref=e502]: "Guia de Suplementos: Como funciona e quais marcas adquirir"
+          - generic "Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys" [ref=e505]:
+            - group [ref=e506]:
+              - generic "Ver lista completa de ferramentas" [ref=e507] [cursor=pointer]:
+                - generic [ref=e509]: Ver lista completa de ferramentas
+              - text:                 
+        - region "Carrossel de imagens" [ref=e513]:
+          - generic [ref=e514]:
+            - group "1 de 9" [ref=e515]:
+              - figure [ref=e516]:
+                - img "_e_book_guia_de_medidas_1x" [ref=e517]
+            - group "2 de 9" [ref=e518]:
+              - figure [ref=e519]:
+                - img "guia_de_industrializados_1__1x" [ref=e520]
+            - group "3 de 9" [ref=e521]:
+              - figure [ref=e522]:
+                - img "guia_de_industrializados_3_1 (1)" [ref=e523]
+            - group "4 de 9" [ref=e524]:
+              - figure [ref=e525]:
+                - img "guia_de_suplementos_1x" [ref=e526]
+            - group "5 de 9" [ref=e527]:
+              - figure [ref=e528]:
+                - img "guia_de_suplementos_1_1 (1)" [ref=e529]
+            - group "6 de 9" [ref=e530]:
+              - figure [ref=e531]:
+                - img "e_book_lanches_intermedi_rios_1x" [ref=e532]
+            - group "7 de 9" [ref=e533]:
+              - figure [ref=e534]:
+                - img "e_book_lanches_intermedi_rios_1_1 (1)" [ref=e535]
+            - group "8 de 9" [ref=e536]:
+              - figure [ref=e537]:
+                - img "e_book_caf_da_manh__1x" [ref=e538]
+            - group "9 de 9" [ref=e539]:
+              - figure [ref=e540]:
+                - img "guia_de_preparo_de_marmitas_1x" [ref=e541]
+          - button [ref=e542] [cursor=pointer]: 
+          - button [ref=e543] [cursor=pointer]: 
+      - generic [ref=e552]:
+        - generic [ref=e553]:
+          - heading "Layouts de entrega premium" [level=2] [ref=e556]
+          - paragraph [ref=e559]: A embalagem exclusiva que o seu serviço merece. Você vai agregar muito mais valor ao seu trabalho e encantar seus pacientes.
+          - list [ref=e564]:
+            - listitem [ref=e565]:
+              - generic [ref=e566]: "Templates de Plano Alimentar: Layouts com design de alto nível para o paciente sentir que recebeu um projeto personalizado, não apenas uma folha impressa."
+            - listitem [ref=e567]:
+              - generic [ref=e568]: "Listas de Substituição Personalizada: Nada de tabelas de excel ou folha de word. Esta lista de sub é 100% personalizada com a distribuição visual inteligente para facilitar o entendimento (e a vida) do paciente"
+            - listitem [ref=e569]:
+              - generic [ref=e570]: "Manual pré/pós consulta: Para dar total clareza sobre o funcionamento dos seus atendimentos e quais etapas o paciente irá passar."
+        - region "Carrossel de imagens" [ref=e574]:
+          - generic [ref=e575]:
+            - group "1 de 5" [ref=e576]:
+              - figure [ref=e577]:
+                - img "template_04_1x" [ref=e578]
+            - group "2 de 5" [ref=e579]:
+              - figure [ref=e580]:
+                - img "template_01_1" [ref=e581]
+            - group "3 de 5" [ref=e582]:
+              - figure [ref=e583]:
+                - img "modelo_02_manual_pr_consulta_1x" [ref=e584]
+            - group "4 de 5" [ref=e585]:
+              - figure [ref=e586]:
+                - img "modelo_02_manual_p_s_consulta_1x" [ref=e587]
+            - group "5 de 5" [ref=e588]:
+              - figure [ref=e589]:
+                - img "_l_mina_lista_de_substitui_o_1_1" [ref=e590]
+          - button [ref=e591] [cursor=pointer]: 
+          - button [ref=e592] [cursor=pointer]: 
+    - generic [ref=e594]:
+      - heading "Os materiais estão disponíveis em 2 formatos:" [level=2] [ref=e599]
+      - generic [ref=e605]:
+        - img [ref=e608]
+        - generic [ref=e615]:
+          - generic [ref=e616]: Materiais em PDF
+          - paragraph [ref=e617]: Os materiais em formato PDF estão prontos para uso imediato. Você pode imprimir ou compartilhar de forma digital (email ou whatsapp) com seus pacientes
+      - generic [ref=e623]:
+        - img [ref=e626]
+        - generic [ref=e630]:
+          - generic [ref=e631]: Editáveis no Canva
+          - paragraph [ref=e632]:
+            - text: "Os materiais em formato editável permitem que você personalize cada detalhe: adicionar ou remover informações, adicionar seu logotipo e modificar cores ou textos."
+            - text: Ah, não se preocupe se não tiver experiência com design. Na plataforma temos aulas ensinando como editar de forma muito simples e prática.
+    - generic [ref=e633]:
+      - generic [ref=e635]:
+        - img [ref=e639]
+        - heading "Atualizações mensais sem custo adicional !" [level=2] [ref=e690]
+        - paragraph [ref=e693]: Todos os meses são adicionados materiais inéditos na nossa plataforma, sem que você precise pagar nada a mais por isso.
+      - generic [ref=e695]:
+        - heading "Você também vai receber de presente 🎁" [level=2] [ref=e699]
+        - generic [ref=e700]:
+          - generic [ref=e701]:
+            - heading "NutriDocs" [level=2] [ref=e704]
+            - paragraph [ref=e707]:
+              - text: Para acabar com o amadorismo operacional. O NutriDocs não é apenas um pacote de arquivos; é o arsenal completo de
+              - strong [ref=e708]: Gestão e Blindagem Profissional
+              - text: "que te dá a postura de uma nutricionista de alto padrão. Você terá acesso imediato a:"
+            - list [ref=e713]:
+              - listitem [ref=e714]:
+                - generic [ref=e715]:
+                  - img "📄" [ref=e716]
+                  - text: "Contratos de Acompanhamento: Para vender pacotes de médio/longo prazo com segurança jurídica e garantir seu recebimento."
+              - listitem [ref=e717]:
+                - generic [ref=e718]:
+                  - img "🔎" [ref=e719]
+                  - text: "Anamneses Estratégicas: Roteiros investigativos que demonstram autoridade técnica logo na primeira pergunta."
+              - listitem [ref=e720]:
+                - generic [ref=e721]:
+                  - img "📊" [ref=e722]
+                  - text: "Questionários e Relatórios: A padronização profissional que encanta o paciente no pré e no pós-consulta."
+              - listitem [ref=e723]:
+                - generic [ref=e724]:
+                  - img "🎨" [ref=e725]
+                  - text: "O Toque exclusivo: Tudo pronto com a Sua Identidade Visual. Sua marca e suas cores em cada detalhe."
+            - generic "Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys" [ref=e728]:
+              - group [ref=e729]:
+                - generic "Ver lista completa do NutriDocs" [ref=e730] [cursor=pointer]:
+                  - generic [ref=e732]: Ver lista completa do NutriDocs
+                - text:               
+          - region "Carrossel de imagens" [ref=e736]:
+            - generic [ref=e737]:
+              - group "1 de 6" [ref=e738]:
+                - figure [ref=e739]:
+                  - img "modelo_01_anamnese_de_1_consulta_1_1" [ref=e740]
+              - group "2 de 6" [ref=e741]:
+                - figure [ref=e742]:
+                  - img "modelo_02_relat_rio_para_conv_nio_m_dio_1x" [ref=e743]
+              - group "3 de 6" [ref=e744]:
+                - figure [ref=e745]:
+                  - img "modelo_01_contrato_1x" [ref=e746]
+              - group "4 de 6" [ref=e747]:
+                - figure [ref=e748]:
+                  - img "modelo_03_recibo_de_pagamento_1x" [ref=e749]
+              - group "5 de 6" [ref=e750]:
+                - figure [ref=e751]:
+                  - img "modelo_05_question_rio_de_follow_up_1x" [ref=e752]
+              - group "6 de 6" [ref=e753]:
+                - figure [ref=e754]:
+                  - img "modelo_02_relat_rio_de_avalia_o_antropom_trica_1x" [ref=e755]
+            - button [ref=e756] [cursor=pointer]: 
+            - button [ref=e757] [cursor=pointer]: 
+        - generic [ref=e759]:
+          - heading "Nutrimap" [level=2] [ref=e762]
+          - generic [ref=e764]:
+            - paragraph [ref=e765]: O Nutrimap é uma inteligência artificial que guia o seu diagnóstico passo a passo, garantindo que você conecte sintomas, queixas e objetivos com precisão cirúrgica. É o fim do “branco” na hora de montar a estratégia.
+            - paragraph [ref=e766]
+            - paragraph [ref=e767]: Você diz o que precisar tratar com o paciente e em poucos segundos tem tudo o que precisa para montar o plano ideal para o paciente
+      - generic [ref=e772]:
+        - heading "As Nutris que usam a WebNutri recebem esse tipo de elogio dos pacientes:" [level=2] [ref=e777]
+        - generic [ref=e778]:
+          - figure "\"Só os materiais valem muito mais que o valor das consultas\"" [ref=e781]:
+            - generic [ref=e782]: "\"Só os materiais valem muito mais que o valor das consultas\""
+          - figure "\"Já passei em um nutri uma vez e não tive toda essa atenção\"" [ref=e785]:
+            - generic [ref=e786]: "\"Já passei em um nutri uma vez e não tive toda essa atenção\""
+          - figure "\"Amei receber minha dieta dessa forma. Que capricho\"" [ref=e789]:
+            - generic [ref=e790]: "\"Amei receber minha dieta dessa forma. Que capricho\""
+      - generic [ref=e794]:
+        - img [ref=e799]
+        - heading "Se você fosse comprar cada parte desse protocolo separadamente, este seria o seu investimento:" [level=2] [ref=e858]
+        - list [ref=e861]:
+          - listitem [ref=e862]:
+            - link "👁️ Pack Didática Visual (Acervo com mais de 80 Lâminas) R$ 497,00" [ref=e863] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e865]:
+                - generic [ref=e866]: 👁️ Pack Didática Visual (Acervo com mais de 80 Lâminas)
+                - generic [ref=e867]: R$ 497,00
+          - listitem [ref=e868]:
+            - link "🔄 Kit Ferramentas de Adesão (Guias, Receitas e Suporte R$ 397,00" [ref=e869] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e871]:
+                - generic [ref=e872]: 🔄 Kit Ferramentas de Adesão (Guias, Receitas e Suporte
+                - generic [ref=e873]: R$ 397,00
+          - listitem [ref=e874]:
+            - link "✨ Layouts de Entrega Premium (Templates Exclusivos) R$ 147,00" [ref=e875] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e877]:
+                - generic [ref=e878]: ✨ Layouts de Entrega Premium (Templates Exclusivos)
+                - generic [ref=e879]: R$ 147,00
+          - listitem [ref=e880]:
+            - link "📄 NutriDocs (Blindagem e Gestão) R$ 147,00" [ref=e881] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e883]:
+                - generic [ref=e884]: 📄 NutriDocs (Blindagem e Gestão)
+                - generic [ref=e885]: R$ 147,00
+          - listitem [ref=e886]:
+            - link "🗺 Nutrimap (Raciocínio Clínico) R$ 197,00" [ref=e887] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e889]:
+                - generic [ref=e890]: 🗺 Nutrimap (Raciocínio Clínico)
+                - generic [ref=e891]: R$ 197,00
+          - listitem [ref=e892]:
+            - link "🛣 Trilha do Paciente (Fidelização) R$ 147,00" [ref=e893] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e895]:
+                - generic [ref=e896]: 🛣 Trilha do Paciente (Fidelização)
+                - generic [ref=e897]: R$ 147,00
+        - heading "Total de R$1.532,00" [level=2] [ref=e900]
+        - generic [ref=e901]:
+          - heading "Mas somente hoje e agora" [level=2] [ref=e906]
+          - paragraph [ref=e909]: "Você vai poder garantir acesso à Webnutri e implementar o Protocolo de Atendimento Visual investindo apenas:"
+          - generic [ref=e913]:
+            - generic [ref=e914]: 12x de
+            - paragraph [ref=e915]: R$ 29,90
+          - paragraph [ref=e918]: ou R$297,00 à vista
+          - link "QUERO ACESSO À WEBNUTRI" [ref=e922] [cursor=pointer]:
+            - /url: https://go.webnutri.com.br/checkout/wn-checkout-ads
+            - generic [ref=e923]:
+              - img [ref=e925]
+              - generic [ref=e928]: QUERO ACESSO À WEBNUTRI
+      - generic [ref=e940]:
+        - img [ref=e945]
+        - heading "Vamos fazer um acordo?" [level=2] [ref=e1006]
+        - generic [ref=e1008]:
+          - paragraph [ref=e1009]: Nós entendemos o seu receio de comprar “mais do mesmo” e continuar frustrada. O mercado está cheio de “packs” que prometem milagres, mas entregam pastas bagunçadas com designs amadores.
+          - paragraph [ref=e1010]: A Webnutri é diferente porque não vendemos arquivos, te entregamos um Protocolo Clínico.
+          - paragraph [ref=e1011]
+          - paragraph [ref=e1012]: "A nossa promessa aqui é muito simples: Se você não sentir que sua postura profissional mudou, se os seus pacientes não elogiarem o seu material, ou se você achar que a Webnutri não economizou horas da sua vida…"
+          - paragraph [ref=e1013]
+          - paragraph [ref=e1014]:
+            - text: Basta enviar um único e-mail dentro de 7 dias e
+            - strong [ref=e1015]: nós devolveremos 100% do seu investimento
+            - text: ","
+            - text: sem burocracia.
+      - generic [ref=e1018]:
+        - heading "Quem somos?" [level=2] [ref=e1021]
+        - generic [ref=e1023]:
+          - paragraph [ref=e1024]:
+            - text: Olá nutri! Nós somos a
+            - strong [ref=e1025]: Bárbara
+            - text: e a
+            - strong [ref=e1027]: Letícia
+            - text: ","
+            - strong [ref=e1028]: criadoras da Webnutri
+            - text: e da
+            - strong [ref=e1029]: Nutri de Consultório
+            - text: ", uma empresa de capacitação e soluções para nutricionistas. Juntas somamos"
+            - strong [ref=e1030]: mais de 15 anos de experiência
+            - text: na nutrição e em atendimento clínico.
+          - paragraph [ref=e1031]
+          - paragraph [ref=e1032]: Nossa missão com a Webnutri é te entregar as melhores soluções para que você possa captar mais pacientes, melhorar a qualidade dos seus atendimentos e agregar mais valor ao seu trabalho, fazendo com que seus pacientes enxerguem você como uma nutricionista de referência.
+          - paragraph [ref=e1033]
+          - paragraph [ref=e1034]:
+            - text: Chegou a hora de entregar uma experiência premium para os seus pacientes.
+            - strong [ref=e1035]: Conte com a gente!
+      - generic [ref=e1042]:
+        - heading "Perguntas frequentes" [level=2] [ref=e1045]
+        - generic "Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys" [ref=e1048]:
+          - group [ref=e1049]:
+            - generic "Como recebo o acesso?" [ref=e1050] [cursor=pointer]:
+              - generic [ref=e1052]: Como recebo o acesso?
+          - group [ref=e1053]:
+            - generic "Por quanto tempo terei acesso?" [ref=e1054] [cursor=pointer]:
+              - generic [ref=e1056]: Por quanto tempo terei acesso?
+          - group [ref=e1057]:
+            - generic "E se eu tiver alguma dúvida?" [ref=e1058] [cursor=pointer]:
+              - generic [ref=e1060]: E se eu tiver alguma dúvida?
+          - group [ref=e1061]:
+            - generic "A garantia é real?" [ref=e1062] [cursor=pointer]:
+              - generic [ref=e1064]: A garantia é real?
+      - generic [ref=e1067]:
+        - img [ref=e1072]
+        - heading "Garanta seu acesso agora" [level=2] [ref=e1131]
+        - list [ref=e1134]:
+          - listitem [ref=e1135]:
+            - link "👁️ Pack Didática Visual (Acervo com mais de 80 Lâminas)" [ref=e1136] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1139]: 👁️ Pack Didática Visual (Acervo com mais de 80 Lâminas)
+          - listitem [ref=e1140]:
+            - link "🔄 Kit Ferramentas de Adesão (Guias, Receitas e Suporte" [ref=e1141] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1144]: 🔄 Kit Ferramentas de Adesão (Guias, Receitas e Suporte
+          - listitem [ref=e1145]:
+            - link "✨ Layouts de Entrega Premium (Templates Exclusivos)" [ref=e1146] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1149]: ✨ Layouts de Entrega Premium (Templates Exclusivos)
+          - listitem [ref=e1150]:
+            - link "📄 NutriDocs (Blindagem e Gestão)" [ref=e1151] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1154]: 📄 NutriDocs (Blindagem e Gestão)
+          - listitem [ref=e1155]:
+            - link "🗺 Nutrimap (Raciocínio Clínico)" [ref=e1156] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1159]: 🗺 Nutrimap (Raciocínio Clínico)
+          - listitem [ref=e1160]:
+            - link "🛣 Trilha do Paciente (Fidelização)" [ref=e1161] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1164]: 🛣 Trilha do Paciente (Fidelização)
+        - generic [ref=e1168]:
+          - generic [ref=e1169]: 12x de
+          - paragraph [ref=e1170]: R$ 29,90
+        - paragraph [ref=e1173]: ou R$297,00 à vista
+        - link "QUERO ACESSO À WEBNUTRI" [ref=e1177] [cursor=pointer]:
+          - /url: https://go.webnutri.com.br/checkout/wn-checkout-ads
+          - generic [ref=e1178]:
+            - img [ref=e1180]
+            - generic [ref=e1183]: QUERO ACESSO À WEBNUTRI
+      - generic [ref=e1187]:
+        - generic [ref=e1190]:
+          - img [ref=e1193]
+          - generic [ref=e1197]:
+            - generic [ref=e1198]: Precisa de ajuda? Fale com o nosso time
+            - paragraph [ref=e1199]: Clique no botão para entrar em contato
+        - link "Entrar em contato" [ref=e1203] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send/?phone=5511943893789&text=Ol%C3%A1%2C+quero+saber+mais+sobre+a+Webnutri&type=phone_number&app_absent=0
+          - generic [ref=e1204]:
+            - img [ref=e1206]
+            - generic [ref=e1211]: Entrar em contato
+      - generic [ref=e1216]:
+        - list [ref=e1219]:
+          - listitem [ref=e1220]:
+            - generic [ref=e1221]: © Copyright 2025. Todos os direitos reservados a WebNutri.
+        - list [ref=e1224]:
+          - listitem [ref=e1225]:
+            - link "Termo de cancelamento" [ref=e1226] [cursor=pointer]:
+              - /url: https://webnutri.com.br/termo-de-cancelamento/
+              - generic [ref=e1227]: Termo de cancelamento
+          - listitem [ref=e1228]:
+            - link "Termos de Uso" [ref=e1229] [cursor=pointer]:
+              - /url: https://webnutri.com.br/termos-de-uso-nutri-de-consultorio/
+              - generic [ref=e1230]: Termos de Uso
+  - generic:                                                            

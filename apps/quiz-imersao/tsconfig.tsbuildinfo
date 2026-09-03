@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/completionscreen.tsx","./src/components/progressbar.tsx","./src/components/quizstep.tsx","./src/components/whatsappbutton.tsx","./src/data/config.ts","./src/data/questions.ts","./src/lib/webhook.ts"],"version":"5.9.3"}

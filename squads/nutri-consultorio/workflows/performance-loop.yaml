@@ -1,0 +1,98 @@
+name: performance-loop
+version: 2.0.0
+description: |
+  Loop de performance — Max -> Zoe DIRETO (velocidade maxima).
+  Max puxa e cruza dados (Meta + gateway + vTurb), identifica os vencedores e entrega
+  um "pacote de producao" pronto; Zoe escreve as variacoes modelando o vencedor.
+  Jack NAO entra por padrao — e acionado sob demanda (@jack) quando precisa de angulo
+  novo / decisao estrategica (fadiga de criativo, novo nivel de consciencia, escala).
+  Read-only no Meta — nada e publicado; output pronto para o Pedro revisar e subir.
+
+trigger:
+  command: "*performance-loop"
+  agent: max
+
+elicitation:
+  enabled: true
+  questions:
+    - id: product
+      prompt: "Para qual produto?"
+      type: choice
+      options:
+        - Webnutri
+        - GCN (Guia de Condutas Nutricionais)
+        - ANC (Aceleracao Nutri de Consultorio)
+      required: true
+      default: "Webnutri"
+
+    - id: window
+      prompt: "Janela de analise (dias)?"
+      type: text
+      required: true
+      default: "7"
+
+    - id: quantity
+      prompt: "Quantas variacoes a Zoe deve escrever por vencedor?"
+      type: text
+      required: true
+      default: "3"
+
+steps:
+  - id: max-report
+    agent: max
+    action: report
+    description: |
+      Max puxa os criativos do Meta (read-only, somente utm_source=FB), a venda real
+      por UTM do gateway e, se houver VSL, a retencao da vTurb. Cruza pela UTM e gera o
+      Relatorio de Padroes Vencedores. No FIM, entrega o "PACOTE DE PRODUCAO" pra Zoe —
+      tudo que ela precisa pra trabalhar sem o Jack:
+        1. Criativo(s) vencedor(es) com TEXTO (body/headline/CTA) e VISUAL puxados da API
+           do Meta (ads_get_creatives + ads_get_ad_preview). Para VIDEO, o roteiro falado nao
+           vem da API: Max busca em docs/references/winning-ads/roteiros/<ad_id>.md e, se faltar,
+           marca "PENDENTE: roteiro do video — Pedro cola" (salvo la pra reuso).
+        2. O PADRAO que faz vencer (formato, angulo, nivel de consciencia)
+        3. CONTEXTO DE CONVERSAO: CR da pagina de vendas + curva da VSL (onde cai)
+        4. DIRETIVA do que variar: se o vencedor esta saudavel -> "varie o HOOK, mantenha
+           corpo/formato"; se esta FATIGANDO (ROAS caindo / frequencia subindo) ->
+           sinaliza "varie o ANGULO, nao so o hook" e sugere @jack se precisar de Big Idea nova.
+    inputs:
+      product: "{{elicitation.product}}"
+      window: "{{elicitation.window}}"
+    constraints:
+      meta_ads: "READ-ONLY — proibido operar a conta"
+    output_location: docs/outputs/performance/
+    on_success: zoe-write
+
+  - id: zoe-write
+    agent: zoe
+    action: batch
+    description: |
+      Zoe recebe o pacote de producao do Max e escreve as variacoes diretamente,
+      modelando a copy/hook vencedora segundo a DIRETIVA do Max (varia hook ou angulo).
+      Copy com acentuacao impecavel e tom da Leticia. Pronta para teste A/B.
+    inputs:
+      pacote: "{{steps.max-report.output}}"
+      quantity: "{{elicitation.quantity}}"
+    on_success: review
+
+  - id: review
+    agent: zoe
+    action: review
+    description: Zoe revisa as copies contra o tone of voice e os winning ads do produto
+    inputs:
+      copies: "{{steps.zoe-write.output}}"
+
+# Escalonamento opcional — NAO faz parte do fluxo padrao:
+# Quando o Pedro (ou a diretiva do Max) pedir angulo novo / decisao estrategica,
+# aciona @jack *brief com o relatorio do Max como insumo, e dai Jack -> Zoe.
+escalation:
+  trigger: "manual ou diretiva do Max (fadiga / novo nivel de consciencia / escala)"
+  agent: jack
+  command: "*brief"
+
+completion:
+  message: |
+    Loop completo. Max analisou os dados (FB-only) e entregou o pacote; Zoe escreveu as
+    variacoes modelando o vencedor. Output pronto para revisao do Pedro — nada publicado
+    no Meta. Para angulo novo / decisao estrategica, acione @jack.
+  output_location: docs/outputs/

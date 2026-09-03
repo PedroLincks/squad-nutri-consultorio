@@ -1,0 +1,623 @@
+<style>
+  :root{
+    --ground:#FAFAF6; --surface:#FFFFFF; --surface-2:#F3F3EC;
+    --border:#E5E4DB; --border-strong:#D3D2C6;
+    --ink:#1B211D; --ink-2:#4C534C; --ink-3:#767C74;
+    --accent:#1F7A4D; --accent-soft:#E4F0E8;
+    --wn:#16697A; --wn-soft:#E1EEF1;
+    --mda:#B47B1E; --mda-soft:#F4EAD4;
+    --crit:#BE3A2B; --warn:#B77914; --good:#2E7D46;
+    --crit-soft:#F6E3E0; --warn-soft:#F5EAD6; --good-soft:#E3F0E6;
+    --shadow:0 1px 2px rgba(20,30,22,.04),0 8px 24px -12px rgba(20,30,22,.10);
+    --radius:14px;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --maxw:1000px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#0F120E; --surface:#161B15; --surface-2:#1C2119;
+      --border:#2A3128; --border-strong:#374035;
+      --ink:#E9ECE3; --ink-2:#AEB4A8; --ink-3:#828A7E;
+      --accent:#4FB37E; --accent-soft:#16311F;
+      --wn:#5FB7CC; --wn-soft:#13303A;
+      --mda:#D9A94A; --mda-soft:#33280F;
+      --crit:#E86B5C; --warn:#DBA344; --good:#5FB37E;
+      --crit-soft:#3A1D18; --warn-soft:#33280F; --good-soft:#16311F;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="light"]{
+    --ground:#FAFAF6; --surface:#FFFFFF; --surface-2:#F3F3EC;
+    --border:#E5E4DB; --border-strong:#D3D2C6;
+    --ink:#1B211D; --ink-2:#4C534C; --ink-3:#767C74;
+    --accent:#1F7A4D; --accent-soft:#E4F0E8;
+    --wn:#16697A; --wn-soft:#E1EEF1; --mda:#B47B1E; --mda-soft:#F4EAD4;
+    --crit:#BE3A2B; --warn:#B77914; --good:#2E7D46;
+    --crit-soft:#F6E3E0; --warn-soft:#F5EAD6; --good-soft:#E3F0E6;
+    --shadow:0 1px 2px rgba(20,30,22,.04),0 8px 24px -12px rgba(20,30,22,.10);
+  }
+  :root[data-theme="dark"]{
+    --ground:#0F120E; --surface:#161B15; --surface-2:#1C2119;
+    --border:#2A3128; --border-strong:#374035;
+    --ink:#E9ECE3; --ink-2:#AEB4A8; --ink-3:#828A7E;
+    --accent:#4FB37E; --accent-soft:#16311F;
+    --wn:#5FB7CC; --wn-soft:#13303A; --mda:#D9A94A; --mda-soft:#33280F;
+    --crit:#E86B5C; --warn:#DBA344; --good:#5FB37E;
+    --crit-soft:#3A1D18; --warn-soft:#33280F; --good-soft:#16311F;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased;margin:0;
+    font-feature-settings:"kern";text-rendering:optimizeLegibility}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{margin:0;letter-spacing:-.02em;text-wrap:balance;font-weight:680}
+  p{margin:0}
+  .num{font-variant-numeric:tabular-nums}
+  .mono{font-family:var(--mono)}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-3);font-weight:600}
+
+  /* ---- header ---- */
+  header.masthead{border-bottom:1px solid var(--border);background:
+    linear-gradient(180deg,var(--surface),var(--ground));position:relative;overflow:hidden}
+  header.masthead::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(120% 100% at 100% 0,var(--accent-soft),transparent 55%);
+    opacity:.7;pointer-events:none}
+  .masthead .wrap{padding-top:44px;padding-bottom:40px;position:relative}
+  .kicker{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.05;max-width:16ch}
+  .lede{margin-top:16px;color:var(--ink-2);font-size:clamp(15px,1.6vw,17px);max-width:60ch}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px}
+  .meta-row span{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .meta-row b{color:var(--ink-2);font-weight:600}
+
+  /* ---- nav ---- */
+  nav.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ground) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+  nav.toc .wrap::-webkit-scrollbar{display:none}
+  nav.toc a{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-decoration:none;
+    padding:6px 11px;border-radius:8px;white-space:nowrap;transition:.15s}
+  nav.toc a:hover{background:var(--surface-2);color:var(--ink)}
+
+  section{padding:52px 0;border-bottom:1px solid var(--border)}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:clamp(21px,2.6vw,28px);margin-top:8px}
+  .sec-head p{color:var(--ink-2);margin-top:10px;max-width:70ch}
+
+  /* ---- cards / grid ---- */
+  .grid{display:grid;gap:16px}
+  .cols-2{grid-template-columns:repeat(2,1fr)}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .cols-4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:720px){.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow)}
+
+  /* product headed card */
+  .pcard{position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--pc)}
+  .pcard[data-p="wn"]{--pc:var(--wn)} .pcard[data-p="mda"]{--pc:var(--mda)}
+  .ptag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;
+    font-weight:600;letter-spacing:.04em;color:var(--pc)}
+  .ptag .sq{width:9px;height:9px;border-radius:2px;background:var(--pc)}
+
+  /* KPI tiles */
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+  @media(max-width:720px){.kpi{grid-template-columns:repeat(2,1fr)}}
+  .kpi .cell{background:var(--surface-2);border-radius:10px;padding:13px 14px}
+  .kpi .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .kpi .v{font-size:24px;font-weight:680;letter-spacing:-.02em;margin-top:5px;font-variant-numeric:tabular-nums}
+  .kpi .v small{font-size:13px;color:var(--ink-3);font-weight:600}
+
+  .stat-hero{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:720px){.stat-hero{grid-template-columns:1fr}}
+  .stat-hero .big{font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+  .stat-hero .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+  .stat-hero .sub{color:var(--ink-2);font-size:13px;margin-top:6px}
+
+  /* severity chip */
+  .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;
+    font-weight:600;padding:3px 9px;border-radius:999px;letter-spacing:.02em;white-space:nowrap}
+  .chip.crit{background:var(--crit-soft);color:var(--crit)}
+  .chip.warn{background:var(--warn-soft);color:var(--warn)}
+  .chip.good{background:var(--good-soft);color:var(--good)}
+  .chip .sq{width:7px;height:7px;border-radius:50%;background:currentColor}
+
+  /* tables */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--border)}
+  thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:600;background:var(--surface-2)}
+  tbody tr:last-child td{border-bottom:none}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  tbody tr.total td{font-weight:680;background:var(--surface-2)}
+  .pill-wn,.pill-mda{font-family:var(--mono);font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px}
+  .pill-wn{background:var(--wn-soft);color:var(--wn)} .pill-mda{background:var(--mda-soft);color:var(--mda)}
+
+  /* bars */
+  .bars{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+  .bar-row{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center}
+  .bar-row .rl{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-align:right;font-variant-numeric:tabular-nums}
+  .track{position:relative;background:var(--surface-2);border-radius:7px;height:26px;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;border-radius:7px;display:flex;align-items:center;
+    padding:0 9px;color:#fff;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;min-width:2px}
+  .fill.wn{background:var(--wn)} .fill.mda{background:var(--mda)}
+  .fill.mut{background:var(--border-strong);color:var(--ink-2)}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+  .legend span{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+  .legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  /* funnel */
+  .funnel{display:flex;flex-direction:column;gap:7px}
+  .funnel .step{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;
+    padding:11px 14px;border-radius:9px;background:var(--surface-2)}
+  .funnel .step .fl{font-size:13px;color:var(--ink-2)}
+  .funnel .step .fv{font-family:var(--mono);font-weight:600;font-variant-numeric:tabular-nums}
+  .funnel .arrow{justify-self:center;font-family:var(--mono);font-size:11px;color:var(--ink-3);padding:1px 0}
+
+  .callout{border-radius:var(--radius);padding:18px 20px;border:1px solid var(--border);
+    background:var(--surface);display:flex;gap:14px;align-items:flex-start}
+  .callout .ic{font-size:20px;line-height:1.2}
+  .callout.crit{border-color:color-mix(in srgb,var(--crit) 40%,var(--border));background:var(--crit-soft)}
+  .callout h3{font-size:16px;margin-bottom:4px}
+  .callout p{color:var(--ink-2);font-size:14px}
+
+  .note{font-size:12.5px;color:var(--ink-3);margin-top:14px;font-style:italic}
+  .lead-in{color:var(--ink-2);margin-bottom:20px;max-width:72ch}
+
+  ul.clean{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  ul.clean li{padding-left:22px;position:relative;color:var(--ink-2);font-size:14px}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;
+    border-radius:50%;background:var(--accent)}
+  ul.clean li b{color:var(--ink)}
+
+  /* map (page x scroll) */
+  .map{display:flex;flex-direction:column;gap:2px}
+  .map .row{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;
+    padding:7px 12px;border-radius:8px}
+  .map .row:nth-child(odd){background:var(--surface-2)}
+  .map .row .d{font-family:var(--mono);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+  .map .row .c{font-size:13.5px;color:var(--ink)}
+  .map .row .c small{color:var(--ink-3)}
+  .map .row .a{font-family:var(--mono);font-size:11px;color:var(--ink-2);white-space:nowrap}
+  .map .row.hot{background:var(--accent-soft)}
+  .map .row.hot .a{color:var(--accent);font-weight:600}
+  .map .row.money{background:var(--mda-soft)}
+  .map .row.leak .a{color:var(--crit);font-weight:600}
+  .badge-hot{font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:600}
+
+  .prio{display:flex;flex-direction:column;gap:10px}
+  .prio .item{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+    padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+  .prio .item .rank{font-family:var(--mono);font-size:13px;font-weight:680;color:var(--ink-3);
+    width:24px;text-align:center;font-variant-numeric:tabular-nums}
+  .prio .item h4{margin:0 0 3px;font-size:15px;font-weight:660}
+  .prio .item p{color:var(--ink-2);font-size:13.5px}
+  .prio .item .act{margin-top:7px;font-size:13px;color:var(--ink)}
+  .prio .item .act b{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .prio .top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+  footer{padding:40px 0 60px;color:var(--ink-3);font-size:12.5px}
+  footer .wrap{display:flex;flex-direction:column;gap:8px}
+  footer .mono{font-family:var(--mono)}
+  @media(prefers-reduced-motion:no-preference){
+    .fill{animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
+    @keyframes grow{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1)}}
+  }
+  a.anchor{color:inherit;text-decoration:none}
+</style>
+
+<header class="masthead" id="topo">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span><span class="eyebrow">Relatório de Performance · Max</span></div>
+    <h1>Funil, tráfego e páginas — Webnutri × Dieta Ágil</h1>
+    <p class="lede">Foto consolidada de junho/2026: venda real, funil de topo cruzado (Meta × Utmify × Guru) e o CRO das duas páginas de venda mapeadas no DOM real. Onde está o dinheiro, onde ele vaza, e o que atacar primeiro.</p>
+    <div class="meta-row">
+      <span>Janela · <b>01–30 jun 2026</b></span>
+      <span>Fontes · <b>Meta Ads · Utmify · Digital Manager Guru · Clarity</b></span>
+      <span>Conta · <b>01 — Nutri de Consultório</b></span>
+      <span>Escopo · <b>tráfego pago (FB) · read-only</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#resumo">Resumo</a>
+    <a href="#vendas">Vendas</a>
+    <a href="#bumps">Order bumps</a>
+    <a href="#trafego">Tráfego &amp; connect</a>
+    <a href="#pixel">Pixel</a>
+    <a href="#cro-wn">Página WN</a>
+    <a href="#cro-mda">Página MDA</a>
+    <a href="#sintese">Síntese</a>
+  </div>
+</nav>
+
+<!-- RESUMO -->
+<section id="resumo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">01 · Resumo executivo</span>
+      <h2>As duas contas gastam quase igual. O retorno, não.</h2>
+      <p>Investimento parelho (~R$11k cada), mas a Webnutri se paga no dado atribuído e a Dieta Ágil não. Abaixo, o retrato de cada produto — e os três achados que mandam na leitura de tudo.</p>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card pcard" data-p="wn">
+        <div class="ptag"><span class="sq"></span>WEBNUTRI · [WN]</div>
+        <div class="kpi">
+          <div class="cell"><div class="k">Investimento</div><div class="v num">R$ 10.860</div></div>
+          <div class="cell"><div class="k">Vendas reais (FB)</div><div class="v num">44</div></div>
+          <div class="cell"><div class="k">Receita</div><div class="v num">R$ 12.249</div></div>
+          <div class="cell"><div class="k">ROAS atribuído</div><div class="v num" style="color:var(--good)">1,13<small>x</small></div></div>
+        </div>
+      </div>
+      <div class="card pcard" data-p="mda">
+        <div class="ptag"><span class="sq"></span>DIETA ÁGIL · [MDA]</div>
+        <div class="kpi">
+          <div class="cell"><div class="k">Investimento</div><div class="v num">R$ 11.033</div></div>
+          <div class="cell"><div class="k">Vendas reais (FB)</div><div class="v num">34</div></div>
+          <div class="cell"><div class="k">Receita</div><div class="v num">R$ 7.207</div></div>
+          <div class="cell"><div class="k">ROAS atribuído</div><div class="v num" style="color:var(--crit)">0,65<small>x</small></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid cols-3" style="margin-top:16px">
+      <div class="card">
+        <span class="chip crit"><span class="sq"></span>ACHADO 1</span>
+        <h3 style="font-size:17px;margin:12px 0 6px">Pixel inflado 3–4×</h3>
+        <p style="color:var(--ink-2);font-size:13.5px">O Meta reporta 163 compras na WN; a venda real é 44. O algoritmo otimiza para conversões-fantasma.</p>
+      </div>
+      <div class="card">
+        <span class="chip crit"><span class="sq"></span>ACHADO 2</span>
+        <h3 style="font-size:17px;margin:12px 0 6px">Payoff enterrado</h3>
+        <p style="color:var(--ink-2);font-size:13.5px">Prova e preço no fim das páginas: só ~19% (WN) e ~27% (MDA) chegam ao preço.</p>
+      </div>
+      <div class="card">
+        <span class="chip warn"><span class="sq"></span>ACHADO 3</span>
+        <h3 style="font-size:17px;margin:12px 0 6px">OB da WN parado</h3>
+        <p style="color:var(--ink-2);font-size:13.5px">Só 8% dos pedidos da Webnutri levam order bump — contra 48% do Dieta Ágil. Margem na mesa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENDAS -->
+<section id="vendas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">02 · Vendas &amp; backredirect</span>
+      <h2>Venda real por degrau do funil</h2>
+      <p>Fonte da verdade = Digital Manager Guru (vendas com origem FB). Degrau inferido pela faixa de valor pago (o parcelamento 12× infla ~1,21×).</p>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card pcard" data-p="wn">
+        <div class="ptag"><span class="sq"></span>WEBNUTRI — 44 vendas · R$ 12.249</div>
+        <p style="color:var(--ink-2);font-size:13.5px;margin:10px 0 16px">Backredirect saudável: segura ~48% no downsell. Oferta cheia (297) = 60% da receita.</p>
+        <div class="bars">
+          <div class="bar-row"><div class="rl">R$ 297</div><div class="track"><div class="fill wn" style="width:100%">23 vendas · 52%</div></div></div>
+          <div class="bar-row"><div class="rl">R$ 247</div><div class="track"><div class="fill wn" style="width:48%">11 · 25%</div></div></div>
+          <div class="bar-row"><div class="rl">R$ 197</div><div class="track"><div class="fill wn" style="width:43%">10 · 23%</div></div></div>
+        </div>
+      </div>
+      <div class="card pcard" data-p="mda">
+        <div class="ptag"><span class="sq"></span>DIETA ÁGIL — 34 vendas · R$ 7.207</div>
+        <p style="color:var(--ink-2);font-size:13.5px;margin:10px 0 16px">Quase tudo na oferta cheia. O downsell <b style="color:var(--crit)">não converte via FB</b> — oportunidade parada.</p>
+        <div class="bars">
+          <div class="bar-row"><div class="rl">R$ 197</div><div class="track"><div class="fill mda" style="width:100%">~97% das vendas</div></div></div>
+          <div class="bar-row"><div class="rl">R$ 147</div><div class="track"><div class="fill mut" style="width:5%">0 via FB</div></div></div>
+          <div class="bar-row"><div class="rl">R$ 97</div><div class="track"><div class="fill mut" style="width:5%">0 via FB</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER BUMPS -->
+<section id="bumps">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">03 · Order bumps</span>
+      <h2>Bump: onde a Dieta Ágil ganha margem — e a WN deixa na mesa</h2>
+      <p>OB entra como transação separada (<span class="mono">is_order_bump</span>) carregando a UTM do funil. Soma faturamento sem inflar o ticket do produto-âncora.</p>
+    </div>
+
+    <div class="grid cols-2" style="margin-bottom:16px">
+      <div class="card" style="text-align:center">
+        <div class="ptag" style="justify-content:center;color:var(--mda)"><span class="sq" style="background:var(--mda)"></span>DIETA ÁGIL</div>
+        <div style="font-size:44px;font-weight:700;letter-spacing:-.03em;margin:10px 0 2px" class="num">48%</div>
+        <div class="eyebrow">attach rate · 16 de 33 pedidos</div>
+        <div style="color:var(--ink-2);font-size:13px;margin-top:10px">17 bumps · <b>R$ 830,28</b> · +11,8% de receita</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="ptag" style="justify-content:center;color:var(--wn)"><span class="sq" style="background:var(--wn)"></span>WEBNUTRI</div>
+        <div style="font-size:44px;font-weight:700;letter-spacing:-.03em;margin:10px 0 2px;color:var(--crit)" class="num">8%</div>
+        <div class="eyebrow">attach rate · 3 de 39 pedidos</div>
+        <div style="color:var(--ink-2);font-size:13px;margin-top:10px">3 bumps · R$ 175,40 · dinheiro na mesa</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Funil</th><th>Produto OB</th><th class="n">Vendas</th><th class="n">Receita</th><th>Valores</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="2"><span class="pill-mda">DIETA ÁGIL</span></td><td>Box de Receitas</td><td class="n">9</td><td class="n">R$ 423,00</td><td class="mono">R$ 47</td></tr>
+          <tr><td>Trilha do Paciente</td><td class="n">8</td><td class="n">R$ 407,28</td><td class="mono">47 / 49,40 / 61,44</td></tr>
+          <tr><td rowspan="2"><span class="pill-wn">WEBNUTRI</span></td><td>Biblioteca de Refeições</td><td class="n">2</td><td class="n">R$ 128,40</td><td class="mono">57 / 71,40</td></tr>
+          <tr><td>Trilha do Paciente</td><td class="n">1</td><td class="n">R$ 47,00</td><td class="mono">R$ 47</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Attach 48% vs 8%: quase metade dos compradores do Dieta Ágil leva um bump; na Webnutri, quase ninguém. Replicar a estrutura de OB da MDA no funil WN é ganho direto de margem.</p>
+  </div>
+</section>
+
+<!-- TRAFEGO / CONNECT -->
+<section id="trafego">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">04 · Tráfego &amp; connect rate</span>
+      <h2>Do clique pago à venda real</h2>
+      <p>Meta e Utmify batem dígito por dígito (a Utmify relaya o pixel). Connect rate = page view ÷ clique no link. Só <span class="mono">omni_initiated_checkout</span> conta como checkout (os 5 action_types têm valor idêntico; somar triplica).</p>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card pcard" data-p="wn">
+        <div class="ptag"><span class="sq"></span>WEBNUTRI</div>
+        <div class="funnel" style="margin-top:14px">
+          <div class="step"><span class="fl">Cliques no link</span><span class="fv">3.538</span></div>
+          <div class="arrow">↓ connect 72,3%</div>
+          <div class="step"><span class="fl">Page views (LPV)</span><span class="fv">2.557</span></div>
+          <div class="arrow">↓ 5,0%</div>
+          <div class="step"><span class="fl">Compras iniciadas</span><span class="fv">129</span></div>
+          <div class="arrow">↓ venda real</div>
+          <div class="step" style="background:var(--wn-soft)"><span class="fl"><b>Vendas (Guru)</b></span><span class="fv" style="color:var(--wn)">44</span></div>
+        </div>
+      </div>
+      <div class="card pcard" data-p="mda">
+        <div class="ptag"><span class="sq"></span>DIETA ÁGIL</div>
+        <div class="funnel" style="margin-top:14px">
+          <div class="step"><span class="fl">Cliques no link</span><span class="fv">3.102</span></div>
+          <div class="arrow">↓ connect 72,9%</div>
+          <div class="step"><span class="fl">Page views (LPV)</span><span class="fv">2.262</span></div>
+          <div class="arrow">↓ 5,3%</div>
+          <div class="step"><span class="fl">Compras iniciadas</span><span class="fv">120</span></div>
+          <div class="arrow">↓ venda real</div>
+          <div class="step" style="background:var(--mda-soft)"><span class="fl"><b>Vendas (Guru)</b></span><span class="fv" style="color:var(--mda)">34</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid cols-2" style="margin-top:16px">
+      <div class="card pcard" data-p="wn" style="display:flex;align-items:center;justify-content:space-between;gap:14px">
+        <div>
+          <div class="eyebrow">Conversão do funil · clique → venda</div>
+          <div style="font-size:13px;color:var(--ink-2);margin-top:5px">3.538 cliques no link → 44 vendas FB</div>
+        </div>
+        <div style="font-size:38px;font-weight:700;letter-spacing:-.03em;color:var(--wn)" class="num">1,2%</div>
+      </div>
+      <div class="card pcard" data-p="mda" style="display:flex;align-items:center;justify-content:space-between;gap:14px">
+        <div>
+          <div class="eyebrow">Conversão do funil · clique → venda</div>
+          <div style="font-size:13px;color:var(--ink-2);margin-top:5px">3.102 cliques no link → 34 vendas FB</div>
+        </div>
+        <div style="font-size:38px;font-weight:700;letter-spacing:-.03em;color:var(--mda)" class="num">1,1%</div>
+      </div>
+    </div>
+
+    <p class="note">Taxa de ponta a ponta: de cada 100 cliques pagos no link, ~1,2 viram venda na WN e ~1,1 na MDA (sobre o total de cliques: 0,86% e 0,79%). Connect ~72% nos dois = piso do saudável (70–85%); o degrau fraco e confiável é LPV→checkout (~5%).</p>
+  </div>
+</section>
+
+<!-- PIXEL / ATRIBUICAO -->
+<section id="pixel">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">05 · Pixel de compra</span>
+      <h2>O pixel conta 3–4× mais do que a Guru atribui ao FB</h2>
+      <p>Comparação entre o evento de compra do pixel do Meta e a venda real com origem FB no gateway. O pixel superconta — e o algoritmo otimiza para o número inflado.</p>
+    </div>
+
+    <div class="callout crit" style="margin-bottom:16px">
+      <div class="ic">🔴</div>
+      <div>
+        <h3>Pixel de compra inflado 3–4×</h3>
+        <p>Explica a anomalia impossível num funil sadio: compras iniciadas (129) &lt; compras-pixel (163) na WN. O <span class="mono">purchase</span> dispara múltiplas vezes (backredirect / recompra / bump), o <span class="mono">initiate_checkout</span> subconta. O algoritmo otimiza para o número errado.</p>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Camada de "compra"</th><th class="n">Webnutri</th><th class="n">Dieta Ágil</th></tr></thead>
+        <tbody>
+          <tr><td>Pixel do Meta (omni_purchase)</td><td class="n">163</td><td class="n">133</td></tr>
+          <tr><td>Venda real atribuída ao FB (Guru)</td><td class="n">44</td><td class="n">34</td></tr>
+          <tr class="total"><td>Fator de inflação do pixel</td><td class="n" style="color:var(--crit)">3,8×</td><td class="n" style="color:var(--crit)">2,7×</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Base de venda = transações com <span class="mono">utm_source=FB</span> no Digital Manager Guru. O pixel do Meta conta muito mais evento de compra do que existe de venda rastreada ao FB.</p>
+  </div>
+</section>
+
+<!-- CRO WN -->
+<section id="cro-wn">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">06 · Página Webnutri · Clarity + DOM real</span>
+      <h2>A oferta está trancada atrás de 54 slides de carrossel</h2>
+      <p><span class="mono">webnutri.com.br/v8-ads</span> · celular · 30 dias · 3.055 pageviews · 5.025 cliques. Página pura (sem VSL). Gargalo duplo: hero + carrosséis.</p>
+    </div>
+
+    <div class="grid cols-4" style="margin-bottom:22px">
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700" class="num" >61%</div><div class="eyebrow" style="margin-top:6px">saem antes de 5%</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700" class="num">68%</div><div class="eyebrow" style="margin-top:6px">cliques em carrossel</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700" class="num">54</div><div class="eyebrow" style="margin-top:6px">slides no value stack</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700;color:var(--crit)" class="num">~19%</div><div class="eyebrow" style="margin-top:6px">chegam ao preço</div></div>
+    </div>
+
+    <h3 style="font-size:15px;margin-bottom:12px"><span class="eyebrow">Mapa real · conteúdo × scroll × atenção</span></h3>
+    <div class="map">
+      <div class="row leak"><div class="d">1–3%</div><div class="c">Hero — headline é <em>pergunta de problema</em> + CTA</div><div class="a">🡇 61% saem</div></div>
+      <div class="row"><div class="d">10–19%</div><div class="c">Como funciona o P.A.V · comparação + CTA</div><div class="a">—</div></div>
+      <div class="row"><div class="d">21%</div><div class="c">Prova "+10.000 nutricionistas"</div><div class="a">—</div></div>
+      <div class="row hot"><div class="d">28%</div><div class="c">Value stack — Pack Didática · <small>carrossel 14 slides</small></div><div class="a badge-hot">pico atenção 22,5%</div></div>
+      <div class="row hot"><div class="d">32%</div><div class="c">Kit de adesão · <small>carrossel 18 slides</small></div><div class="a">—</div></div>
+      <div class="row hot"><div class="d">36%</div><div class="c">Layouts premium · <small>carrossel 10 slides</small></div><div class="a">—</div></div>
+      <div class="row"><div class="d">52%</div><div class="c">Bônus 🎁 NutriDocs · <small>carrossel 12 slides</small></div><div class="a">~22% aqui</div></div>
+      <div class="row"><div class="d">63%</div><div class="c">Depoimentos (elogios dos pacientes)</div><div class="a">~21%</div></div>
+      <div class="row money"><div class="d">70–73%</div><div class="c"><b>Oferta / Preço</b> (R$1.532 → hoje) + CTA</div><div class="a">só ~19% chegam</div></div>
+      <div class="row leak"><div class="d">80–85%</div><div class="c">Garantia · "Vamos fazer um acordo?"</div><div class="a">🡇 -32%</div></div>
+      <div class="row"><div class="d">88–90%</div><div class="c">FAQ (acesso / tempo / garantia)</div><div class="a">~11%</div></div>
+    </div>
+
+    <div class="grid cols-2" style="margin-top:20px">
+      <div class="card">
+        <div class="eyebrow" style="margin-bottom:10px">Onde clicam</div>
+        <div class="bars">
+          <div class="bar-row"><div class="rl">68%</div><div class="track"><div class="fill wn" style="width:100%">Carrosséis</div></div></div>
+          <div class="bar-row"><div class="rl">16%</div><div class="track"><div class="fill mut" style="width:24%">FAQ</div></div></div>
+          <div class="bar-row"><div class="rl">11%</div><div class="track"><div class="fill mut" style="width:16%">CTA + Checkout</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="eyebrow" style="margin-bottom:10px">Retenção de scroll · WN vs MDA</div>
+        <div class="legend"><span><i style="background:var(--wn)"></i>WN</span><span><i style="background:var(--mda)"></i>MDA</span></div>
+        <div class="bars">
+          <div class="bar-row"><div class="rl">5%</div><div class="track"><div class="fill wn" style="width:38.9%">39%</div></div></div>
+          <div class="bar-row"><div class="rl"></div><div class="track"><div class="fill mda" style="width:56.4%">56%</div></div></div>
+          <div class="bar-row"><div class="rl">100%</div><div class="track"><div class="fill wn" style="width:14%">3,7%</div></div></div>
+          <div class="bar-row"><div class="rl"></div><div class="track"><div class="fill mda" style="width:20%">6,4%</div></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">O value stack inteiro são 4 carrosséis (14+18+10+12) que exigem swipe manual — por isso 68% dos cliques são em seta e a maioria vê só o 1º slide. Prova e preço vêm depois de tudo isso.</p>
+  </div>
+</section>
+
+<!-- CRO MDA -->
+<section id="cro-mda">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">07 · Página Dieta Ágil · Clarity + DOM real</span>
+      <h2>Ingredientes certos, ordem errada</h2>
+      <p><span class="mono">nutrideconsultorio.com/mda</span> · celular · 30 dias · ~2.918 pageviews · 1.393 cliques. Página pura, sem VSL. Segura melhor que a WN — mas enterra o payoff.</p>
+    </div>
+
+    <div class="grid cols-4" style="margin-bottom:22px">
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700;color:var(--good)" class="num">56%</div><div class="eyebrow" style="margin-top:6px">passam de 5% (WN 39%)</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700" class="num">52%</div><div class="eyebrow" style="margin-top:6px">cliques em FAQ</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700" class="num">27%</div><div class="eyebrow" style="margin-top:6px">cliques em CTA (WN 11%)</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:30px;font-weight:700;color:var(--warn)" class="num">~27%</div><div class="eyebrow" style="margin-top:6px">chegam ao preço</div></div>
+    </div>
+
+    <h3 style="font-size:15px;margin-bottom:12px"><span class="eyebrow">Mapa real · conteúdo × scroll × atenção</span></h3>
+    <div class="map">
+      <div class="row"><div class="d">0–5%</div><div class="c">Hero — "Calcule a dieta 5× mais rápido" + CTA</div><div class="a">56% passam</div></div>
+      <div class="row leak"><div class="d">9%</div><div class="c">"Não é dieta de gaveta" (quebra de mito)</div><div class="a">🡇 -33%</div></div>
+      <div class="row"><div class="d">13–31%</div><div class="c">4 problemas · estrutura da consulta + CTA</div><div class="a">—</div></div>
+      <div class="row"><div class="d">35–40%</div><div class="c">O que recebe (Metodologia + Biblioteca)</div><div class="a">—</div></div>
+      <div class="row hot"><div class="d">44–49%</div><div class="c">🎁 <b>Bônus grátis</b> (Templates + Box)</div><div class="a badge-hot">pico atenção 29,8%</div></div>
+      <div class="row"><div class="d">53%</div><div class="c">Prova social + depoimentos (WhatsApp)</div><div class="a">~30%</div></div>
+      <div class="row money"><div class="d">64–70%</div><div class="c"><b>Oferta / Preço</b> (R$588 → R$197) + CTA</div><div class="a">só ~27% chegam</div></div>
+      <div class="row"><div class="d">73–79%</div><div class="c">Cashback 100% · Garantia</div><div class="a">—</div></div>
+      <div class="row"><div class="d">89–90%</div><div class="c">FAQ (acesso / tempo / pagamento / suporte)</div><div class="a">~11%</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      <div class="ic">🔎</div>
+      <div>
+        <h3>O FAQ não é objeção — é logística</h3>
+        <p>As 4 perguntas mais clicadas (52% dos cliques) são todas operacionais: como recebo, quanto tempo, formas de pagamento, suporte. É sinal de intenção quente checando detalhe — não "a copy não vence objeção". Falta um FAQ que responda a objeção real (funciona pra iniciante? atendo online? preciso saber cálculo?).</p>
+      </div>
+    </div>
+    <p class="note">Pico de atenção nos bônus grátis, não no método. Prova em ~53% e preço em ~64–70% — a maioria não chega. A recomendação é reordenar: subir prova e âncora de preço, não criar conteúdo novo.</p>
+  </div>
+</section>
+
+<!-- SINTESE -->
+<section id="sintese" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">08 · Síntese &amp; ordem de ataque</span>
+      <h2>O que fazer, na ordem</h2>
+      <p>Hygiene de dados antes de qualquer decisão de escala — com o pixel inflado 3,8× e a UTM sumindo, escalar é chute com dado corrompido. Depois, CRO por página (diagnósticos diferentes).</p>
+    </div>
+
+    <div class="prio">
+      <div class="item">
+        <div class="rank">1</div>
+        <div>
+          <div class="top"><h4>Pixel de purchase inflado 3–4×</h4><span class="chip crit"><span class="sq"></span>ALTA</span></div>
+          <p>O algoritmo otimiza para 3–4× conversões-fantasma.</p>
+          <div class="act"><b>Ação</b> · Auditar o disparo do pixel nas 3 páginas do backredirect.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="rank">2</div>
+        <div>
+          <div class="top"><h4>Furo de UTM da WN (58% sem origem)</h4><span class="chip crit"><span class="sq"></span>ALTA</span></div>
+          <p>Decisões de escala/corte da WN estão parcialmente cegas.</p>
+          <div class="act"><b>Ação</b> · Corrigir a passagem de UTM anúncio→página→checkout.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="rank">3</div>
+        <div>
+          <div class="top"><h4>WN — hero fraco + value stack em 54 slides de carrossel</h4><span class="chip crit"><span class="sq"></span>ALTA</span></div>
+          <p>Hero abre com pergunta-problema; oferta em ~70%, só ~19% chegam.</p>
+          <div class="act"><b>Ação</b> · Hero novo (promessa + prova na 1ª tela) · tirar o value stack do swipe · subir prova/preço pra antes de 40%.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="rank">4</div>
+        <div>
+          <div class="top"><h4>MDA — prova e preço enterrados</h4><span class="chip warn"><span class="sq"></span>MÉDIA</span></div>
+          <p>Página engaja bem, mas só ~27% chegam ao preço em ~65%.</p>
+          <div class="act"><b>Ação</b> · Subir depoimentos + ancorar preço mais cedo · adicionar FAQ de objeção.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="rank">5</div>
+        <div>
+          <div class="top"><h4>OB da WN subaproveitado (8% vs 48% da MDA)</h4><span class="chip warn"><span class="sq"></span>MÉDIA</span></div>
+          <p>O funil que mais fatura é o que menos monetiza no bump.</p>
+          <div class="act"><b>Ação</b> · Replicar a estrutura de order bump do Dieta Ágil no funil Webnutri.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="rank">6</div>
+        <div>
+          <div class="top"><h4>Downsell MDA converte ~0% via FB</h4><span class="chip warn"><span class="sq"></span>MÉDIA</span></div>
+          <p>Recuperação de degrau parada no tráfego pago.</p>
+          <div class="act"><b>Ação</b> · Verificar se o backredirect da MDA está ligado/funcional.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:22px">
+      <div class="ic">🧭</div>
+      <div>
+        <h3>Duas páginas, dois problemas</h3>
+        <p>Padrão comum: as duas enterram o payoff (prova + preço no fim). Diferença: a <b style="color:var(--wn)">Webnutri</b> precisa de <b>página nova</b> — hero e value stack preso em carrossel; a <b style="color:var(--mda)">Dieta Ágil</b> precisa de <b>reordenação</b> — os ingredientes existem, na sequência errada pra mobile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">Relatório do Max · gerado 07 jul 2026 · janela de dados 01–30 jun 2026</div>
+    <div>Meta Ads (Graph API v21) × Utmify (dashboard Principal) × Digital Manager Guru × Microsoft Clarity — cruzados por tag de campanha, UTM e DOM real das páginas. Read-only.</div>
+    <div class="mono">Escopo: apenas tráfego pago com origem FB (utm_source=FB). ROAS calculado sobre venda real da Guru atribuída ao FB.</div>
+  </div>
+</footer>
