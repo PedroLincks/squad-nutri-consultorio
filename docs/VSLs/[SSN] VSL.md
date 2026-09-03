@@ -36,7 +36,7 @@
 | 2 | Ideia do Produto | ✅ Aprovado — 31/08/2026 (briefing em finalização, pendências em 2.7) |
 | 3 | Big Idea | ✅ **APROVADA** — 01/09/2026 |
 | 3A | **Tema da VSL** (adicionado ao framework) | ✅ **APROVADO** — 01/09/2026 |
-| 4 | Mecanismos — Problema | ✅ **APROVADO** — 01/09/2026 · ⚠️ **falta Nome Chiclete** (ver 4.1) |
+| 4 | Mecanismos — Problema | ✅ **APROVADO** — 01/09/2026 · **Nome do estado: MODO INVISÍVEL** (03/09/2026) |
 | 4 | Mecanismos — Solução | ✅ **APROVADO** — 01/09/2026 |
 | 5 | Única Crença | ✅ **APROVADA** — 01/09/2026 |
 | 6 | Pergunta Paradoxal | ✅ **APROVADA** — 01/09/2026 |
@@ -626,7 +626,7 @@ Do próprio mapa mestre, decisões da Letícia ainda em aberto:
 
 ### 3.1 A BIG IDEA
 
-> # O funil de captação invisível de apenas 3 etapas que converte views nos stories em consulta marcada na agenda e pix na conta
+> # O funil de captação de apenas 3 etapas que converte views nos stories em consulta marcada na agenda e pix na conta
 
 ---
 
@@ -635,8 +635,8 @@ Do próprio mapa mestre, decisões da Letícia ainda em aberto:
 | Peça | Função | Origem |
 |---|---|---|
 | **"funil de captação"** | "Captar" é o verbo literal da dor nº1 do ICP ANC — reconhecimento imediato, sem soar a marketeiro. O eixo de venda fica carregado por "pix na conta" no fim da frase. Instala vocabulário de dona de negócio em quem hoje só se enxerga atendendo — "eu atendo" → "eu tenho um funil". Primeiro degrau de identidade que torna o ANC de R$3.400 legível para ela | Pedro + Hormozi Copy |
-| **"invisível"** | O território. Invisível **por estar à plena vista** — as ferramentas já estão de graça no celular dela e ela usa como brincadeira | Pedro (eixo cravado) |
-| **"de apenas 3 etapas"** | Mecanismo finito e completável — "apenas" reduz o esforço percebido. Número de PROCESSO, não de dinheiro — pede curiosidade, não pede prova pesada. Resolve o paradoxo de nomear algo invisível | Pedro |
+| ~~**"invisível"**~~ | **REMOVIDA em 03/09/2026.** Significava "o funil está à plena vista, de graça no celular dela". Saiu porque **"invisível" passou a nomear o PROBLEMA** (Modo Invisível) — a palavra não pode ser doença e remédio na mesma peça. O território segue vivo no corpo da VSL, sem ocupar a Big Idea | Pedro |
+| **"de apenas 3 etapas"** | Mecanismo finito e completável — "apenas" reduz o esforço percebido. Número de PROCESSO, não de dinheiro — pede curiosidade, não pede prova pesada. Resolve o paradoxo de nomear algo que ela ainda não enxerga | Pedro |
 | **"converte"** | Verbo de mecanismo. Mantém a leitura de funil sem precisar da palavra "vendas" | Pedro |
 | **"views nos stories"** | **A peça que resolve o furo mais grave.** View existe até no perfil parado — não exclui a ANC de Instagram parado ("de post não vem ninguém"), diferente de "quem responde os stories" | Pedro (achado dele) |
 | **"consulta marcada na agenda"** | Teto honesto do produto (item 2.5: leva até o agendamento). Denominador que torna o R$297 computável: consulta avulsa custa R$150-400, então o ponto de equilíbrio é 1. Para na porta da venda — o que fabrica a dor que o ANC resolve | Pedro + convergência dos 4 copywriters |
@@ -841,7 +841,9 @@ Dito em 1ª pessoa: *"Eu também paguei por isso."* — colhe 80% do ganho com 0
 
 #### O MECANISMO DO PROBLEMA
 
-> # STORY AVULSO = SILÊNCIO DA AUDIÊNCIA
+> # STORY AVULSO → MODO INVISÍVEL
+
+> **Nome do estado:** MODO INVISÍVEL · **Causa:** story avulso · *Aprovado em 03/09/2026*
 
 **A causa raiz, em uma frase:**
 
@@ -872,25 +874,84 @@ E ninguém está errado nessa história: o story não pergunta, a audiência nã
 **Frase de demonstração** (Beat 6, com as duas telas): *"Story cheio, silêncio no Direct."*
 
 
-> ### ⚠️ PENDÊNCIA ABERTA (02/09/2026) — O MECANISMO DO PROBLEMA PRECISA DE NOME CHICLETE
+#### O NOME DO ESTADO: MODO INVISÍVEL
+
+> **Aprovado pelo Pedro em 03/09/2026.** Substitui a formulação anterior *"Story Avulso = Silêncio da Audiência"*, que era descrição igualada a descrição e não nomeava estado nenhum.
+
+**O que o nome afirma:**
+
+> O Instagram e os próprios seguidores dela passaram a tratar o perfil dela como se ele não estivesse ali.
+
+A invisibilidade aqui **não é ótica, é social.** Ela é vista — o número de views prova isso todo dia, e é esse número que a mantém confusa. O que não acontece é **reação**. Ser vista sem gerar reação nenhuma é a definição prática de ser invisível: a pessoa que todo mundo olha através.
+
+Isso separa o nosso uso do uso comum do mercado. Quando dizem *"você está invisível"*, querem dizer "ninguém te vê". Quando **nós** dizemos, queremos dizer o contrário: **te veem, e é como se não vissem.**
+
+##### A dupla autoria — o que torna o nome nosso
+
+Dois agentes colocaram ela nesse modo, e o segundo é consequência do primeiro:
+
+- **Os seguidores.** Assistem, aprendem, gostam — e seguem em frente sem responder. Não porque ela é desinteressante, mas porque o story dela informa e nunca convida ninguém a falar. Eles a tratam como quem não está ali.
+- **O Instagram.** Lê exatamente esse comportamento. Se ninguém para, ninguém responde, ninguém reage, ele conclui que o conteúdo não interessa nem a quem já segue — e reduz a entrega ao mínimo.
+
+> ## O algoritmo não tem opinião própria. Ele copia o julgamento da audiência.
+
+Essa frase é a chave técnica do mecanismo e faz duas coisas:
+
+1. **Dispensa superestrutura.** Não afirmamos nada verificável sobre a mecânica interna do algoritmo — dizemos que a máquina espelha o comportamento humano. Não precisa de estudo, de Mosseri, de fonte. A lead confere sozinha.
+2. **Explica os dois sintomas com uma causa só.** O Direct vazio e o teto de views não são dois problemas — são o mesmo problema visto de dois lados. Nenhuma das três VSLs do swipe file consegue isso, porque todas nomeiam só o lado do algoritmo.
+
+##### Por que "modo"
+
+Vocabulário de aparelho — modo avião, modo silencioso, modo escuro. Carrega três coisas: **configuração** (foi ativado, não é natureza dela), **reversibilidade** (modo se desliga; é a porta que o produto atravessa) e **autoridade nativa** (soa como recurso real da plataforma, não como metáfora de copy).
+
+##### Por que "invisível" e não os outros candidatos
+
+| Candidato | Por que caiu |
+|---|---|
+| **Silencioso** | Campo semântico do Oney Araújo, e descreve o Direct — não o estado do perfil |
+| **Paisagem · Passa Reto · Figurante** | Descrevem bem o ato de ignorar, mas **não têm par natural de solução**. Sair do modo paisagem é ficar o quê? |
+| **Vitrine** | Colide com o que ela já considera funcionamento normal — confirma em vez de reenquadrar |
+| **Modo Espera** | Amarrava com o eixo passiva/ativa, mas "espera" descreve o que ela faz, não o que fizeram com ela |
+| **Invisível** | Descreve o estado **e** entrega o destino no antônimo |
+
+##### O par — e o que o Oney não tem
+
+```
+MODO INVISÍVEL  →  ficar VISÍVEL
+```
+
+Visível para as duas pontas, pelo mesmo caminho: **para as pessoas**, que passam a responder; **e para o Instagram**, que volta a entregar porque as pessoas responderam.
+
+Sair do Modo Silencioso do Oney não leva a lugar nomeado. Sair do Modo Invisível leva.
+
+##### A relação com "story avulso"
+
+```
+STORY AVULSO  →  MODO INVISÍVEL
+   (a causa)      (o estado)
+```
+
+Não competem. **Avulso é o que ela faz; Modo Invisível é onde isso a coloca.** "Avulso" continua vivendo dentro do PL2 como a explicação do mecanismo; "Modo Invisível" é o nome que abre a VSL, fecha a VSL e vai para os criativos.
+
+##### Contra os cinco critérios
+
+| Critério | |
+|---|---|
+| Ser um estado, não um defeito dela | ✅ Foi colocada nele por terceiros |
+| Ser reversível | ✅ "Modo" implica desligável |
+| Poder abrir a 1ª frase e fechar a última | ✅ Bookend |
+| Ser repetível na copy e nos criativos | ✅ Duas palavras, memorável |
+| Não acusar | ✅ A acusação é de terceiros; a Letícia está do lado dela contando o que fizeram |
+
+##### TRAVAS DE USO — obrigatórias
+
+> **1. Nunca "você é invisível" ou "você está invisível".** Devolve a culpa para ela e é factualmente falso — ela é vista. A construção é sempre passiva e com autor: *"o Instagram e os seus seguidores colocaram o seu perfil no Modo Invisível."*
 >
-> **O que falta:** *"Story Avulso = Silêncio da Audiência"* é uma **descrição do problema**, não um **nome** para ele. Descrição a lead entende; nome ela **repete pra si mesma** — e é o nome que sobrevive ao fim da VSL.
+> **2. "Invisível" pertence ao problema. Nunca à solução.** É o que obriga a tirar "funil de captação invisível" da Big Idea. A palavra não pode ser doença e remédio na mesma peça.
 >
-> **Por que isso apareceu:** três fontes independentes convergiram.
-> 1. **Playbook VSL — DR Expert** (`docs/library/books/playbook-vsl-dr-expert--sistema.md`): o Nome Chiclete pode ser dado ao mecanismo de PROBLEMA, não só ao de solução — e quando é, funciona melhor. Exemplo do próprio playbook: **"Bug Neural"** (Wendell Carvalho, produtividade).
-> 2. **VSL do Código Viral** (`docs/references/swipe-file/[VSL] Analise Codigo Viral - Oney Araujo.md`): **"Modo Silencioso"** é dito na PRIMEIRA frase e na ÚLTIMA. Faz três coisas de uma vez — dá explicação externa ao fracasso, cria um estado do qual se pode SAIR (logo existe uma porta, logo existe um produto), e é verificável de graça pela lead.
-> 3. **Nossa própria estrutura:** hoje o nome do problema só aparece no PL2, no meio da VSL. Ele não abre nem fecha a peça.
+> **3. Não afirmar punição, bloqueio ou shadowban.** A formulação correta é *"ele para de entregar porque lê o sinal"* — nunca *"ele te puniu"*. A primeira é defensável; a segunda é teoria de conspiração.
 >
-> **O critério que o nome novo precisa cumprir:**
-> - Ser um **estado**, não um diagnóstico — algo de que se sai, não algo que se é
-> - Preservar "avulso" se possível: é palavra nativa dela (*consulta avulsa*), está nos dois ICPs, e é o antônimo exato de "funil" — é o que faz o par com a Big Idea
-> - Poder abrir a VSL na 1ª frase e fechar na última (bookend)
-> - Ser repetível: é o termo que mais aparece na copy e nos criativos
-> - Não acusar. O nome não pode soar como defeito dela
->
-> **Dependências:** o nome novo altera o PL2, a abertura da VSL, o Lead, os criativos e a headline da página. Trocar ANTES da gravação, não depois.
->
-> **Status:** aguardando definição.
+> **4. A palavra sozinha é comum no mercado** — o Oney e a Diandra usam como adjetivo de sentimento. O que nos diferencia é a estrutura: **modo + dupla autoria + reversibilidade**. Usada solta, vira clichê. Usada como estado atribuído e nomeado, vira mecanismo.
 
 ---
 
@@ -1083,7 +1144,7 @@ O nome do método aparecerá em tela, slides e área de membros. Grafia adotada:
 
 > **Ela quer ser notada antes de mais nada.**
 
-É o outro lado do **Silêncio da Audiência**: ela publica e não recebe sinal nenhum de que existe. É a mesma raiz da emoção dominante (*esforço sem retorno*) — ela trabalha e ninguém responde.
+É o outro lado do **Modo Invisível**: ela publica e não recebe sinal nenhum de que existe. É a mesma raiz da emoção dominante (*esforço sem retorno*) — ela trabalha e ninguém responde.
 
 **Ser notada é o que ela sente. Fazer falarem com ela é a forma.**
 
@@ -1557,7 +1618,7 @@ _(parte por parte, após a escrita)_
 |---|---|---|
 | 2026-08-31 | 1 | ICP ANC + Master. A VSL fala com os dois. |
 | 2026-08-31 | 2 | Produto: Social Selling para Nutris, R$297, front-end para ascensão ao high ticket. Avatar: quem posta e ESPERA a paciente chamar. |
-| 2026-09-01 | 3 | Big Idea: "O funil de captação invisível de apenas 3 etapas que converte views nos stories em consulta marcada na agenda e pix na conta." |
+| 2026-09-01 | 3 | Big Idea: "O funil de captação invisível de apenas 3 etapas que converte views nos stories em consulta marcada na agenda e pix na conta." *(ajustada em 03/09/2026 — ver abaixo)* |
 | 2026-09-01 | 3A | Tema: HISTÓRIA — variante CONTRASTE. Emoção dominante: esforço sem retorno. |
 | 2026-09-01 | 5 | Única Crença: "Fazer seus seguidores falarem com você é a chave para captar paciente pelo Instagram todo mês — e a melhor forma de fazer isso é aplicando o Funil de Storieselling, que funciona independente do tamanho do perfil." |
 | 2026-09-01 | 7 | Pontos Lógicos: 6 pontos aprovados (PL1-4 Ação Acreditável, PL5-6 Solução Acreditável). Expansão em Afirmação/Prova/Consequência Emocional pendente. |
@@ -1570,3 +1631,5 @@ _(parte por parte, após a escrita)_
 | 2026-09-01 | 7.6 | Sincronização com o briefing de gravação do Pedro: PL1 (corte da linha do “número de cabeça” + “não te deram bola”) e PL3 (“Conversa marca!” + “Você agora tem uma métrica clara”). |
 | 2026-09-02 | 4.1 | **Pendência aberta:** o mecanismo do problema precisa de Nome Chiclete. “Story Avulso = Silêncio da Audiência” é descrição, não nome. Convergência de 3 fontes (Playbook DR Expert, VSL Código Viral, estrutura própria). |
 | 2026-09-02 | 2.8 | **Decisão do Pedro:** não existe lista de proibições na NC. O que entra em cada copy é decidido por ele durante a construção, caso a caso. Restrições de compliance deixam de operar como lei; nenhum recurso é vetado de antemão. |
+| 2026-09-03 | 4.1 | **NOME DO MECANISMO DO PROBLEMA APROVADO: MODO INVISÍVEL.** Formulação: STORY AVULSO → MODO INVISÍVEL (causa → estado). Substitui "Silêncio da Audiência". Dupla autoria (Instagram + seguidores) e a chave "o algoritmo não tem opinião própria, ele copia o julgamento da audiência". Encerra a pendência aberta em 02/09. |
+| 2026-09-03 | 3 | **Big Idea ajustada:** removida a palavra "invisível" (funil de captação **invisível** → funil de captação), porque a palavra passou a nomear o problema. |

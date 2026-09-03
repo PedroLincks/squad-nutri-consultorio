@@ -301,6 +301,34 @@ PDF:          python3 scripts/swipe2pdf.py "<caminho do .md da análise>"
 ```
 
 
+---
+
+## SSN — NOMENCLATURA OBRIGATÓRIA DA VSL
+
+> Aprovado pelo Pedro em 03/09/2026. Doc mestre: `docs/VSLs/[SSN] VSL.md` (item 4.1).
+
+```
+STORY AVULSO  →  MODO INVISÍVEL  →  ficar VISÍVEL
+   (a causa)       (o estado)        (o destino)
+```
+
+- **MODO INVISÍVEL** — nome do mecanismo do problema. O Instagram **e os próprios seguidores** passaram a tratar o perfil dela como se não estivesse ali. Invisibilidade **social, não ótica**: ela é vista (as views provam) e não gera reação.
+- **FUNIL DE STORIESELLING** — mecanismo da solução, 3 fases: Ativação Inteligente → Abordagem Direcionada → Fechamento Natural.
+
+**A chave técnica, que dispensa qualquer superestrutura:**
+
+> *O algoritmo não tem opinião própria. Ele copia o julgamento da audiência.*
+
+Os seguidores assistem e seguem em frente porque o story informa e nunca convida a falar. O Instagram lê esse comportamento e reduz a entrega. **Um nome, dois sintomas explicados:** o Direct vazio e o teto de views.
+
+### Travas de uso — obrigatórias
+
+1. **Nunca "você é invisível" ou "você está invisível"** — devolve a culpa para ela e é falso, porque ela é vista. Sempre passivo e com autor: *"colocaram o seu perfil no Modo Invisível."*
+2. **"Invisível" pertence ao problema, nunca à solução.** Foi por isso que a palavra saiu da Big Idea
+3. **Não afirmar punição, bloqueio ou shadowban.** É *"para de entregar porque lê o sinal"*, nunca *"te puniu"*
+4. A palavra sozinha é clichê de mercado (Oney e Diandra usam como adjetivo). O que a torna mecanismo é a estrutura: **modo + dupla autoria + reversibilidade**
+
+
 ## Referências
 
 - Tone of voice: `docs/prd/tone-of-voice.md`

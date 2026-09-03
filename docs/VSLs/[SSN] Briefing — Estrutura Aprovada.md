@@ -7,7 +7,7 @@
 
 ## Big Idea
 
-O funil de captação invisível de apenas 3 etapas que converte views nos stories em consulta marcada na agenda e Pix na conta, mesmo com pouca audiência.
+O funil de captação de apenas 3 etapas que converte views nos stories em consulta marcada na agenda e Pix na conta, mesmo com pouca audiência.
 
 ## Única Crença
 
@@ -19,7 +19,11 @@ Você já parou pra pensar por que tem nutri com menos de 3.000 seguidores que t
 
 ## Mecanismo do Problema
 
-**STORY AVULSO = SILÊNCIO DA AUDIÊNCIA**
+**STORY AVULSO → MODO INVISÍVEL**
+
+> **Nome do estado:** MODO INVISÍVEL — o Instagram e os próprios seguidores passaram a tratar o perfil dela como se ele não estivesse ali. Ela é vista (as views provam), mas não gera reação. **Dupla autoria:** os seguidores assistem e seguem em frente porque o story informa e não convida a falar; o Instagram lê esse comportamento e reduz a entrega. *O algoritmo não tem opinião própria — ele copia o julgamento da audiência.*
+>
+> **Travas:** nunca dizer "você é/está invisível" (sempre "colocaram o seu perfil no Modo Invisível") · "invisível" pertence ao problema, nunca à solução · não afirmar punição ou shadowban.
 
 Causa raiz: o story dela não gera identificação, não estimula ação.
 - Ela publica sem estratégia e espera o paciente chamar pedindo consulta.
@@ -281,7 +285,7 @@ E no fim do dia você não tem visualização. Você tem nomes. Pessoas com um p
 | 2 | **A frase-síntese do mecanismo não está em lugar nenhum da VSL:** *"Uma interação te dá um número. Uma ativação te dá um nome com um problema."* Saiu junto com o contraste da enquete errada (café ou chá), que estava guardado desde o PL2 para pagar no PL6 | 4.2 / 7.3 |
 | 3 | **A rotina precisa ser declarada como "não é a quarta fase"** em algum ponto da VSL — provavelmente na virada para a oferta. Se não, a lead conta quatro e o "três" perde credibilidade | 4.2 |
 | 4 | Índice da área de membros, títulos das aulas e Playbook reorganizados nas 3 fases nomeadas **antes** da gravação | 3.4 (dep. ②) |
-| 5 | **O mecanismo do problema precisa de Nome Chiclete.** "Story Avulso = Silêncio da Audiência" é descrição, não nome — a lead entende, mas não repete. Precisa ser um ESTADO do qual se sai (como "Modo Silencioso" no Código Viral), capaz de abrir a 1ª frase e fechar a última. Muda PL2, Lead, criativos e headline — resolver ANTES da gravação | 4.1 |
+| ~~5~~ | ~~O mecanismo do problema precisa de Nome Chiclete~~ — **RESOLVIDO em 03/09/2026: MODO INVISÍVEL.** Pendência derivada: aplicar o nome no PL2, na abertura e no fechamento da VSL (bookend) | 4.1 |
 
 # Decisões de vocabulário tomadas até aqui
 
