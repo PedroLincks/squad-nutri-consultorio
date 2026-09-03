@@ -9,7 +9,8 @@ Mapa rápido: o que você precisa escrever → qual playbook abrir + qual lenda 
 | **VSL, roteiro de vídeo de vendas** | vsl | Stefan Georgi | Jon Benson |
 | **VSL de expert BR, tráfego frio, ticket R$197-497, para escalar** | **vsl-dr-expert** + vsl | Escola DR Expert | Stefan Georgi / Todd Brown |
 | **Nome chiclete, pergunta paradoxal, mecanismo de problema/solução** | **vsl-dr-expert** | Escola DR Expert | Todd Brown / Eugene Schwartz |
-| **Engenharia reversa de VSL concorrente** | **vsl-dr-expert** (checklist final) | Escola DR Expert | Eugene Schwartz |
+| **Engenharia reversa / desmembramento de VSL para o swipe file** | **vsl-engenharia-reversa** | Processo da casa | Escola DR Expert |
+| **Grade de leitura de VSL concorrente (checklist)** | **vsl-dr-expert** | Escola DR Expert | Eugene Schwartz |
 | **Carta/página de vendas longa, magalog** | sales-letter | Gary Halbert | John Carlton / Parris Lampropoulos |
 | **Sequência de e-mail, autoresponder, nurture** | email-sequence | Andre Chaperon | Ben Settle / Ry Schwartz |
 | **E-mail diário, newsletter, engajamento** | email-sequence | Ben Settle | Dan Koe |

@@ -33,6 +33,17 @@ Convenções do markdown de entrada estão documentadas no topo de `scripts/swip
 
 Preservadas **exatamente como recebidas**, sem correção. Todas chegaram com trechos truncados por desconfiguração de formatação na origem; os pontos afetados estão listados no cabeçalho de cada arquivo. Nada foi reconstruído no corpo do texto.
 
+## O processo
+
+O fluxo de trabalho — do envio da transcrição até o PDF — está em `skills/zoe-copywriter/playbooks/vsl-engenharia-reversa.md`.
+
+```
+1. Pedro envia a transcrição da VSL
+2. Análise entregue no terminal
+3. Pedro revisa e corrige
+4. Só então: salvar o .md e gerar o PDF
+```
+
 ## Referência de método
 
 A grade de análise segue o `Playbook VSL — DR Expert` (`docs/library/books/playbook-vsl-dr-expert.md` e `--sistema.md`).

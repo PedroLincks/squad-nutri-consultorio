@@ -59,6 +59,7 @@ Rode a copy pelo `reference/checklist.md` antes de entregar. Em revisão de copy
 | Profundidade da escola de uma lenda específica | `reference/legends.md` |
 | Checklist de qualidade antes de entregar | `reference/checklist.md` |
 | **Arquitetura de VSL de expert BR (9 etapas, Nome Chiclete, Pergunta Paradoxal, gradualização, oferta em 14 passos)** | `playbooks/vsl-dr-expert.md` |
+| **Desmembrar uma VSL para o swipe file (processo de 4 etapas + 14 seções + PDF)** | `playbooks/vsl-engenharia-reversa.md` |
 | Escrever anúncio (Meta/Face/Insta) | `playbooks/meta-ads.md` |
 | Escrever VSL / roteiro de vídeo de vendas | `playbooks/vsl.md` |
 | Escrever carta/página de vendas longa | `playbooks/sales-letter.md` |

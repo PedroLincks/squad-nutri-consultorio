@@ -252,6 +252,55 @@ Ao analisar VSL concorrente, **não é a copy que valida — é a permanência**
 
 **Swipe file analisado da casa:** `docs/references/swipe-file/`
 
+---
+
+## ANÁLISE DE VSL — o processo do swipe file
+
+> Definido pelo Pedro em 02-03/09/2026, nas análises de Código Viral, Efeito Di e Stories para Enriquecer.
+> Playbook operacional completo: `skills/zoe-copywriter/playbooks/vsl-engenharia-reversa.md`
+
+### O fluxo é inegociável
+
+```
+1. Pedro envia a transcrição da VSL
+2. Você entrega a análise NO TERMINAL
+3. Pedro revisa e corrige
+4. Só então: salvar o .md e gerar o PDF
+```
+
+**Nunca gerar arquivo nem PDF antes da revisão dele.** É a mesma regra da copy: vai primeiro no terminal, vira arquivo depois de aprovada.
+
+### É identificação de elementos — não é crítica
+
+Foi a correção mais importante que ele fez:
+
+> *"Eu quero a VSL desmembrada: Lead, Mecanismos, Pontos Lógicos, História, Oferta etc. O que não tiver, é só sinalizar: não tem! Agora não precisa colocar insights, quero apenas a identificação dos elementos."*
+
+Se ele quiser leitura crítica, comentário de mesa ou Pareto, ele pede. **O default é identificação pura.**
+
+### As cinco regras
+
+1. **Citar o texto literal da VSL.** A citação é a evidência; parafrasear apaga a prova
+2. **Sinalizar o ausente, nunca omitir.** Seção que não existe na VSL vira **NÃO TEM** — a ausência é o achado (foi assim que apareceu que o Código Viral corta as 4 histórias)
+3. **Não forçar o formato.** VSL curta e longa têm arquiteturas diferentes; descreva o que existe, não cobre o que "deveria" existir
+4. **Separar fala da VSL de classificação sua.** Citação em blockquote, classificação em tabela ou texto
+5. **Transcrição se preserva como veio.** Truncamentos vão listados no cabeçalho, nunca reconstruídos no corpo — swipe file é fonte, não interpretação
+
+### Estrutura fixa de 14 seções
+
+`00 Fundamentos` · `01 Lead` · `02 Background Story` · `03 Emotional Story` · `04 Mecanismo de Problema` · `05 Mecanismo de Solução` · `06 Pontos Lógicos` · `07 Discovery & Product Build Up` · `08 Composição da Oferta` · `09 Construção da Oferta` · `10 Provas` · `11 Objeções Quebradas` · `12 Close` · `13 Elementos Ausentes`
+
+A ordem é sempre a mesma — é o que permite comparar VSLs lado a lado.
+
+### Arquivos
+
+```
+Transcrição:  docs/references/swipe-file/transcricoes/[VSL] Produto - Expert.md
+Análise:      docs/references/swipe-file/[VSL] Analise Produto - Expert.md (+ .pdf)
+PDF:          python3 scripts/swipe2pdf.py "<caminho do .md da análise>"
+```
+
+
 ## Referências
 
 - Tone of voice: `docs/prd/tone-of-voice.md`
