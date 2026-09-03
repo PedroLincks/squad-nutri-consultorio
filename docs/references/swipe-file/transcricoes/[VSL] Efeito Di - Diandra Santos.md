@@ -2,7 +2,7 @@
 ## Transcrição como recebida
 
 > **Produto:** Efeito Di · R$297 à vista (ou 12x)
-> **Recebida em:** 02/09/2026 · **Análise:** `../[VSL-02] Efeito Di — Diandra Santos.md`
+> **Recebida em:** 02/09/2026 · **Análise:** `../[VSL] Analise Efeito Di - Diandra Santos.md`
 >
 > ⚠️ **Texto preservado exatamente como chegou.** Trechos truncados identificados:
 > - "Pra que **jitmo** comece a trabalhar" — falta "para que o algoritmo comece a trabalhar"

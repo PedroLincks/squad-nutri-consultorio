@@ -3,7 +3,7 @@
 """
 swipe2pdf — converte uma analise de VSL do swipe file (markdown) em PDF diagramado.
 
-Uso:  python3 scripts/swipe2pdf.py "docs/references/swipe-file/[VSL-01] ....md"
+Uso:  python3 scripts/swipe2pdf.py "docs/references/swipe-file/[VSL] Analise Nome - Expert.md"
 
 Convencoes do markdown de entrada:
   ---                    front matter: titulo, subtitulo, kicker, resumo + pares Chave: valor (capa)

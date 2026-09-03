@@ -878,7 +878,7 @@ E ninguém está errado nessa história: o story não pergunta, a audiência nã
 >
 > **Por que isso apareceu:** três fontes independentes convergiram.
 > 1. **Playbook VSL — DR Expert** (`docs/library/books/playbook-vsl-dr-expert--sistema.md`): o Nome Chiclete pode ser dado ao mecanismo de PROBLEMA, não só ao de solução — e quando é, funciona melhor. Exemplo do próprio playbook: **"Bug Neural"** (Wendell Carvalho, produtividade).
-> 2. **VSL do Código Viral** (`docs/references/swipe-file/[VSL-01]...`): **"Modo Silencioso"** é dito na PRIMEIRA frase e na ÚLTIMA. Faz três coisas de uma vez — dá explicação externa ao fracasso, cria um estado do qual se pode SAIR (logo existe uma porta, logo existe um produto), e é verificável de graça pela lead.
+> 2. **VSL do Código Viral** (`docs/references/swipe-file/[VSL] Analise Codigo Viral - Oney Araujo.md`): **"Modo Silencioso"** é dito na PRIMEIRA frase e na ÚLTIMA. Faz três coisas de uma vez — dá explicação externa ao fracasso, cria um estado do qual se pode SAIR (logo existe uma porta, logo existe um produto), e é verificável de graça pela lead.
 > 3. **Nossa própria estrutura:** hoje o nome do problema só aparece no PL2, no meio da VSL. Ele não abre nem fecha a peça.
 >
 > **O critério que o nome novo precisa cumprir:**

@@ -2,7 +2,7 @@
 ## Transcrição como recebida
 
 > **Produto:** Story pra Enriquecer (SPE) · R$697 à vista ou 12x de R$72,09
-> **Recebida em:** 03/09/2026 · **Análise:** `../[VSL-03] Stories para Enriquecer — Luana Carolina.md`
+> **Recebida em:** 03/09/2026 · **Análise:** `../[VSL] Analise Stories para Enriquecer - Luana Carolina.md`
 >
 > ⚠️ **Texto preservado exatamente como chegou.** Trechos truncados identificados:
 > - "mais rápido do que você **imagin**ela fez vendas 20 minutos depois" — falta o fecho da frase

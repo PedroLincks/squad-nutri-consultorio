@@ -2,7 +2,7 @@
 ## Transcrição como recebida
 
 > **Produto:** Código Viral · R$197 (de R$297) · +60 mil alunos
-> **Recebida em:** 02/09/2026 · **Análise:** `../[VSL-01] Codigo Viral — Oney Araujo.md`
+> **Recebida em:** 02/09/2026 · **Análise:** `../[VSL] Analise Codigo Viral - Oney Araujo.md`
 >
 > ⚠️ **Texto preservado exatamente como chegou.** A colagem veio com desconfiguração de formatação e alguns trechos foram comidos no meio. Pontos truncados identificados:
 > - "manter pessoas de**o do algoritmo** dessas plataformas" — falta o fecho de "manter pessoas na plataforma" + abertura do parágrafo seguinte

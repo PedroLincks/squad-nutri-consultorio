@@ -2,11 +2,16 @@
 
 Cada VSL tem três arquivos: a **análise** (identificação de elementos), o **PDF** diagramado e a **transcrição** original.
 
-| # | VSL | Produto | Ticket | Análise | PDF | Transcrição |
-|---|---|---|---|---|---|---|
-| 01 | **Código Viral** — Oney Araújo | Treinamento de viralização, 3h | R$197 | `[VSL-01] ....md` | `[VSL-01] ....pdf` | `transcricoes/[VSL-01] ... (transcricao).md` |
-| 02 | **Efeito Di** — Diandra Santos | Experiência digital / imersão | R$297 | `[VSL-02] ....md` | `[VSL-02] ....pdf` | `transcricoes/[VSL-02] ... (transcricao).md` |
-| 03 | **Stories para Enriquecer** — Luana Carolina | Curso de vendas por stories | R$697 | `[VSL-03] ....md` | `[VSL-03] ....pdf` | `transcricoes/[VSL-03] ... (transcricao).md` |
+| VSL | Produto | Ticket | Arquivos |
+|---|---|---|---|
+| **Código Viral** — Oney Araújo | Treinamento de viralização, 3h | R$197 | `[VSL] Analise Codigo Viral - Oney Araujo` (.md e .pdf)<br>`transcricoes/[VSL] Codigo Viral - Oney Araujo.md` |
+| **Efeito Di** — Diandra Santos | Experiência digital / imersão | R$297 | `[VSL] Analise Efeito Di - Diandra Santos` (.md e .pdf)<br>`transcricoes/[VSL] Efeito Di - Diandra Santos.md` |
+| **Stories para Enriquecer** — Luana Carolina | Curso de vendas por stories | R$697 | `[VSL] Analise Stories para Enriquecer - Luana Carolina` (.md e .pdf)<br>`transcricoes/[VSL] Stories para Enriquecer - Luana Carolina.md` |
+
+## Convenção de nomes
+
+- **Transcrição:** `[VSL] Nome do Produto - Nome do Expert.md` — fica em `transcricoes/`
+- **Análise:** `[VSL] Analise Nome do Produto - Nome do Expert.md` (e o `.pdf` de mesmo nome)
 
 ## Formato das análises
 
@@ -19,7 +24,7 @@ Elementos que a VSL não possui são marcados com **NÃO TEM** em vez de omitido
 ## Gerar o PDF
 
 ```bash
-python3 scripts/swipe2pdf.py "docs/references/swipe-file/[VSL-XX] Nome.md"
+python3 scripts/swipe2pdf.py "docs/references/swipe-file/[VSL] Analise Nome - Expert.md"
 ```
 
 Convenções do markdown de entrada estão documentadas no topo de `scripts/swipe2pdf.py`.
