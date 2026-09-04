@@ -312,6 +312,18 @@ STORY AVULSO  →  MODO INVISÍVEL  →  ficar VISÍVEL
    (a causa)       (o estado)        (o destino)
 ```
 
+**A arquitetura de 3 nomes:**
+
+```
+MODO INVISÍVEL          →  o ESTADO   (problema)
+SINAL DE PERMISSÃO      →  a UNIDADE  (o que o funil produz)
+FUNIL DE STORIESELLING  →  o SISTEMA  (solução)
+```
+
+- **SINAL DE PERMISSÃO** — o que a pessoa te dá quando levanta a mão. Unidade contável produzida pela Ativação Inteligente. Mata a objeção de invasão antes dela nascer: se ela **deu** permissão, abordar não é invadir.
+- **Perfil × story:** o modo invisível é do **perfil**; a alavanca para sair é o **story**. O perfil é o sintoma, o story é onde se opera.
+- **A peça é chamada de "aula"** em toda a VSL.
+
 - **MODO INVISÍVEL** — nome do mecanismo do problema. O Instagram **e os próprios seguidores** passaram a tratar o perfil dela como se não estivesse ali. Invisibilidade **social, não ótica**: ela é vista (as views provam) e não gera reação.
 - **FUNIL DE STORIESELLING** — mecanismo da solução, 3 fases: Ativação Inteligente → Abordagem Direcionada → Fechamento Natural.
 

@@ -42,7 +42,7 @@
 | 6 | Pergunta Paradoxal | ✅ **APROVADA** — 01/09/2026 |
 | 7 | Pontos Lógicos | ✅ **APROVADOS + EXPANDIDOS** — 01/09/2026 (PL1 a PL6 em 7.6) |
 | — | Briefing consolidado para a Zoe | ⬜ Pendente |
-| — | Roteiro da VSL (Zoe) | ⬜ Pendente |
+| 9 | Roteiro da VSL | 🔄 **EM ANDAMENTO** — Lead 01 fechada (04/09/2026) |
 | — | Revisão dos Copy Seniors | ⬜ Pendente |
 
 ---
@@ -1060,6 +1060,46 @@ Isso conecta direto com a cadeia causal do problema: o passo 3 (views anônimas)
 | **② AUTORIZA** | Quem levantou a mão convidou a conversa. Não existe abordagem fria, porque **ela falou primeiro** |
 | **③ CONTINUA** | O story não termina em si mesmo. Ele abre uma porta que tem outro lado — não é conteúdo, é o degrau 1 de 3 |
 
+#### SINAL DE PERMISSÃO — a moeda do mecanismo
+
+> **Nomeado pelo Pedro em 04/09/2026, durante a escrita da Lead 01.**
+
+> ### Sinal de permissão é o que a pessoa te dá quando levanta a mão.
+
+É a **unidade contável** que a Ativação Inteligente produz. Na prática, um sinal de permissão é um nome com um problema declarado — mas nomeá-lo assim faz quatro coisas que a formulação anterior não fazia:
+
+| O que faz | Por quê |
+|---|---|
+| **Dá uma métrica** | *"Quantos sinais de permissão você teve essa semana?"* — conecta direto com o PL3, que é sobre contar a coisa certa |
+| **Mata a objeção do PL4 antes dela nascer** | Se a pessoa **deu** permissão, abordar não é invadir. A autorização está dentro da palavra |
+| **Nomeia o componente ② AUTORIZA** | Que até aqui existia no mecanismo sem nome próprio |
+| **Torna a fase 1 verificável** | A Ativação deixa de ser conceito e passa a ter output contável |
+
+**A sequência dentro do funil:**
+
+```
+Ativação Inteligente  →  SINAL DE PERMISSÃO  →  Abordagem Direcionada
+   (a ação)              (o que ela recebe)      (o que faz com ele)
+```
+
+**As duas formulações convivem:** "sinal de permissão" é a conceitual (carrega a autorização); "um nome com um problema declarado" é a visual (mostra o que aparece na tela). Usar a primeira para argumentar, a segunda para demonstrar.
+
+---
+
+#### A ARQUITETURA DE NOMES DA VSL
+
+Três camadas nomeadas, na mesma lógica que a VSL da Luana Carolina usa (Perfil Magnético → Pódio dos Stories → Story Validado):
+
+```
+MODO INVISÍVEL          →  o ESTADO      (o problema)
+SINAL DE PERMISSÃO      →  a UNIDADE     (o que se produz)
+FUNIL DE STORIESELLING  →  o SISTEMA     (a solução)
+```
+
+E a distinção que a Lead 01 fixou: **o modo invisível é do PERFIL; a alavanca para sair dele é o STORY.** O perfil é onde está o sintoma, o story é onde se opera. Formulação registrada: *"o problema não está no seu perfil. Está no que você posta nos seus stories. E é exatamente ali que a virada acontece."*
+
+---
+
 **A frase que resume o mecanismo:**
 
 > ## Uma interação te dá um número. Uma ativação te dá um nome com um problema.
@@ -1640,7 +1680,107 @@ _(gerado pelo Jack somente após as etapas 1–7 aprovadas)_
 
 ## 9. Roteiro da VSL
 
-_(escrito pela Zoe, bloco a bloco, com aprovação individual)_
+### 9.1 Estrutura definida
+
+> **Decisão do Pedro, 03/09/2026.**
+
+```
+Lead → Background Story → Discovery Story → Mecanismos
+→ Produto → Oferta → Bônus → Garantia
+```
+
+**Sem Emotional Story.** Decisão consciente: a carga emocional desta VSL está do lado da **lead**, não da Letícia. O PL1 inteiro já é a experiência dela narrada — o esforço, o Direct vazio, o *"por que não funciona comigo"*. O Código Viral prova que funciona: história emocional de duas frases e é a top seller das três analisadas.
+
+**O custo do corte:** o rapport que viria da vulnerabilidade. Precisa ser compensado pela **Discovery Story**, que tem que mostrar a Letícia **descobrindo**, não a Letícia ensinando.
+
+**Vocabulário fixado:** a peça é chamada de **"aula"** em toda a VSL (decisão de 04/09/2026).
+
+---
+
+### 9.2 LEAD 01 — Modo Invisível
+##### Ângulo: Mecanismo de Problema · ✅ **FECHADA em 04/09/2026**
+
+Story de bom dia com a foto do café. Story do "dia de atendimento". Foto do almoço para mostrar o prato saudável. A garrafinha de água com "já bebeu água hoje?".
+
+Se hoje você posta stories desse jeito no seu Instagram, eu preciso te falar com sinceridade: você nunca vai conseguir captar pacientes assim!
+
+Lá em 2019, 2020, esse tipo de story até funcionava. Afinal, quase ninguém postava, o Instagram entregava pra todo mundo, e vez ou outra caía uma paciente no Direct.
+
+Mas de uns anos pra cá, com as atualizações de algoritmo do Instagram, o jogo virou. E hoje esse tipo de story faz duas coisas com você. E as duas coisas são ruins.
+
+A primeira: as pessoas olham e ignoram. Não respondem, não reagem, não falam nada.
+
+E a segunda, que é a que dói no bolso: o algoritmo do Instagram olha pra esse comportamento dos seus seguidores e para de te mostrar. Ele entende que o seu conteúdo não interessa nem pra quem já te segue.
+
+Ou seja, o Instagram e os seus próprios seguidores literalmente colocaram o seu perfil no que eu chamo de **modo invisível**.
+
+Invisível não porque ninguém te vê. Você até é vista. Mas invisível porque ninguém te nota. Você passa despercebida pelas pessoas que assistem os seus stories.
+
+E repara numa coisa: o problema não está no seu perfil. Está no que você posta nos seus stories. E é exatamente ali que a virada acontece.
+
+Fica tranquila, porque tirar o seu perfil desse modo invisível e fazer com que os seus seguidores passem a te notar e engajar com você é muito mais fácil do que você imagina.
+
+Existe um funil de captação no Instagram de 03 etapas simples, que quase nenhuma nutricionista usa, que faz o seu perfil sair desse modo invisível e começar a ter seguidores engajando com você. E principalmente: faz com que esse engajamento vire conversas no Direct, e que a partir dessas conversas você capte pacientes interessados no seu acompanhamento nutricional.
+
+O mais impressionante desse funil é que ele funciona para qualquer perfil de nutricionista, independente do tamanho.
+
+Você pode ter 500, 1.000, 3.000 seguidores ou mais. Não importa. Ele funciona porque ativa uma resposta imediata nos seus seguidores e faz com que eles queiram saber mais sobre os seus serviços.
+
+**[print]**
+A Wendy, por exemplo, tem pouco mais de 2.000 seguidores e fatura mais de 10 mil reais por mês captando paciente apenas pelo Instagram.
+
+**[print]**
+A Kalline, com poucos seguidores também, fez mais de 3 mil reais aplicando apenas 01 fase desse funil.
+
+A questão não é quantos seguidores você tem, mas como você ativa essas pessoas e faz elas te darem o que eu chamo de **SINAL DE PERMISSÃO**.
+
+E a melhor parte é que, para aplicar esse funil, você não precisa mudar nada na sua rotina. Não precisa gravar reels todo dia. Não precisa entrar em trend, não precisa fazer dancinha. Não precisa abrir a sua casa, mostrar a sua família, expor a sua vida.
+
+Você só precisa usar o que você já vive e já sabe, dentro de uma estrutura de stories que faz a pessoa levantar a mão e te dar um sinal de permissão. É uma questão de intenção, não de esforço. E você já vai entender isso.
+
+Agora deixa eu ser bem honesta com você sobre uma coisa. Esse funil funciona para qualquer perfil de nutricionista, mas ao mesmo tempo ele não é pra todo mundo.
+
+Não é pra quem quer viralizar e juntar seguidor a qualquer custo, porque número de seguidores é pura métrica de ego e vaidade. E não é pra quem quer um atalho fácil pra ganhar dinheiro no digital, ou acha que pra captar no Instagram precisa virar blogueirinha ou ser famosa.
+
+Isso aqui é pra nutricionista que é muito boa no que faz, que tem potencial, mas que ainda não consegue captar pacientes aqui no Instagram.
+
+Se você é essa nutricionista, fica comigo até o final dessa aula. Porque nos próximos minutos eu vou te mostrar as três etapas do funil que tira o seu perfil do modo invisível, e você vai entender exatamente o que postar amanhã de manhã nos seus stories para a primeira pessoa te dar um sinal de permissão.
+
+---
+
+> **Notas da Lead 01**
+>
+> **Origem:** mescla dos três trechos que o Pedro marcou no swipe file — abertura por enumeração do erro + contexto histórico absolvente + dupla autoria (Luana Carolina) · diagnóstico nomeado com absolvição e promessa de facilidade (Oney Araújo) · redução de esforço (Diandra Santos). Lapidada pelo Pedro.
+>
+> **Movimentos, na ordem:** erro específico → absolvição histórica → dupla autoria → nome do estado → correção da leitura literal → ponte perfil/story → promessa de facilidade → o funil e a escada completa → universalidade por tamanho → prova social → sinal de permissão → esforço zero → filtro de público → promessa da aula.
+>
+> **Decisões:**
+> - *"o que eu chamo de modo invisível"* — a atribuição pessoal transforma o termo em **conceito autoral da Letícia**. Sem ela, soa como jargão emprestado.
+> - A leitura literal é corrigida na hora (*"não porque ninguém te vê"*), senão a prova das views desmonta o argumento minutos depois.
+> - O reposicionamento de identidade vem em duas camadas: primeiro pelo que ela **não** vai precisar fazer, depois pelo filtro de público.
+> - *"Nos próximos minutos"* em vez de um número — não cria contrato de tempo que o roteiro possa quebrar.
+>
+> **PENDENTE:** os dois prints (Wendy e Kalline) precisam de autorização e captura.
+>
+> **Guardado para as próximas leads (teste):** o reconhecimento numérico do Oney (*"cinquenta, cento e vinte, duzentas, é sempre nessa faixa, né?"* + *"o Instagram não te avisa"*) · a **pergunta paradoxal** (nutri de 3 mil × nutri de 10 mil) · o segundo loop de saída (*"por que postar conteúdo de valor é o que está te mantendo invisível"*).
+
+---
+
+### 9.3 Leads 02 a 05
+
+_(ângulos diferentes, para teste — o playbook DR Expert pede de 3 a 5)_
+
+---
+
+### 9.4 Background Story
+
+_(a escrever)_
+
+---
+
+### 9.5 Discovery Story
+
+_(a escrever)_
 
 ---
 
@@ -1672,3 +1812,6 @@ _(parte por parte, após a escrita)_
 | 2026-09-03 | 4.1 | **NOME DO MECANISMO DO PROBLEMA APROVADO: MODO INVISÍVEL.** Formulação: STORY AVULSO → MODO INVISÍVEL (causa → estado). Substitui "Silêncio da Audiência". Dupla autoria (Instagram + seguidores) e a chave "o algoritmo não tem opinião própria, ele copia o julgamento da audiência". Encerra a pendência aberta em 02/09. |
 | 2026-09-03 | 3 | **Big Idea ajustada:** removida a palavra "invisível" (funil de captação **invisível** → funil de captação), porque a palavra passou a nomear o problema. |
 | 2026-09-03 | 7.6 | **PL2 v2 aprovado:** reescrito com o Modo Invisível, a camada de plataforma (dupla autoria) e a absolvição em duas doses. |
+| 2026-09-03 | 9.1 | **Estrutura da VSL definida:** Lead → Background → Discovery → Mecanismos → Produto → Oferta → Bônus → Garantia. **Sem Emotional Story** — a carga emocional está do lado da lead, não da Letícia. |
+| 2026-09-04 | 4.2 | **SINAL DE PERMISSÃO** nomeado como a moeda do mecanismo: a unidade contável que a Ativação Inteligente produz. Fecha a arquitetura de 3 nomes (Modo Invisível → Sinal de Permissão → Funil de Storieselling). |
+| 2026-09-04 | 9.2 | **LEAD 01 FECHADA.** Ângulo mecanismo de problema. Mescla dos trechos marcados pelo Pedro nas 3 VSLs do swipe file, lapidada por ele. Peça chamada de "aula" em toda a VSL. |
