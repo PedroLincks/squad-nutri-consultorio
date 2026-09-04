@@ -1384,11 +1384,18 @@ Você começa a se questionar: por que não funciona comigo? Sendo que vejo outr
 
 
 #### PONTO LÓGICO 02
-##### O problema é que os seus stories são avulsos
+##### Por que o seu perfil foi parar no Modo Invisível
+
+> **Versão 2 — aprovada em 03/09/2026.** Reescrito para carregar o nome do estado, a camada de plataforma (dupla autoria) e a absolvição. A versão anterior parava no diagnóstico do story e não explicava o comportamento do Instagram.
+> **Pressuposto:** a Lead já nomeou o Modo Invisível. Aqui o ponto não introduz o nome — ele **paga** o nome.
 
 **AFIRMAÇÃO**
 
-O problema não é o seu conteúdo. Nem o tamanho do seu perfil. Nem a sua constância. O problema é que os seus stories são avulsos.
+Deixa eu te contar como você foi parar nesse modo.
+
+Não foi o seu conteúdo. Não foi o tamanho do seu perfil. Não foi a sua constância.
+
+Foi porque os seus stories são avulsos.
 
 Avulso é aquele story que existe sozinho. A foto da garrafa de água. O "dia de atendimento". A dica que você viu num artigo e resolveu compartilhar. Cada um vive por conta própria, sem ligação com o anterior nem com o próximo. Não leva a lugar nenhum.
 
@@ -1400,6 +1407,8 @@ E tem o story que identifica. Esse faz a pessoa levantar a mão e dizer: "esse p
 
 Os seus stories fazem o primeiro. Todos eles. Todo dia.
 
+E é por isso que ninguém te responde. Não é porque você é desinteressante. É porque **você nunca deu abertura pra ela falar.**
+
 **PROVA**
 
 Deixa eu te mostrar isso de um jeito familiar.
@@ -1408,14 +1417,43 @@ Quando a paciente senta na sua frente, você não fica esperando ela contar o qu
 
 Cada pergunta tem ligação uma com a outra, para que você tenha as informações necessárias para montar a conduta daquela paciente. Certo?
 
-No Instagram você faz o contrário. Você fala, fala, fala… nada se conecta. E no fim, você tem apenas o silêncio das pessoas nos stories.
+No Instagram você faz o contrário. Você fala, fala, fala… e espera que ela conte sozinha.
+
+E aí presta atenção no que acontece do outro lado.
+
+Quando ninguém responde os seus stories, duas coisas acontecem ao mesmo tempo.
+
+A primeira: os seus seguidores se acostumam. Eles aprendem que ali não tem conversa, tem recado. Assistem no automático e seguem em frente.
+
+A segunda: o Instagram olha exatamente pra isso. Ele não tem opinião própria sobre você. **Ele só copia o que as pessoas fazem.** Se ninguém para, ninguém responde, ninguém reage, ele entende que aquele conteúdo não interessa nem pra quem já te segue.
+
+E aí ele para de te mostrar. Não pra todas. Só pro grupinho que sempre assiste.
+
+Repara no seu número de views. Ele quase não muda, né? Fica sempre naquela mesma faixa, não importa o que você poste.
+
+Isso não é coincidência. É o tamanho da entrega que o Instagram decidiu te dar, olhando pro sinal que chegou.
+
+E é assim que um perfil vai parar no modo invisível. **Não porque ninguém te vê. Porque ninguém reage.**
 
 **CONSEQUÊNCIA EMOCIONAL**
 
-Você fica na esperança de alguém chamar querendo saber mais sobre o seu atendimento. Segue postando e continua no aguardo do Direct notificar. E isso quase nunca acontece.
+E olha, você não fez nada errado. Você fez exatamente o que te ensinaram: aparecer, informar, entregar conteúdo de valor.
 
-> **Nota de escrita:** a analogia da anamnese carrega a absolvição DENTRO da prova — ela valida a competência da lead em vez de acusá-la, e mostra que ela **já sabe fazer isso**, só nunca transferiu para o Instagram. O eixo da analogia é a **conexão entre as perguntas** (sequência × avulso), não "perguntar × falar".
-> A enquete "certa" NÃO aparece aqui de propósito: entregar a solução no PL2 queima a curiosidade que o PL6 precisa.
+Só que ninguém nunca te disse que o Instagram não estava contando quantas pessoas assistiram. Ele estava contando quantas responderam.
+
+Você passou meses alimentando o número errado.
+
+E segue ali, postando e esperando o Direct notificar. Que quase nunca notifica.
+
+> **Notas de escrita:**
+> - **A analogia da anamnese** carrega a absolvição DENTRO da prova — valida a competência da lead em vez de acusá-la, e mostra que ela **já sabe fazer isso**, só nunca transferiu para o Instagram. O eixo é a **conexão entre as perguntas** (sequência × avulso), não "perguntar × falar".
+> - **A enquete "certa" NÃO aparece aqui de propósito:** entregar a solução no PL2 queima a curiosidade que o PL6 precisa.
+> - **A absolvição aparece duas vezes e nenhuma é declarada.** Fecha a Afirmação (*"não é porque você é desinteressante"*) e abre a CE (*"você fez exatamente o que te ensinaram"*). Nenhuma diz "não é culpa sua" — as duas transferem a causa para uma regra que ela não conhecia.
+> - **A dupla autoria é Prova, não Afirmação**, porque não é argumento e sim demonstração de mecânica — e termina no número dela, que é verificável.
+> - **O nome é redefinido no meio:** *"não porque ninguém te vê, porque ninguém reage"*. Corrige a leitura literal que ela pode ter feito na abertura e impede o termo de virar clichê de mercado.
+> - **Reuso do número de views com função nova:** no PL1 prova a DOR (tem gente e ninguém fala); aqui prova o TETO (o número não muda porque a entrega foi limitada).
+> - **Cortada** a linha *"Você fica na esperança de alguém chamar querendo saber mais sobre o seu atendimento"* — virou redundante, a CE já chega ali por dentro do mecanismo.
+> - **ALERTA DE TAMANHO:** este ponto dobrou e carrega dois mecanismos (story avulso + camada de plataforma). Se travar na leitura em voz alta, o corte natural é em *"E aí presta atenção no que acontece do outro lado"*, virando um ponto próprio entre PL2 e PL3.
 
 ---
 
@@ -1633,3 +1671,4 @@ _(parte por parte, após a escrita)_
 | 2026-09-02 | 2.8 | **Decisão do Pedro:** não existe lista de proibições na NC. O que entra em cada copy é decidido por ele durante a construção, caso a caso. Restrições de compliance deixam de operar como lei; nenhum recurso é vetado de antemão. |
 | 2026-09-03 | 4.1 | **NOME DO MECANISMO DO PROBLEMA APROVADO: MODO INVISÍVEL.** Formulação: STORY AVULSO → MODO INVISÍVEL (causa → estado). Substitui "Silêncio da Audiência". Dupla autoria (Instagram + seguidores) e a chave "o algoritmo não tem opinião própria, ele copia o julgamento da audiência". Encerra a pendência aberta em 02/09. |
 | 2026-09-03 | 3 | **Big Idea ajustada:** removida a palavra "invisível" (funil de captação **invisível** → funil de captação), porque a palavra passou a nomear o problema. |
+| 2026-09-03 | 7.6 | **PL2 v2 aprovado:** reescrito com o Modo Invisível, a camada de plataforma (dupla autoria) e a absolvição em duas doses. |
