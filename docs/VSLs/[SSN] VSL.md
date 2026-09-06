@@ -1689,7 +1689,15 @@ Lead → Background Story → Discovery Story → Mecanismos
 → Produto → Oferta → Bônus → Garantia
 ```
 
-**Sem Emotional Story.** Decisão consciente: a carga emocional desta VSL está do lado da **lead**, não da Letícia. O PL1 inteiro já é a experiência dela narrada — o esforço, o Direct vazio, o *"por que não funciona comigo"*. O Código Viral prova que funciona: história emocional de duas frases e é a top seller das três analisadas.
+**Sem Emotional Story — decisão definitiva (Pedro, 05/09/2026).**
+
+O motivo é de **encaixe de produto**, não de economia de tempo: *"não faz sentido pra esse tipo de produto e seria forçação de barra."*
+
+Emotional Story serve para transformação de vida. O SSN é um produto de R$297 que resolve um problema **operacional** — agenda com buraco, Direct vazio. Enxertar drama biográfico num produto desse porte soa a manipulação, e a nutri sente.
+
+E a carga emocional necessária já está no lugar certo: do lado da **lead**, não da Letícia. O PL1 inteiro é a experiência dela narrada — o esforço, o Direct vazio, o *"por que não funciona comigo"*. O Código Viral confirma que dá certo: história emocional de duas frases, e é a top seller das três VSLs analisadas.
+
+> **Consequência para a Discovery Story:** ela **não** deve tentar compensar rapport emocional. Essa instrução produziria exatamente a forçação de barra que a decisão evita. O trabalho dela é outro: dar **origem crível ao mecanismo** — mostrar a Letícia descobrindo o funil, não ensinando. Credibilidade de descoberta, não comoção.
 
 **O custo do corte:** o rapport que viria da vulnerabilidade. Precisa ser compensado pela **Discovery Story**, que tem que mostrar a Letícia **descobrindo**, não a Letícia ensinando.
 
@@ -1923,7 +1931,7 @@ resposta faz DUAS coisas → ponte para o mecanismo da solução
 
 5. **A escalada dos SINAIS DE PERMISSÃO preserva o PL4 e o PL5.** Os três sinais sobem no ranking, mas só a **resposta** entrega uma pessoa com nome. Sem essa hierarquia, a distinção entre interação e ativação some e os pontos lógicos perdem munição.
 
-6. **Sem Emotional Story também aqui.** A Background Story não carrega rapport emocional — ela carrega autoridade e camada de plataforma. O rapport fica todo na **Discovery Story** (9.5), que precisa mostrar a Letícia *descobrindo*, não ensinando.
+6. **Sem Emotional Story.** A Background Story carrega autoridade e camada de plataforma — só isso. E a Discovery Story **não herda** encargo emocional nenhum (ver 9.1): o produto não comporta, e forçar soaria manipulatório. O que a Discovery deve entregar é origem crível do mecanismo — a Letícia *descobrindo*, não ensinando.
 
 **Loop fechado:** o segundo loop guardado na Lead 01 (*"por que postar conteúdo de valor é o que está te mantendo invisível"*) **tem dono aqui** — na passagem dos stories de bom dia / foto de café: eles são feitos para serem assistidos e ignorados, não para serem respondidos. As Leads 02–05 podem abrir esse loop sabendo onde ele paga.
 
@@ -1987,3 +1995,4 @@ _(parte por parte, após a escrita)_
 | 2026-09-05 | 9.4 | **Decisão de argumento:** "rede de **retenção**" substitui "rede de recomendação". Recomendação é argumento de feed e vazaria do território do story. |
 | 2026-09-05 | 9.4 | **Regra permanente de retenção da VSL:** proibido pedir para a espectadora abrir o Instagram / pausar a peça para conferir qualquer coisa. Toda prova acontece na memória dela ou em tela. |
 | 2026-09-05 | 9.2 | **Loop com dono:** o segundo loop guardado na Lead 01 ("por que postar conteúdo de valor te mantém invisível") fecha na Background Story, na passagem dos stories de bom dia / foto de café. |
+| 2026-09-05 | 9.1 | **Sem Emotional Story — decisão definitiva.** Motivo: encaixe de produto. SSN é R$297 e resolve dor operacional; drama biográfico nesse porte soa manipulatório. A Discovery Story **não** compensa isso — entrega origem crível do mecanismo, não rapport emocional. |

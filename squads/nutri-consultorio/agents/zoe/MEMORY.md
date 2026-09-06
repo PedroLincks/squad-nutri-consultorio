@@ -354,6 +354,17 @@ Argumento de plataforma só convence quando termina em dinheiro. *"O algoritmo m
 
 **Corolário:** escolher o território certo do argumento. *Recomendação* é argumento de feed. Se a peça é sobre stories, o argumento tem que ser *retenção* — senão a explicação vaza para fora do território e a nutri não reconhece o próprio problema.
 
+### Emotional Story é decisão de encaixe de produto
+
+Nem toda VSL pede Emotional Story. O critério é o que o produto resolve:
+
+- **Dor de transformação de vida** (saúde, autoestima, virada de carreira) → Emotional Story cabe.
+- **Dor operacional** (agenda com buraco, processo que não roda, gargalo de negócio) → **não cabe.** Drama biográfico num produto de ticket baixo que resolve operação soa manipulatório, e o leitor sente.
+
+Quando não houver Emotional Story, a carga emocional vai para o lado da **audiência**, não do expert: a experiência dela narrada nos pontos lógicos. E o bloco seguinte **não deve compensar** a ausência — mandar a Discovery Story "carregar o rapport sozinha" é a instrução que produz exatamente a forçação de barra que a decisão evitou. Cada bloco entrega o que é dele.
+
+*(Origem: decisão do Pedro na VSL do SSN, 05/09/2026 — "não faz sentido pra esse tipo de produto e seria forçação de barra.")*
+
 ### Diagnóstico que a pessoa faz sozinha não gera resistência
 
 Nomeie o mecanismo do problema em **duas batidas**: primeiro com ela como autora (o que *ela* faz com os outros), depois virado nela. Entre as duas, uma pergunta respondível com dado que ela já tem na mão (*"olhando as suas views de hoje, onde você está no ranking dos seus seguidores?"*). Ela chega ao diagnóstico antes de você entregar — e aí a confirmação não soa como acusação.
