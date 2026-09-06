@@ -42,7 +42,7 @@
 | 6 | Pergunta Paradoxal | ✅ **APROVADA** — 01/09/2026 |
 | 7 | Pontos Lógicos | ✅ **APROVADOS + EXPANDIDOS** — 01/09/2026 (PL1 a PL6 em 7.6) |
 | — | Briefing consolidado para a Zoe | ⬜ Pendente |
-| 9 | Roteiro da VSL | 🔄 **EM ANDAMENTO** — Lead 01 fechada (04/09/2026) |
+| 9 | Roteiro da VSL | 🔄 **EM ANDAMENTO** — Lead 01 + Background Story fechadas (05/09/2026) |
 | — | Revisão dos Copy Seniors | ⬜ Pendente |
 
 ---
@@ -1774,7 +1774,175 @@ _(ângulos diferentes, para teste — o playbook DR Expert pede de 3 a 5)_
 
 ### 9.4 Background Story
 
-_(a escrever)_
+> **STATUS:** ✅ **FECHADA em 05/09/2026**
+> Apresentação da Letícia + camada de plataforma (como o algoritmo funciona) + aterrissagem no MODO INVISÍVEL + ponte para o mecanismo da solução.
+
+---
+
+#### TEXTO APROVADO
+
+Bom, antes de continuar, deixa eu me apresentar.
+
+Meu nome é Letícia Lincks, nutricionista há mais de 10 anos e especialista em emagrecimento e hipertrofia. Sou também fundadora da Nutri de Consultório, uma aceleradora de negócios para nutris onde, desde 2021, já atendemos mais de 20 mil clientes no Brasil e no exterior. E hoje, até o momento em que eu estou gravando essa aula, já somamos mais de 500 consultórios escalados em nossos programas de acompanhamento.
+
+E depois desses anos de experiência aqui no digital e no mundo dos negócios da nutrição, eu posso te afirmar com convicção que estamos vivendo a maior janela de oportunidade para nutricionistas com perfis pequenos captarem pacientes no Instagram e fazerem dinheiro de verdade.
+
+E eu sei que provavelmente você pense:
+
+*"Ahhh, lá vem conversa fiada. Já vi um monte de 'mentora', de 'guru' da internet falando que precisa estar no Instagram e blá blá blá. Isso eu já sei."*
+
+Você já ouviu que precisa postar stories todo dia. Que precisa aparecer mais, entrar em trend, abrir caixinha de perguntas, mostrar bastidor e lifestyle no stories.
+
+E você fez, mas não funcionou!
+
+E sabe por quê? Presta bem atenção nisso aqui.
+
+O Instagram deixou de ser uma rede de seguidores. **Ele virou uma rede de retenção.**
+
+E isso não é teoria minha, não. Quem falou isso foi o próprio Adam Mosseri, que é o CEO do Instagram.
+
+`[PRINTS DE NOTÍCIAS NA TELA]`
+
+Nos últimos meses o algoritmo passou por diversas atualizações e hoje ele tem um padrão muito claro de funcionamento: reter o usuário o maior tempo possível dentro da plataforma.
+
+E o motivo é simples: quanto mais tempo a pessoa fica no Instagram, mais anúncios ela consome. E mais anúncio consumido significa mais dinheiro pra plataforma. A receita do Instagram é essa, **tempo de tela**.
+
+E como que isso te impacta diretamente:
+
+Se o objetivo do Instagram é manter a pessoa lá dentro o máximo de tempo… o que ele precisa fazer? Ele precisa mostrar o perfil de pessoas que fazem o usuário ficar na plataforma. E o Instagram não faz isso de forma aleatória. **Ele escolhe a dedo.** As contas que geram retenção são exatamente as contas que ele recompensa com mais entrega e mais views.
+
+E aqui está a parte que quase nenhuma nutricionista entende:
+
+Existe uma diferença enorme, pro Instagram, entre alguém **ver** o seu story e alguém **responder** o seu story.
+
+Ver um stories dura três segundos. Responder abre uma conversa. E conversa é o que dá mais tempo de tela pro Instagram. Então grava isso: o Instagram não entrega mais pra quem posta mais. **Ele entrega mais pra quem faz as pessoas ficarem.**
+
+E como que você faz com que esse novo padrão do algoritmo jogue a seu favor?
+
+No feed você está disputando atenção com o Brasil inteiro. Com gente que tem equipe, estúdio, edição… Mas o story não. **O story só aparece pra quem já te segue.**
+
+No story você já tem a audiência. Essas pessoas já te acharam, já gostaram de alguma coisa em você, já apertaram pra seguir. Ou seja, você não precisa de gente nova. **Você precisa aparecer mais pra quem já te segue.**
+
+E é exatamente por isso que eu te falei no começo que essa é a maior janela de oportunidade pra nutricionista com perfil pequeno que eu vi nos últimos 5 anos. Porque nessa disputa por atenção no Instagram, quem decide não é tamanho. Quem decide é quem faz a pessoa ficar.
+
+Quer ver como isso é real e acontece todo dia com você mesma?
+
+`[NA TELA: mockup da barra de stories]`
+
+Pensa na primeira fileira de bolinhas de stories do seu Instagram. Aquelas contas que aparecem na sua frente todo santo dia, você sabe quem são. Sem olhar.
+
+E eu vou te dizer o que tem ali. Tem, provavelmente, uma influenciadora enorme. Que posta todo dia, tem milhões de seguidores e vive na internet. E bem do lado dela, na bolinha ao lado, tem uma amiga sua. Que posta de vez em quando, tem 400 seguidores e talvez tenha até o perfil fechado.
+
+Duas contas completamente diferentes, mas elas têm uma coisa em comum: **você interage com as duas.** Você responde. Você reage. Você segura o dedo na tela pra ver por mais tempo, e é só por isso que elas estão na sua frente.
+
+Porque aquela ordem não é aleatória. Não é cronológica.
+
+**Aquela ordem é um ranking.**
+
+O Instagram coloca na frente as pessoas com quem você mais interage. E as pessoas com quem você não interage, ele vai empurrando pro final da fila, até que você simplesmente para de ver que elas existem. Elas continuam postando todo dia. Você só não vê mais.
+
+Esses perfis com quem você não interage são colocados naquilo que eu chamo de **MODO INVISÍVEL**. Você até segue as pessoas, elas estão ali, mas você não as vê!
+
+E agora trazendo para o seu cenário, para o seu perfil de nutricionista. Olhando para a sua quantidade de views nos stories hoje, para o seu engajamento, eu te pergunto: **onde você está no ranking de stories dos seus seguidores?**
+
+O diagnóstico é simples. Se as suas views estão baixas e ninguém interage com você, sinto te dizer, mas provavelmente o seu perfil está no modo invisível.
+
+*"Ok, Letícia, entendi. Mas como é que o Instagram define quais perfis serão colocados no modo invisível?"*
+
+E aqui está um detalhe sobre o algoritmo que você precisa entender: ele não julga o seu perfil pelo número de pessoas que **viram** os seus stories. A métrica principal que ele analisa é quantas pessoas te deram o que eu chamo de **SINAIS DE PERMISSÃO**. Pessoas que:
+
+**1)** Responderam os seus stories
+**2)** Reagiram aos seus stories
+**3)** Curtiram os seus stories
+
+`[PRINT — resposta e conversa no Direct, reações e curtidas como sinal mais forte de relacionamento]`
+
+Pensa aí rapidinho nos últimos stories que você postou… quantas pessoas te deram sinais de permissão? Quantas responderam, reagiram ou curtiram?
+
+Poucas, né?
+
+É por isso que as suas views travam sempre no mesmo número e não sobem nunca, por mais que você poste. Não é o seu conteúdo que é ruim. **É a sua posição no ranking que vai caindo.** E isso vai piorando todo dia. A cada stories que você posta e não tem interação, o problema só aumenta.
+
+Grava isso que eu vou te falar:
+
+**O algoritmo do Instagram não tem opinião própria.** Ele apenas reflete o comportamento da sua audiência. Se as pessoas te ignoram, ele também vai te ignorar e te colocar no modo invisível.
+
+É por isso que aqueles stories de bom dia, foto de café, foto do computador escrito *"dia cheio de atendimentos"*, *"já bebeu água hoje?"* não geram resultado nenhum. Eles são stories para serem **assistidos e ignorados**, não para serem **respondidos**!
+
+Mas existe um jeito de tirar o seu perfil do modo invisível e fazer com que você volte a aparecer nos stories dos seus seguidores.
+
+A única coisa que faz o algoritmo te subir no ranking dos stories e ser vista por mais gente é você gerar SINAIS DE PERMISSÃO: resposta, reação ou curtida. **Só que um deles é mais poderoso que os outros dois.**
+
+Curtida e reação fazem uma coisa só: dizem pro Instagram que você é interessante.
+
+**Resposta faz duas coisas.**
+
+Porque no momento em que alguém responde um story teu, o Instagram passa a te entregar mais pra aquela pessoa, e ao mesmo tempo aquela pessoa passa a te enxergar como alguém com quem ela pode conversar.
+
+**Uma resposta te sobe no ranking e te coloca dentro de uma conversa ao mesmo tempo.** E é aqui onde você começa a construir a captação de pacientes que realmente funciona no Instagram.
+
+---
+
+#### NOTAS DA BACKGROUND STORY
+
+**Origem.** Abertura, ajustes de ritmo e lapidações escritos pelo Pedro. Camada de plataforma, prova da primeira fileira, escalada dos sinais e ordem dos movimentos construídas em conjunto com a Zoe, ao longo de 7 rodadas de iteração (04–05/09/2026).
+
+**A cadeia causal (por que ela fecha sem salto de fé):**
+
+```
+retenção = tempo de tela = anúncios = dinheiro   (piso econômico)
+   ↓
+o Instagram escolhe a dedo quem faz o usuário ficar
+   ↓
+ver dura 3s / responder abre conversa → conversa retem
+   ↓
+o story é onde ela JÁ tem audiência — falta POSIÇÃO, não gente nova
+   ↓
+a primeira fileira é um ranking (prova: influenciadora + amiga de 400)
+   ↓
+quem ela não interage → MODO INVISÍVEL (ela como autora)
+   ↓
+diagnóstico virado nela: "onde você está no ranking dos seus seguidores?"
+   ↓
+critério do ranking = SINAIS DE PERMISSÃO (não views)
+   ↓
+o algoritmo não tem opinião própria — copia o julgamento da audiência
+   ↓
+resposta faz DUAS coisas → ponte para o mecanismo da solução
+```
+
+**Decisões estruturais tomadas:**
+
+1. **A camada de plataforma entrou.** Era o gap diagnosticado nas 3 VSLs do swipe file — todas explicam como a plataforma funciona; a nossa não explicava. Sem ela o MODO INVISÍVEL era acusação; com ela é diagnóstico.
+
+2. **O piso econômico é o que sustenta tudo.** *"Quanto mais tempo o usuário fica, mais dinheiro o Instagram ganha com anúncios."* Sem essa frase, "retenção" era jargão. Com ela, o algoritmo deixa de parecer humor e passa a ser contabilidade — e a nutri para de se sentir perseguida.
+
+3. **O MODO INVISÍVEL é nomeado em duas batidas.** Primeiro com a nutri como **autora** (os perfis que *ela* deixou de ver), depois virado nela pelo diagnóstico. Diagnóstico que a pessoa faz sozinha não gera resistência.
+
+4. **A prova é auto-verificável sem tirar ninguém da VSL.** A referência (VSL da Luana Carolina) manda a espectadora *abrir o Instagram e conferir* — erro grave de retenção. Aqui ela não precisa olhar: ela já sabe de cor quem está na primeira fileira dela. A prova acontece na memória dela e no mockup em tela.
+
+5. **A escalada dos SINAIS DE PERMISSÃO preserva o PL4 e o PL5.** Os três sinais sobem no ranking, mas só a **resposta** entrega uma pessoa com nome. Sem essa hierarquia, a distinção entre interação e ativação some e os pontos lógicos perdem munição.
+
+6. **Sem Emotional Story também aqui.** A Background Story não carrega rapport emocional — ela carrega autoridade e camada de plataforma. O rapport fica todo na **Discovery Story** (9.5), que precisa mostrar a Letícia *descobrindo*, não ensinando.
+
+**Loop fechado:** o segundo loop guardado na Lead 01 (*"por que postar conteúdo de valor é o que está te mantendo invisível"*) **tem dono aqui** — na passagem dos stories de bom dia / foto de café: eles são feitos para serem assistidos e ignorados, não para serem respondidos. As Leads 02–05 podem abrir esse loop sabendo onde ele paga.
+
+**PENDÊNCIAS DE PRODUÇÃO:**
+
+| # | Item | Status |
+|---|---|---|
+| 1 | Prints de notícias sobre atualizações do algoritmo / Mosseri sobre retenção | ⚠️ capturar + validar fonte |
+| 2 | Print sobre resposta/reação/curtida como sinal de relacionamento | ⚠️ capturar + validar fonte |
+| 3 | Mockup animado da barra de stories | ⚠️ produzir |
+| 4 | Sobrenome da Letícia — "Lincks" (no roteiro) x "Cruz" (assinatura registrada nos e-mails) | ⚠️ **confirmar antes de gravar** |
+| 5 | Título do Mosseri — oficialmente *Head of Instagram*; imprensa BR usa "CEO do Instagram". Manter "CEO" se os prints em tela disserem CEO | ✅ decidido: manter CEO |
+
+**Cortes deliberados (registrados para não voltarem por engano):**
+
+- *"Abre o seu Instagram agora e confere"* — **proibido**. Tira a espectadora da VSL.
+- Rede de **recomendação** como argumento central — substituído por **retenção**, porque recomendação é argumento de feed e vazaria do território do story.
+- Espiral descendente em 4 linhas — comprimida por decisão do Pedro em *"E isso vai piorando todo dia. A cada stories que você posta e não tem interação, o problema só aumenta."* (a nutri já entendeu o motivo das views baixas; as 4 linhas eram excesso de copy).
+- *"Visualização não é sinal. Visualização é a consequência."* — saiu na última lapidação. Disponível para retomada se a passagem dos sinais pedir reforço.
 
 ---
 
@@ -1815,3 +1983,7 @@ _(parte por parte, após a escrita)_
 | 2026-09-03 | 9.1 | **Estrutura da VSL definida:** Lead → Background → Discovery → Mecanismos → Produto → Oferta → Bônus → Garantia. **Sem Emotional Story** — a carga emocional está do lado da lead, não da Letícia. |
 | 2026-09-04 | 4.2 | **SINAL DE PERMISSÃO** nomeado como a moeda do mecanismo: a unidade contável que a Ativação Inteligente produz. Fecha a arquitetura de 3 nomes (Modo Invisível → Sinal de Permissão → Funil de Storieselling). |
 | 2026-09-04 | 9.2 | **LEAD 01 FECHADA.** Ângulo mecanismo de problema. Mescla dos trechos marcados pelo Pedro nas 3 VSLs do swipe file, lapidada por ele. Peça chamada de "aula" em toda a VSL. |
+| 2026-09-05 | 9.4 | **BACKGROUND STORY FECHADA.** Apresentação da Letícia + camada de plataforma (retenção = tempo de tela = anúncios) + prova da primeira fileira + MODO INVISÍVEL nomeado em duas batidas (ela como autora → diagnóstico virado nela) + escalada dos SINAIS DE PERMISSÃO (resposta faz duas coisas) → ponte para o mecanismo da solução. |
+| 2026-09-05 | 9.4 | **Decisão de argumento:** "rede de **retenção**" substitui "rede de recomendação". Recomendação é argumento de feed e vazaria do território do story. |
+| 2026-09-05 | 9.4 | **Regra permanente de retenção da VSL:** proibido pedir para a espectadora abrir o Instagram / pausar a peça para conferir qualquer coisa. Toda prova acontece na memória dela ou em tela. |
+| 2026-09-05 | 9.2 | **Loop com dono:** o segundo loop guardado na Lead 01 ("por que postar conteúdo de valor te mantém invisível") fecha na Background Story, na passagem dos stories de bom dia / foto de café. |

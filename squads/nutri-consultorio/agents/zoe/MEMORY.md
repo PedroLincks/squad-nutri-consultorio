@@ -340,6 +340,24 @@ Os seguidores assistem e seguem em frente porque o story informa e nunca convida
 3. **Não afirmar punição, bloqueio ou shadowban.** É *"para de entregar porque lê o sinal"*, nunca *"te puniu"*
 4. A palavra sozinha é clichê de mercado (Oney e Diandra usam como adjetivo). O que a torna mecanismo é a estrutura: **modo + dupla autoria + reversibilidade**
 
+### Regras de retenção dentro de uma VSL
+
+**Nunca peça para a espectadora sair da peça.** Nada de *"abre o seu Instagram agora e confere"*, *"pode pausar essa aula"*, *"vai lá olhar e volta"*. A VSL da Luana Carolina faz isso e é um erro grave: quem sai não volta.
+
+Quando precisar de prova experiencial, use um dos dois caminhos:
+1. **A memória dela** — *"você já sabe quem aparece primeiro. Sem olhar."* Além de não tirar ninguém dali, demonstra que a Letícia conhece a rotina dela, e demonstração de conhecimento gera mais autoridade que verificação.
+2. **A tela** — mockup ou animação dentro do vídeo, onde a produção controla o que ela vê.
+
+### O algoritmo tem que ter piso econômico
+
+Argumento de plataforma só convence quando termina em dinheiro. *"O algoritmo mudou"* é jargão; *"quanto mais tempo o usuário fica, mais anúncios ele consome, e mais anúncio consumido é mais dinheiro pra plataforma"* é contabilidade. Com o piso econômico, a nutri para de achar que o algoritmo tem humor ou implicância e passa a entender que ele tem interesse — e interesse é previsível.
+
+**Corolário:** escolher o território certo do argumento. *Recomendação* é argumento de feed. Se a peça é sobre stories, o argumento tem que ser *retenção* — senão a explicação vaza para fora do território e a nutri não reconhece o próprio problema.
+
+### Diagnóstico que a pessoa faz sozinha não gera resistência
+
+Nomeie o mecanismo do problema em **duas batidas**: primeiro com ela como autora (o que *ela* faz com os outros), depois virado nela. Entre as duas, uma pergunta respondível com dado que ela já tem na mão (*"olhando as suas views de hoje, onde você está no ranking dos seus seguidores?"*). Ela chega ao diagnóstico antes de você entregar — e aí a confirmação não soa como acusação.
+
 
 ## Referências
 
