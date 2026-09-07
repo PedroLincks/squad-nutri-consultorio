@@ -1891,6 +1891,25 @@ Porque no momento em que alguém responde um story teu, o Instagram passa a te e
 
 ---
 
+#### ⛔ TRAVA PERMANENTE — a nutri NÃO tem engajamento
+
+**Ela não tem NADA de engajamento. Nada de respostas. Zero.**
+
+Nenhuma formulação da VSL pode sugerir que ela já consegue interação, nem que o que ela faz hoje funciona parcialmente. Frases proibidas e o motivo:
+
+| Proibido | Por que quebra |
+|---|---|
+| *"funciona por uns dias e depois para"* | Entrega vitória parcial. Se algo funciona um pouco, o problema vira **dosagem** — e a solução vira "faça mais", que é exatamente o que a VSL inteira nega |
+| *"nutricionista com story engajado e agenda vazia"* | Ela não tem story engajado. Descreve outra pessoa, e ela não se reconhece |
+| *"as views sobem um pouco, aparece gente na caixinha"* | Mesmo erro |
+| *"você até consegue algumas respostas, mas…"* | Mesmo erro |
+
+**Formulação correta:** tudo que ela tenta hoje é hipótese (*"imagina que você postou…"*) ou fracasso completo (*"você posta e não acontece nada"*). Nunca sucesso parcial.
+
+**Erro cometido 3× durante a escrita (05–06/09/2026).** Conferir esta trava antes de fechar qualquer bloco.
+
+---
+
 #### NOTAS DA BACKGROUND STORY
 
 **Origem.** Abertura, ajustes de ritmo e lapidações escritos pelo Pedro. Camada de plataforma, prova da primeira fileira, escalada dos sinais e ordem dos movimentos construídas em conjunto com a Zoe, ao longo de 7 rodadas de iteração (04–05/09/2026).

@@ -354,6 +354,31 @@ Argumento de plataforma só convence quando termina em dinheiro. *"O algoritmo m
 
 **Corolário:** escolher o território certo do argumento. *Recomendação* é argumento de feed. Se a peça é sobre stories, o argumento tem que ser *retenção* — senão a explicação vaza para fora do território e a nutri não reconhece o próprio problema.
 
+### Nunca dê vitória parcial ao avatar
+
+Antes de escrever qualquer bloco, confirme **em que ponto zero o avatar realmente está**. Se ele não tem resultado nenhum, nenhuma frase pode sugerir que o que ele faz hoje funciona um pouco.
+
+*"Funciona por uns dias"*, *"as views sobem um pouco"*, *"você até consegue algumas respostas"* — todas destroem o diagnóstico pelo mesmo caminho: se algo funciona parcialmente, o problema vira **dosagem**, e a solução implícita vira "faça mais". Que é justamente o que a copy passou a peça inteira negando.
+
+**Formulação correta:** o que ele tentaria é hipótese (*"imagina que você postou…"*), ou é fracasso completo. Nunca meio-termo.
+
+*(Erro cometido 3× na VSL do SSN, corrigido pelo Pedro em 06/09/2026: "a nutricionista não tem NADA de engajamento, nada de respostas".)*
+
+### Discovery Story — as 7 batidas do Oney + o dispositivo da Luana
+
+**Oney (Código Viral) conta como descobriu:**
+1. Mostra o próprio fracasso **com número na tela** — *"demorei 8 anos pra bater 40 mil seguidores"*
+2. **Aplica em si o mecanismo do problema** — *"meu perfil tava numa espécie de modo silencioso"*. É a batida que faz tudo funcionar: ele esteve onde o leitor está
+3. A ruptura é **ação**, não epifania — *"parei tudo, eu mergulhei"*
+4. Diz **o método da descoberta** — *"comecei a mapear todos os padrões"*. Descoberta por trabalho convence; descoberta por iluminação cheira a guru
+5. A reação à simplicidade — *"eu falava: não é possível, é só isso"*. Promete facilidade sem prometer nada
+6. **O nome nasce da descoberta** — *"eu chamei esses padrões de códigos virais"*. Nunca anuncie o nome antes de descobrir a coisa
+7. Primeiro teste **com número** → depois a validação fora dele (*"e não foi só eu"*)
+
+**Luana (SPE) não conta, ela mostra.** Dispositivo físico: *"deixa só eu mudar de cenário, porque agora eu quero abrir meu Instagram e te mostrar os meus próprios stories"*. A mudança de cenário sinaliza *agora é prova, não é mais argumento*. Cada tática vem colada num caso real com o resultado grudado.
+
+**Regra:** estrutura do Oney para a origem, dispositivo da Luana para a prova. E a prova precisa mostrar a **corrente inteira** — o que foi publicado → o que chegou → o que virou dinheiro. Prova que para no engajamento comprova a coisa errada.
+
 ### Emotional Story é decisão de encaixe de produto
 
 Nem toda VSL pede Emotional Story. O critério é o que o produto resolve:
