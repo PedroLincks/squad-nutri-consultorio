@@ -317,7 +317,7 @@ STORY AVULSO  →  MODO INVISÍVEL  →  ficar VISÍVEL
 ```
 MODO INVISÍVEL          →  o ESTADO   (problema)
 SINAL DE PERMISSÃO      →  a UNIDADE  (o que o funil produz)
-FUNIL DE STORIESELLING  →  o SISTEMA  (solução)
+FUNIL DE SOCIAL SELLING  →  o SISTEMA  (solução)
 ```
 
 - **SINAL DE PERMISSÃO** — o que a pessoa te dá quando levanta a mão. Unidade contável produzida pela Ativação Inteligente. Mata a objeção de invasão antes dela nascer: se ela **deu** permissão, abordar não é invadir.
@@ -325,7 +325,7 @@ FUNIL DE STORIESELLING  →  o SISTEMA  (solução)
 - **A peça é chamada de "aula"** em toda a VSL.
 
 - **MODO INVISÍVEL** — nome do mecanismo do problema. O Instagram **e os próprios seguidores** passaram a tratar o perfil dela como se não estivesse ali. Invisibilidade **social, não ótica**: ela é vista (as views provam) e não gera reação.
-- **FUNIL DE STORIESELLING** — mecanismo da solução, 3 fases: Ativação Inteligente → Abordagem Direcionada → Fechamento Natural.
+- **FUNIL DE SOCIAL SELLING** — mecanismo da solução, 3 fases: Ativação Inteligente → Abordagem Direcionada → Fechamento Natural.
 
 **A chave técnica, que dispensa qualquer superestrutura:**
 

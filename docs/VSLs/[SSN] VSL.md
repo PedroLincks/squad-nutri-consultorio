@@ -42,7 +42,7 @@
 | 6 | Pergunta Paradoxal | ✅ **APROVADA** — 01/09/2026 |
 | 7 | Pontos Lógicos | ✅ **APROVADOS + EXPANDIDOS** — 01/09/2026 (PL1 a PL6 em 7.6) |
 | — | Briefing consolidado para a Zoe | ⬜ Pendente |
-| 9 | Roteiro da VSL | 🔄 **EM ANDAMENTO** — Lead 01 + Background Story fechadas (05/09/2026) |
+| 9 | Roteiro da VSL | 🔄 **EM ANDAMENTO** — Lead 01, Background Story e Mecanismo da Solução fechados (07/09/2026) |
 | — | Revisão dos Copy Seniors | ⬜ Pendente |
 
 ---
@@ -612,7 +612,7 @@ Do próprio mapa mestre, decisões da Letícia ainda em aberto:
 ### 2.9 Nomenclatura obrigatória
 
 - **"Ativação Inteligente"** — nome do lado do problema
-- **"Funil de Storieselling"** — nome do método/mecanismo da solução
+- **"Funil de Social Selling"** — nome do método/mecanismo da solução
 - **3 fases:** Ativação Inteligente → Abordagem Direcionada → Fechamento Natural
 
 ---
@@ -1016,7 +1016,7 @@ Os itens levantados pelo Pedro são **sintomas** — a evidência visível do St
 
 #### O MÉTODO
 
-> # FUNIL DE STORIESELLING
+> # FUNIL DE SOCIAL SELLING
 
 **As 3 fases:**
 
@@ -1093,7 +1093,7 @@ Três camadas nomeadas, na mesma lógica que a VSL da Luana Carolina usa (Perfil
 ```
 MODO INVISÍVEL          →  o ESTADO      (o problema)
 SINAL DE PERMISSÃO      →  a UNIDADE     (o que se produz)
-FUNIL DE STORIESELLING  →  o SISTEMA     (a solução)
+FUNIL DE SOCIAL SELLING  →  o SISTEMA     (a solução)
 ```
 
 E a distinção que a Lead 01 fixou: **o modo invisível é do PERFIL; a alavanca para sair dele é o STORY.** O perfil é onde está o sintoma, o story é onde se opera. Formulação registrada: *"o problema não está no seu perfil. Está no que você posta nos seus stories. E é exatamente ali que a virada acontece."*
@@ -1110,7 +1110,7 @@ E a distinção que a Lead 01 fixou: **o modo invisível é do PERFIL; a alavanc
 
 As duas peças do quebra-cabeça:
 
-| | **Story Avulso** | **Funil de Storieselling** |
+| | **Story Avulso** | **Funil de Social Selling** |
 |---|---|---|
 | Função do story | Informa | **Identifica** |
 | Produz | Views anônimas | **Nomes com problema declarado** |
@@ -1147,7 +1147,7 @@ E o nome da fase 3 — **Natural** — carrega a mesma promessa: o convite não 
 
 #### Nota de grafia
 
-O nome do método aparecerá em tela, slides e área de membros. Grafia adotada: **Storieselling** (de *stories* + *selling*). Alternativas consideradas: *Storyselling* (correto em inglês, porém genérico — já existe no mercado como storytelling aplicado a vendas) e *Storiselling*. A grafia escolhida amarra o método aos **stories do Instagram**, que é o eixo de aplicação do produto e o que a Big Idea afirma. **Manter a grafia consistente em todos os materiais.**
+O nome do método aparecerá em tela, slides e área de membros. Grafia adotada: **Social Selling** (de *stories* + *selling*). Alternativas consideradas: *Storyselling* (correto em inglês, porém genérico — já existe no mercado como storytelling aplicado a vendas) e *Storiselling*. A grafia escolhida amarra o método aos **stories do Instagram**, que é o eixo de aplicação do produto e o que a Big Idea afirma. **Manter a grafia consistente em todos os materiais.**
 
 ---
 
@@ -1162,7 +1162,7 @@ O nome do método aparecerá em tela, slides e área de membros. Grafia adotada:
 
 ### 5.1 A ÚNICA CRENÇA
 
-> # Fazer seus seguidores falarem com você é a chave para captar paciente pelo Instagram todo mês — e a melhor forma de fazer isso é aplicando o Funil de Storieselling, que funciona independente do tamanho do perfil.
+> # Fazer seus seguidores falarem com você é a chave para captar paciente pelo Instagram todo mês — e a melhor forma de fazer isso é aplicando o Funil de Social Selling, que funciona independente do tamanho do perfil.
 
 ---
 
@@ -1172,9 +1172,9 @@ O nome do método aparecerá em tela, slides e área de membros. Grafia adotada:
 |---|---|
 | **Ação Acreditável** | **Fazer seus seguidores falarem com você.** Contém as duas coisas que faltavam: a *identificação* (elas falam, então você sabe quem são) e a *iniciativa* (você provoca, não espera) |
 | **Desejo** | **Captar paciente pelo Instagram todo mês.** NÃO é "lotar a agenda" — agenda cheia é promessa de ANC. Este produto entrega **captação recorrente**, e "todo mês" diz recorrência sem usar vocabulário de negócio |
-| **Solução Acreditável** | **O Funil de Storieselling** |
+| **Solução Acreditável** | **O Funil de Social Selling** |
 
-**Regra estrutural registrada:** a Ação nunca pode ser o produto. Se a ação for "usar o Funil de Storieselling", some o degrau do meio e a lead precisa acreditar direto na solução — que é a única coisa desconhecida para ela. *"Fazer meus seguidores falarem comigo"* ela aceita em dois segundos; o método exige confiança que ela ainda não tem.
+**Regra estrutural registrada:** a Ação nunca pode ser o produto. Se a ação for "usar o Funil de Social Selling", some o degrau do meio e a lead precisa acreditar direto na solução — que é a única coisa desconhecida para ela. *"Fazer meus seguidores falarem comigo"* ela aceita em dois segundos; o método exige confiança que ela ainda não tem.
 
 **Sobre "independente do tamanho do perfil":** a cláusula qualifica a **solução**, não a pessoa. Não é concessão ("mesmo que você tenha pouco") — é atributo do método ("ele funciona em qualquer perfil"). Isso mantém a coerência com a Pergunta Paradoxal, que anula a variável seguidor pelos dois lados em vez de pedir desculpa por ela.
 
@@ -1325,13 +1325,13 @@ Isso é a aplicação direta da **regra inegociável de escrita** (seção 3A.6)
 
 **PL5** — Por isso você nunca resolveu isso produzindo mais conteúdo e postando mais stories: o que faltava não era volume, era estratégia e intenção.
 
-**PL6** — A forma mais rápida de fazer seus seguidores falarem com você é aplicando o Funil de Storieselling.
+**PL6** — A forma mais rápida de fazer seus seguidores falarem com você é aplicando o Funil de Social Selling.
 
 ---
 
 ### 7.2 A cadeia, em uma respiração
 
-> Tem gente te vendo, mas ninguém fala **(PL1)** → porque seu story não faz ninguém se identificar **(PL2)** → então o que falta é conversa, não audiência **(PL3)** → e conversa não nasce sozinha: alguém precisa ir atrás — sem ser invasiva **(PL4)** → você nunca resolveu porque tentou resolver com volume **(PL5)** → e o caminho mais rápido é o Funil de Storieselling **(PL6)**.
+> Tem gente te vendo, mas ninguém fala **(PL1)** → porque seu story não faz ninguém se identificar **(PL2)** → então o que falta é conversa, não audiência **(PL3)** → e conversa não nasce sozinha: alguém precisa ir atrás — sem ser invasiva **(PL4)** → você nunca resolveu porque tentou resolver com volume **(PL5)** → e o caminho mais rápido é o Funil de Social Selling **(PL6)**.
 
 **Eco interno registrado:** o PL2 diz *"sem intenção, sem estratégia"*; o PL5 responde *"faltava estratégia e intenção"*. O argumento se fecha sobre si mesmo — a lead sente a peça encaixar sem saber por quê. **Manter as duas formulações espelhadas; não reescrever uma sem a outra.**
 
@@ -1536,7 +1536,7 @@ Aí o seu Instagram deixa de ser aposta. Você deixa de depender de sorte e pass
 > **Notas de escrita:**
 > - A prova funciona porque **revela um comportamento**, não repete a tese: ela sabe os três números errados e não sabe o certo. Reconhecimento próprio é mais difícil de contestar que estatística.
 > - **Decisão de copy:** evitar "lead" / "geração de leads" e afins — é a linguagem de quem vendeu alcance pra ela, não a da Letícia. Revisável pelo Pedro a qualquer momento.
-> - O nome do mecanismo NÃO aparece aqui. O PL6 é quem revela o Funil de Storieselling — se a Ativação for citada antes, o PL6 chega sem novidade.
+> - O nome do mecanismo NÃO aparece aqui. O PL6 é quem revela o Funil de Social Selling — se a Ativação for citada antes, o PL6 chega sem novidade.
 
 ---
 
@@ -1584,7 +1584,7 @@ E é nesse momento que eles deixam de ser apenas seguidores e passam a ser poten
 > **Notas de escrita:**
 > - **Vocabulário obrigatório: “captação ativa”, nunca “venda ativa”** (item 7.5). Alinha com o mecanismo e evita o peso da palavra “venda”, que é justamente o que assusta essa nutricionista.
 > - A objeção sobe no mesmo instante em que a tese é dita — por isso a Prova deste PL não é evidência, é **quebra de objeção**. É o timing correto.
-> - A permissão é citada, mas o **como** não: fazer o seguidor levantar a mão é território do PL6 (Ativação Inteligente). Entregar aqui queimaria a revelação do Funil de Storieselling.
+> - A permissão é citada, mas o **como** não: fazer o seguidor levantar a mão é território do PL6 (Ativação Inteligente). Entregar aqui queimaria a revelação do Funil de Social Selling.
 > - **Revisão sugerida e não aplicada (01/09/2026):** segurar o trecho “a partir de uma permissão” na Afirmação para deixar a objeção subir crua antes da Prova; isolar “Talvez você tenha construído o seu consultório inteiro em cima da minoria” como parágrafo de fechamento; cortar a linha de rampa “tudo fica mais claro”. Versão aprovada mantém a forma acima.
 
 ---
@@ -1685,9 +1685,15 @@ _(gerado pelo Jack somente após as etapas 1–7 aprovadas)_
 > **Decisão do Pedro, 03/09/2026.**
 
 ```
-Lead → Background Story → Discovery Story → Mecanismos
+Lead → Background Story → Mecanismo da Solução
 → Produto → Oferta → Bônus → Garantia
 ```
+
+> **Discovery Story ABORTADA (Pedro, 06/09/2026).** Dois motivos, ambos definitivos:
+> 1. **O produto entrega o funil pronto** (estilo SPE da Luana). História de descoberta cria expectativa de aprender um caminho, quando o que ela recebe é uma coisa montada.
+> 2. **A Letícia nunca é quem errou** — o que elimina a origem estilo Oney (*"meu perfil também estava no modo silencioso"*), que era a única formulação forte que restava.
+>
+> A credibilidade de origem passa a ser resolvida pelo dispositivo da Luana: **demonstração**. Os 3 exemplos reais de ativação fazem o trabalho que a Discovery faria, sem bloco biográfico.
 
 **Sem Emotional Story — decisão definitiva (Pedro, 05/09/2026).**
 
@@ -1697,7 +1703,7 @@ Emotional Story serve para transformação de vida. O SSN é um produto de R$297
 
 E a carga emocional necessária já está no lugar certo: do lado da **lead**, não da Letícia. O PL1 inteiro é a experiência dela narrada — o esforço, o Direct vazio, o *"por que não funciona comigo"*. O Código Viral confirma que dá certo: história emocional de duas frases, e é a top seller das três VSLs analisadas.
 
-> **Consequência para a Discovery Story:** ela **não** deve tentar compensar rapport emocional. Essa instrução produziria exatamente a forçação de barra que a decisão evita. O trabalho dela é outro: dar **origem crível ao mecanismo** — mostrar a Letícia descobrindo o funil, não ensinando. Credibilidade de descoberta, não comoção.
+> **Nota:** nenhum bloco deve tentar compensar a ausência de rapport emocional. Essa instrução produziria exatamente a forçação de barra que a decisão evita. Cada bloco entrega o que é dele.
 
 **O custo do corte:** o rapport que viria da vulnerabilidade. Precisa ser compensado pela **Discovery Story**, que tem que mostrar a Letícia **descobrindo**, não a Letícia ensinando.
 
@@ -1985,9 +1991,162 @@ resposta faz DUAS coisas → ponte para o mecanismo da solução
 
 ---
 
-### 9.5 Discovery Story
+### 9.5 Mecanismo da Solução — Ativação Inteligente
 
-_(a escrever)_
+> **STATUS:** ✅ **FECHADO em 07/09/2026**
+> Transição do problema para a solução + os 3 exemplos práticos de Ativação Inteligente + ponte para a Abordagem Direcionada.
+
+---
+
+#### TEXTO APROVADO
+
+A partir de agora eu vou te mostrar exatamente como ativar estes sinais aí nos seus stories, e você vai ver como **existem pacientes escondidos no seu Instagram**.
+
+A primeira coisa que você precisa fazer é o que eu chamo de **ativação inteligente**, que é literalmente fisgar a atenção dos seus seguidores e fazer com que eles tomem a ação que você quer.
+
+Quer ver como funciona na prática?
+
+Se eu te falar a frase *"o peixe morre pela…"*
+
+O seu subconsciente foi ativado e você respondeu **BOCA**.
+
+Se eu te perguntar quanto é 2 + 2? Você pensou e respondeu **4**.
+
+Percebe que com apenas uma afirmação e uma pergunta eu te fiz tomar uma ação? **Você me respondeu.**
+
+Agora deixa eu te mostrar isso funcionando dentro do Instagram. Três exemplos práticos.
+
+**› O PRIMEIRO é a enquete de identificação.**
+
+E presta atenção, porque a ferramenta não é o segredo. **O segredo é como você faz a pergunta.**
+
+Se você posta uma enquete perguntando *"você toma café com ou sem açúcar?"*, as pessoas votam. É divertido, todo mundo adora dar opinião.
+
+Só que isso não tem nada a ver com o problema que você, nutricionista, resolve. Você ganhou voto. **Não captou ninguém.**
+
+Agora olha a mesma ferramenta, com outra pergunta:
+
+*"Eu treino todos os dias da semana e ainda assim não vejo resultado."*
+*"Você também se sente assim?"* `[ENQUETE — SIM / NÃO]`
+
+Quem votou SIM acabou de assumir, com o dedo dela, que vive uma dificuldade que o seu trabalho resolve.
+
+E aí você abre a lista de quem votou. Está tudo ali. **Nome e foto.**
+
+Pronto: além de fazer a ativação inteligente para aumentar as suas views, você acabou de gerar leads. Pessoas que disseram, por conta própria, que têm um problema — e o problema que você resolve.
+
+`[PRINT da lista de votos]`
+
+E essa geração de leads acontece enquanto você está atendendo. **Durante 24 horas o Instagram fica trabalhando pra você. Literalmente.**
+
+**› O SEGUNDO é a caixinha de perguntas.**
+
+E eu já sei o que você vai me dizer: *"Letícia, ninguém manda pergunta na minha caixinha. Eu abro e fico falando sozinha."*
+
+Sim. E não é porque ninguém liga pra você.
+
+Imagina que você está andando na rua, para na frente da primeira pessoa que aparece e fala: **"faça uma pergunta."**
+
+A pessoa vai perguntar o quê? Ela não sabe quem você é e muito menos sobre o que deveria perguntar.
+
+É exatamente isso que acontece quando você abre a caixinha do nada. A pessoa estava passando os stories e de repente precisa escolher um assunto, pensar numa dúvida e formular uma pergunta. **É esforço demais.**
+
+Agora olha a mesma caixinha, com contexto antes:
+
+*"Eu treino tanto e mesmo assim não vejo resultado. Você também se sente assim?"* `[ENQUETE]`
+
+*"Que treinar é importante você já sabe. Mas você já parou pra pensar que talvez a sua alimentação não esteja ajustada ao volume e à intensidade dos seus treinos?"*
+
+*"Qual é a sua principal dúvida quando o assunto é dieta e corrida?"* `[CAIXINHA]`
+
+Mesma ferramenta. Mesma caixinha que você acha que não funciona.
+
+A diferença é que agora a pessoa **sabe o que perguntar**.
+
+`[PRINT das perguntas recebidas]`
+
+**› O TERCEIRO é o que mais gera paciente pras minhas alunas. Stories de diagnóstico.**
+
+Você lembra dos testes das revistas Capricho e Atrevida? *"Qual famoso combina com você?"*
+
+A gente respondia tudo, somava os pontos e ia correndo ver o resultado.
+
+O ser humano não resiste a um quiz. E é exatamente isso que a gente vai usar.
+
+Você publica uma sequência de cinco perguntas sobre a rotina da sua paciente ideal. Cada resposta vale uma pontuação. No fim, ela soma e descobre o resultado.
+
+`[PRINTS DO DIAGNÓSTICO DA KALLINE]`
+
+Quanto menor a pontuação, mais dificuldade aquela pessoa tem.
+
+Mas agora presta muita atenção, porque aqui está a parte que faz esse framework ser muito poderoso:
+
+**Você não olha só quem chegou no fim e te mandou a pontuação.**
+
+Você abre a lista de resposta de **cada uma das cinco perguntas**.
+
+Porque a mulher que desistiu no meio do caminho e nunca te mandou pontuação nenhuma… ela respondeu que pula refeições. Que passa horas sem comer. Que exagera no fim de semana.
+
+**Ela te contou o problema dela e nem percebeu.**
+
+E no fim do dia você não tem "respostas nos stories". **Você tem a sua base inteira separada por tipo de dificuldade.**
+
+**› A EXTRAÇÃO**
+
+Agora repara o que os três têm em comum. Nenhum deles pediu resposta. Nenhum deles é um card de cinco dicas, nem post técnico, nem explicação de macronutriente.
+
+E os três fazem duas coisas ao mesmo tempo:
+
+Primeiro, eles **ATIVAM**. A pessoa responde sem decidir responder, igual você fez com o peixe.
+
+Segundo, eles **REVELAM**. A resposta carrega uma informação sobre quem respondeu.
+
+E quando você faz uma ativação inteligente bem feita, abre caminho para você fazer uma **abordagem direcionada** no Direct.
+
+Para cada pessoa de quem você tem informação nos stories — problemas, dificuldades — você vai abordar de acordo com o que ela revelou pra você.
+
+Por exemplo:
+
+> *"Oi, Ana! Vi que você respondeu ali no meu story que treina, mas ainda não consegue ver resultado. Entrei no seu perfil e vi que você já tem uma rotina de treinos bem legal, o que facilita demais esse processo. Mas me conta: como você tem organizado as suas refeições hoje?"*
+
+Não é uma abordagem fria. Não é invasiva. **Ela falou primeiro.** Você só continuou a conversa que ela mesma começou.
+
+---
+
+#### NOTAS DO MECANISMO DA SOLUÇÃO
+
+**Origem dos exemplos.** Os três frameworks saíram das aulas do próprio SSN — 3.3 (enquetes e reações), 3.4 (caixinha de perguntas) e 3.7 (diagnóstico). A VSL não inventa nada: mostra o que a compradora vai receber.
+
+**Critério de seleção — escalada de esforço:**
+
+```
+enquete      → 1 toque            → volume
+caixinha     → escrever a dúvida  → qualidade da informação
+diagnóstico  → sequência inteira  → a base toda classificada
+```
+
+**Frameworks deixados de fora da VSL** (e por quê): *lifestyle* e *POV do atendimento* (ótimos, mas não demonstram o REVELAR em segundos) · *case de sucesso* e *isca gratuita* (dependem de ativo que ela ainda não tem) · *story único* (é convite, não ativação — serve melhor na oferta).
+
+**O contraste café-com-açúcar × treino-sem-resultado é canônico** — está escrito na aula 3.3. Não foi criado para a VSL.
+
+**O golpe do diagnóstico** — quem desistiu no meio também deixou rastro — é o pico do bloco. Transforma abandono em ativo, e é informação que ela nunca considerou possível.
+
+**A analogia da rua** (*"para na frente de alguém e fala: faça uma pergunta"*) absolve a caixinha vazia sem culpar ninguém, e é a única coisa atribuída a ela no bloco inteiro. Fracasso completo, nunca vitória parcial — conforme a trava.
+
+**A mensagem de abordagem entra aqui de propósito.** O medo real dela não é gerar resposta: é não saber o que dizer depois. Mostrar a mensagem pronta mata isso e já dá gosto da fase 2 sem precisar explicá-la.
+
+**Decisões do Pedro sobre este bloco:**
+- *"leads"* fica nesta passagem (fora dela, continua valendo a preferência por linguagem da nutri)
+- **Sem repetir a explicação do peixe** na extração — excesso de informação
+- Sem nomear SINAL DE PERMISSÃO de novo aqui: já vem nomeado da transição (*"estes sinais"*)
+
+**PENDÊNCIAS DE PRODUÇÃO:**
+
+| # | Item | Status |
+|---|---|---|
+| 1 | Print da lista de votos de uma enquete de identificação | ⚠️ capturar |
+| 2 | Print de caixinha com perguntas recebidas | ⚠️ capturar |
+| 3 | Prints do diagnóstico da Kalline | 🟡 **existem no material do curso** — falta autorização |
 
 ---
 
@@ -2005,14 +2164,14 @@ _(parte por parte, após a escrita)_
 | 2026-08-31 | 2 | Produto: Social Selling para Nutris, R$297, front-end para ascensão ao high ticket. Avatar: quem posta e ESPERA a paciente chamar. |
 | 2026-09-01 | 3 | Big Idea: "O funil de captação invisível de apenas 3 etapas que converte views nos stories em consulta marcada na agenda e pix na conta." *(ajustada em 03/09/2026 — ver abaixo)* |
 | 2026-09-01 | 3A | Tema: HISTÓRIA — variante CONTRASTE. Emoção dominante: esforço sem retorno. |
-| 2026-09-01 | 5 | Única Crença: "Fazer seus seguidores falarem com você é a chave para captar paciente pelo Instagram todo mês — e a melhor forma de fazer isso é aplicando o Funil de Storieselling, que funciona independente do tamanho do perfil." |
+| 2026-09-01 | 5 | Única Crença: "Fazer seus seguidores falarem com você é a chave para captar paciente pelo Instagram todo mês — e a melhor forma de fazer isso é aplicando o Funil de Social Selling, que funciona independente do tamanho do perfil." |
 | 2026-09-01 | 7 | Pontos Lógicos: 6 pontos aprovados (PL1-4 Ação Acreditável, PL5-6 Solução Acreditável). Expansão em Afirmação/Prova/Consequência Emocional pendente. |
 | 2026-09-01 | 6 | Pergunta Paradoxal: "Você já parou pra pensar por que tem nutri com menos de 3.000 seguidores atendendo mais do que nutri com mais de 10.000?" |
 | 2026-09-01 | 4 | Mecanismo do Problema: STORY AVULSO = SILÊNCIO DA AUDIÊNCIA. |
-| 2026-09-01 | 4 | Mecanismo da Solução: **FUNIL DE STORIESELLING** — 3 fases: Ativação Inteligente → Abordagem Direcionada → Fechamento Natural. A Ativação é o coração do método. |
+| 2026-09-01 | 4 | Mecanismo da Solução: **FUNIL DE SOCIAL SELLING** — 3 fases: Ativação Inteligente → Abordagem Direcionada → Fechamento Natural. A Ativação é o coração do método. |
 | 2026-09-01 | 7.6 | PL4 expandido aprovado: “O dinheiro não está em quem te procura, está em quem você procura”. Prova = quebra da objeção ativa × invasiva. |
 | 2026-09-01 | 7.6 | PL5 expandido aprovado: “Você tentou resolver com volume, e volume nunca foi o problema”. Prova = analogia da conduta (paciente que já tentou de tudo). |
-| 2026-09-01 | 7.6 | PL6 expandido aprovado: revelação do Funil de Storieselling com as 3 fases nomeadas. **Etapa 7 fechada — PL1 a PL6 expandidos.** |
+| 2026-09-01 | 7.6 | PL6 expandido aprovado: revelação do Funil de Social Selling com as 3 fases nomeadas. **Etapa 7 fechada — PL1 a PL6 expandidos.** |
 | 2026-09-01 | 7.6 | Sincronização com o briefing de gravação do Pedro: PL1 (corte da linha do “número de cabeça” + “não te deram bola”) e PL3 (“Conversa marca!” + “Você agora tem uma métrica clara”). |
 | 2026-09-02 | 4.1 | **Pendência aberta:** o mecanismo do problema precisa de Nome Chiclete. “Story Avulso = Silêncio da Audiência” é descrição, não nome. Convergência de 3 fontes (Playbook DR Expert, VSL Código Viral, estrutura própria). |
 | 2026-09-02 | 2.8 | **Decisão do Pedro:** não existe lista de proibições na NC. O que entra em cada copy é decidido por ele durante a construção, caso a caso. Restrições de compliance deixam de operar como lei; nenhum recurso é vetado de antemão. |
@@ -2020,10 +2179,13 @@ _(parte por parte, após a escrita)_
 | 2026-09-03 | 3 | **Big Idea ajustada:** removida a palavra "invisível" (funil de captação **invisível** → funil de captação), porque a palavra passou a nomear o problema. |
 | 2026-09-03 | 7.6 | **PL2 v2 aprovado:** reescrito com o Modo Invisível, a camada de plataforma (dupla autoria) e a absolvição em duas doses. |
 | 2026-09-03 | 9.1 | **Estrutura da VSL definida:** Lead → Background → Discovery → Mecanismos → Produto → Oferta → Bônus → Garantia. **Sem Emotional Story** — a carga emocional está do lado da lead, não da Letícia. |
-| 2026-09-04 | 4.2 | **SINAL DE PERMISSÃO** nomeado como a moeda do mecanismo: a unidade contável que a Ativação Inteligente produz. Fecha a arquitetura de 3 nomes (Modo Invisível → Sinal de Permissão → Funil de Storieselling). |
+| 2026-09-04 | 4.2 | **SINAL DE PERMISSÃO** nomeado como a moeda do mecanismo: a unidade contável que a Ativação Inteligente produz. Fecha a arquitetura de 3 nomes (Modo Invisível → Sinal de Permissão → Funil de Social Selling). |
 | 2026-09-04 | 9.2 | **LEAD 01 FECHADA.** Ângulo mecanismo de problema. Mescla dos trechos marcados pelo Pedro nas 3 VSLs do swipe file, lapidada por ele. Peça chamada de "aula" em toda a VSL. |
 | 2026-09-05 | 9.4 | **BACKGROUND STORY FECHADA.** Apresentação da Letícia + camada de plataforma (retenção = tempo de tela = anúncios) + prova da primeira fileira + MODO INVISÍVEL nomeado em duas batidas (ela como autora → diagnóstico virado nela) + escalada dos SINAIS DE PERMISSÃO (resposta faz duas coisas) → ponte para o mecanismo da solução. |
 | 2026-09-05 | 9.4 | **Decisão de argumento:** "rede de **retenção**" substitui "rede de recomendação". Recomendação é argumento de feed e vazaria do território do story. |
 | 2026-09-05 | 9.4 | **Regra permanente de retenção da VSL:** proibido pedir para a espectadora abrir o Instagram / pausar a peça para conferir qualquer coisa. Toda prova acontece na memória dela ou em tela. |
 | 2026-09-05 | 9.2 | **Loop com dono:** o segundo loop guardado na Lead 01 ("por que postar conteúdo de valor te mantém invisível") fecha na Background Story, na passagem dos stories de bom dia / foto de café. |
 | 2026-09-05 | 9.1 | **Sem Emotional Story — decisão definitiva.** Motivo: encaixe de produto. SSN é R$297 e resolve dor operacional; drama biográfico nesse porte soa manipulatório. A Discovery Story **não** compensa isso — entrega origem crível do mecanismo, não rapport emocional. |
+| 2026-09-06 | 9.1 | **Discovery Story ABORTADA.** O produto entrega o funil pronto (estilo SPE), e a Letícia nunca pode ser quem errou — o que elimina a origem estilo Oney. A credibilidade de origem passa para a demonstração (dispositivo da Luana). |
+| 2026-09-07 | 4.2 | **NOME CRAVADO: FUNIL DE SOCIAL SELLING.** Substitui "Funil de Storieselling" em todos os documentos. Motivo: as aulas do produto já dizem "funil de Social Selling" e o produto se chama Social Selling para Nutris. Um nome só, do anúncio à área de membros. |
+| 2026-09-07 | 9.5 | **MECANISMO DA SOLUÇÃO FECHADO.** Ativação Inteligente demonstrada ao vivo (peixe / 2+2) + 3 exemplos práticos tirados das aulas 3.3, 3.4 e 3.7 + ponte para a Abordagem Direcionada com mensagem de Direct real. |

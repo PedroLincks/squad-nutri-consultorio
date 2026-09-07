@@ -11,7 +11,7 @@ O funil de captação de apenas 3 etapas que converte views nos stories em consu
 
 ## Única Crença
 
-Fazer seus seguidores falarem com você é a chave para captar paciente pelo Instagram todo mês — e a melhor forma de fazer isso é aplicando o Funil de Storieselling, que funciona independente do tamanho do perfil.
+Fazer seus seguidores falarem com você é a chave para captar paciente pelo Instagram todo mês — e a melhor forma de fazer isso é aplicando o Funil de Social Selling, que funciona independente do tamanho do perfil.
 
 ## Pergunta Paradoxal
 
@@ -31,7 +31,7 @@ Causa raiz: o story dela não gera identificação, não estimula ação.
 
 ## Mecanismo da Solução
 
-**FUNIL DE STORIESELLING**
+**FUNIL DE SOCIAL SELLING**
 
 1. Ativação Inteligente
 2. Abordagem Direcionada
@@ -57,7 +57,7 @@ Esse funil gera interações e abre conversas qualificadas, faz com que as pesso
 
 **PL5** — Por isso você nunca resolveu isso produzindo mais conteúdo e postando mais stories: o que faltava não era volume, era estratégia e intenção.
 
-**PL6** — A forma mais rápida de fazer seus seguidores falarem com você é aplicando o Funil de Storieselling.
+**PL6** — A forma mais rápida de fazer seus seguidores falarem com você é aplicando o Funil de Social Selling.
 
 ---
 
@@ -291,7 +291,7 @@ E no fim do dia você não tem visualização. Você tem nomes. Pessoas com um p
 
 > Não são proibições. São escolhas de construção feitas com o Pedro, e **revisáveis por ele a qualquer momento**. O que entra ou não em cada peça é decisão dele, caso a caso.
 
-- **"Storieselling"** — grafia fixa nos materiais (evita divergência entre VSL, área de membros e criativos).
+- **"Social Selling"** — grafia fixa nos materiais (evita divergência entre VSL, área de membros e criativos).
 - **"Captação ativa"** em vez de "venda ativa" — a palavra "venda" assusta essa nutricionista.
 - **Evitar "lead" / "geração de leads"** — é a linguagem de quem vendeu alcance pra ela.
 - **"Fechamento Natural" = marcar a consulta.** O produto leva até o agendamento; a venda dentro da sessão é ANC. Se a promessa mudar, este ponto muda junto.

@@ -335,8 +335,8 @@ Comparação do playbook contra o estado atual da nossa VSL (`docs/VSLs/[SSN] VS
 | Elemento do playbook | Nosso estado |
 |---|---|
 | Pergunta Paradoxal | ✅ *"por que tem nutri com menos de 3.000 seguidores que tem mais pacientes do que nutri com mais de 10.000?"* — grupo específico, comportamento contraintuitivo, resultado melhor. Fórmula cumprida |
-| MUP antagônico ao MUS | ✅ Story Avulso ↔ Funil de Storieselling. As peças encaixam |
-| Nome Chiclete na solução | ✅ **Funil de Storieselling** |
+| MUP antagônico ao MUS | ✅ Story Avulso ↔ Funil de Social Selling. As peças encaixam |
+| Nome Chiclete na solução | ✅ **Funil de Social Selling** |
 | Diga o QUE, não o COMO | ✅ O PL6 nomeia as 3 fases e mostra a enquete, mas não ensina a operar o funil |
 | Ticket | ✅ R$297 — dentro da faixa ideal do playbook |
 | Produto com começo/meio/fim | ✅ Desafio 10 Dias |
