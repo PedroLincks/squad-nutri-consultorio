@@ -1891,6 +1891,18 @@ Porque no momento em que alguém responde um story teu, o Instagram passa a te e
 
 ---
 
+#### ⛔ TRAVA PERMANENTE — a Letícia nunca é quem errou
+
+**Nenhuma peça pode colocar a Letícia como quem fez besteira.** Nem no passado, nem como recurso de rapport.
+
+Isso elimina a origem estilo Oney (*"meu perfil também estava no modo silencioso, eu era só mais uma pessoa que publicava"*). Por mais que funcione na VSL dele, aqui não serve: a Letícia é a autoridade que escalou 500 consultórios, e confissão de fracasso próprio contradiz a credencial que a Background Story acabou de estabelecer.
+
+**A descoberta, então, vem de observação — não de erro.** A Letícia percebeu o padrão olhando o que acontecia (com ela, com alunas, com o mercado), não corrigindo o próprio fracasso.
+
+*(Decisão do Pedro, 06/09/2026.)*
+
+---
+
 #### ⛔ TRAVA PERMANENTE — a nutri NÃO tem engajamento
 
 **Ela não tem NADA de engajamento. Nada de respostas. Zero.**
