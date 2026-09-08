@@ -42,7 +42,7 @@
 | 6 | Pergunta Paradoxal | ✅ **APROVADA** — 01/09/2026 |
 | 7 | Pontos Lógicos | ✅ **APROVADOS + EXPANDIDOS** — 01/09/2026 (PL1 a PL6 em 7.6) |
 | — | Briefing consolidado para a Zoe | ⬜ Pendente |
-| 9 | Roteiro da VSL | 🔄 **EM ANDAMENTO** — Lead 01, Background Story e Mecanismo da Solução fechados (07/09/2026) |
+| 9 | Roteiro da VSL | 🔄 **EM ANDAMENTO** — Lead 01, Background Story, Mecanismo da Solução e Descoberta fechados (07/09/2026) |
 | — | Revisão dos Copy Seniors | ⬜ Pendente |
 
 ---
@@ -2150,6 +2150,119 @@ diagnóstico  → sequência inteira  → a base toda classificada
 
 ---
 
+### 9.6 Descoberta do Funil → Produto
+
+> **STATUS:** 🟡 **TEXTO APROVADO — faltam 3 números** (ver pendências no fim da seção)
+> Responde *"por que eu nunca ouvi falar disso?"*, dá origem proprietária ao mecanismo e entrega a ponte para a apresentação do produto.
+
+---
+
+#### TEXTO APROVADO
+
+Talvez agora você esteja se perguntando:
+
+*"Se é tão simples assim, por que eu nunca ouvi falar disso antes?"*
+
+Eu vou te responder, e a resposta incomoda um pouco. **Porque tudo que te ensinaram sobre Instagram até hoje foi marketing. E o que eu acabei de te mostrar é venda.**
+
+São duas coisas completamente diferentes, e ninguém nunca te falou isso abertamente. Marketing é o que você faz pra ser vista. Venda é o que você faz pra alguém virar paciente.
+
+E o mercado da nutrição no Brasil ensinou uma coisa só pra você: apareça, poste, produza conteúdo de valor, seja vista. E parou aí. Como se depois de ser vista fizesse a paciente cair do céu.
+
+Nos últimos 12 meses eu investi mais de 70 mil reais estudando uma coisa só: funis de vendas. E não foi estudando com brasileiros. Foi com os americanos.
+
+Pessoas como Alex Hormozi, Russell Brunson, Maria Wendt. Nomes que você provavelmente nunca ouviu falar, afinal eles não estão no mundo da nutrição. Eles estão no mundo de quem vende todo santo dia e fatura milhões de dólares por ano.
+
+E lá eu descobri uma coisa que virou a minha cabeça do avesso. **Lá nos EUA, rede social não é departamento de marketing. É um departamento de vendas.**
+
+Enquanto aqui no Brasil a nutricionista aprende a postar e esperar os seguidores chamarem, lá as pessoas estão vendendo todos os dias simplesmente conversando pelo Direct do Instagram. E eles chamam esse funil de **Social Selling**.
+
+E foi aí que a ficha caiu pra mim:
+
+**O Instagram da nutricionista brasileira nunca foi visto como um canal de vendas. Sempre foi visto como uma vitrine.** Posta e aparece, posta e aparece. E isso está claro que já não funciona mais.
+
+Eu comecei a pensar em como adaptar esse funil americano de social selling aqui para as minhas mentoradas, nutricionistas alunas da Nutri de Consultório, mas tinha um detalhe…
+
+O foco do social selling americano é em **como abordar**. O que dizer depois que a pessoa chega no Direct, e como mandar mensagem pra desconhecido em troca de uma resposta.
+
+Só que quase nada do que eu estudei falava sobre como **gerar** essa demanda de graça. E tem um motivo pra isso: lá fora o jogo é pago. Empresário e influenciador americano investe pesado em anúncio, inclusive anúncio dentro dos stories, justamente pra gerar interação e encher a lista de gente pra abordar.
+
+Ou seja: **o funil deles começa com dinheiro. Eles compram a levantada de mão.**
+
+E aí eu olhei pra realidade da nutricionista brasileira. Ela não tem verba de anúncio. E se ela sair mandando mensagem pra desconhecido, ela queima o perfil dela em uma semana.
+
+Mas ela tem uma coisa que lá fora custa caríssimo.
+
+**Ela já tem audiência.** Já tem 2 mil, 5 mil pessoas que um dia escolheram seguir ela. Pessoas que já a conhecem, que já confiam nela de alguma forma.
+
+O problema é que essas pessoas estão ali. **Mudas.**
+
+E foi nesse momento que eu entendi qual era a peça que faltava.
+
+O funil americano te ensina o que fazer **depois** que a pessoa aparece. Ele não te ensina a fazer a pessoa aparecer — porque lá isso se compra.
+
+Então eu tive que construir a etapa que não existia em lugar nenhum: **a etapa que faz a pessoa certa levantar a mão sozinha, de graça, dentro do seu próprio story.**
+
+Que é exatamente a ativação inteligente que eu acabei de te mostrar.
+
+E foi encaixando a ativação inteligente na frente do que os americanos já faziam que nasceu o **FUNIL DE SOCIAL SELLING** — adaptado 100% para a realidade do consultório. Sem lista, sem anúncio. Só com o celular e os seguidores que você já tem.
+
+---
+
+#### FECHO — proposto, aguardando os números
+
+E eu não testei isso na teoria, não.
+
+Apliquei primeiro aqui dentro da Nutri de Consultório. `[SLOT A — resultado]`
+
+Depois eu levei pras minhas mentoradas. Nutricionistas de consultório, perfil pequeno, atendendo sozinhas, com o celular na mão. `[SLOT B — quantas + o que mudou na agenda delas]`
+
+E é aqui que eu preciso te falar uma coisa com sinceridade.
+
+Até hoje esse funil só existia dentro da minha mentoria individual, que custa `[SLOT C]`.
+
+Só que tem uma coisa que me incomodava.
+
+**A parte que mais muda a agenda de uma nutricionista não é a parte que precisa de mim.**
+
+Não precisa de call, não precisa de análise do seu caso, não precisa de mentoria. São três etapas, com os frameworks prontos, que qualquer nutricionista consegue aplicar sozinha a partir de hoje.
+
+Foi por isso que eu tirei esse funil de dentro da mentoria, gravei tudo, montei os frameworks prontos e transformei nisso aqui:
+
+`[→ APRESENTAÇÃO DO PRODUTO]`
+
+---
+
+#### NOTAS DA DESCOBERTA
+
+**A descoberta é MARKETING × VENDA.** Foi a quarta tentativa de origem, e é a primeira que funciona, porque é a única que **surpreende**. As três anteriores morreram assim:
+
+| Tentativa | Por que caiu |
+|---|---|
+| *"A Letícia também estava no modo invisível"* (estilo Oney) | Viola a trava: a Letícia nunca é quem errou |
+| *"O funil americano não cabia na rotina do consultório"* | Mentira — social selling é leve, cabe |
+| *"Lá fora eles é que chamam as pessoas"* | Contradiz a VSL: o nosso funil também é a nutri quem chama. A adaptação se anulava |
+
+**Por que MARKETING × VENDA fecha:** a nutri nunca fez essa distinção, e ela reorganiza tudo que a nutri viveu. Não é que ela seja ruim de Instagram — é que ela nunca fez ali a atividade que traz paciente. É o *"não é possível, é só isso"* do Oney acontecendo na cabeça dela, sem que a Letícia precise confessar erro nenhum. **Quem errou foi o mercado.**
+
+**"Eles compram a levantada de mão"** é a frase que torna a contribuição da Letícia inevitável. Se lá a demanda se compra e aqui não há verba, alguém precisava inventar o jeito de conseguir a mesma coisa de graça. A Ativação Inteligente deixa de ser "mais uma técnica" e vira resposta a um problema que a própria nutri consegue enunciar. E de quebra ancora o preço: a alternativa lá fora é verba recorrente de anúncio.
+
+**"Ela já tem audiência — e lá fora isso custa caríssimo"** reposiciona o ativo que a nutri considera prova do próprio fracasso. Os seguidores calados viram patrimônio.
+
+> ⚠️ **"Vitrine" é uso deliberado e não deve ser "corrigido".** O nome *Modo Vitrine* foi rejeitado em 03/09 como nome do mecanismo do problema, porque a nutri não enxerga vitrine como defeito. Aqui é o oposto: a Letícia **nomeia** a moldura mental dela e **invalida** na frase seguinte (*"e isso está claro que já não funciona mais"*). Nomear para invalidar é diferente de nomear o estado.
+
+**Afirmação descartada por risco:** *"o tráfego orgânico nos Estados Unidos é muito fraco."* Impossível de provar e desnecessária. Substituída por *"lá fora o jogo é pago"* — defensável, e leva direto a "eles compram a levantada de mão". Numa VSL construída sobre argumentos verificáveis (Mosseri, retenção, receita de anúncio), uma afirmação frágil contamina as sólidas.
+
+**PENDÊNCIAS — 3 números bloqueiam o fecho:**
+
+| Slot | O que falta | Peso |
+|---|---|---|
+| **A** | O resultado do funil dentro da Nutri de Consultório | Médio |
+| **B** | Quantas mentoradas aplicaram + o que mudou na agenda delas | **Alto** — é a única prova de que funciona em consultório de quem atende sozinha, e precisa chegar ANTES do preço |
+| **C** | Preço da mentoria individual | **Alto** — é a âncora que dá tamanho aos R$297. Se não houver preço público, trocar por outra âncora |
+
+---
+
 ## 10. Revisão dos Copy Seniors
 
 _(parte por parte, após a escrita)_
@@ -2189,3 +2302,4 @@ _(parte por parte, após a escrita)_
 | 2026-09-06 | 9.1 | **Discovery Story ABORTADA.** O produto entrega o funil pronto (estilo SPE), e a Letícia nunca pode ser quem errou — o que elimina a origem estilo Oney. A credibilidade de origem passa para a demonstração (dispositivo da Luana). |
 | 2026-09-07 | 4.2 | **NOME CRAVADO: FUNIL DE SOCIAL SELLING.** Substitui "Funil de Storieselling" em todos os documentos. Motivo: as aulas do produto já dizem "funil de Social Selling" e o produto se chama Social Selling para Nutris. Um nome só, do anúncio à área de membros. |
 | 2026-09-07 | 9.5 | **MECANISMO DA SOLUÇÃO FECHADO.** Ativação Inteligente demonstrada ao vivo (peixe / 2+2) + 3 exemplos práticos tirados das aulas 3.3, 3.4 e 3.7 + ponte para a Abordagem Direcionada com mensagem de Direct real. |
+| 2026-09-07 | 9.6 | **DESCOBERTA DO FUNIL APROVADA.** Origem = MARKETING × VENDA: o mercado da nutrição ensinou marketing e chamou de captação. Quarta tentativa de origem — as três anteriores caíram por violar a trava da Letícia, por ser mentira ou por contradizer a própria VSL. Fecho (validação + âncora da mentoria) aguarda 3 números. |
