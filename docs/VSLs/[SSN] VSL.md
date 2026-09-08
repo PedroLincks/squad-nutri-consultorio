@@ -2152,12 +2152,14 @@ diagnóstico  → sequência inteira  → a base toda classificada
 
 ### 9.6 Descoberta do Funil → Produto
 
-> **STATUS:** 🟡 **TEXTO APROVADO — faltam 3 números** (ver pendências no fim da seção)
+> **STATUS:** 🟡 **TEXTO FECHADO (07/09/2026) — o fecho aguarda 3 números** (ver pendências no fim da seção)
 > Responde *"por que eu nunca ouvi falar disso?"*, dá origem proprietária ao mecanismo e entrega a ponte para a apresentação do produto.
 
 ---
 
 #### TEXTO APROVADO
+
+> **Fechado pelo Pedro em 07/09/2026.**
 
 Talvez agora você esteja se perguntando:
 
@@ -2171,7 +2173,7 @@ E o mercado da nutrição no Brasil ensinou uma coisa só pra você: apareça, p
 
 Nos últimos 12 meses eu investi mais de 70 mil reais estudando uma coisa só: funis de vendas. E não foi estudando com brasileiros. Foi com os americanos.
 
-Pessoas como Alex Hormozi, Russell Brunson, Maria Wendt. Nomes que você provavelmente nunca ouviu falar, afinal eles não estão no mundo da nutrição. Eles estão no mundo de quem vende todo santo dia e fatura milhões de dólares por ano.
+Pessoas como Alex Hormozi, Russell Brunson, Maria Wendt. Nomes que você provavelmente nunca ouviu falar, afinal eles não estão no mundo da nutrição. Eles estão no mundo de quem vende todo santo dia e faturam milhões de dólares por ano.
 
 E lá eu descobri uma coisa que virou a minha cabeça do avesso. **Lá nos EUA, rede social não é departamento de marketing. É um departamento de vendas.**
 
@@ -2181,31 +2183,27 @@ E foi aí que a ficha caiu pra mim:
 
 **O Instagram da nutricionista brasileira nunca foi visto como um canal de vendas. Sempre foi visto como uma vitrine.** Posta e aparece, posta e aparece. E isso está claro que já não funciona mais.
 
-Eu comecei a pensar em como adaptar esse funil americano de social selling aqui para as minhas mentoradas, nutricionistas alunas da Nutri de Consultório, mas tinha um detalhe…
+Eu comecei a pensar em como adaptar esse funil americano de social selling para as nutricionistas aqui no Brasil, mas tinha um detalhe…
 
-O foco do social selling americano é em **como abordar**. O que dizer depois que a pessoa chega no Direct, e como mandar mensagem pra desconhecido em troca de uma resposta.
+O foco do social selling americano é em **como abordar**. O que dizer depois que a pessoa chega no Direct, e como mandar mensagem pra desconhecidos em troca de uma resposta — tipo aquelas mensagens de spam que a gente recebe de vez em quando, sabe?
 
-Só que quase nada do que eu estudei falava sobre como **gerar** essa demanda de graça. E tem um motivo pra isso: lá fora o jogo é pago. Empresário e influenciador americano investe pesado em anúncio, inclusive anúncio dentro dos stories, justamente pra gerar interação e encher a lista de gente pra abordar.
+Só que quase nada do que eu estudei com eles falava sobre como **gerar** essa demanda de graça. E tem um motivo pra isso: lá fora o jogo é tráfego pago. O empresário e o influenciador americano investem pesado em anúncios, principalmente em anúncios dentro dos stories, justamente pra gerar interação e ter lista de gente pra abordar.
 
-Ou seja: **o funil deles começa com dinheiro. Eles compram a levantada de mão.**
+Ou seja: **o funil deles começa com dinheiro. Eles compram os Sinais de Permissão.**
 
-E aí eu olhei pra realidade da nutricionista brasileira. Ela não tem verba de anúncio. E se ela sair mandando mensagem pra desconhecido, ela queima o perfil dela em uma semana.
+E aí eu olhei pra realidade da nutricionista brasileira. Ela não tem dinheiro e nem tempo para investir em anúncios. E muito menos ela vai sair mandando mensagem pra desconhecido no Instagram.
 
-Mas ela tem uma coisa que lá fora custa caríssimo.
+Mas a nutricionista brasileira tem uma coisa que lá fora custa caro. **Ela tem audiência orgânica.** Já tem mil, 2 mil, 5 mil pessoas que seguem ela no Instagram.
 
-**Ela já tem audiência.** Já tem 2 mil, 5 mil pessoas que um dia escolheram seguir ela. Pessoas que já a conhecem, que já confiam nela de alguma forma.
-
-O problema é que essas pessoas estão ali. **Mudas.**
+A grande questão é que ela ainda não extrai todo o potencial que esses seguidores possuem.
 
 E foi nesse momento que eu entendi qual era a peça que faltava.
 
-O funil americano te ensina o que fazer **depois** que a pessoa aparece. Ele não te ensina a fazer a pessoa aparecer — porque lá isso se compra.
+O funil americano te ensina o que fazer **depois** que a pessoa aparece. Ele nunca te ensina a fazer a pessoa aparecer, porque lá eles compram.
 
-Então eu tive que construir a etapa que não existia em lugar nenhum: **a etapa que faz a pessoa certa levantar a mão sozinha, de graça, dentro do seu próprio story.**
+Então eu tive que construir a etapa que não existia em lugar nenhum: **a etapa que faz a pessoa certa levantar a mão sozinha e dar o Sinal de Permissão de graça, dentro do seu próprio story.** E é justamente a ativação inteligente que eu acabei de te mostrar.
 
-Que é exatamente a ativação inteligente que eu acabei de te mostrar.
-
-E foi encaixando a ativação inteligente na frente do que os americanos já faziam que nasceu o **FUNIL DE SOCIAL SELLING** — adaptado 100% para a realidade do consultório. Sem lista, sem anúncio. Só com o celular e os seguidores que você já tem.
+E encaixando ela na frente do que os americanos já faziam, nasceu o **FUNIL DE SOCIAL SELLING PARA NUTRIS** — 100% adaptado para a realidade do consultório, onde qualquer nutricionista consegue implementar sozinha para captar pacientes e vender os seus serviços.
 
 ---
 
