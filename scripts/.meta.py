@@ -52,7 +52,7 @@ PRESETS = {
 }
 
 FIELDS = ",".join([
-    "ad_id", "ad_name", "spend", "impressions", "reach", "frequency",
+    "ad_id", "ad_name", "campaign_name", "spend", "impressions", "reach", "frequency",
     "clicks", "inline_link_clicks", "ctr", "cpc", "cpm",
     "video_play_actions", "video_p75_watched_actions", "actions",
 ])
@@ -187,6 +187,9 @@ def normalize(rows, links):
         out.append({
             "id": aid,
             "name": r.get("ad_name", ""),
+            # Tag do produto vive no nome da CAMPANHA ([SSN], [WN], [MDA], [CONSULTORIA]);
+            # o nome do anuncio nem sempre repete a tag (ex: ads [NUTRI] dentro de campanha [SSN]).
+            "campaign": r.get("campaign_name", "") or "",
             "amount_spent": float(r.get("spend", 0) or 0),
             "ctr": float(r.get("ctr", 0) or 0),
             "impressions": int(r.get("impressions", 0) or 0),

@@ -59,9 +59,27 @@ def pct(s):
         return None
 
 
-def product_of(name):
-    m = re.match(r"\s*\[?(WN|MDA|GCN|ANC)\]?", name or "", re.I)
-    return m.group(1).upper() if m else "OUTRO"
+# Codigos de produto reconhecidos na tag inicial do nome. CONSULTORIA antes de
+# nomes mais curtos para a alternancia do regex nao casar um prefixo por engano.
+PRODUCTS = ("CONSULTORIA", "WN", "MDA", "GCN", "ANC", "SSN")
+PRODUCT_RE = re.compile(r"\s*\[?(" + "|".join(PRODUCTS) + r")\]?", re.I)
+
+
+def _tag(text):
+    m = PRODUCT_RE.match(text or "")
+    return m.group(1).upper() if m else None
+
+
+def product_of(ad_name, campaign_name=""):
+    """Produto do criativo, pela tag inicial do nome.
+
+    A tag canonica vive no nome da CAMPANHA ("[SSN][VSL LEAD 01][MEIO] ...",
+    "[WN][CA1][ASC] ..."): o nome do anuncio nem sempre a repete — os criativos
+    do SSN se chamam "[NUTRI] React-01...", e os da CONSULTORIA, "copy_16".
+    Por isso a campanha manda e o nome do anuncio e so fallback, p/ os JSONs
+    antigos coletados antes de campaign_name entrar no .meta.py.
+    """
+    return _tag(campaign_name) or _tag(ad_name) or "OUTRO"
 
 
 def ad_id_of(text):
@@ -116,7 +134,7 @@ def build_period(data_dir, period):
         rows.append({
             "id": aid,
             "name": ad.get("name", ""),
-            "product": product_of(ad.get("name", "")),
+            "product": product_of(ad.get("name", ""), ad.get("campaign", "")),
             "spend": round(spend, 2),
             "impressions": impressions,
             "frequency": round(float(ad.get("frequency", 0) or 0), 2),
@@ -191,7 +209,8 @@ def main():
 
     data = {p: build_period(data_dir, p) for p, _ in PERIODS}
     payload = json.dumps({"periods": PERIODS, "data": data, "generated": generated,
-                          "account": ACCOUNT_ID, "ranges": ranges}, ensure_ascii=False)
+                          "account": ACCOUNT_ID, "ranges": ranges,
+                          "today": today_d.isoformat()}, ensure_ascii=False)
 
     html = HTML_TEMPLATE.replace("/*__DATA__*/", payload)
     out_dir = os.path.dirname(out)
@@ -243,7 +262,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   th.idx,td.idx{width:34px;max-width:34px;text-align:right;color:var(--mut);padding-right:6px;cursor:default}
   td.idx{font-variant-numeric:tabular-nums}
   .pill{display:inline-block;padding:1px 7px;border-radius:6px;font-size:10px;font-weight:700;margin-right:6px}
-  .WN{background:#13314a;color:#7fb6ff}.MDA{background:#3a2a13;color:#f0b95f}.GCN{background:#2a1340;color:#c08bff}.OUTRO{background:#23262e;color:#9aa}
+  .WN{background:#13314a;color:#7fb6ff}.MDA{background:#3a2a13;color:#f0b95f}.GCN{background:#2a1340;color:#c08bff}.SSN{background:#0e3330;color:#5fe0cd}.CONSULTORIA{background:#3a1430;color:#ff9ad5}.ANC{background:#1c2b3a;color:#8fb3cc}.OUTRO{background:#23262e;color:#9aa}
   .roas{font-weight:700;padding:2px 8px;border-radius:6px}
   .good{background:var(--greenbg);color:#56d98a}.mid{background:var(--yellowbg);color:#e7c463}.bad{background:var(--redbg);color:#ff8a7a}.na{color:var(--mut)}
   tr.win td{background:#10271a}
@@ -283,6 +302,10 @@ const roasClass = r => r==null?'na':(r>=2?'good':(r>=1?'mid':'bad'));
 const SPEND_MIN = 50;
 // 🏆 escalar (ROAS>=2) · ⚠️ matar (ROAS<1, gastou e não retornou) · '' = neutro
 const tier = r => (r.spend < SPEND_MIN || r.roas==null) ? '' : (r.roas>=2 ? 'win' : (r.roas<1 ? 'lose' : ''));
+// Pill da tabela usa sigla curta p/ nao espremer o nome do criativo;
+// o chip de filtro continua com o codigo inteiro.
+const PILL_LABEL = {CONSULTORIA:'CONS'};
+const pill = p => `<span class="pill ${p}">${PILL_LABEL[p]||p}</span>`;
 const badgeOf = t => t==='win' ? '<span class="badge">🏆</span>' : (t==='lose' ? '<span class="badge">⚠️</span>' : '');
 const adLink = id => `https://adsmanager.facebook.com/adsmanager/manage/ads?act=${DB.account}&selected_ad_ids=${id}`;
 const rate = n => n==null ? '—' : n.toLocaleString('pt-BR',{maximumFractionDigits:2})+'%';
@@ -301,6 +324,19 @@ function setSort(k){ if(sortKey===k) sortDir*=-1; else {sortKey=k;sortDir=-1;} r
 function setSearch(v,caret){ search=v; searchCaret=(caret==null?v.length:caret); render() }
 function clearSearch(){ search=''; searchCaret=null; render() }
 
+function staleWarn(){
+  if(!DB.today) return '';
+  const hoje = new Date().toLocaleDateString('sv-SE',{timeZone:'America/Sao_Paulo'}); // YYYY-MM-DD
+  if(hoje <= DB.today) return '';
+  const br = s => s.split('-').reverse().join('/');
+  return `<div class="warn" style="background:#2a1411;border-color:#5a2018;color:#ff9f90">
+     <b>\u26a0\ufe0f Painel desatualizado \u2014 as abas estão deslocadas.</b> Os dados são de
+     <b>${br(DB.today)}</b> (última atualização ${DB.generated||'—'}), mas hoje é <b>${br(hoje)}</b>.
+     Ou seja: a aba <b>"Hoje" está mostrando ${br(DB.today)}</b>.
+     Rode <code>scripts/refresh-painel.sh</code> para atualizar.
+   </div>`;
+}
+
 function render(){
   tabs();
   const d = DB.data[cur], s = d.summary;
@@ -316,7 +352,10 @@ function render(){
   const agg = rows.reduce((a,r)=>{a.spend+=r.spend||0;a.rev+=r.receita||0;a.vendas+=r.vendas||0;return a;},{spend:0,rev:0,vendas:0});
   const aRoas = agg.spend>0 ? agg.rev/agg.spend : null;
   const aCac = agg.vendas>0 ? agg.spend/agg.vendas : null;
-  const periodLine = `<div class="muted" style="margin:14px 0 -2px">📅 Período: <b style="color:var(--txt)">${range}/2026</b> · só vendas atribuídas ao Meta (utm_source=FB)${isAll?'':` · filtro: <b style="color:var(--txt)">${prod}</b>`}${searching?` · busca: <b style="color:var(--txt)">"${search}"</b>`:''}</div>`;
+  // O painel e um snapshot: so muda quando o refresh roda. Se o dia virou desde a
+  // ultima geracao, a aba "Hoje" mostra o dia do snapshot — nao o dia de verdade.
+  const stale = staleWarn();
+  const periodLine = `<div class="muted" style="margin:14px 0 -2px">📅 Período: <b style="color:var(--txt)">${range}/${(DB.today||'').slice(0,4)}</b> · só vendas atribuídas ao Meta (utm_source=FB)${isAll?'':` · filtro: <b style="color:var(--txt)">${prod}</b>`}${searching?` · busca: <b style="color:var(--txt)">"${search}"</b>`:''}</div>`;
   const cards = `
    <div class="cards">
      <div class="c"><div class="k">Investido (Meta)</div><div class="v">${fmt(agg.spend)}</div></div>
@@ -336,13 +375,13 @@ function render(){
   const head = `<tr><th class="idx">#</th>${th('name','Criativo')}${th('spend','Investido')}${th('receita','Receita')}${th('vendas','Vendas')}${th('roas','ROAS')}${th('cac','CAC')}${th('clicks','Cliques')}${th('ctr','CTR')}${th('cpc','CPC')}${th('cpm','CPM')}${th('impressions','Impr.')}${th('frequency','Freq.')}${th('play_rate','Play%')}${th('ret_hook','Ret.Hook')}${th('ret_body','Ret.Body')}${th('conv_body','Conv.Body')}${th('cta','CTA')}</tr>`;
   const body = rows.map((r,i)=>{const t=tier(r);return `<tr class="${t}">
      <td class="idx">${i+1}</td>
-     <td>${badgeOf(t)}<span class="pill ${r.product}">${r.product}</span><a class="adlink" href="${r.instagram||r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ${r.instagram?'ver no Instagram':'ver anúncio'}</span></a></td>
+     <td>${badgeOf(t)}${pill(r.product)}<a class="adlink" href="${r.instagram||r.preview||adLink(r.id)}" target="_blank" rel="noopener">${r.name}<span class="go">↗ ${r.instagram?'ver no Instagram':'ver anúncio'}</span></a></td>
      <td>${fmt(r.spend)}</td><td>${fmt(r.receita)}</td><td>${num(r.vendas)}</td>
      <td><span class="roas ${roasClass(r.roas)}">${r.roas==null?'—':r.roas+'x'}</span></td>
      <td>${fmt(r.cac)}</td><td>${num(r.clicks)}</td><td>${rate(r.ctr)}</td><td>${fmt(r.cpc)}</td><td>${fmt(r.cpm)}</td><td>${num(r.impressions)}</td><td>${freq(r.frequency)}</td>
      <td>${rate(r.play_rate)}</td><td>${rate(r.ret_hook)}</td><td>${rate(r.ret_body)}</td><td>${rate(r.conv_body)}</td><td>${rate(r.cta)}</td>
    </tr>`}).join('');
-  document.getElementById('wrap').innerHTML = periodLine + cards + warn + filters + `<div class="tscroll"><table><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
+  document.getElementById('wrap').innerHTML = stale + periodLine + cards + warn + filters + `<div class="tscroll"><table><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
   if(searchCaret!==null){ const el=document.getElementById('search'); if(el){ el.focus(); try{ el.setSelectionRange(searchCaret,searchCaret); }catch(e){} } }
 }
 render();
