@@ -26,5 +26,8 @@ export const config = {
    * Guru passes these in the thank-you page URL.
    * Map: paramName → friendly label for the webhook payload.
    */
-  guruParams: ['c_email', 'c_name', 'c_phone', 'c_product', 'c_tid'] as const,
+  guruParams: [
+    'c_email', 'c_name', 'c_phone', 'c_product', 'c_tid',
+    'utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term',
+  ] as const,
 } as const

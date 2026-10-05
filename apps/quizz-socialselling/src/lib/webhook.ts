@@ -60,6 +60,13 @@ export async function submitToWebhook(answers: Answers): Promise<boolean> {
     product: guruData.c_product ?? '',
     transaction_id: guruData.c_tid ?? '',
 
+    // UTMs forwarded by Guru on the approved-purchase redirect
+    utm_source: guruData.utm_source ?? '',
+    utm_campaign: guruData.utm_campaign ?? '',
+    utm_medium: guruData.utm_medium ?? '',
+    utm_content: guruData.utm_content ?? '',
+    utm_term: guruData.utm_term ?? '',
+
     // Quiz answers (human-readable)
     instagram: quizAnswers.instagram ?? '',
     momento_atual: quizAnswers.momento_atual ?? '',
