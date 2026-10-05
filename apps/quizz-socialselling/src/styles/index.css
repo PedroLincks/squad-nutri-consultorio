@@ -12,6 +12,11 @@ body {
   min-height: 100vh;
 }
 
+html.embedded,
+html.embedded body {
+  background: transparent;
+}
+
 @layer components {
   .glass-card {
     background: rgba(255, 255, 255, 0.05);

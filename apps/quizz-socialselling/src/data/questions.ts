@@ -67,7 +67,7 @@ export const questions: QuizQuestion[] = [
   {
     id: 5,
     key: 'maior_dificuldade',
-    question: 'Qual é a sua MAIOR dificuldade hoje? Se você pudesse nos pedir ajuda em algo, o que pediria?',
+    question: 'Qual a sua MAIOR dificuldade hoje no seu consultório? O que te impede de faturar mais?',
     type: 'text',
     placeholder: 'Digite sua maior dificuldade...',
   },
