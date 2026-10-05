@@ -3,7 +3,7 @@
  */
 export const config = {
   /** URL to redirect after quiz completion (página de agendamento) */
-  redirectUrl: 'https://lp.nutrideconsultorio.com/ssn-consultoria02',
+  redirectUrl: 'https://www.lp.nutrideconsultorio.com/ssn-consultoria02',
 
   /** Make webhook URL — quiz sends all data here on completion */
   webhookUrl: 'https://hook.us1.make.com/5ppxyeapp1hledef15qgc1v8savn5fuk',
