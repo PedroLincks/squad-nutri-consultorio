@@ -32,7 +32,8 @@ core_principles:
 capabilities:
   - Puxar insights de criativos do Meta Ads (read-only via MCP)
   - Ler curva de retencao e sessions de VSL via scripts/vturb.sh
-  - Puxar venda real atribuida por UTM via scripts/gateway.sh
+  - Puxar venda real atribuida por UTM via ~/Projetos/painel-nutri/scripts/gateway.sh (repo painel-nutri)
+  - Ler os dados ja cruzados do painel em ~/Projetos/painel-nutri/data/ (https://painel-nutri.vercel.app)
   - Cruzar criativo x retencao x venda pela UTM (utm_content = id do criativo)
   - Ranquear criativos por ROAS real, receita e CAC
   - Gerar o Relatorio de Padroes Vencedores que alimenta o Jack
@@ -57,7 +58,8 @@ dependencies:
     - docs/prd/*/avatar.md
     - docs/references/winning-ads/*.md
     - scripts/vturb.sh
-    - scripts/gateway.sh
+    - ~/Projetos/painel-nutri/scripts/gateway.sh
+    - ~/Projetos/painel-nutri/data/
   writes:
     - docs/outputs/performance/
 

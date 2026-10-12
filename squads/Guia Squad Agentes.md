@@ -40,7 +40,7 @@ Para ver comandos disponíveis: `*help`
 |-------|------------|------|
 | **Meta Ads** | Criativos ativos: spend, hook rate, hold rate, CTR, CPA, conversoes | MCP (read-only) |
 | **vTurb** | Curva de retencao da VSL (onde abandonam, quem chega no pitch) | `scripts/vturb.sh` |
-| **Gateway** | Venda REAL atribuida por criativo (fonte da verdade de receita/LTV) | `scripts/gateway.sh` |
+| **Gateway** | Venda REAL atribuida por criativo (fonte da verdade de receita/LTV) | `~/Projetos/painel-nutri/scripts/gateway.sh` (repo [painel-nutri](https://github.com/PedroLincks/painel-nutri)) |
 
 A chave de cruzamento e a **UTM** (`utm_content` = id do criativo): liga "criativo X" → "reteve ate o pitch" → "vendeu Y reais".
 

@@ -32,7 +32,3 @@ Thumbs.db
 
 # Large files (books PDFs - keep local only)
 docs/library/books/*.pdf
-
-# Capas dos criativos (baixadas a cada build; a URL do Meta expira)
-docs/outputs/performance/data/thumbs/
-painel-nutri/thumbs/
