@@ -13,7 +13,7 @@
 # Uso:
 #   ./scripts/meta.sh ping                          # testa auth (nome/status da conta)
 #   ./scripts/meta.sh ads <periodo>                 # insights por anúncio (JSON), período: hoje|ontem|7d|14d|mes
-#   ./scripts/meta.sh build [data_dir]              # gera meta_<periodo>.json p/ todos os períodos (alimenta o painel)
+#   ./scripts/meta.sh build [data_dir]              # gera meta_<periodo>.json + meta_ads.json, meta_daily.json e thumbs/ (alimenta o painel)
 #
 # O 'build' grava em docs/outputs/performance/data/ por padrão — o mesmo dir lido
 # pelo dashboard.py / deploy-painel.sh.

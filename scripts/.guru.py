@@ -5,8 +5,10 @@ Filtra por confirmed_at (data de aprovacao) + transaction_status=approved e
 pagina por cursor. A chave de atribuicao e trackings.utm_content, que carrega
 "<nome do criativo>|<id do ad no Meta>".
 """
+import datetime
 import json
 import os
+import re
 import sys
 import time
 import urllib.parse
@@ -102,6 +104,23 @@ def main():
         for r in ranked:
             r["receita"] = round(r["receita"], 2)
         print(json.dumps(ranked, indent=2, ensure_ascii=False))
+        return
+
+    if cmd == "daily":
+        # Venda por dia por ad id (mesmo filtro utm_source=FB) -> minigraficos da aba Criativos.
+        # d = data de aprovacao no fuso local (TZ do runner = America/Sao_Paulo).
+        out = []
+        for t in fetch_all(ini, fim):
+            tr = t.get("trackings") or {}
+            if (tr.get("utm_source") or "").strip().upper() != "FB":
+                continue
+            ids = re.findall(r"\d{15,}", tr.get("utm_content") or "")
+            ts = (t.get("dates") or {}).get("confirmed_at")
+            if not ts:
+                continue
+            out.append({"d": datetime.datetime.fromtimestamp(ts).date().isoformat(),
+                        "id": ids[-1] if ids else None, "receita": round(_val(t), 2)})
+        print(json.dumps(out, ensure_ascii=False))
         return
 
     print("comando desconhecido:", cmd, file=sys.stderr)

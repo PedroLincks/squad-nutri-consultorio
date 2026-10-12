@@ -28,6 +28,7 @@ Medidor de CTA) sao calculadas no dashboard.py, que tambem tem a venda da Guru.
 
 Autenticacao: META_ACCESS_TOKEN + META_ACCOUNT_ID. Sem deps externas (urllib stdlib).
 """
+import datetime
 import json
 import os
 import sys
@@ -156,6 +157,68 @@ def fetch_ad_links(ad_ids):
     return out
 
 
+def fetch_ad_details(ad_ids):
+    """Mapa {ad_id: {status, adset, thumb_url}} p/ a aba Criativos.
+
+    status    = effective_status (ACTIVE, PAUSED, CAMPAIGN_PAUSED, ...)
+    thumb_url = capa do video em 540x960. A URL do Meta EXPIRA — por isso o
+                build baixa a imagem (download_thumbs) em vez de linkar direto.
+
+    Nao-fatal, como fetch_ad_links: lote que falha fica sem detalhe.
+    """
+    ids = [i for i in {str(a) for a in ad_ids} if i]
+    fields = "effective_status,adset{name},creative{thumbnail_url}"
+    out = {}
+    for i in range(0, len(ids), 50):
+        batch = ids[i:i + 50]
+        try:
+            data = _get("", {"ids": ",".join(batch), "fields": fields,
+                             "thumbnail_width": 540, "thumbnail_height": 960})
+        except Exception as e:
+            print(f"  aviso: detalhes do lote {i // 50 + 1} falharam ({e}); "
+                  f"seguindo sem eles", file=sys.stderr)
+            continue
+        for aid, a in (data.items() if isinstance(data, dict) else []):
+            a = a or {}
+            out[str(aid)] = {
+                "status": a.get("effective_status", "") or "",
+                "adset": (a.get("adset") or {}).get("name", "") or "",
+                "thumb_url": (a.get("creative") or {}).get("thumbnail_url", "") or "",
+            }
+        time.sleep(0.3)
+    return out
+
+
+def download_thumbs(details, thumb_dir):
+    """Baixa a capa de cada anuncio em <thumb_dir>/<ad_id>.jpg (cache: pula as que ja existem)."""
+    os.makedirs(thumb_dir, exist_ok=True)
+    novas = falhas = 0
+    for aid, d in details.items():
+        path = os.path.join(thumb_dir, f"{aid}.jpg")
+        if os.path.exists(path) or not d.get("thumb_url"):
+            continue
+        try:
+            with urllib.request.urlopen(d["thumb_url"], timeout=30) as r:
+                body = r.read()
+            with open(path, "wb") as f:
+                f.write(body)
+            novas += 1
+        except Exception:
+            falhas += 1
+    return novas, falhas
+
+
+def fetch_daily(since, until):
+    """Gasto por anuncio por dia (time_increment=1) -> [{d, id, spend}] p/ os minigraficos."""
+    rows = _paginate(f"{ACCOUNT}/insights", {
+        "level": "ad", "fields": "ad_id,spend", "time_increment": 1, "limit": 500,
+        "time_range": json.dumps({"since": since, "until": until}),
+    })
+    return [{"d": r["date_start"], "id": str(r.get("ad_id", "")),
+             "spend": round(float(r.get("spend", 0) or 0), 2)}
+            for r in rows if float(r.get("spend", 0) or 0) > 0]
+
+
 def _first(v):
     """Campo de action que vem como lista [{action_type,value}] -> soma dos values."""
     if isinstance(v, list):
@@ -248,6 +311,25 @@ def main():
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(norm, f, ensure_ascii=False, indent=2)
             print(f"  {period:5s} -> {path} ({len(norm)} anuncios)")
+
+        # Aba Criativos: status/conjunto/capa de cada anuncio + serie diaria.
+        details = fetch_ad_details(ad_ids)
+        novas, falhas = download_thumbs(details, os.path.join(data_dir, "thumbs"))
+        for d in details.values():
+            d.pop("thumb_url", None)  # expira; o painel usa a copia local
+        path = os.path.join(data_dir, "meta_ads.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(details, f, ensure_ascii=False, indent=2)
+        print(f"  ads   -> {path} ({len(details)} anuncios, {novas} capas novas"
+              f"{f', {falhas} falharam' if falhas else ''})")
+
+        today = datetime.date.today()
+        since = (today.replace(day=1) - datetime.timedelta(days=1)).replace(day=1)
+        daily = fetch_daily(since.isoformat(), today.isoformat())
+        path = os.path.join(data_dir, "meta_daily.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(daily, f, ensure_ascii=False)
+        print(f"  daily -> {path} ({since.isoformat()}..{today.isoformat()}, {len(daily)} linhas)")
         return
 
     print("comando desconhecido:", cmd, file=sys.stderr)

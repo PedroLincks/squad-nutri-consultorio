@@ -17,6 +17,7 @@ import datetime
 import json
 import os
 import re
+import shutil
 import sys
 
 PERIODS = [
@@ -198,6 +199,96 @@ def date_ranges(today):
     }
 
 
+def period_bounds(today):
+    """(inicio, fim) de cada periodo como date — usado na serie diaria dos minigraficos."""
+    td = datetime.timedelta
+    last_prev = today.replace(day=1) - td(days=1)
+    return {
+        "hoje": (today, today),
+        "ontem": (today - td(days=1), today - td(days=1)),
+        "7d": (today - td(days=6), today),
+        "14d": (today - td(days=13), today),
+        "mes": (today.replace(day=1), today),
+        "mespassado": (last_prev.replace(day=1), last_prev),
+    }
+
+
+# Regra de decisao da aba Criativos (definida pelo Pedro)
+MIN_SPEND, ROAS_ESCALAR = 50, 2
+
+
+def decisao(row):
+    """escalar | desativar | teste — so decide depois de gasto > R$50."""
+    if row["spend"] <= MIN_SPEND:
+        return "teste"
+    return "escalar" if (row["roas"] or 0) >= ROAS_ESCALAR else "desativar"
+
+
+def _ig_code(url):
+    m = re.search(r"instagram\.com/(?:p|reel)/([^/?#]+)", url or "")
+    return m.group(1) if m else ""
+
+
+def _read_json(path, default):
+    return json.load(open(path)) if os.path.exists(path) else default
+
+
+def build_criativos(data_dir, out_dir, data, today_d, generated):
+    """Gera <out_dir>/criativos.html (grade de criativos + janela de detalhe) e copia as capas."""
+    ads = _read_json(os.path.join(data_dir, "meta_ads.json"), {})
+    thumbs_src = os.path.join(data_dir, "thumbs")
+    thumbs_dst = os.path.join(out_dir, "thumbs")
+    os.makedirs(thumbs_dst, exist_ok=True)
+
+    periods, catalog = {}, {}
+    for key, label in PERIODS:
+        meta = {str(a["id"]): a for a in load(data_dir, key)[0]}
+        rows = []
+        for r in data[key]["rows"]:
+            if r["spend"] <= 0:
+                continue
+            a, x = meta.get(r["id"], {}), ads.get(r["id"], {})
+            thumb = ""
+            src = os.path.join(thumbs_src, f"{r['id']}.jpg")
+            if os.path.exists(src):
+                shutil.copyfile(src, os.path.join(thumbs_dst, f"{r['id']}.jpg"))
+                thumb = f"thumbs/{r['id']}.jpg"
+            rows.append({**r,
+                         "campaign": a.get("campaign", ""),
+                         "adset": x.get("adset", ""),
+                         "status": x.get("status", ""),
+                         "thumb": thumb,
+                         "ig": _ig_code(r.get("instagram")),
+                         "reach": int(a.get("reach", 0) or 0),
+                         "link_clicks": int(a.get("link_clicks", 0) or 0),
+                         "decisao": decisao(r)})
+            catalog[r["id"]] = [r["product"], a.get("campaign", "")]
+        periods[key] = {"label": label, "rows": rows}
+
+    meta_daily = _read_json(os.path.join(data_dir, "meta_daily.json"), [])
+    guru_daily = _read_json(os.path.join(data_dir, "guru_daily.json"), [])
+    payload = {
+        "periods": periods,
+        "ranges": date_ranges(today_d),
+        "bounds": {k: [a.isoformat(), b.isoformat()] for k, (a, b) in period_bounds(today_d).items()},
+        "catalog": catalog,
+        "daily": {
+            "spend": [[x["d"], x["id"], x["spend"]] for x in meta_daily if x["id"] in catalog],
+            "sales": [[x["d"], x["id"], x["receita"]] for x in guru_daily if x.get("id") in catalog],
+        },
+        "updated": generated,
+        "account": ACCOUNT_ID,
+        "rule": {"min_spend": MIN_SPEND, "roas": ROAS_ESCALAR},
+    }
+    tpl = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "criativos.html")
+    html = open(tpl, encoding="utf-8").read().replace(
+        "/*__DATA__*/null", json.dumps(payload, ensure_ascii=False))
+    out = os.path.join(out_dir, "criativos.html")
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"Criativos gerado: {out} ({len(periods['mes']['rows'])} criativos no mês)")
+
+
 def main():
     data_dir = sys.argv[1] if len(sys.argv) > 1 else "."
     out = sys.argv[2] if len(sys.argv) > 2 else "dashboard.html"
@@ -220,6 +311,8 @@ def main():
         f.write(html)
     print(f"Painel gerado: {out}")
 
+    build_criativos(data_dir, out_dir or ".", data, today_d, generated)
+
 
 HTML_TEMPLATE = r"""<!DOCTYPE html>
 <html lang="pt-BR">
@@ -234,6 +327,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
   header{padding:20px 28px 8px}
   h1{margin:0;font-size:20px}
+  .views{display:inline-flex;vertical-align:middle;margin-left:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px}
+  .views a{padding:4px 14px;border-radius:999px;text-decoration:none;color:var(--mut);font-size:13px;font-weight:600}
+  .views a.on{background:var(--accent);color:#fff}
   .sub{color:var(--mut);font-size:12px;margin-top:4px}
   .tabs{display:flex;gap:6px;padding:14px 28px 0;flex-wrap:wrap}
   .tab{padding:8px 16px;border:1px solid var(--line);border-radius:8px 8px 0 0;background:var(--card);
@@ -287,7 +383,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 </head>
 <body>
 <header>
-  <h1>📊 Painel de Performance — Criativos</h1>
+  <h1>📊 Painel de Performance — Criativos <nav class="views"><a href="index.html" class="on">Tabela</a><a href="criativos.html">Criativos</a></nav></h1>
   <div class="sub">Meta Ads (spend) × Digital Manager Guru (venda real) cruzados por ad id · Conta 01 - Nutri de Consultório · <b>somente vendas atribuídas ao Meta (utm_source=FB)</b> · <span id="gen"></span></div>
 </header>
 <div class="tabs" id="tabs"></div>

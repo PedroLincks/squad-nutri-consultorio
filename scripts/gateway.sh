@@ -15,7 +15,7 @@
 #   ./scripts/gateway.sh sample                             # dump cru de 1 transacao
 #   ./scripts/gateway.sh orders <inicio> <fim>              # transacoes aprovadas no periodo (JSON)
 #   ./scripts/gateway.sh revenue-by-utm <inicio> <fim>      # receita por utm_content (SOMENTE utm_source=FB, i.e. vendas vindas dos anuncios)
-#   ./scripts/gateway.sh build [data_dir]                   # gera guru_<periodo>.json p/ todos os periodos (alimenta o painel)
+#   ./scripts/gateway.sh build [data_dir]                   # gera guru_<periodo>.json + guru_daily.json (alimenta o painel)
 #
 # Datas no formato "YYYY-MM-DD". Periodo maximo: 180 dias (limite da API).
 # Filtro: confirmed_at (data de aprovacao) + transaction_status=approved.
@@ -80,6 +80,10 @@ case "$cmd" in
       n="$(grep -c '"utm_content"' "$out" 2>/dev/null || true)"
       echo "  ${p}: ${ini}..${fim} -> ${out} (${n} criativos c/ venda)"
     done
+    # Serie diaria (mes passado ate hoje) p/ os minigraficos da aba Criativos
+    out="${DATA_DIR}/guru_daily.json"
+    _py daily "$_mp_ini" "$_today" > "$out"
+    echo "  daily: ${_mp_ini}..${_today} -> ${out}"
     ;;
   help|*)          grep -E '^#( |$)' "$0" | sed 's/^# \{0,1\}//' ;;
 esac
