@@ -1,341 +1,9 @@
 {
-  "120250724781690633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
-  "120250714434000633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120250714434050633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120250050555940633": {
-    "status": "PAUSED",
-    "adset": "SEGUIDORES"
-  },
-  "120250714321770633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120249988021530633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120249987670040633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120249987670030633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250600756030633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 03 - B-Roll - ."
-  },
-  "120250711162590633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  B-Roll Pack 02 - Cont."
-  },
-  "120249988093940633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120250714579230633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v2 - Cont."
-  },
-  "120250600842170633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] Pack 08 - Digitando - Cont."
-  },
-  "120250711038120633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  B-Roll Pack 02 - Cont."
-  },
-  "120250600730810633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
-  },
-  "120250600730780633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] Pack 01 - React - Cont."
-  },
-  "120250714434040633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120250690302240633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 03 - B-Rol- Cont."
-  },
-  "120250714433970633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120249988169980633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Semelhante (BR, 2%) - Engajou] Criativos B-roll  - Cont."
-  },
-  "120250585036240633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
-  },
-  "120250123934040633": {
-    "status": "ACTIVE",
-    "adset": "ASC [Broad_Sugestao]"
-  },
-  "120249987669990633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250123934070633": {
-    "status": "ACTIVE",
-    "adset": "ASC [Broad_Sugestao]"
-  },
-  "120250123934080633": {
-    "status": "ACTIVE",
-    "adset": "ASC [Broad_Sugestao]"
-  },
-  "120250585011950633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
-  },
-  "120250050128180633": {
-    "status": "PAUSED",
-    "adset": "SEGUIDORES"
-  },
-  "120250714323280633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120250714490250633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v2 -  PENDENTE."
-  },
-  "120250600730820633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
-  },
-  "120250724795960633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
-  "120249987670010633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120249988239510633": {
-    "status": "PAUSED",
-    "adset": "ASC TESTES [Broad] . — Cópia"
-  },
-  "120249988022000633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120250600730790633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
-  },
-  "120250724791100633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120250123934090633": {
-    "status": "ACTIVE",
-    "adset": "ASC [Broad_Sugestao]"
-  },
-  "120250724781680633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
-  "120250600730750633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] Pack 01 - React - Cont."
-  },
-  "120250585036230633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
-  },
-  "120250724795930633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
-  "120250724795990633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
-  "120250690309870633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
-  },
-  "120249988093970633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120250600730840633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
-  },
-  "120250714323270633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120250690306610633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
-  },
-  "120249988021510633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120250666742120633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas"
-  },
-  "120250123934050633": {
-    "status": "ACTIVE",
-    "adset": "ASC [Broad_Sugestao]"
-  },
-  "120250690306630633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
-  },
-  "120250600730800633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] Pack 01 - React - Cont."
-  },
-  "120250050555920633": {
-    "status": "ACTIVE",
-    "adset": "SEGUIDORES"
-  },
-  "120250724781650633": {
-    "status": "PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
-  "120250600730760633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 01 - React - Cont."
-  },
-  "120250724791130633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120249988239060633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont. — Cópia"
-  },
-  "120249988094020633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120249988203800633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Semelhante (BR, 2%) - Engajou] Criativos B-roll  - Cont."
-  },
-  "120250600791980633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 03 - B-Roll - ."
-  },
-  "120250724781660633": {
-    "status": "PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
-  "120250714490260633": {
-    "status": "PAUSED",
-    "adset": "[Broad] react v2 -  PENDENTE."
-  },
-  "120250690302260633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 03 - B-Rol- Cont."
-  },
-  "120250123763790633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "SEGUIDORES"
-  },
-  "120249988021500633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120250600842150633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] Pack 08 - Digitando - Cont."
-  },
-  "120250690309900633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
-  },
-  "120249988093950633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120250600730770633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
-  },
-  "120249987669980633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250690309860633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
-  },
-  "120250600758610633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 08 - Digitando - Cont."
-  },
-  "120250724796030633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[Broad][VALIDADOS]  Cont."
-  },
   "120250600798270633": {
     "status": "PAUSED",
     "adset": "[Broad] Pack 03 - B-Roll - ."
   },
-  "120250666742180633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120249987670060633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250724795920633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120250724795900633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120250714434020633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120250666742170633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120250600798280633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 03 - B-Roll - ."
-  },
-  "120250050555930633": {
-    "status": "PAUSED",
-    "adset": "SEGUIDORES"
-  },
-  "120250585011940633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
-  },
-  "120250714434010633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120250585036250633": {
+  "120250585036220633": {
     "status": "PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
   },
@@ -343,223 +11,63 @@
     "status": "CAMPAIGN_PAUSED",
     "adset": "Semelhante (BR, 2%) - Engajou"
   },
-  "120249987670050633": {
+  "120249987669990633": {
     "status": "CAMPAIGN_PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
   },
-  "120249987404190633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250585028560633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
-  },
-  "120250714163450633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120249988022040633": {
-    "status": "PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120250600842190633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 08 - Digitando - Cont."
-  },
-  "120250711180010633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  B-Roll Pack 02 - Cont."
-  },
-  "120250724796020633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120250600842160633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 08 - Digitando - Cont."
-  },
-  "120250714434060633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120249987670020633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250724791110633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
-  },
-  "120250714323320633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120249988094000633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120250600842180633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 08 - Digitando - Cont."
-  },
-  "120250714323330633": {
-    "status": "PAUSED",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120250600762450633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 09 - Conselhos - ."
-  },
-  "120250050555950633": {
-    "status": "ACTIVE",
-    "adset": "SEGUIDORES"
-  },
-  "120250690306650633": {
+  "120250690306630633": {
     "status": "CAMPAIGN_PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
   },
-  "120250714434080633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120249988022020633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120249988021940633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120250050555960633": {
+  "120250666742170633": {
     "status": "PAUSED",
-    "adset": "SEGUIDORES"
-  },
-  "120249988094030633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120250714434030633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120250714323290633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120250724795940633": {
-    "status": "CAMPAIGN_PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
   },
-  "120250714579240633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v2 - Cont."
-  },
-  "120250600920950633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 09 - Conselhos - ."
-  },
-  "120249988094040633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120250714451800633": {
-    "status": "PAUSED",
-    "adset": "[Broad] react v2 -  PENDENTE."
-  },
-  "120250585009240633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
-  },
-  "120250714434070633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120250600730830633": {
+  "120250600730770633": {
     "status": "PAUSED",
     "adset": "[Broad] Pack 02 - Caixinhas - Cont."
   },
-  "120250585036210633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
+  "120249987670060633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
   },
   "120250714323310633": {
     "status": "ACTIVE",
     "adset": "[Broad] react v1 - PENDENTE."
   },
-  "120250584863820633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
-  },
-  "120250714323340633": {
+  "120250600730800633": {
     "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120250600918800633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 09 - Conselhos - ."
-  },
-  "120250690309890633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
-  },
-  "120250123934060633": {
-    "status": "ACTIVE",
-    "adset": "ASC [Broad_Sugestao]"
-  },
-  "120250714579250633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v2 - Cont."
-  },
-  "120249987651160633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250600920940633": {
-    "status": "PAUSED",
-    "adset": "[Broad] Pack 09 - Conselhos - ."
-  },
-  "120250714323350633": {
-    "status": "ACTIVE",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120249988021950633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "ASC TESTES [Broad] ."
-  },
-  "120250714433980633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
-  },
-  "120249987670070633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
-  },
-  "120250714323300633": {
-    "status": "PAUSED",
-    "adset": "[Broad] react v1 - PENDENTE."
-  },
-  "120250690306640633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
-  },
-  "120249988093960633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "Semelhante (BR, 2%) - Engajou"
-  },
-  "120250690302250633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 03 - B-Rol- Cont."
+    "adset": "[Broad] Pack 01 - React - Cont."
   },
   "120250585011960633": {
     "status": "CAMPAIGN_PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
   },
-  "120250585036220633": {
-    "status": "PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
+  "120250714323320633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
   },
-  "120249988021480633": {
+  "120250714451800633": {
+    "status": "PAUSED",
+    "adset": "[Broad] react v2 -  PENDENTE."
+  },
+  "120250123934040633": {
+    "status": "ACTIVE",
+    "adset": "ASC [Broad_Sugestao]"
+  },
+  "120250711180010633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  B-Roll Pack 02 - Cont."
+  },
+  "120250600920950633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 09 - Conselhos - ."
+  },
+  "120249988169980633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Semelhante (BR, 2%) - Engajou] Criativos B-roll  - Cont."
+  },
+  "120249988021510633": {
     "status": "CAMPAIGN_PAUSED",
     "adset": "ASC TESTES [Broad] ."
   },
@@ -567,32 +75,524 @@
     "status": "CAMPAIGN_PAUSED",
     "adset": "ASC TESTES [Broad] ."
   },
-  "120250690306620633": {
-    "status": "CAMPAIGN_PAUSED",
-    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
-  },
-  "120250600730740633": {
-    "status": "ACTIVE",
+  "120250600730760633": {
+    "status": "PAUSED",
     "adset": "[Broad] Pack 01 - React - Cont."
   },
   "120250714433990633": {
     "status": "CAMPAIGN_PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
   },
+  "120250714434070633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250050555940633": {
+    "status": "PAUSED",
+    "adset": "SEGUIDORES"
+  },
+  "120250724795900633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120250714323330633": {
+    "status": "PAUSED",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250724791130633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120250714323270633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250724781690633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120249988093970633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
+  "120249988093960633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
+  "120250714434020633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250600730840633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
+  },
+  "120250714434040633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120249988022020633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250714163450633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250050555920633": {
+    "status": "ACTIVE",
+    "adset": "SEGUIDORES"
+  },
+  "120250123934080633": {
+    "status": "ACTIVE",
+    "adset": "ASC [Broad_Sugestao]"
+  },
+  "120250690309890633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
+  },
+  "120250600920940633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 09 - Conselhos - ."
+  },
+  "120250050555930633": {
+    "status": "PAUSED",
+    "adset": "SEGUIDORES"
+  },
+  "120250714579240633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v2 - Cont."
+  },
+  "120250600798280633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 03 - B-Roll - ."
+  },
+  "120250724791100633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120250724795960633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120250600730830633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
+  },
+  "120250690309900633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
+  },
+  "120250690309870633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
+  },
+  "120249987670020633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120250600758610633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 08 - Digitando - Cont."
+  },
+  "120250714490250633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v2 -  PENDENTE."
+  },
+  "120250711038120633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  B-Roll Pack 02 - Cont."
+  },
+  "120250714323340633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250724795930633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120250714434030633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250585036230633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
+  },
+  "120249987651160633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120250600842180633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 08 - Digitando - Cont."
+  },
+  "120250600842190633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 08 - Digitando - Cont."
+  },
+  "120250714579230633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v2 - Cont."
+  },
+  "120250050128180633": {
+    "status": "PAUSED",
+    "adset": "SEGUIDORES"
+  },
+  "120250724781660633": {
+    "status": "PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120249988093950633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
   "120250690306660633": {
     "status": "PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
+  },
+  "120250724781680633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120250600762450633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 09 - Conselhos - ."
+  },
+  "120250600842150633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] Pack 08 - Digitando - Cont."
+  },
+  "120250600918800633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 09 - Conselhos - ."
+  },
+  "120250585036240633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
+  },
+  "120250600730740633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] Pack 01 - React - Cont."
+  },
+  "120249988021480633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250690302260633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 03 - B-Rol- Cont."
+  },
+  "120250585036210633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
   },
   "120250690302270633": {
     "status": "CAMPAIGN_PAUSED",
     "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 03 - B-Rol- Cont."
   },
-  "120250714323260633": {
+  "120250724796020633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120250585009240633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
+  },
+  "120250600730780633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] Pack 01 - React - Cont."
+  },
+  "120250600842170633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] Pack 08 - Digitando - Cont."
+  },
+  "120249987670040633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120249988094000633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
+  "120250714321770633": {
     "status": "ACTIVE",
     "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250711162590633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  B-Roll Pack 02 - Cont."
+  },
+  "120250714433980633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250724795920633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120250690306650633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
+  },
+  "120250690302240633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 03 - B-Rol- Cont."
+  },
+  "120249987669980633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120250714434060633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250600756030633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 03 - B-Roll - ."
+  },
+  "120250585011940633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
+  },
+  "120249988094020633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
+  "120250666742120633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas"
+  },
+  "120250690306640633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
+  },
+  "120250666742180633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120250714323290633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250600842160633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 08 - Digitando - Cont."
+  },
+  "120250724796030633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120250714323280633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250714323350633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250585011950633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
+  },
+  "120250714434050633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250123934070633": {
+    "status": "ACTIVE",
+    "adset": "ASC [Broad_Sugestao]"
+  },
+  "120250724781650633": {
+    "status": "PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120250714490260633": {
+    "status": "PAUSED",
+    "adset": "[Broad] react v2 -  PENDENTE."
+  },
+  "120249988239060633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont. — Cópia"
+  },
+  "120250690309860633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 09 - Conselhos - Cont."
+  },
+  "120250123934090633": {
+    "status": "ACTIVE",
+    "adset": "ASC [Broad_Sugestao]"
+  },
+  "120250050555960633": {
+    "status": "PAUSED",
+    "adset": "SEGUIDORES"
   },
   "120249988021430633": {
     "status": "CAMPAIGN_PAUSED",
     "adset": "ASC TESTES [Broad] ."
+  },
+  "120250600730790633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
+  },
+  "120250714434010633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120249987670050633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120249988094040633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
+  "120249988021950633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250690306620633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
+  },
+  "120250724795990633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Broad][VALIDADOS]  Cont."
+  },
+  "120249988203800633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[Semelhante (BR, 2%) - Engajou] Criativos B-roll  - Cont."
+  },
+  "120249988021530633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250123934050633": {
+    "status": "ACTIVE",
+    "adset": "ASC [Broad_Sugestao]"
+  },
+  "120249988022000633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250600730750633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] Pack 01 - React - Cont."
+  },
+  "120249987404190633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120249988021940633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250584863820633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 01 - React - Cont."
+  },
+  "120250714579250633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v2 - Cont."
+  },
+  "120250714434000633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120249987670010633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120249987670070633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120250714433970633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250600730810633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
+  },
+  "120249987670030633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Cont."
+  },
+  "120250585036250633": {
+    "status": "PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
+  },
+  "120250714323260633": {
+    "status": "ACTIVE",
+    "adset": "[Broad] react v1 - PENDENTE."
+  },
+  "120250123763790633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "SEGUIDORES"
+  },
+  "120250585028560633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 02 - Caixinhas - Cont."
+  },
+  "120250714434080633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%] react v1 - Cont."
+  },
+  "120250724791110633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120250690302250633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 03 - B-Rol- Cont."
+  },
+  "120250123934060633": {
+    "status": "ACTIVE",
+    "adset": "ASC [Broad_Sugestao]"
+  },
+  "120249988094030633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
+  "120250724795940633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%][VALIDADOS] Cont."
+  },
+  "120249988093940633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "Semelhante (BR, 2%) - Engajou"
+  },
+  "120249988239510633": {
+    "status": "PAUSED",
+    "adset": "ASC TESTES [Broad] . — Cópia"
+  },
+  "120249988022040633": {
+    "status": "PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250600730820633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 02 - Caixinhas - Cont."
+  },
+  "120250050555950633": {
+    "status": "ACTIVE",
+    "adset": "SEGUIDORES"
+  },
+  "120250600791980633": {
+    "status": "PAUSED",
+    "adset": "[Broad] Pack 03 - B-Roll - ."
+  },
+  "120250690306610633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "[MEIO_FUNIL.180D][PV+ENG+VV25%]  Pack 08 - Digitando - Cont."
+  },
+  "120249988021500633": {
+    "status": "CAMPAIGN_PAUSED",
+    "adset": "ASC TESTES [Broad] ."
+  },
+  "120250714323300633": {
+    "status": "PAUSED",
+    "adset": "[Broad] react v1 - PENDENTE."
   }
 }

@@ -79,7 +79,7 @@ a{color:inherit}
 .mini{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:auto}
 .mini div{background:var(--bg);border-radius:8px;padding:5px 4px;text-align:center}
 .mini small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}
-.mini strong{font-size:13px;font-variant-numeric:tabular-nums}
+.mini strong{font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;display:block;overflow:hidden;text-overflow:ellipsis}
 .pos{color:var(--ok)} .neg{color:var(--bad)}
 .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px 0}
 /* modal */
@@ -276,7 +276,7 @@ function renderGrid(){
         <div class="camp" title="${esc(r.campaign)}">${esc(r.product)} · ${esc(clean(r.campaign))}</div>
         <div class="mini">
           <div><small>ROAS</small><strong class="${r.roas>=D.rule.roas?'pos':(r.roas!=null&&r.spend>D.rule.min_spend?'neg':'')}">${x2(r.roas)}</strong></div>
-          <div><small>CPA</small><strong>${r.cac?brl0(r.cac):'—'}</strong></div>
+          <div><small>CPA</small><strong>${r.cac?Math.round(r.cac).toLocaleString('pt-BR'):'—'}</strong></div>
           <div><small>CTR</small><strong>${pc(r.ctr)}</strong></div>
           <div><small>Hook</small><strong>${pc(r.ret_hook)}</strong></div>
         </div>

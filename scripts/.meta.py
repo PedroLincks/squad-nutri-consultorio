@@ -167,13 +167,15 @@ def fetch_ad_details(ad_ids):
     Nao-fatal, como fetch_ad_links: lote que falha fica sem detalhe.
     """
     ids = [i for i in {str(a) for a in ad_ids} if i]
-    fields = "effective_status,adset{name},creative{thumbnail_url}"
+    # O tamanho TEM que ir na expansao do campo: thumbnail_width/height como
+    # parametro da URL e ignorado no ?ids= e a capa volta em 64x64 (pixelada).
+    fields = ("effective_status,adset{name},"
+              "creative.thumbnail_width(540).thumbnail_height(960){thumbnail_url}")
     out = {}
     for i in range(0, len(ids), 50):
         batch = ids[i:i + 50]
         try:
-            data = _get("", {"ids": ",".join(batch), "fields": fields,
-                             "thumbnail_width": 540, "thumbnail_height": 960})
+            data = _get("", {"ids": ",".join(batch), "fields": fields})
         except Exception as e:
             print(f"  aviso: detalhes do lote {i // 50 + 1} falharam ({e}); "
                   f"seguindo sem eles", file=sys.stderr)
@@ -195,7 +197,8 @@ def download_thumbs(details, thumb_dir):
     novas = falhas = 0
     for aid, d in details.items():
         path = os.path.join(thumb_dir, f"{aid}.jpg")
-        if os.path.exists(path) or not d.get("thumb_url"):
+        # cache: pula capa ja baixada, a menos que seja das antigas de 64x64 (< 8 KB)
+        if (os.path.exists(path) and os.path.getsize(path) > 8000) or not d.get("thumb_url"):
             continue
         try:
             with urllib.request.urlopen(d["thumb_url"], timeout=30) as r:
