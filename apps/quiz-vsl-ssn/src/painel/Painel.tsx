@@ -202,7 +202,7 @@ export default function Painel() {
               <Diario diario={stats.diario} from={from} to={to} escuro={tema === 'escuro'} />
             </Secao>
 
-            <Secao titulo="Funil por criativo">
+            <Secao titulo="Funil por campanha e criativo">
               <Criativos criativos={stats.criativos} />
             </Secao>
 

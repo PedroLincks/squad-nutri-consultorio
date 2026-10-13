@@ -20,10 +20,10 @@ export function statsDemo(from: string, to: string): Stats {
     funil: { acessos, iniciou, vsl, perguntas: { perfil: p(0.97), tempo_atendimento: p(0.9), seguidores: p(0.84), dificuldade: p(0.74) } },
     aparelhos: { mobile: Math.round(acessos * 0.93), desktop: Math.round(acessos * 0.07) },
     criativos: [
-      { criativo: '[NUTRI] React-01 | 120210000000001', acessos: Math.round(acessos * 0.41), iniciou: Math.round(acessos * 0.41 * 0.66), vsl: Math.round(acessos * 0.41 * 0.5) },
-      { criativo: '[NUTRI] Caixinha-03 | 120210000000002', acessos: Math.round(acessos * 0.33), iniciou: Math.round(acessos * 0.33 * 0.58), vsl: Math.round(acessos * 0.33 * 0.39) },
-      { criativo: '[NUTRI] B-roll-07 | 120210000000003', acessos: Math.round(acessos * 0.2), iniciou: Math.round(acessos * 0.2 * 0.61), vsl: Math.round(acessos * 0.2 * 0.44) },
-      { criativo: '(sem utm_content)', acessos: Math.round(acessos * 0.06), iniciou: Math.round(acessos * 0.06 * 0.4), vsl: Math.round(acessos * 0.06 * 0.25) },
+      { campanha: '[SSN][VSL LEAD 01][MEIO]', criativo: '[NUTRI] React-01 | 120210000000001', acessos: Math.round(acessos * 0.41), iniciou: Math.round(acessos * 0.41 * 0.66), vsl: Math.round(acessos * 0.41 * 0.5) },
+      { campanha: '[SSN][VSL LEAD 01][MEIO]', criativo: '[NUTRI] Caixinha-03 | 120210000000002', acessos: Math.round(acessos * 0.33), iniciou: Math.round(acessos * 0.33 * 0.58), vsl: Math.round(acessos * 0.33 * 0.39) },
+      { campanha: '[SSN][VSL LEAD 02][FUNDO]', criativo: '[NUTRI] B-roll-07 | 120210000000003', acessos: Math.round(acessos * 0.2), iniciou: Math.round(acessos * 0.2 * 0.61), vsl: Math.round(acessos * 0.2 * 0.44) },
+      { campanha: '(sem utm_campaign)', criativo: '(sem utm_content)', acessos: Math.round(acessos * 0.06), iniciou: Math.round(acessos * 0.06 * 0.4), vsl: Math.round(acessos * 0.06 * 0.25) },
     ],
     respostas: [
       ['perfil', 'formada', 0.82], ['perfil', 'estudante', 0.15],

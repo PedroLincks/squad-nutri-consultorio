@@ -7,7 +7,8 @@ export interface Contagens {
 export interface Stats {
   funil: Contagens & { perguntas: Record<string, number> }
   respostas: { pergunta: string; opcao: string; n: number }[]
-  criativos: (Contagens & { criativo: string })[]
+  /** Uma linha por par campanha × criativo (campanha ausente = função SQL antiga) */
+  criativos: (Contagens & { campanha?: string; criativo: string })[]
   diario: (Contagens & { dia: string })[]
   aparelhos: Record<string, number>
 }

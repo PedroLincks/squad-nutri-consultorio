@@ -20,6 +20,7 @@ as $$
   sess as (
     select distinct on (session_id)
       session_id,
+      coalesce(nullif(utm_campaign, ''), '(sem utm_campaign)') as campanha,
       coalesce(nullif(utm_content, ''), '(sem utm_content)') as criativo,
       device,
       (created_at at time zone 'America/Sao_Paulo')::date as dia
@@ -28,13 +29,13 @@ as $$
   ),
   marcos as (
     select
-      s.session_id, s.criativo, s.device, s.dia,
+      s.session_id, s.campanha, s.criativo, s.device, s.dia,
       bool_or(e.event = 'page_view')  as acessou,
       bool_or(e.event = 'quiz_start') as iniciou,
       bool_or(e.event = 'vsl_view')   as vsl
     from sess s
     join ev e using (session_id)
-    group by 1, 2, 3, 4
+    group by 1, 2, 3, 4, 5
   )
   select jsonb_build_object(
     'funil', jsonb_build_object(
@@ -56,14 +57,14 @@ as $$
     ), '[]'::jsonb),
     'criativos', coalesce((
       select jsonb_agg(jsonb_build_object(
-        'criativo', criativo, 'acessos', acessos, 'iniciou', iniciou, 'vsl', vsl
+        'campanha', campanha, 'criativo', criativo, 'acessos', acessos, 'iniciou', iniciou, 'vsl', vsl
       ) order by acessos desc)
       from (
-        select criativo,
+        select campanha, criativo,
           count(*) filter (where acessou) as acessos,
           count(*) filter (where iniciou) as iniciou,
           count(*) filter (where vsl)     as vsl
-        from marcos group by criativo
+        from marcos group by campanha, criativo
       ) c
     ), '[]'::jsonb),
     'diario', coalesce((
