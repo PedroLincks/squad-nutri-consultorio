@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mockup trio</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #fff; }
+
+  /* Canvas exportado como PNG (2x) — layout de 3 imagens sobrepostas */
+  .canvas { position: relative; width: 540px; height: 450px; overflow: hidden; }
+
+  .img { position: absolute; background-repeat: no-repeat; background-color: #ddd; }
+
+  /* Moldura principal */
+  .outer {
+    position: absolute; left: 30px; top: 70px; width: 452px; height: 288px;
+    background: #fff; border: 1.5px solid #ececec; border-radius: 26px;
+    box-shadow: 0 10px 30px rgba(17,24,39,.06);
+  }
+  .main { inset: 11px; border-radius: 18px; }
+
+  /* Cards sobrepostos */
+  .card {
+    position: absolute; background: #fff; padding: 6px; border-radius: 22px;
+    border: 1.5px solid #ececec; box-shadow: 0 16px 36px rgba(17,24,39,.16);
+  }
+  .card .img { inset: 6px; border-radius: 16px; }
+  .tr { left: 272px; top: 12px; width: 184px; height: 124px; }
+  .bl { left: 62px; top: 276px; width: 254px; height: 160px; }
+
+  /* Play + linha */
+  .play { position: absolute; left: 340px; top: 368px; width: 30px; height: 34px; }
+  .line { position: absolute; left: 388px; top: 384px; width: 140px; height: 3px; border-radius: 3px;
+    background: linear-gradient(90deg, #dc2626, rgba(220,38,38,0)); }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="outer"><div class="img main" id="main"></div></div>
+    <div class="card tr"><div class="img" id="tr"></div></div>
+    <div class="card bl"><div class="img" id="bl"></div></div>
+    <svg class="play" viewBox="0 0 30 34"><path d="M4 4.5v25l22-12.5z" fill="none" stroke="#dc2626" stroke-width="3" stroke-linejoin="round" /></svg>
+    <div class="line"></div>
+  </div>
+  <script>
+    // ?main=img|size|pos&tr=...&bl=...  (size e pos no formato CSS background)
+    const q = new URLSearchParams(location.search)
+    for (const id of ['main', 'tr', 'bl']) {
+      const [img, size = 'cover', pos = '50% 50%'] = (q.get(id) || '').split('|')
+      const el = document.getElementById(id)
+      if (img) el.style.backgroundImage = `url(${img})`
+      el.style.backgroundSize = size
+      el.style.backgroundPosition = pos
+    }
+  </script>
+</body>
+</html>

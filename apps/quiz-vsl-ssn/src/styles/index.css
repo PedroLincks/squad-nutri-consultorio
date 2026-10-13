@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #ffffff;
+  color: #111827;
+}
+
+@layer components {
+  .quiz-option {
+    @apply flex w-full items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-4
+           transition duration-200 hover:border-gray-300 hover:shadow-md active:scale-[0.99];
+  }
+  .quiz-option.selected {
+    @apply border-brand-red shadow-md;
+  }
+  .radio {
+    @apply flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border-2 border-gray-300 text-white transition;
+  }
+  .radio.selected {
+    @apply border-brand-red bg-brand-red;
+  }
+
+  .btn-cta {
+    @apply w-full rounded-xl bg-brand-green px-6 py-4 font-montserrat text-base font-bold uppercase text-white
+           animate-pulse-cta transition hover:brightness-110 active:scale-[0.98] motion-reduce:animate-none;
+  }
+}
