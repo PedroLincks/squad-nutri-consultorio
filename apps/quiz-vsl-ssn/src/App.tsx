@@ -5,7 +5,7 @@ import { QuizStep } from './components/QuizStep'
 import { Loading } from './components/Loading'
 import { Vsl } from './components/Vsl'
 import { questions } from './data/questions'
-import { track } from './lib/track'
+import { quandoVisivel, track } from './lib/track'
 
 type Stage = 'capa' | 'quiz' | 'loading' | 'vsl'
 
@@ -22,9 +22,8 @@ export default function App() {
   // Respostas guardadas para o analytics (próxima fase)
   const [, setAnswers] = useState<Record<string, string>>({})
 
-  useEffect(() => {
-    track('page_view')
-  }, [])
+  // Acesso só conta quando a pessoa realmente vê a página (não em pré-carregamento)
+  useEffect(() => quandoVisivel(() => track('page_view')), [])
 
   const handleStart = () => {
     track('quiz_start')

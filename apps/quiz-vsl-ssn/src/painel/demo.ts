@@ -16,6 +16,7 @@ export function statsDemo(from: string, to: string): Stats {
   const vsl = soma('vsl')
   const p = (f: number) => Math.round(iniciou * f)
   return {
+    descartados: Math.round(acessos * 0.9),
     diario,
     funil: { acessos, iniciou, vsl, perguntas: { perfil: p(0.97), tempo_atendimento: p(0.9), seguidores: p(0.84), dificuldade: p(0.74) } },
     aparelhos: { mobile: Math.round(acessos * 0.93), desktop: Math.round(acessos * 0.07) },

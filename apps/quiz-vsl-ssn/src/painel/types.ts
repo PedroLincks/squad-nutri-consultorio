@@ -5,6 +5,8 @@ export interface Contagens {
 }
 
 export interface Stats {
+  /** Sessões de robôs/pré-carregamentos, fora de todas as contagens */
+  descartados?: number
   funil: Contagens & { perguntas: Record<string, number> }
   respostas: { pergunta: string; opcao: string; n: number }[]
   /** Uma linha por par campanha × criativo (campanha ausente = função SQL antiga) */

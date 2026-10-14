@@ -9,12 +9,19 @@ stable
 security invoker
 set search_path = public
 as $$
-  with ev as (
+  with todos as (
     select *
     from quiz_events
     where funnel = p_funnel
       and created_at >= p_from
       and created_at <  p_to
+  ),
+  -- Sessões de robôs/pré-carregamentos ficam fora de TODAS as contagens
+  bots as (
+    select distinct session_id from todos where is_bot
+  ),
+  ev as (
+    select * from todos where session_id not in (select session_id from bots)
   ),
   -- Origem da sessão = UTM / aparelho do primeiro evento dela
   sess as (
@@ -38,6 +45,7 @@ as $$
     group by 1, 2, 3, 4, 5
   )
   select jsonb_build_object(
+    'descartados', (select count(*) from bots),
     'funil', jsonb_build_object(
       'acessos',  (select count(*) from marcos where acessou),
       'iniciou',  (select count(*) from marcos where iniciou),

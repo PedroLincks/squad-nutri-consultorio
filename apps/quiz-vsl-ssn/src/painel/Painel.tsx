@@ -38,12 +38,13 @@ function Secao({ titulo, children }: { titulo: string; children: React.ReactNode
   )
 }
 
-function Card({ label, valor, sub }: { label: string; valor: string; sub?: string }) {
+function Card({ label, valor, sub, nota }: { label: string; valor: string; sub?: string; nota?: string }) {
   return (
     <div className="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
       <div className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{label}</div>
       <div className="mt-1 text-2xl font-extrabold tabular-nums text-gray-900 dark:text-gray-100">{valor}</div>
       {sub && <div className="mt-0.5 text-xs text-gray-500 dark:text-gray-400">{sub}</div>}
+      {nota && <div className="mt-1 text-[11px] text-gray-400 dark:text-gray-500">{nota}</div>}
     </div>
   )
 }
@@ -150,7 +151,7 @@ export default function Painel() {
         <header className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h1 className="text-xl font-extrabold text-gray-900 dark:text-gray-100">Painel · Quiz SSN</h1>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Contagens por sessão (visita). Fuso de Brasília.</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">Pessoas que abriram a página (robôs e pré-carregamentos fora). Fuso de Brasília.</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -188,7 +189,12 @@ export default function Painel() {
         {f && stats && (
           <>
             <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-              <Card label="Acessos" valor={fmtNum(f.acessos)} sub={`${fmtPct(pct(mobile, f.acessos))} no celular`} />
+              <Card
+                label="Acessos (pessoas)"
+                valor={fmtNum(f.acessos)}
+                sub={`${fmtPct(pct(mobile, f.acessos))} no celular`}
+                nota={stats.descartados ? `+ ${fmtNum(stats.descartados)} descartados (robôs/prévias)` : undefined}
+              />
               <Card label="Iniciaram o quiz" valor={fmtPct(pct(f.iniciou, f.acessos))} sub={`${fmtNum(f.iniciou)} sessões`} />
               <Card label="Concluíram o quiz" valor={fmtPct(pct(f.vsl, f.iniciou))} sub="dos que iniciaram" />
               <Card label="Chegaram na VSL" valor={fmtPct(pct(f.vsl, f.acessos))} sub={`${fmtNum(f.vsl)} sessões`} />
