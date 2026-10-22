@@ -3,8 +3,9 @@ import { Criativos } from './Criativos'
 import { Diario } from './Diario'
 import { Funil } from './Funil'
 import { Respostas } from './Respostas'
-import { PRESETS, fmtNum, fmtPct, hojeBrt, pct } from './periodo'
+import { PRESETS, fmtNum, fmtPct, formatarDia, hojeBrt, pct } from './periodo'
 import type { Stats } from './types'
+import { VERSAO_ATUAL, VERSOES, type Versao } from '../shared/versoes'
 
 const CHAVE_SENHA = 'painel_senha'
 const CHAVE_TEMA = 'painel_tema'
@@ -53,9 +54,11 @@ export default function Painel() {
   const hoje = hojeBrt()
   const [senha, setSenha] = useState(lerSenha)
   const [digitada, setDigitada] = useState('')
-  const [preset, setPreset] = useState<string>('7d')
-  const [from, setFrom] = useState(PRESETS[2].range(hoje)[0])
-  const [to, setTo] = useState(hoje)
+  // Cada aba é uma versão do funil; ao trocar, o período vai para a vida inteira daquela versão
+  const [versao, setVersao] = useState<Versao>(VERSAO_ATUAL)
+  const [preset, setPreset] = useState<string>('')
+  const [from, setFrom] = useState<string>(VERSAO_ATUAL.inicio)
+  const [to, setTo] = useState<string>(VERSAO_ATUAL.fim ?? hoje)
   const [stats, setStats] = useState<Stats | null>(null)
   const [erro, setErro] = useState('')
   const [carregando, setCarregando] = useState(false)
@@ -84,7 +87,7 @@ export default function Painel() {
     setCarregando(true)
     setErro('')
     try {
-      const res = await fetch(`/api/stats?from=${from}&to=${to}`, { headers: { 'x-painel-senha': senha } })
+      const res = await fetch(`/api/stats?from=${from}&to=${to}&funnel=${versao.funnel}`, { headers: { 'x-painel-senha': senha } })
       const body = await res.json()
       if (res.status === 401) {
         try { localStorage.removeItem(CHAVE_SENHA) } catch { /* sem storage */ }
@@ -100,11 +103,19 @@ export default function Painel() {
     } finally {
       setCarregando(false)
     }
-  }, [senha, from, to])
+  }, [senha, from, to, versao])
 
   useEffect(() => {
     carregar()
   }, [carregar])
+
+  const escolherVersao = (v: Versao) => {
+    setVersao(v)
+    setPreset('')
+    setStats(null)
+    setFrom(v.inicio)
+    setTo(v.fim ?? hoje)
+  }
 
   const escolherPreset = (id: string) => {
     const p = PRESETS.find((x) => x.id === id)
@@ -184,6 +195,28 @@ export default function Painel() {
           </div>
         </header>
 
+        <nav className="flex flex-wrap gap-2 border-b border-gray-200 dark:border-gray-800">
+          {VERSOES.map((v) => {
+            const ativa = v.funnel === versao.funnel
+            return (
+              <button
+                key={v.funnel}
+                onClick={() => escolherVersao(v)}
+                className={`-mb-px border-b-2 px-3 py-2 text-sm font-bold ${
+                  ativa
+                    ? 'border-brand-red text-gray-900 dark:text-gray-100'
+                    : 'border-transparent text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'
+                }`}
+              >
+                {v.label}
+                <span className="ml-1.5 font-normal text-gray-400 dark:text-gray-500">
+                  {formatarDia(v.inicio)} → {v.fim ? formatarDia(v.fim) : 'hoje'}
+                </span>
+              </button>
+            )
+          })}
+        </nav>
+
         {erro && <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-brand-red dark:bg-red-950/40 dark:text-red-400">{erro}</p>}
 
         {f && stats && (
@@ -195,13 +228,17 @@ export default function Painel() {
                 sub={`${fmtPct(pct(mobile, f.acessos))} no celular`}
                 nota={stats.descartados ? `+ ${fmtNum(stats.descartados)} descartados (robôs/prévias)` : undefined}
               />
-              <Card label="Iniciaram o quiz" valor={fmtPct(pct(f.iniciou, f.acessos))} sub={`${fmtNum(f.iniciou)} sessões`} />
+              <Card
+                label={'semCapa' in versao ? 'Responderam a P1' : 'Iniciaram o quiz'}
+                valor={fmtPct(pct(f.iniciou, f.acessos))}
+                sub={`${fmtNum(f.iniciou)} sessões`}
+              />
               <Card label="Concluíram o quiz" valor={fmtPct(pct(f.vsl, f.iniciou))} sub="dos que iniciaram" />
               <Card label="Chegaram na VSL" valor={fmtPct(pct(f.vsl, f.acessos))} sub={`${fmtNum(f.vsl)} sessões`} />
             </div>
 
             <Secao titulo="Funil etapa a etapa">
-              <Funil funil={f} />
+              <Funil funil={f} semCapa={'semCapa' in versao} />
             </Secao>
 
             <Secao titulo="Evolução diária">

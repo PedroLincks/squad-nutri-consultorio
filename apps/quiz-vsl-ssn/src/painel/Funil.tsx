@@ -3,10 +3,11 @@ import { fmtNum, fmtPct, pct } from './periodo'
 import type { Stats } from './types'
 
 /** Funil etapa a etapa: barras horizontais, uma cor só, com a perda entre etapas. */
-export function Funil({ funil }: { funil: Stats['funil'] }) {
+export function Funil({ funil, semCapa = false }: { funil: Stats['funil']; semCapa?: boolean }) {
   const etapas = [
     { label: 'Acessaram a página', n: funil.acessos },
-    { label: 'Iniciaram o quiz', n: funil.iniciou },
+    // Sem capa, "iniciou" = respondeu a P1: a etapa não se repete
+    ...(semCapa ? [] : [{ label: 'Iniciaram o quiz', n: funil.iniciou }]),
     ...questions.map((q, i) => ({ label: `P${i + 1} · ${q.question}`, n: funil.perguntas[q.key] ?? 0 })),
     { label: 'Chegaram na VSL', n: funil.vsl },
   ]

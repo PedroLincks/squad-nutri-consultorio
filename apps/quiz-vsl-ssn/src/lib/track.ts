@@ -2,6 +2,8 @@
  * Registro de eventos do funil no Supabase (tabela quiz_events).
  * Sem VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY configuradas, não faz nada.
  */
+import { VERSAO_ATUAL } from '../shared/versoes'
+
 type FunnelEvent = 'page_view' | 'quiz_start' | 'answer' | 'vsl_view'
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string | undefined
@@ -107,6 +109,7 @@ export function track(event: FunnelEvent, extra: { step_key?: string; answer?: s
       Prefer: 'return=minimal',
     },
     body: JSON.stringify({
+      funnel: VERSAO_ATUAL.funnel,
       session_id: sessionId,
       event,
       ...extra,

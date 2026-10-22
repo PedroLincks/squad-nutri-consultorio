@@ -3,9 +3,13 @@
  * Header obrigatório: x-painel-senha
  * Lê os agregados do Supabase com a service_role — a chave nunca vai para o navegador.
  */
+import { VERSOES } from '../src/shared/versoes'
+
 export const config = { runtime: 'edge' }
 
 const DATA = /^\d{4}-\d{2}-\d{2}$/
+/** Versões do funil que o painel pode consultar */
+const FUNIS = new Set<string>(VERSOES.map((v) => v.funnel))
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -32,6 +36,8 @@ export default async function handler(req: Request): Promise<Response> {
   const params = new URL(req.url).searchParams
   const from = params.get('from') ?? ''
   const to = params.get('to') ?? ''
+  const funnel = params.get('funnel') ?? 'quiz-vsl-ssn'
+  if (!FUNIS.has(funnel)) return json({ erro: 'Versão inválida.' }, 400)
   if (!DATA.test(from) || !DATA.test(to) || from > to) {
     return json({ erro: 'Período inválido.' }, 400)
   }
@@ -45,7 +51,7 @@ export default async function handler(req: Request): Promise<Response> {
         Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ p_from: `${from}T00:00:00-03:00`, p_to: `${diaSeguinte(to)}T00:00:00-03:00` }),
+      body: JSON.stringify({ p_from: `${from}T00:00:00-03:00`, p_to: `${diaSeguinte(to)}T00:00:00-03:00`, p_funnel: funnel }),
     })
     if (!res.ok) throw new Error(`Supabase ${res.status}: ${await res.text()}`)
     return json(await res.json())
