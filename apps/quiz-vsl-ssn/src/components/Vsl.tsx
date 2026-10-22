@@ -2,10 +2,7 @@ import { useEffect } from 'react'
 import { vsl } from '../data/content'
 
 /** Embed do vTurb, igual ao código fornecido pela plataforma. */
-const playerHtml = `
-<vturb-smartplayer id="vid-${vsl.vturb.playerId}" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
-  <div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0; z-index: 0; background-color: black;"></div>
-</vturb-smartplayer>`
+const playerHtml = `<vturb-smartplayer id="${vsl.vturb.elementId}" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
 
 export function Vsl() {
   useEffect(() => {

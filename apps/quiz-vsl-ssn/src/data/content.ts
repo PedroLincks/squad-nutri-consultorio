@@ -33,9 +33,13 @@ export const loading = {
 export const vsl = {
   /** A headline da VSL fica dentro do próprio player (configurada no painel do vTurb) */
   /** Player vTurb da VSL do SSN */
+  /**
+   * Teste A/B do vTurb (Lead 01 × Lead 02 da VSL do SSN) — o vTurb sorteia a lead e mede cada uma.
+   * Antes (só Lead 01): elemento vid-6acd13e92c9f70133a450b52, script players/6acd13e92c9f70133a450b52/v4/player.js
+   */
   vturb: {
-    playerId: '6acd13e92c9f70133a450b52',
+    elementId: 'ab-6ada108a4e1a50542a652b2c',
     scriptUrl:
-      'https://scripts.converteai.net/de9f0fff-7d49-41c3-9231-9f795c12e369/players/6acd13e92c9f70133a450b52/v4/player.js',
+      'https://scripts.converteai.net/de9f0fff-7d49-41c3-9231-9f795c12e369/ab-test/6ada108a4e1a50542a652b2c/player.js',
   },
 }
