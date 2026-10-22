@@ -11,6 +11,17 @@ export const capa = {
   botao: 'SIM! QUERO ASSISTIR AGORA',
 }
 
+/**
+ * Faixa acima da pergunta 1 (desde 22/10/2026 o funil abre direto nas perguntas, sem a capa).
+ * {n} vira o número de perguntas do quiz.
+ */
+export const abertura = {
+  /** Trechos entre ** ** aparecem em vermelho */
+  headline:
+    '**AULA GRATUITA:** Como captar pacientes no Instagram usando um funil simples de 3 etapas nos stories, mesmo que você tenha um perfil pequeno',
+  cta: 'Responda às {n} perguntas abaixo para assistir 👇',
+}
+
 export const loading = {
   titulo: 'Um momento… estamos preparando a sua aula',
   /** Duração total do carregamento (ms) */
