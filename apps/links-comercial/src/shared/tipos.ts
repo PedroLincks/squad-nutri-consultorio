@@ -11,12 +11,17 @@ export type Produto = {
 export type TipoOferta = 'avista' | 'downsell' | 'recorrencia'
 
 export type Vendedora = {
-  /** Vai na URL curta: comercial.../larissa/... */
+  /** Código que vai no link enviado ao cliente: sales.../01/anc3500 */
   slug: string
   /** Vai no utm_medium: "Larissa" */
   nome: string
+  /** Endereço da página dela: sales.../larissa (pede senha) */
+  pagina: string
   ativa: boolean
 }
+
+/** Como o admin vê a vendedora: nunca recebe o hash, só se a senha existe */
+export type VendedoraAdmin = Vendedora & { tem_senha: boolean }
 
 export type Oferta = {
   id: number
@@ -45,10 +50,14 @@ export type Oferta = {
 
 export type OfertaEntrada = Omit<Oferta, 'id'> & { id?: number }
 
-export type Catalogo = {
-  produtos: Produto[]
-  vendedoras: Vendedora[]
-  ofertas: Oferta[]
+/** Oferta como a vendedora recebe: sem o checkout nem as UTMs (isso só existe no servidor) */
+export type OfertaVendedora = Pick<Oferta, 'id' | 'slug' | 'produto' | 'sigla' | 'nome' | 'tipo' | 'ticket' | 'orientacao'>
+
+/** O que a página da vendedora recebe depois do login: só os dados dela */
+export type CatalogoVendedora = {
+  vendedora: { nome: string; codigo: string }
+  produtos: Pick<Produto, 'sigla' | 'nome'>[]
+  ofertas: OfertaVendedora[]
 }
 
 export type Clique = {
@@ -58,4 +67,9 @@ export type Clique = {
   is_bot: boolean
 }
 
-export type DadosAdmin = Catalogo & { cliques: Clique[] }
+export type DadosAdmin = {
+  produtos: Produto[]
+  vendedoras: VendedoraAdmin[]
+  ofertas: Oferta[]
+  cliques: Clique[]
+}

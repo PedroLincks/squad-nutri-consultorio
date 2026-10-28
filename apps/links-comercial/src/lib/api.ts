@@ -1,4 +1,4 @@
-import type { Catalogo, DadosAdmin } from '../shared/tipos'
+import type { CatalogoVendedora, DadosAdmin } from '../shared/tipos'
 
 export class ErroApi extends Error {
   constructor(message: string, public status: number) {
@@ -12,22 +12,34 @@ async function ler<T>(res: Response): Promise<T> {
   return body as T
 }
 
-export async function carregarCatalogo(): Promise<Catalogo> {
-  return ler<Catalogo>(await fetch('/api/catalogo'))
+function postJson(url: string, dados: unknown): Promise<Response> {
+  return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(dados) })
 }
 
-export async function adminListar(senha: string): Promise<DadosAdmin> {
-  return ler<DadosAdmin>(await fetch('/api/admin', { headers: { 'x-admin-senha': senha } }))
+/** A sessão fica num cookie HttpOnly: o JavaScript nunca guarda a senha nem o token */
+export async function entrar(tipo: 'admin' | 'vendedora', senha: string, pagina?: string): Promise<void> {
+  await ler(await postJson('/api/entrar', { tipo, senha, pagina }))
 }
 
-export async function adminExecutar(senha: string, acao: string, dados: unknown): Promise<DadosAdmin> {
-  return ler<DadosAdmin>(
-    await fetch('/api/admin', {
-      method: 'POST',
-      headers: { 'x-admin-senha': senha, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ acao, dados }),
-    }),
-  )
+export async function sair(tipo: 'admin' | 'vendedora'): Promise<void> {
+  await postJson('/api/sair', { tipo }).catch(() => {})
+}
+
+export async function carregarCatalogo(pagina: string): Promise<CatalogoVendedora> {
+  return ler<CatalogoVendedora>(await fetch(`/api/catalogo?pagina=${encodeURIComponent(pagina)}`))
+}
+
+export async function adminListar(): Promise<DadosAdmin> {
+  return ler<DadosAdmin>(await fetch('/api/admin'))
+}
+
+export async function adminExecutar(acao: string, dados: unknown): Promise<DadosAdmin> {
+  return ler<DadosAdmin>(await postJson('/api/admin', { acao, dados }))
+}
+
+/** Decifra a senha de uma vendedora (só o admin, sob clique) */
+export async function adminVerSenha(slug: string): Promise<string> {
+  return (await ler<{ senha: string }>(await postJson('/api/admin', { acao: 'vendedora.verSenha', dados: { slug } }))).senha
 }
 
 /** Domínio público dos links curtos */

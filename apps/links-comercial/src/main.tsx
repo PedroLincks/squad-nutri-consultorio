@@ -7,19 +7,26 @@ import './styles/index.css'
 // O admin só é baixado por quem abre /admin
 const Admin = lazy(() => import('./paginas/Admin'))
 
+// Versões antigas guardavam a senha do admin no navegador: apaga o que tiver sobrado
+try {
+  localStorage.removeItem('admin_senha')
+} catch {
+  /* sem storage */
+}
+
 const caminho = location.pathname.replace(/\/+$/, '')
 
 function Tela() {
   if (caminho === '/admin') {
-    document.title = 'Admin · Links de venda'
     return (
       <Suspense fallback={null}>
         <Admin />
       </Suspense>
     )
   }
-  const vendedora = caminho.match(/^\/([a-z0-9-]+)$/)
-  if (vendedora) return <Vendedora slug={vendedora[1]} />
+  // /larissa — página da vendedora (pede a senha dela)
+  const pagina = caminho.toLowerCase().match(/^\/([a-z0-9-]+)$/)
+  if (pagina) return <Vendedora pagina={pagina[1]} />
   return <Inicio />
 }
 

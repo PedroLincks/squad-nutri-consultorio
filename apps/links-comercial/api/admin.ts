@@ -1,13 +1,16 @@
 /**
- * /api/admin — cadastro de ofertas e vendedoras + cliques dos últimos 30 dias.
- * Header obrigatório: x-admin-senha (ADMIN_SENHA no servidor).
+ * /api/admin — cadastro de ofertas, produtos e vendedoras + cliques dos últimos 30 dias.
+ * Exige a sessão de admin (cookie criado por /api/entrar). POST só aceita JSON (barra envio por formulário de outro site).
+ * 'vendedora.verSenha' devolve só { senha } — a senha nunca vem na listagem.
  *
  * GET  → { vendedoras, ofertas, cliques }
  * POST → { acao: 'oferta.salvar' | 'oferta.excluir' | 'vendedora.salvar' | 'vendedora.excluir' | 'produto.salvar' | 'produto.excluir', dados }
  */
 import { ErroBanco, atualizar, excluir, gravar, inserir, respostaJson, selecionar } from '../src/server/db'
-import { SLUG_RE } from '../src/shared/links'
-import type { Clique, Oferta, OfertaEntrada, Produto, TipoOferta, Vendedora } from '../src/shared/tipos'
+import { cifrar, decifrar } from '../src/server/cifra'
+import { gerarHashSenha, sessaoAdmin } from '../src/server/sessao'
+import { PAGINAS_RESERVADAS, SLUG_RE } from '../src/shared/links'
+import type { Clique, Oferta, OfertaEntrada, Produto, TipoOferta, Vendedora, VendedoraAdmin } from '../src/shared/tipos'
 
 export const config = { runtime: 'edge' }
 
@@ -66,8 +69,21 @@ function validarProduto(d: Record<string, unknown>): Produto {
   return { sigla, nome: texto(d.nome, 'nome do produto', 80), ordem: Number.isFinite(Number(d.ordem)) ? Number(d.ordem) : 0 }
 }
 
-function validarVendedora(d: Record<string, unknown>): Vendedora {
-  return { slug: slug(d.slug, 'slug'), nome: texto(d.nome, 'nome', 60), ativa: d.ativa !== false }
+async function validarVendedora(d: Record<string, unknown>): Promise<Vendedora & { senha_hash?: string; senha_cifrada?: string }> {
+  const codigo = slug(d.slug, 'código')
+  const pagina = slug(d.pagina, 'página')
+  if (PAGINAS_RESERVADAS.has(pagina)) throw new ErroValidacao(`"${pagina}" é um endereço reservado. Escolha outro.`)
+  const outra = await selecionar<{ slug: string }>('vendedoras', { select: 'slug', pagina: `eq.${pagina}`, slug: `neq.${codigo}`, limit: '1' })
+  if (outra.length) throw new ErroValidacao(`Já existe uma vendedora com a página "${pagina}".`)
+
+  const v: Vendedora & { senha_hash?: string; senha_cifrada?: string } = { slug: codigo, nome: texto(d.nome, 'nome', 60), pagina, ativa: d.ativa !== false }
+  if (typeof d.senha === 'string' && d.senha !== '') {
+    if (d.senha.length < 8) throw new ErroValidacao('A senha precisa ter pelo menos 8 caracteres.')
+    if (d.senha.length > 200) throw new ErroValidacao('Senha longa demais.')
+    v.senha_hash = await gerarHashSenha(d.senha)
+    v.senha_cifrada = await cifrar(d.senha)
+  }
+  return v
 }
 
 function diasAtras(dias: number): string {
@@ -79,7 +95,7 @@ function diasAtras(dias: number): string {
 async function listar() {
   const [produtos, vendedoras, ofertas, cliques] = await Promise.all([
     selecionar<Produto>('produtos', { order: 'ordem.asc,nome.asc' }),
-    selecionar<Vendedora>('vendedoras', { order: 'slug.asc' }),
+    selecionar<Vendedora & { senha_hash: string | null }>('vendedoras', { select: 'slug,nome,pagina,ativa,senha_hash', order: 'slug.asc' }),
     selecionar<Oferta>('ofertas', { order: 'ticket.desc.nullslast,nome.asc' }),
     selecionar<Clique>('cliques', {
       select: 'created_at,vendedora,oferta,is_bot',
@@ -88,7 +104,9 @@ async function listar() {
       limit: '5000',
     }),
   ])
-  return { produtos, vendedoras, ofertas, cliques }
+  // O hash da senha nunca sai do servidor: o admin só fica sabendo se existe senha
+  const vendedorasAdmin: VendedoraAdmin[] = vendedoras.map(({ senha_hash, ...v }) => ({ ...v, tem_senha: Boolean(senha_hash) }))
+  return { produtos, vendedoras: vendedorasAdmin, ofertas, cliques }
 }
 
 async function executar(acao: unknown, dados: unknown) {
@@ -117,7 +135,8 @@ async function executar(acao: unknown, dados: unknown) {
       return null
     }
     case 'vendedora.salvar':
-      return gravar<Vendedora>('vendedoras', validarVendedora(d), 'slug')
+      await gravar('vendedoras', await validarVendedora(d), 'slug')
+      return null
     case 'vendedora.excluir':
       await excluir('vendedoras', { slug: `eq.${slug(d.slug, 'slug')}` })
       return null
@@ -126,19 +145,30 @@ async function executar(acao: unknown, dados: unknown) {
   }
 }
 
-export default async function handler(req: Request): Promise<Response> {
-  const { ADMIN_SENHA } = process.env
-  if (!ADMIN_SENHA) return respostaJson({ erro: 'Admin sem configuração no servidor (ADMIN_SENHA).' }, 500)
-  if (req.headers.get('x-admin-senha') !== ADMIN_SENHA) return respostaJson({ erro: 'Senha incorreta.' }, 401)
+/** Decifra a senha de uma vendedora, sob pedido explícito do admin */
+async function verSenha(d: Record<string, unknown>): Promise<Response> {
+  const [v] = await selecionar<{ senha_hash: string | null; senha_cifrada: string | null }>('vendedoras', {
+    select: 'senha_hash,senha_cifrada',
+    slug: `eq.${slug(d.slug, 'código')}`,
+    limit: '1',
+  })
+  if (!v?.senha_hash) throw new ErroValidacao('Essa vendedora ainda não tem senha.')
+  if (!v.senha_cifrada) throw new ErroValidacao('Essa senha foi definida antes da opção "Ver senha". Defina de novo para poder ver.')
+  return respostaJson({ senha: await decifrar(v.senha_cifrada) })
+}
 
+export default async function handler(req: Request): Promise<Response> {
   try {
+    if (!(await sessaoAdmin(req))) return respostaJson({ erro: 'Faça login.' }, 401)
     if (req.method === 'GET') return respostaJson(await listar())
     if (req.method !== 'POST') return respostaJson({ erro: 'Método não suportado.' }, 405)
+    if (!req.headers.get('content-type')?.includes('application/json')) return respostaJson({ erro: 'Requisição inválida.' }, 415)
 
     const body = (await req.json().catch(() => null)) as { acao?: unknown; dados?: unknown } | null
     if (!body) return respostaJson({ erro: 'Corpo inválido.' }, 400)
-    const resultado = await executar(body.acao, body.dados)
-    return respostaJson({ ok: true, resultado, ...(await listar()) })
+    if (body.acao === 'vendedora.verSenha') return await verSenha((body.dados ?? {}) as Record<string, unknown>)
+    await executar(body.acao, body.dados)
+    return respostaJson({ ok: true, ...(await listar()) })
   } catch (error) {
     if (error instanceof ErroValidacao) return respostaJson({ erro: error.message }, 400)
     if (error instanceof ErroBanco && error.status === 409) {

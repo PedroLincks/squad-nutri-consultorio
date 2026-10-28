@@ -1,14 +1,42 @@
 {
   "produtos": [
-    { "sigla": "ANC", "nome": "Aceleração Nutri de Consultório", "ordem": 0 },
-    { "sigla": "NS", "nome": "Nutri Sales", "ordem": 1 },
-    { "sigla": "SSN", "nome": "Social Selling Nutris", "ordem": 2 }
+    {
+      "sigla": "ANC",
+      "nome": "Aceleração Nutri de Consultório",
+      "ordem": 0
+    },
+    {
+      "sigla": "NS",
+      "nome": "Nutri Sales",
+      "ordem": 1
+    },
+    {
+      "sigla": "SSN",
+      "nome": "Social Selling Nutris",
+      "ordem": 2
+    }
   ],
   "vendedoras": [
-    { "slug": "00", "nome": "Pedro" },
-    { "slug": "01", "nome": "Larissa" },
-    { "slug": "02", "nome": "Andressa" },
-    { "slug": "03", "nome": "Gabriela" }
+    {
+      "slug": "00",
+      "nome": "Pedro",
+      "pagina": "pedro"
+    },
+    {
+      "slug": "01",
+      "nome": "Larissa",
+      "pagina": "larissa"
+    },
+    {
+      "slug": "02",
+      "nome": "Andressa",
+      "pagina": "andressa"
+    },
+    {
+      "slug": "03",
+      "nome": "Gabriela",
+      "pagina": "gabriela"
+    }
   ],
   "ofertas": []
 }

@@ -2,8 +2,11 @@
 -- Rodar uma vez no SQL Editor do projeto novo. Depois, rodar supabase/seed.sql.
 
 create table public.vendedoras (
-  slug        text primary key,                 -- vai na URL: comercial.../larissa/...
+  slug        text primary key,                 -- código no link do cliente: sales.../01/anc3500
   nome        text not null,                    -- vai no utm_medium: "Larissa"
+  pagina      text unique,                      -- página de acesso: sales.../larissa
+  senha_hash  text,                             -- PBKDF2; nunca sai do servidor
+  senha_cifrada text,                           -- AES-GCM (SENHAS_CHAVE); só o "Ver senha" do admin decifra
   ativa       boolean not null default true,
   created_at  timestamptz not null default now()
 );
@@ -48,11 +51,21 @@ create table public.cliques (
 create index cliques_created_at_idx on public.cliques (created_at);
 create index cliques_vendedora_idx  on public.cliques (vendedora, oferta);
 
+create table public.tentativas_login (
+  id          bigint generated always as identity primary key,
+  created_at  timestamptz not null default now(),
+  ip          text not null,
+  alvo        text not null                     -- 'admin' ou 'v:{pagina}'
+);
+create index tentativas_login_ip_idx   on public.tentativas_login (ip, created_at);
+create index tentativas_login_alvo_idx on public.tentativas_login (alvo, created_at);
+
 -- Só a service_role (usada nas funções da Vercel) acessa as tabelas. Nenhuma policy para anon.
 alter table public.produtos   enable row level security;
 alter table public.vendedoras enable row level security;
 alter table public.ofertas    enable row level security;
 alter table public.cliques    enable row level security;
+alter table public.tentativas_login enable row level security;
 -- Gerado por scripts/gerar-seed-sql.mjs a partir de supabase/seed.json. Rodar depois do schema.sql.
 
 insert into public.produtos (sigla, nome, ordem) values
@@ -61,11 +74,12 @@ insert into public.produtos (sigla, nome, ordem) values
   ('SSN', 'Social Selling Nutris', 2)
 on conflict (sigla) do nothing;
 
-insert into public.vendedoras (slug, nome, ativa) values
-  ('00', 'Pedro', true),
-  ('01', 'Larissa', true),
-  ('02', 'Andressa', true),
-  ('03', 'Gabriela', true)
-on conflict (slug) do update set nome = excluded.nome, ativa = excluded.ativa;
+-- Vendedoras entram sem senha: defina a de cada uma na aba Vendedoras do /admin.
+insert into public.vendedoras (slug, nome, pagina, ativa) values
+  ('00', 'Pedro', 'pedro', true),
+  ('01', 'Larissa', 'larissa', true),
+  ('02', 'Andressa', 'andressa', true),
+  ('03', 'Gabriela', 'gabriela', true)
+on conflict (slug) do update set nome = excluded.nome, pagina = excluded.pagina, ativa = excluded.ativa;
 
 -- Sem ofertas no seed: elas são cadastradas na tela /admin.

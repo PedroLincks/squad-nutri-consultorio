@@ -1,15 +1,18 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Aviso, Cabecalho, Pagina } from '../components/Cabecalho'
+import { Login } from '../components/Login'
 import { useToast } from '../components/Toast'
-import { DOMINIO, carregarCatalogo } from '../lib/api'
+import { DOMINIO, ErroApi, carregarCatalogo, entrar, sair } from '../lib/api'
 import { copiar } from '../lib/copiar'
 import { formatarReais, linkCurto, linkParaCopiar } from '../shared/links'
 import { TIPOS_OFERTA, ordemProduto, rotuloTipo } from '../shared/produtos'
-import type { Catalogo, Oferta, Produto, TipoOferta } from '../shared/tipos'
+import type { CatalogoVendedora, OfertaVendedora, Produto, TipoOferta } from '../shared/tipos'
+
+type ProdutoBase = Pick<Produto, 'sigla' | 'nome'>
 
 /** Agrupa as ofertas por produto, na ordem cadastrada dos produtos */
-function agrupar(ofertas: Oferta[], produtos: Produto[]): { produto: string; ofertas: Oferta[] }[] {
-  const grupos: { produto: string; ofertas: Oferta[] }[] = []
+function agrupar(ofertas: OfertaVendedora[], produtos: ProdutoBase[]): { produto: string; ofertas: OfertaVendedora[] }[] {
+  const grupos: { produto: string; ofertas: OfertaVendedora[] }[] = []
   for (const o of ofertas) {
     const g = grupos.find((x) => x.produto === o.produto)
     if (g) g.ofertas.push(o)
@@ -22,23 +25,37 @@ function normalizar(t: string) {
   return t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
 }
 
-/** "/{vendedora}" — a tela que a vendedora usa no ato da venda */
-export default function Vendedora({ slug }: { slug: string }) {
-  const [catalogo, setCatalogo] = useState<Catalogo | null>(null)
+/**
+ * "/{pagina}" (ex.: /larissa) — a tela que a vendedora usa no ato da venda.
+ * Sem sessão válida mostra só o campo de senha, igual para qualquer endereço (não revela quem existe).
+ */
+export default function Vendedora({ pagina }: { pagina: string }) {
+  const [catalogo, setCatalogo] = useState<CatalogoVendedora | null>(null)
+  const [pedirSenha, setPedirSenha] = useState(false)
   const [erro, setErro] = useState('')
   const [busca, setBusca] = useState('')
   const [filtroProduto, setFiltroProduto] = useState('')
   const [filtroTipo, setFiltroTipo] = useState<'' | TipoOferta>('')
   const { mostrar, elemento: toast } = useToast()
 
-  useEffect(() => {
-    carregarCatalogo().then(setCatalogo).catch((e: Error) => setErro(e.message))
-  }, [])
+  const carregar = useCallback(async () => {
+    setErro('')
+    try {
+      setCatalogo(await carregarCatalogo(pagina))
+      setPedirSenha(false)
+    } catch (e) {
+      if (e instanceof ErroApi && e.status === 401) setPedirSenha(true)
+      else setErro((e as Error).message)
+    }
+  }, [pagina])
 
-  const vendedora = catalogo?.vendedoras.find((v) => v.slug === slug)
   useEffect(() => {
-    if (vendedora) document.title = `Links · ${vendedora.nome}`
-  }, [vendedora])
+    carregar()
+  }, [carregar])
+
+  useEffect(() => {
+    document.title = catalogo ? `Links · ${catalogo.vendedora.nome}` : 'Nutri de Consultório'
+  }, [catalogo])
 
   const grupos = useMemo(() => {
     if (!catalogo) return []
@@ -62,11 +79,19 @@ export default function Vendedora({ slug }: { slug: string }) {
   }, [catalogo])
   const filtrando = Boolean(busca || filtroProduto || filtroTipo)
 
-  const copiarLink = async (o: Oferta) => {
-    const ok = await copiar(linkParaCopiar(DOMINIO, slug, o.slug))
-    mostrar(ok ? 'Link copiado! Pode colar no WhatsApp.' : 'Não consegui copiar. Segure o link para copiar.', ok ? 'ok' : 'erro')
+  if (pedirSenha) {
+    return (
+      <Pagina>
+        <Cabecalho titulo="Acesso restrito" subtitulo="Digite sua senha para ver seus links de venda." />
+        <Login
+          onEntrar={async (senha) => {
+            await entrar('vendedora', senha, pagina)
+            await carregar()
+          }}
+        />
+      </Pagina>
+    )
   }
-
   if (erro) {
     return (
       <Pagina>
@@ -76,26 +101,30 @@ export default function Vendedora({ slug }: { slug: string }) {
     )
   }
   if (!catalogo) return <Pagina>{null}</Pagina>
-  if (!vendedora) {
-    return (
-      <Pagina>
-        <Cabecalho titulo="Vendedora não encontrada" subtitulo={`Não existe "${slug}" no cadastro.`} />
-        <a href="/" className="btn-secundario">
-          Ver vendedoras
-        </a>
-      </Pagina>
-    )
+
+  const codigo = catalogo.vendedora.codigo
+  const copiarLink = async (o: OfertaVendedora) => {
+    const ok = await copiar(linkParaCopiar(DOMINIO, codigo, o.slug))
+    mostrar(ok ? 'Link copiado! Pode colar no WhatsApp.' : 'Não consegui copiar. Segure o link para copiar.', ok ? 'ok' : 'erro')
   }
 
   return (
     <Pagina>
       <Cabecalho
-        titulo={`Links · ${vendedora.nome}`}
+        titulo={`Links · ${catalogo.vendedora.nome}`}
         subtitulo="Toque em “Copiar link” e cole no WhatsApp. O link já vai com o seu nome e as UTMs."
         acao={
-          <a href="/" className="text-xs text-gray-400 hover:text-gray-600">
-            trocar
-          </a>
+          <button
+            type="button"
+            className="text-xs text-gray-400 hover:text-gray-600"
+            onClick={async () => {
+              await sair('vendedora')
+              setCatalogo(null)
+              setPedirSenha(true)
+            }}
+          >
+            sair
+          </button>
         }
       />
 
@@ -152,7 +181,7 @@ export default function Vendedora({ slug }: { slug: string }) {
             <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-gray-500">{g.produto}</h2>
             <div className="space-y-3">
               {g.ofertas.map((o) => {
-                const link = linkCurto(DOMINIO, slug, o.slug)
+                const link = linkCurto(DOMINIO, codigo, o.slug)
                 return (
                   <article key={o.id} className="cartao">
                     <div className="flex items-start justify-between gap-3">
@@ -169,7 +198,7 @@ export default function Vendedora({ slug }: { slug: string }) {
                     </div>
                     <div className="mt-3 break-all rounded-lg bg-gray-50 px-3 py-2 font-mono text-xs text-gray-400" title={link}>
                       {DOMINIO.replace(/^https?:\/\//, '')}
-                      <span className="font-bold text-gray-700">/{slug}/{o.slug}</span>
+                      <span className="font-bold text-gray-700">/{codigo}/{o.slug}</span>
                     </div>
                     <div className="mt-3 flex gap-2">
                       <button type="button" className="btn-primario flex-1" onClick={() => copiarLink(o)}>

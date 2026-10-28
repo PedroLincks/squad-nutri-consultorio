@@ -26,8 +26,13 @@ export default async function handler(req: Request): Promise<Response> {
 
   try {
     const [vendedoras, ofertas] = await Promise.all([
-      selecionar<Vendedora>('vendedoras', { slug: `eq.${v}`, ativa: 'eq.true', limit: '1' }),
-      selecionar<Oferta>('ofertas', { slug: `eq.${o}`, ativa: 'eq.true', limit: '1' }),
+      selecionar<Pick<Vendedora, 'slug' | 'nome'>>('vendedoras', { select: 'slug,nome', slug: `eq.${v}`, ativa: 'eq.true', limit: '1' }),
+      selecionar<Pick<Oferta, 'slug' | 'destino' | 'utm_campaign' | 'utm_content'>>('ofertas', {
+        select: 'slug,destino,utm_campaign,utm_content',
+        slug: `eq.${o}`,
+        ativa: 'eq.true',
+        limit: '1',
+      }),
     ])
     const vendedora = vendedoras[0]
     const oferta = ofertas[0]

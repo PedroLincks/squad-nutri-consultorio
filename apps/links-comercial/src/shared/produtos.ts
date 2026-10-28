@@ -12,7 +12,7 @@ export function rotuloTipo(tipo: TipoOferta | null): string {
 }
 
 /** Posição do produto na lista cadastrada (produtos desconhecidos vão para o fim) */
-export function ordemProduto(produtos: Produto[], nomeOuSigla: string): number {
+export function ordemProduto(produtos: Pick<Produto, 'sigla' | 'nome'>[], nomeOuSigla: string): number {
   const i = produtos.findIndex((p) => p.nome === nomeOuSigla || p.sigla === nomeOuSigla)
   return i === -1 ? produtos.length : i
 }

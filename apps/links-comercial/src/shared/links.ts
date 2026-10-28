@@ -35,6 +35,9 @@ export function slugOfertaSugerido(sigla: string, nome: string): string {
   return `${slugify(sigla)}${base}`
 }
 
+/** Endereços que não podem ser página de vendedora */
+export const PAGINAS_RESERVADAS = new Set(['admin', 'api', 'assets', 'robots', 'favicon'])
+
 /** Próximo código de vendedora: dois dígitos, sequencial ("00", "01", "02"…) */
 export function proximoCodigoVendedora(codigos: string[]): string {
   const numeros = codigos.filter((c) => /^\d+$/.test(c)).map(Number)

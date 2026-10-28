@@ -19,6 +19,8 @@ function apiDev(): Plugin {
       if (!process.env.SUPABASE_URL || process.env.BANCO_SIMULADO) bancoSimulado()
       // No banco simulado a senha do admin é sempre "dev" (nunca a de produção)
       if (!process.env.ADMIN_SENHA || process.env.BANCO_SIMULADO) process.env.ADMIN_SENHA = 'dev'
+      if (!process.env.SESSAO_SEGREDO || process.env.BANCO_SIMULADO) process.env.SESSAO_SEGREDO = 'segredo-de-desenvolvimento-com-mais-de-32-caracteres'
+      if (!process.env.SENHAS_CHAVE || process.env.BANCO_SIMULADO) process.env.SENHAS_CHAVE = 'chave-de-desenvolvimento-com-mais-de-32-caracteres'
 
       const ROTA_CURTA = /^\/([a-z0-9-]+)\/([a-z0-9-]+)$/
       const RESERVADOS = new Set(['src', 'api', 'node_modules', '@vite', '@react-refresh', '@fs', '@id', 'public', 'assets'])
@@ -90,7 +92,7 @@ function bancoSimulado() {
       const agora = new Date().toISOString()
       salvar({
         produtos: s.produtos.map((p) => ({ ordem: 0, created_at: agora, ...p })),
-        vendedoras: s.vendedoras.map((v) => ({ ativa: true, created_at: agora, ...v })),
+        vendedoras: s.vendedoras.map((v) => ({ ativa: true, senha_hash: null, created_at: agora, ...v })),
         ofertas: s.ofertas.map((o, i) => ({ id: i + 1, ativa: true, ordem: 0, orientacao: null, created_at: agora, ...o })),
         cliques: [],
       })
@@ -104,7 +106,9 @@ function bancoSimulado() {
       const [op, ...resto] = valor.split('.')
       const v = resto.join('.')
       if (op === 'eq') linhas = linhas.filter((l) => String(l[coluna]) === v)
+      else if (op === 'neq') linhas = linhas.filter((l) => String(l[coluna]) !== v)
       else if (op === 'gte') linhas = linhas.filter((l) => String(l[coluna]) >= v)
+      else if (op === 'lt') linhas = linhas.filter((l) => String(l[coluna]) < v)
       else if (op === 'in') {
         const valores = v.replace(/^\(|\)$/g, '').split(',').map((x) => x.replace(/^"|"$/g, ''))
         linhas = linhas.filter((l) => valores.includes(String(l[coluna])))
@@ -146,6 +150,11 @@ function bancoSimulado() {
       let r = ordenar(filtrar(linhas, url.searchParams), url.searchParams.get('order'))
       const limit = url.searchParams.get('limit')
       if (limit) r = r.slice(0, Number(limit))
+      const select = url.searchParams.get('select')
+      if (select && select !== '*') {
+        const cols = select.split(',')
+        r = r.map((l) => Object.fromEntries(cols.map((c) => [c, l[c] ?? null])))
+      }
       return json(r)
     }
     if (metodo === 'POST') {

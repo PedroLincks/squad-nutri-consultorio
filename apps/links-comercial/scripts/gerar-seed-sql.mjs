@@ -16,8 +16,9 @@ const linhas = ['-- Gerado por scripts/gerar-seed-sql.mjs a partir de supabase/s
 linhas.push('insert into public.produtos (sigla, nome, ordem) values')
 linhas.push(seed.produtos.map((p) => `  (${sql(p.sigla)}, ${sql(p.nome)}, ${sql(p.ordem ?? 0)})`).join(',\n') + '\non conflict (sigla) do nothing;')
 linhas.push('')
-linhas.push('insert into public.vendedoras (slug, nome, ativa) values')
-linhas.push(seed.vendedoras.map((v) => `  (${sql(v.slug)}, ${sql(v.nome)}, ${sql(v.ativa ?? true)})`).join(',\n') + '\non conflict (slug) do update set nome = excluded.nome, ativa = excluded.ativa;')
+linhas.push('-- Vendedoras entram sem senha: defina a de cada uma na aba Vendedoras do /admin.')
+linhas.push('insert into public.vendedoras (slug, nome, pagina, ativa) values')
+linhas.push(seed.vendedoras.map((v) => `  (${sql(v.slug)}, ${sql(v.nome)}, ${sql(v.pagina)}, ${sql(v.ativa ?? true)})`).join(',\n') + '\non conflict (slug) do update set nome = excluded.nome, pagina = excluded.pagina, ativa = excluded.ativa;')
 linhas.push('')
 if (seed.ofertas.length === 0) linhas.push('-- Sem ofertas no seed: elas são cadastradas na tela /admin.')
 else {

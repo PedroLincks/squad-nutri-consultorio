@@ -1,23 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Aviso, Cabecalho, Pagina } from '../components/Cabecalho'
 import { useToast } from '../components/Toast'
-import { DOMINIO, ErroApi, adminExecutar, adminListar } from '../lib/api'
-import { formatarReais, linkCurto, montarDestino, proximoCodigoVendedora, slugOfertaSugerido, utmContentPadrao } from '../shared/links'
+import { CampoSenha } from '../components/CampoSenha'
+import { Login } from '../components/Login'
+import { DOMINIO, ErroApi, adminExecutar, adminListar, adminVerSenha, entrar, sair } from '../lib/api'
+import { copiar } from '../lib/copiar'
+import { formatarReais, linkCurto, montarDestino, proximoCodigoVendedora, slugOfertaSugerido, slugify, utmContentPadrao } from '../shared/links'
 import { TIPOS_OFERTA, ordemProduto, rotuloTipo } from '../shared/produtos'
-import type { Clique, DadosAdmin, Oferta, OfertaEntrada, Produto, TipoOferta, Vendedora } from '../shared/tipos'
+import type { Clique, DadosAdmin, Oferta, OfertaEntrada, Produto, TipoOferta, Vendedora, VendedoraAdmin } from '../shared/tipos'
 
-const CHAVE_SENHA = 'admin_senha'
 type Aba = 'ofertas' | 'vendedoras' | 'cliques'
 type Mostrar = (t: string, tipo?: 'ok' | 'erro') => void
-type PropsAba = { dados: DadosAdmin; senha: string; atualizar: (d: DadosAdmin) => void; mostrar: Mostrar }
-
-function lerSenha() {
-  try {
-    return localStorage.getItem(CHAVE_SENHA) ?? ''
-  } catch {
-    return ''
-  }
-}
+type PropsAba = { dados: DadosAdmin; atualizar: (d: DadosAdmin) => void; mostrar: Mostrar }
 
 const OFERTA_VAZIA: OfertaEntrada = {
   slug: '',
@@ -35,23 +29,25 @@ const OFERTA_VAZIA: OfertaEntrada = {
 }
 
 /** Chama o admin, atualiza a tela e avisa; devolve true se deu certo */
-function useExecutar(senha: string, atualizar: (d: DadosAdmin) => void, mostrar: Mostrar) {
+function useExecutar(atualizar: (d: DadosAdmin) => void, mostrar: Mostrar) {
   const [salvando, setSalvando] = useState(false)
   const executar = useCallback(
     async (acao: string, payload: unknown, ok: string) => {
       setSalvando(true)
       try {
-        atualizar(await adminExecutar(senha, acao, payload))
+        atualizar(await adminExecutar(acao, payload))
         mostrar(ok)
         return true
       } catch (e) {
+        // Sessão expirou no meio do uso: recarrega e cai no login
+        if (e instanceof ErroApi && e.status === 401) window.location.reload()
         mostrar((e as Error).message, 'erro')
         return false
       } finally {
         setSalvando(false)
       }
     },
-    [senha, atualizar, mostrar],
+    [atualizar, mostrar],
   )
   return { executar, salvando }
 }
@@ -156,7 +152,7 @@ function FormOferta({
 
       <div>
         <label className="rotulo" htmlFor="destino">Link do checkout (sem UTMs)</label>
-        <input id="destino" type="url" className="campo font-mono text-xs" value={f.destino} onChange={(e) => mudar('destino', e.target.value)} placeholder="https://go.nutrideconsultorio.com.br/campaign/..." required />
+        <input id="destino" type="url" className="campo font-mono text-xs" value={f.destino} onChange={(e) => mudar('destino', e.target.value)} placeholder="https://…" required />
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
@@ -209,8 +205,8 @@ function FormOferta({
 
 /* ---------------- Produtos ---------------- */
 
-function PainelProdutos({ dados, senha, atualizar, mostrar, onFechar }: PropsAba & { onFechar: () => void }) {
-  const { executar, salvando } = useExecutar(senha, atualizar, mostrar)
+function PainelProdutos({ dados, atualizar, mostrar, onFechar }: PropsAba & { onFechar: () => void }) {
+  const { executar, salvando } = useExecutar(atualizar, mostrar)
   const [nome, setNome] = useState('')
   const [sigla, setSigla] = useState('')
   const [siglaTocada, setSiglaTocada] = useState(false)
@@ -295,12 +291,12 @@ function PainelProdutos({ dados, senha, atualizar, mostrar, onFechar }: PropsAba
 
 /* ---------------- Abas ---------------- */
 
-function AbaOfertas({ dados, senha, atualizar, mostrar }: PropsAba) {
+function AbaOfertas({ dados, atualizar, mostrar }: PropsAba) {
   const [editando, setEditando] = useState<OfertaEntrada | null>(null)
   const [painelProdutos, setPainelProdutos] = useState(false)
   const [filtroProduto, setFiltroProduto] = useState('')
   const [filtroTipo, setFiltroTipo] = useState<'' | TipoOferta | 'sem'>('')
-  const { executar, salvando } = useExecutar(senha, atualizar, mostrar)
+  const { executar, salvando } = useExecutar(atualizar, mostrar)
 
   const grupos = useMemo(() => {
     const lista = dados.ofertas.filter(
@@ -373,7 +369,7 @@ function AbaOfertas({ dados, senha, atualizar, mostrar }: PropsAba) {
         </div>
       </div>
 
-      {painelProdutos && <PainelProdutos dados={dados} senha={senha} atualizar={atualizar} mostrar={mostrar} onFechar={() => setPainelProdutos(false)} />}
+      {painelProdutos && <PainelProdutos dados={dados} atualizar={atualizar} mostrar={mostrar} onFechar={() => setPainelProdutos(false)} />}
 
       {semTipo > 0 && !filtroTipo && (
         <Aviso>
@@ -414,76 +410,207 @@ function AbaOfertas({ dados, senha, atualizar, mostrar }: PropsAba) {
   )
 }
 
-function AbaVendedoras({ dados, senha, atualizar, mostrar }: PropsAba) {
-  const [nome, setNome] = useState('')
-  const [slug, setSlug] = useState('')
-  const [slugTocado, setSlugTocado] = useState(false)
-  const { executar, salvando } = useExecutar(senha, atualizar, mostrar)
+/** Linha de uma vendedora: dados, link de acesso, troca de senha, ativar e excluir */
+function LinhaVendedora({ v, salvando, executar, mostrar }: { v: VendedoraAdmin; salvando: boolean; executar: (acao: string, payload: unknown, ok: string) => Promise<boolean>; mostrar: Mostrar }) {
+  const [trocandoSenha, setTrocandoSenha] = useState(false)
+  const [senha, setSenha] = useState('')
+  const [senhaAtual, setSenhaAtual] = useState<string | null>(null)
+  const [buscando, setBuscando] = useState(false)
+  const acesso = linkCurto(DOMINIO, v.pagina, '').replace(/\/$/, '')
 
-  // Código da vendedora é sequencial (00, 01, 02…), não o nome: o link fica curto e neutro
+  // A senha decifrada some sozinha depois de 30 s e quando ela muda
   useEffect(() => {
-    if (!slugTocado) setSlug(proximoCodigoVendedora(dados.vendedoras.map((v) => v.slug)))
-  }, [dados.vendedoras, slugTocado])
+    if (senhaAtual === null) return
+    const t = window.setTimeout(() => setSenhaAtual(null), 30_000)
+    return () => window.clearTimeout(t)
+  }, [senhaAtual])
+
+  const verSenha = async () => {
+    if (senhaAtual !== null) return setSenhaAtual(null)
+    setBuscando(true)
+    try {
+      setSenhaAtual(await adminVerSenha(v.slug))
+    } catch (e) {
+      if (e instanceof ErroApi && e.status === 401) window.location.reload()
+      mostrar((e as Error).message, 'erro')
+    } finally {
+      setBuscando(false)
+    }
+  }
+
+  return (
+    <div className="space-y-3 px-4 py-3">
+      <div className="flex flex-wrap items-center gap-3">
+        <div className="min-w-0 flex-1">
+          <div className={`font-bold ${v.ativa ? 'text-gray-900' : 'text-gray-400'}`}>
+            <span className="mr-2 rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-500">{v.slug}</span>
+            {v.nome}
+            <span className={`ml-2 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${v.tem_senha ? 'bg-green-50 text-brand-green' : 'bg-red-50 text-brand-red'}`}>
+              {v.tem_senha ? 'com senha' : 'sem senha'}
+            </span>
+          </div>
+          <button
+            type="button"
+            className="mt-0.5 font-mono text-xs text-gray-400 hover:text-gray-700"
+            title="Copiar o endereço de acesso"
+            onClick={async () => mostrar((await copiar(acesso)) ? 'Endereço de acesso copiado.' : 'Não consegui copiar.', 'ok')}
+          >
+            {acesso.replace(/^https?:\/\//, '')}
+          </button>
+        </div>
+        {v.tem_senha && (
+          <button type="button" className="btn-secundario !px-3 !py-1.5 !text-xs" disabled={salvando || buscando} onClick={verSenha}>
+            {senhaAtual !== null ? 'Ocultar senha' : buscando ? 'Buscando…' : 'Ver senha'}
+          </button>
+        )}
+        <button type="button" className="btn-secundario !px-3 !py-1.5 !text-xs" disabled={salvando} onClick={() => setTrocandoSenha((x) => !x)}>
+          {v.tem_senha ? 'Trocar senha' : 'Definir senha'}
+        </button>
+        <label className="flex items-center gap-2 text-xs font-semibold text-gray-600">
+          <input
+            type="checkbox"
+            className="h-4 w-4 accent-brand-green"
+            checked={v.ativa}
+            disabled={salvando}
+            onChange={(e) =>
+              executar(
+                'vendedora.salvar',
+                { slug: v.slug, nome: v.nome, pagina: v.pagina, ativa: e.target.checked },
+                e.target.checked ? 'Vendedora ativada.' : 'Vendedora desativada: os links e a página dela param de funcionar.',
+              )
+            }
+          />
+          ativa
+        </label>
+        <button
+          type="button"
+          className="btn-perigo !px-3 !py-1.5 !text-xs"
+          disabled={salvando}
+          onClick={() => {
+            if (confirm(`Excluir ${v.nome}? Todos os links dela vão parar de funcionar. Se for temporário, prefira desativar.`)) {
+              executar('vendedora.excluir', { slug: v.slug }, 'Vendedora excluída.')
+            }
+          }}
+        >
+          Excluir
+        </button>
+      </div>
+
+      {senhaAtual !== null && (
+        <div className="flex flex-wrap items-center gap-2 rounded-xl bg-gray-50 p-3">
+          <span className="rotulo !mb-0">Senha de {v.nome}</span>
+          <span className="select-all rounded-lg bg-white px-3 py-1.5 font-mono text-sm text-gray-900 ring-1 ring-gray-200">{senhaAtual}</span>
+          <button
+            type="button"
+            className="btn-secundario !px-3 !py-1.5 !text-xs"
+            onClick={async () => mostrar((await copiar(senhaAtual)) ? 'Senha copiada.' : 'Não consegui copiar.', 'ok')}
+          >
+            Copiar
+          </button>
+          <span className="text-xs text-gray-400">some em 30 segundos</span>
+        </div>
+      )}
+
+      {trocandoSenha && (
+        <form
+          className="flex flex-wrap items-end gap-2 rounded-xl bg-gray-50 p-3"
+          onSubmit={async (e) => {
+            e.preventDefault()
+            const ok = await executar(
+              'vendedora.salvar',
+              { slug: v.slug, nome: v.nome, pagina: v.pagina, ativa: v.ativa, senha },
+              v.tem_senha ? 'Senha trocada. Ela vai precisar entrar de novo.' : 'Senha definida.',
+            )
+            if (ok) {
+              setSenha('')
+              setSenhaAtual(null)
+              setTrocandoSenha(false)
+            }
+          }}
+        >
+          <div className="min-w-[200px] flex-1">
+            <label className="rotulo" htmlFor={`senha-${v.slug}`}>Nova senha de {v.nome} (mínimo 8 caracteres)</label>
+            <CampoSenha id={`senha-${v.slug}`} autoComplete="new-password" value={senha} onChange={(e) => setSenha(e.target.value)} minLength={8} required autoFocus />
+          </div>
+          <button type="submit" className="btn-primario" disabled={salvando || senha.length < 8}>
+            Salvar senha
+          </button>
+          <button type="button" className="btn-secundario" onClick={() => { setSenha(''); setTrocandoSenha(false) }}>
+            Cancelar
+          </button>
+        </form>
+      )}
+    </div>
+  )
+}
+
+function AbaVendedoras({ dados, atualizar, mostrar }: PropsAba) {
+  const [nome, setNome] = useState('')
+  const [codigo, setCodigo] = useState('')
+  const [pagina, setPagina] = useState('')
+  const [senha, setSenha] = useState('')
+  const [tocados, setTocados] = useState<Set<string>>(new Set())
+  const { executar, salvando } = useExecutar(atualizar, mostrar)
+
+  // Código sequencial (00, 01…) vai no link do cliente; a página (/larissa) é o endereço de acesso dela
+  useEffect(() => {
+    if (!tocados.has('codigo')) setCodigo(proximoCodigoVendedora(dados.vendedoras.map((v) => v.slug)))
+  }, [dados.vendedoras, tocados])
+  useEffect(() => {
+    if (!tocados.has('pagina')) setPagina(slugify(nome.split(/\s+/)[0] ?? ''))
+  }, [nome, tocados])
+  const tocar = (campo: string) => setTocados((t) => new Set(t).add(campo))
+  const semSenha = dados.vendedoras.filter((v) => v.ativa && !v.tem_senha).length
 
   return (
     <div className="space-y-6">
       <form
-        className="cartao grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end"
+        className="cartao grid gap-3 sm:grid-cols-2"
         onSubmit={async (e) => {
           e.preventDefault()
-          if (await executar('vendedora.salvar', { nome, slug, ativa: true }, 'Vendedora adicionada.')) {
+          if (await executar('vendedora.salvar', { nome, slug: codigo, pagina, senha, ativa: true }, 'Vendedora adicionada.')) {
             setNome('')
-            setSlug('')
-            setSlugTocado(false)
+            setSenha('')
+            setTocados(new Set())
           }
         }}
       >
         <div>
           <label className="rotulo" htmlFor="v-nome">Nome (vai no utm_medium)</label>
-          <input id="v-nome" className="campo" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Larissa" required />
+          <input id="v-nome" className="campo" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Nome da vendedora" required />
         </div>
         <div>
-          <label className="rotulo" htmlFor="v-slug">Código (vai na URL)</label>
-          <input id="v-slug" className="campo font-mono text-xs" value={slug} onChange={(e) => { setSlugTocado(true); setSlug(e.target.value) }} pattern="[a-z0-9]+(-[a-z0-9]+)*" required />
+          <label className="rotulo" htmlFor="v-senha">Senha de acesso (mínimo 8 caracteres)</label>
+          <CampoSenha id="v-senha" autoComplete="new-password" value={senha} onChange={(e) => setSenha(e.target.value)} minLength={8} required />
         </div>
-        <button type="submit" className="btn-primario" disabled={salvando}>
-          Adicionar
-        </button>
+        <div>
+          <label className="rotulo" htmlFor="v-pagina">Página de acesso</label>
+          <input id="v-pagina" className="campo font-mono text-xs" value={pagina} onChange={(e) => { tocar('pagina'); setPagina(e.target.value) }} pattern="[a-z0-9]+(-[a-z0-9]+)*" required />
+        </div>
+        <div>
+          <label className="rotulo" htmlFor="v-codigo">Código (vai no link do cliente)</label>
+          <input id="v-codigo" className="campo font-mono text-xs" value={codigo} onChange={(e) => { tocar('codigo'); setCodigo(e.target.value) }} pattern="[a-z0-9]+(-[a-z0-9]+)*" required />
+        </div>
+        <div className="text-xs text-gray-500 sm:col-span-2">
+          Acesso: <span className="font-mono">{linkCurto(DOMINIO, pagina || '…', '').replace(/\/$/, '').replace(/^https?:\/\//, '')}</span> · Link do cliente:{' '}
+          <span className="font-mono">{linkCurto(DOMINIO, codigo || '…', 'anc3500').replace(/^https?:\/\//, '')}</span>
+        </div>
+        <div className="sm:col-span-2">
+          <button type="submit" className="btn-primario" disabled={salvando}>
+            Adicionar vendedora
+          </button>
+        </div>
       </form>
+
+      {semSenha > 0 && (
+        <Aviso tipo="erro">
+          {semSenha === 1 ? '1 vendedora ativa está sem senha e não consegue entrar' : `${semSenha} vendedoras ativas estão sem senha e não conseguem entrar`}. Use “Definir senha”.
+        </Aviso>
+      )}
 
       <div className="divide-y divide-gray-100 overflow-hidden rounded-2xl border border-gray-200 bg-white">
         {dados.vendedoras.map((v) => (
-          <div key={v.slug} className="flex items-center gap-3 px-4 py-3">
-            <div className="min-w-0 flex-1">
-              <div className={`font-bold ${v.ativa ? 'text-gray-900' : 'text-gray-400'}`}>
-                <span className="mr-2 rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-500">{v.slug}</span>
-                {v.nome}
-              </div>
-              <div className="font-mono text-xs text-gray-400">{linkCurto(DOMINIO, v.slug, '…').replace(/^https?:\/\//, '')}</div>
-            </div>
-            <label className="flex items-center gap-2 text-xs font-semibold text-gray-600">
-              <input
-                type="checkbox"
-                className="h-4 w-4 accent-brand-green"
-                checked={v.ativa}
-                disabled={salvando}
-                onChange={(e) => executar('vendedora.salvar', { ...v, ativa: e.target.checked }, e.target.checked ? 'Vendedora ativada.' : 'Vendedora desativada: os links dela param de redirecionar.')}
-              />
-              ativa
-            </label>
-            <button
-              type="button"
-              className="btn-perigo !px-3 !py-1.5 !text-xs"
-              disabled={salvando}
-              onClick={() => {
-                if (confirm(`Excluir ${v.nome}? Todos os links dela vão parar de funcionar. Se for temporário, prefira desativar.`)) {
-                  executar('vendedora.excluir', { slug: v.slug }, 'Vendedora excluída.')
-                }
-              }}
-            >
-              Excluir
-            </button>
-          </div>
+          <LinhaVendedora key={v.slug} v={v} salvando={salvando} executar={executar} mostrar={mostrar} />
         ))}
       </div>
     </div>
@@ -562,51 +689,39 @@ function AbaCliques({ dados }: { dados: DadosAdmin }) {
 /* ---------------- Página ---------------- */
 
 export default function Admin() {
-  const [senha, setSenha] = useState(lerSenha)
-  const [digitada, setDigitada] = useState('')
   const [dados, setDados] = useState<DadosAdmin | null>(null)
+  const [pedirSenha, setPedirSenha] = useState(false)
   const [erro, setErro] = useState('')
   const [aba, setAba] = useState<Aba>('ofertas')
   const { mostrar, elemento: toast } = useToast()
 
-  const carregar = useCallback(async (s: string) => {
-    if (!s) return
+  const carregar = useCallback(async () => {
     setErro('')
     try {
-      setDados(await adminListar(s))
-      try { localStorage.setItem(CHAVE_SENHA, s) } catch { /* sem storage */ }
+      setDados(await adminListar())
+      setPedirSenha(false)
     } catch (e) {
-      if (e instanceof ErroApi && e.status === 401) {
-        setSenha('')
-        try { localStorage.removeItem(CHAVE_SENHA) } catch { /* sem storage */ }
-      }
-      setErro((e as Error).message)
+      if (e instanceof ErroApi && e.status === 401) setPedirSenha(true)
+      else setErro((e as Error).message)
     }
   }, [])
 
   useEffect(() => {
-    carregar(senha)
-  }, [senha, carregar])
+    document.title = 'Nutri de Consultório'
+    carregar()
+  }, [carregar])
 
-  if (!senha || !dados) {
+  if (pedirSenha || !dados) {
     return (
       <Pagina>
-        <Cabecalho titulo="Administração" subtitulo="Ofertas, vendedoras e cliques dos links de venda." />
-        {!senha ? (
-          <form
-            className="cartao space-y-3"
-            onSubmit={(e) => {
-              e.preventDefault()
-              setSenha(digitada)
+        <Cabecalho titulo="Administração" subtitulo="Acesso restrito." />
+        {pedirSenha ? (
+          <Login
+            onEntrar={async (senha) => {
+              await entrar('admin', senha)
+              await carregar()
             }}
-          >
-            <label className="rotulo" htmlFor="senha">Senha</label>
-            <input id="senha" type="password" className="campo" value={digitada} onChange={(e) => setDigitada(e.target.value)} autoFocus />
-            {erro && <Aviso tipo="erro">{erro}</Aviso>}
-            <button type="submit" className="btn-primario w-full">
-              Entrar
-            </button>
-          </form>
+          />
         ) : erro ? (
           <Aviso tipo="erro">{erro}</Aviso>
         ) : null}
@@ -626,9 +741,17 @@ export default function Admin() {
         titulo="Administração"
         subtitulo="Cadastre uma oferta uma vez: todas as vendedoras recebem o link delas na hora."
         acao={
-          <a href="/" className="text-xs text-gray-400 hover:text-gray-600">
-            ver como vendedora
-          </a>
+          <button
+            type="button"
+            className="text-xs text-gray-400 hover:text-gray-600"
+            onClick={async () => {
+              await sair('admin')
+              setDados(null)
+              setPedirSenha(true)
+            }}
+          >
+            sair
+          </button>
         }
       />
       <nav className="mb-6 flex gap-1 rounded-xl bg-gray-100 p-1">
@@ -646,8 +769,8 @@ export default function Admin() {
         ))}
       </nav>
       {erro && <div className="mb-4"><Aviso tipo="erro">{erro}</Aviso></div>}
-      {aba === 'ofertas' && <AbaOfertas dados={dados} senha={senha} atualizar={setDados} mostrar={mostrar} />}
-      {aba === 'vendedoras' && <AbaVendedoras dados={dados} senha={senha} atualizar={setDados} mostrar={mostrar} />}
+      {aba === 'ofertas' && <AbaOfertas dados={dados} atualizar={setDados} mostrar={mostrar} />}
+      {aba === 'vendedoras' && <AbaVendedoras dados={dados} atualizar={setDados} mostrar={mostrar} />}
       {aba === 'cliques' && <AbaCliques dados={dados} />}
       {toast}
     </Pagina>
