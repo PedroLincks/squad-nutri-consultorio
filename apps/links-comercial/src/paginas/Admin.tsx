@@ -291,6 +291,13 @@ function PainelProdutos({ dados, atualizar, mostrar, onFechar }: PropsAba & { on
 
 /* ---------------- Abas ---------------- */
 
+/** Ordem dos blocos de tipo dentro de cada produto; ofertas sem tipo vão para o fim */
+const ORDEM_TIPOS: (TipoOferta | null)[] = ['avista', 'recorrencia', 'downsell', null]
+
+function porTipo(ofertas: Oferta[]): { tipo: TipoOferta | null; ofertas: Oferta[] }[] {
+  return ORDEM_TIPOS.map((tipo) => ({ tipo, ofertas: ofertas.filter((o) => o.tipo === tipo) })).filter((g) => g.ofertas.length > 0)
+}
+
 function AbaOfertas({ dados, atualizar, mostrar }: PropsAba) {
   const [editando, setEditando] = useState<OfertaEntrada | null>(null)
   const [painelProdutos, setPainelProdutos] = useState(false)
@@ -380,28 +387,37 @@ function AbaOfertas({ dados, atualizar, mostrar }: PropsAba) {
       {grupos.length === 0 && <Aviso>{dados.ofertas.length === 0 ? 'Nenhuma oferta cadastrada.' : 'Nenhuma oferta com esse filtro.'}</Aviso>}
       {grupos.map((g) => (
         <section key={g.produto}>
-          <h2 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-500">{g.produto}</h2>
-          <div className="divide-y divide-gray-100 overflow-hidden rounded-2xl border border-gray-200 bg-white">
-            {g.ofertas.map((o) => (
-              <button
-                key={o.id}
-                type="button"
-                onClick={() => setEditando(o)}
-                className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-gray-50"
-              >
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className={`font-bold ${o.ativa ? 'text-gray-900' : 'text-gray-400 line-through'}`}>{o.nome}</span>
-                    <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${o.tipo ? 'bg-gray-100 text-gray-500' : 'bg-red-50 text-brand-red'}`}>{rotuloTipo(o.tipo)}</span>
-                    {!o.ativa && <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-bold uppercase text-gray-500">inativa</span>}
-                  </div>
-                  <div className="truncate font-mono text-xs text-gray-400">
-                    /{o.slug} · {o.utm_campaign} · {o.utm_content}
-                  </div>
+          <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-gray-500">{g.produto}</h2>
+          <div className="space-y-4">
+            {porTipo(g.ofertas).map((sub) => (
+              <div key={sub.tipo ?? 'sem'}>
+                <h3 className={`mb-1.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wide ${sub.tipo ? 'text-gray-400' : 'text-brand-red'}`}>
+                  {rotuloTipo(sub.tipo)}
+                  <span className="rounded-full bg-gray-100 px-1.5 py-0.5 text-[10px] text-gray-500">{sub.ofertas.length}</span>
+                </h3>
+                <div className="divide-y divide-gray-100 overflow-hidden rounded-2xl border border-gray-200 bg-white">
+                  {sub.ofertas.map((o) => (
+                    <button
+                      key={o.id}
+                      type="button"
+                      onClick={() => setEditando(o)}
+                      className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-gray-50"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className={`font-bold ${o.ativa ? 'text-gray-900' : 'text-gray-400 line-through'}`}>{o.nome}</span>
+                          {!o.ativa && <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-bold uppercase text-gray-500">inativa</span>}
+                        </div>
+                        <div className="truncate font-mono text-xs text-gray-400">
+                          /{o.slug} · {o.utm_campaign} · {o.utm_content}
+                        </div>
+                      </div>
+                      <div className="shrink-0 text-sm font-bold tabular-nums text-gray-700">{formatarReais(o.ticket)}</div>
+                      <span className="text-gray-300">›</span>
+                    </button>
+                  ))}
                 </div>
-                <div className="shrink-0 text-sm font-bold tabular-nums text-gray-700">{formatarReais(o.ticket)}</div>
-                <span className="text-gray-300">›</span>
-              </button>
+              </div>
             ))}
           </div>
         </section>
