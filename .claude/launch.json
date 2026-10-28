@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "quiz-vsl-ssn",
+      "url": "http://localhost:5191",
+      "port": 5191
+    },
+    {
+      "name": "links-comercial",
+      "url": "http://localhost:5192",
+      "port": 5192
+    }
+  ]
+}

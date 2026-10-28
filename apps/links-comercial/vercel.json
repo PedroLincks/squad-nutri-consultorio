@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/:vendedora/:oferta", "destination": "/api/r?v=:vendedora&o=:oferta" },
+    { "source": "/((?!api/).*)", "destination": "/" }
+  ]
+}

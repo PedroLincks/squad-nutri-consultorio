@@ -1,0 +1,6 @@
+dist
+.vercel
+.env*
+!.env.example
+*.tsbuildinfo
+.dev-data
